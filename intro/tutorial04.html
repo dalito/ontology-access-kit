@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 4: OboGraphs &mdash; oaklib  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Part 5: Graph Visualization" href="tutorial05.html" />
+    <link rel="prev" title="Part 3: Triplestore Backends" href="tutorial03.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> oaklib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial01.html">Part 1: Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial02.html">Part 2: Basic Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial03.html">Part 3: Triplestore Backends</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 4: OboGraphs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#obographs">OboGraphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obograph-interface">OboGraph Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commands">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-examples">Code examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial05.html">Part 5: Graph Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial06.html">Part 6: Working With OWL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial07.html">Part 7: SQLite files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial08.html">Part 8: Applying Changes to Ontologies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">The OAK Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces/index.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementations/index.html">Implementations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors.html">Ontology Implementation Selectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datamodels/index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Ontology Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">oaklib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tutorial</a></li>
+      <li class="breadcrumb-item active">Part 4: OboGraphs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/intro/tutorial04.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-4-obographs">
+<h1>Part 4: OboGraphs<a class="headerlink" href="#part-4-obographs" title="Permalink to this headline"></a></h1>
+<p>So far we have been using the <span class="xref std std-ref">BasicOntologyInterface</span> which provides basic lookup operations. All methods in this interface
+return ‘simple’ python objects, such as strings, lists of strings, or dictionaries or <a class="reference internal" href="../best-practice.html#iterators"><span class="std std-ref">Iterators</span></a> composing these elements.</p>
+<p>Sometimes more powerful abstractions are required. For example, many bioinformatics applications work with a <a class="reference internal" href="../glossary.html#term-Graph"><span class="xref std std-term">Graph</span></a> level abstraction
+of an ontology which allows for graph-theoretic operations and visualizations. In contrast, many ontology management and QC
+applications require an OWL <span class="xref std std-term">Axiom</span> oriented view of an ontology.</p>
+<p>OAK does not favor any one view or abstraction or datamodel. The general philosophy is:</p>
+<ul class="simple">
+<li><p>be <strong>pluralistic</strong> - provide different <span class="xref std std-term">Interfaces</span> with different abstractions, and allow the application developer or user to choose</p></li>
+<li><p>ensure each interface follows a well-documented <a class="reference internal" href="../glossary.html#term-Datamodel"><span class="xref std std-term">Datamodel</span></a>, adhering to standards if they exist</p></li>
+</ul>
+<p>To illustrate this we will first introduce the <span class="xref std std-ref">OboGraphInterface</span> which uses the <span class="xref std std-ref">OboGraph</span> datamodel</p>
+<section id="obographs">
+<h2>OboGraphs<a class="headerlink" href="#obographs" title="Permalink to this headline"></a></h2>
+<p>See <a class="reference external" href="https://incatools.github.io/ontology-access-kit/datamodels/obograph/index.html">OboGraph Datamodel</a></p>
+<p>In this datamodel, an ontology is conceived of as a Graph, with a graph consisting of</p>
+<ul class="simple">
+<li><p><span class="xref std std-term">Node</span> objects</p></li>
+<li><p><a class="reference internal" href="../glossary.html#term-Edge"><span class="xref std std-term">Edge</span></a> objects</p></li>
+</ul>
+<p>Nodes are typically ontology <a class="reference internal" href="../glossary.html#term-Class"><span class="xref std std-term">Classes</span></a> but are not restricted to this.</p>
+<p>Edges are typed relationships between nodes - for example, finger part-of hand.</p>
+<p>The OboGraph datamodel is used by the <span class="xref std std-term">obographviz</span> library, which visualizes graphs like this:</p>
+<img alt="../_images/wing-vein.png" src="../_images/wing-vein.png" />
+</section>
+<section id="obograph-interface">
+<h2>OboGraph Interface<a class="headerlink" href="#obograph-interface" title="Permalink to this headline"></a></h2>
+<p>Like most datamodels in OAK, the OboGraph datamodel follows a Data Access Object (DAO) pattern - the objects are intentionally limited
+in their behavior. For example, you cannot ask a node what edges come out or go in; these are stored at the top level graph object.</p>
+<p>“Smarter” operations are provided by the interface</p>
+</section>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline"></a></h2>
+<p>There are a number of commands that work with OBOGraph abstractions:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../cli.html#runoak-viz"><span class="std std-ref">viz</span></a></p></li>
+<li><p><a class="reference internal" href="../cli.html#runoak-tree"><span class="std std-ref">tree</span></a></p></li>
+<li><p><a class="reference internal" href="../cli.html#runoak-ancestors"><span class="std std-ref">ancestors</span></a></p></li>
+<li><p><a class="reference internal" href="../cli.html#runoak-descendants"><span class="std std-ref">descendants</span></a></p></li>
+<li><p><a class="reference internal" href="../cli.html#runoak-similarity"><span class="std std-ref">similarity</span></a></p></li>
+</ul>
+</section>
+<section id="code-examples">
+<h2>Code examples<a class="headerlink" href="#code-examples" title="Permalink to this headline"></a></h2>
+<p>TODO: see tests for examples for now</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial03.html" class="btn btn-neutral float-left" title="Part 3: Triplestore Backends" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial05.html" class="btn btn-neutral float-right" title="Part 5: Graph Visualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, OAK developers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class: SearchBaseConfiguration &mdash; oaklib  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> oaklib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interfaces/index.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementations/index.html">Implementations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Ontology Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">oaklib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Class: SearchBaseConfiguration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/datamodels/search/SearchBaseConfiguration.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-searchbaseconfiguration">
+<h1>Class: SearchBaseConfiguration<a class="headerlink" href="#class-searchbaseconfiguration" title="Permalink to this headline"></a></h1>
+<p><em>A user-specified configuration that determines how a particular search operation works</em></p>
+<p>URI: <a class="reference external" href="https://w3id.org/linkml/search_datamodel/SearchBaseConfiguration">search:SearchBaseConfiguration</a></p>
+<div class="mermaid">
+             classDiagram
+    class SearchBaseConfiguration
+      SearchBaseConfiguration : categories
+      SearchBaseConfiguration : cursor
+      SearchBaseConfiguration : include_obsoletes_in_results
+      SearchBaseConfiguration : is_complete
+      SearchBaseConfiguration : is_fuzzy
+      SearchBaseConfiguration : is_partial
+      SearchBaseConfiguration : limit
+      SearchBaseConfiguration : properties
+      SearchBaseConfiguration : search_terms
+      SearchBaseConfiguration : syntax
+      
+        </div><!-- no inheritance hierarchy -->
+<section id="slots">
+<h2>Slots<a class="headerlink" href="#slots" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Cardinality and Range</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Inheritance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="search_terms.html"><span class="doc std std-doc">search_terms</span></a></p></td>
+<td><p>0..* <br/> SearchTerm</p></td>
+<td><p>An individual search term. The syntax is determined by the syntax slot</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="syntax.html"><span class="doc std std-doc">syntax</span></a></p></td>
+<td><p>0..1 <br/> SearchTermSyntax</p></td>
+<td><p>Determines how the search term is interpreted</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="properties.html"><span class="doc std std-doc">properties</span></a></p></td>
+<td><p>0..* <br/> SearchProperty</p></td>
+<td><p>determines which properties are searched over</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="limit.html"><span class="doc std std-doc">limit</span></a></p></td>
+<td><p>0..1 <br/> integer</p></td>
+<td><p>the maximum number of search results to be returned in one batch</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="cursor.html"><span class="doc std std-doc">cursor</span></a></p></td>
+<td><p>0..1 <br/> None</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="is_partial.html"><span class="doc std std-doc">is_partial</span></a></p></td>
+<td><p>0..1 <br/> boolean</p></td>
+<td><p>allows matches where the search term is a subset of the full span</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="is_complete.html"><span class="doc std std-doc">is_complete</span></a></p></td>
+<td><p>0..1 <br/> boolean</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="include_obsoletes_in_results.html"><span class="doc std std-doc">include_obsoletes_in_results</span></a></p></td>
+<td><p>0..1 <br/> boolean</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="is_fuzzy.html"><span class="doc std std-doc">is_fuzzy</span></a></p></td>
+<td><p>0..1 <br/> boolean</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="categories.html"><span class="doc std std-doc">categories</span></a></p></td>
+<td><p>0..* <br/> uriorcurie</p></td>
+<td><p>categories that should be matched</p></td>
+<td><p>direct</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="usages">
+<h2>Usages<a class="headerlink" href="#usages" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>used by</p></th>
+<th class="head"><p>used in</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>used</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="ComplexQuery.html"><span class="doc std std-doc">ComplexQuery</span></a></p></td>
+<td><p><a class="reference internal" href="atom.html"><span class="doc std std-doc">atom</span></a></p></td>
+<td><p>range</p></td>
+<td><p>SearchBaseConfiguration</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="PathExpression.html"><span class="doc std std-doc">PathExpression</span></a></p></td>
+<td><p><a class="reference internal" href="search_term.html"><span class="doc std std-doc">search_term</span></a></p></td>
+<td><p>range</p></td>
+<td><p>SearchBaseConfiguration</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="SearchResultSet.html"><span class="doc std std-doc">SearchResultSet</span></a></p></td>
+<td><p><a class="reference internal" href="configuration.html"><span class="doc std std-doc">configuration</span></a></p></td>
+<td><p>range</p></td>
+<td><p>SearchBaseConfiguration</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="todos">
+<h2>TODOs<a class="headerlink" href="#todos" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>rename this SearchConfiguration</p></li>
+</ul>
+</section>
+<section id="identifier-and-mapping-information">
+<h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
+<section id="schema-source">
+<h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>from schema: https://w3id.org/linkml/search_datamodel</p></li>
+</ul>
+</section>
+</section>
+<section id="mappings">
+<h2>Mappings<a class="headerlink" href="#mappings" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mapping Type</p></th>
+<th class="head"><p>Mapped Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>self</p></td>
+<td><p>search:SearchBaseConfiguration</p></td>
+</tr>
+<tr class="row-odd"><td><p>native</p></td>
+<td><p>search:SearchBaseConfiguration</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linkml-source">
+<h2>LinkML Source<a class="headerlink" href="#linkml-source" title="Permalink to this headline"></a></h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<section id="direct">
+<h3>Direct<a class="headerlink" href="#direct" title="Permalink to this headline"></a></h3>
+<details>
+```yaml
+name: SearchBaseConfiguration
+description: A user-specified configuration that determines how a particular search
+  operation works
+todos:
+- rename this SearchConfiguration
+from_schema: https://w3id.org/linkml/search_datamodel
+rank: 1000
+attributes:
+  search_terms:
+    name: search_terms
+    description: An individual search term. The syntax is determined by the syntax
+      slot
+    comments:
+    - This slot is optional when the configuration is used to paramterize multiple
+      searches
+    - If multiple terms are provided this is treated as a union query
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    multivalued: true
+    range: SearchTerm
+  syntax:
+    name: syntax
+    description: Determines how the search term is interpreted
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: SearchTermSyntax
+  properties:
+    name: properties
+    description: determines which properties are searched over
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    multivalued: true
+    range: SearchProperty
+  limit:
+    name: limit
+    description: the maximum number of search results to be returned in one batch
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: integer
+  cursor:
+    name: cursor
+    description: when the number of search results exceed the limit this can be used
+      to iterate through results
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: integer
+  is_partial:
+    name: is_partial
+    description: allows matches where the search term is a subset of the full span
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: boolean
+  is_complete:
+    name: is_complete
+    deprecated: use is_partial
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: boolean
+  include_obsoletes_in_results:
+    name: include_obsoletes_in_results
+    deprecated: use properties to explicitly list properties
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: boolean
+  is_fuzzy:
+    name: is_fuzzy
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    range: boolean
+  categories:
+    name: categories
+    description: categories that should be matched
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    multivalued: true
+    range: uriorcurie
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
+
+### Induced
+
+&lt;details&gt;
+```yaml
+name: SearchBaseConfiguration
+description: A user-specified configuration that determines how a particular search
+  operation works
+todos:
+- rename this SearchConfiguration
+from_schema: https://w3id.org/linkml/search_datamodel
+rank: 1000
+attributes:
+  search_terms:
+    name: search_terms
+    description: An individual search term. The syntax is determined by the syntax
+      slot
+    comments:
+    - This slot is optional when the configuration is used to paramterize multiple
+      searches
+    - If multiple terms are provided this is treated as a union query
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    multivalued: true
+    alias: search_terms
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: SearchTerm
+  syntax:
+    name: syntax
+    description: Determines how the search term is interpreted
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: syntax
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: SearchTermSyntax
+  properties:
+    name: properties
+    description: determines which properties are searched over
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    multivalued: true
+    alias: properties
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: SearchProperty
+  limit:
+    name: limit
+    description: the maximum number of search results to be returned in one batch
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: limit
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: integer
+  cursor:
+    name: cursor
+    description: when the number of search results exceed the limit this can be used
+      to iterate through results
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: cursor
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    - SearchResultSet
+    range: integer
+  is_partial:
+    name: is_partial
+    description: allows matches where the search term is a subset of the full span
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: is_partial
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: boolean
+  is_complete:
+    name: is_complete
+    deprecated: use is_partial
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: is_complete
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: boolean
+  include_obsoletes_in_results:
+    name: include_obsoletes_in_results
+    deprecated: use properties to explicitly list properties
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: include_obsoletes_in_results
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: boolean
+  is_fuzzy:
+    name: is_fuzzy
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    alias: is_fuzzy
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: boolean
+  categories:
+    name: categories
+    description: categories that should be matched
+    from_schema: https://w3id.org/linkml/search_datamodel
+    rank: 1000
+    multivalued: true
+    alias: categories
+    owner: SearchBaseConfiguration
+    domain_of:
+    - SearchBaseConfiguration
+    range: uriorcurie
+
+</pre></div>
+</div>
+</details></section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, OAK developers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

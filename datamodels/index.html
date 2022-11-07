@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datamodels &mdash; oaklib  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ontology Metadata Ontology Schema" href="ontology-metadata/index.html" />
+    <link rel="prev" title="Ontology Implementation Selectors" href="../selectors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> oaklib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">The OAK Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interfaces/index.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../implementations/index.html">Implementations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../selectors.html">Ontology Implementation Selectors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Datamodels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ontology-metadata/index.html">Ontology Metadata Ontology Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search/index.html">search datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obograph/index.html">Obographs Datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sssom/index.html">SSSOM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funowl/index.html">FunOwl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity/index.html">Semantic Similarity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary-statistics/index.html">Summary Statistics Datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation/index.html">Validation Results Datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexical-index/index.html">Lexical Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping-rules/index.html">Mapping Rules Datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-annotator/index.html">Text Annotator Datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-ontology-diff/index.html">Cross-Ontology Diff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="association/index.html">OAK Association Data Model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Ontology Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">oaklib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Datamodels</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/datamodels/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="datamodels">
+<span id="id1"></span><h1>Datamodels<a class="headerlink" href="#datamodels" title="Permalink to this headline"></a></h1>
+<p>This library provides different datamodels designed for different
+purposes. They are intentionally overlapping in content, and may be
+lossy with respect to one another.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need to use <em>any</em> of these to use the
+BasicOntologyInterface, which uses simple python datatypes.</p>
+</div>
+<p>Each datamodel represents the perspective of one or more <a class="reference internal" href="../interfaces/index.html#interfaces"><span class="std std-ref">Interfaces</span></a>. For example,
+the funowl datamodel is used by OwlInterface, and represents the perspective of an ontology
+as being a collection of Owl <em>axioms</em>. Other interfaces present different views and do
+not need this.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ontology-metadata/index.html">Ontology Metadata Ontology Schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ontology-metadata/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ontology-metadata/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ontology-metadata/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ontology-metadata/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ontology-metadata/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search/index.html">search datamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="obograph/index.html">Obographs Datamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="obograph/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obograph/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obograph/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obograph/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="obograph/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sssom/index.html">SSSOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funowl/index.html">FunOwl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="similarity/index.html">Semantic Similarity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="similarity/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="similarity/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="summary-statistics/index.html">Summary Statistics Datamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="summary-statistics/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary-statistics/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary-statistics/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary-statistics/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary-statistics/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validation/index.html">Validation Results Datamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="validation/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lexical-index/index.html">Lexical Index</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lexical-index/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexical-index/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexical-index/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexical-index/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lexical-index/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mapping-rules/index.html">Mapping Rules Datamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mapping-rules/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping-rules/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping-rules/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping-rules/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping-rules/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="text-annotator/index.html">Text Annotator Datamodel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="text-annotator/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-annotator/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-annotator/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-annotator/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-annotator/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cross-ontology-diff/index.html">Cross-Ontology Diff</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cross-ontology-diff/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-ontology-diff/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-ontology-diff/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-ontology-diff/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross-ontology-diff/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="association/index.html">OAK Association Data Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="association/index.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="association/index.html#slots">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="association/index.html#enumerations">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="association/index.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="association/index.html#subsets">Subsets</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../selectors.html" class="btn btn-neutral float-left" title="Ontology Implementation Selectors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ontology-metadata/index.html" class="btn btn-neutral float-right" title="Ontology Metadata Ontology Schema" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, OAK developers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

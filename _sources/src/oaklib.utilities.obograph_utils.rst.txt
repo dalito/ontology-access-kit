@@ -1,0 +1,55 @@
+﻿oaklib.utilities.obograph\_utils
+================================
+
+.. automodule:: oaklib.utilities.obograph_utils
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      ancestors_with_stats
+      as_digraph
+      as_graph
+      as_multi_digraph
+      default_stylemap_path
+      draw_graph
+      filter_by_predicates
+      graph_as_dict
+      graph_info
+      graph_to_image
+      graph_to_tree
+      index_graph_edges_by_object
+      index_graph_edges_by_predicate
+      index_graph_edges_by_subject
+      index_graph_edges_by_subject_object
+      index_graph_nodes
+      reflexive
+      remove_nodes_from_graph
+      shortest_paths
+      topological_sort
+      trim_graph
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TreeFormatEnum
+   
+   
+
+   
+   
+   
+
+
+

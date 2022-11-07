@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class: TermSetPairwiseSimilarity &mdash; oaklib  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> oaklib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../architecture.html">Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interfaces/index.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../implementations/index.html">Implementations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../concepts.html">Ontology Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">oaklib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Class: TermSetPairwiseSimilarity</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/datamodels/similarity/TermSetPairwiseSimilarity.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-termsetpairwisesimilarity">
+<h1>Class: TermSetPairwiseSimilarity<a class="headerlink" href="#class-termsetpairwisesimilarity" title="Permalink to this headline"></a></h1>
+<p><em>A simple pairwise similarity between two sets of concepts/terms</em></p>
+<p>URI: <a class="reference external" href="https://w3id.org/linkml/similarity/TermSetPairwiseSimilarity">sim:TermSetPairwiseSimilarity</a></p>
+<div class="mermaid">
+             classDiagram
+    class TermSetPairwiseSimilarity
+      PairwiseSimilarity &lt;|-- TermSetPairwiseSimilarity
+      
+      TermSetPairwiseSimilarity : average_score
+      TermSetPairwiseSimilarity : best_score
+      TermSetPairwiseSimilarity : metric
+      TermSetPairwiseSimilarity : object_best_matches
+      TermSetPairwiseSimilarity : object_termset
+      TermSetPairwiseSimilarity : subject_best_matches
+      TermSetPairwiseSimilarity : subject_termset
+      
+        </div><section id="inheritance">
+<h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="PairwiseSimilarity.html"><span class="doc std std-doc">PairwiseSimilarity</span></a></p>
+<ul>
+<li><p><strong>TermSetPairwiseSimilarity</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="slots">
+<h2>Slots<a class="headerlink" href="#slots" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Cardinality and Range</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Inheritance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="subject_termset.html"><span class="doc std std-doc">subject_termset</span></a></p></td>
+<td><p>0..* <br/> TermInfo</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="object_termset.html"><span class="doc std std-doc">object_termset</span></a></p></td>
+<td><p>0..* <br/> TermInfo</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="subject_best_matches.html"><span class="doc std std-doc">subject_best_matches</span></a></p></td>
+<td><p>0..* <br/> BestMatch</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="object_best_matches.html"><span class="doc std std-doc">object_best_matches</span></a></p></td>
+<td><p>0..* <br/> BestMatch</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="average_score.html"><span class="doc std std-doc">average_score</span></a></p></td>
+<td><p>1..1 <br/> float</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="best_score.html"><span class="doc std std-doc">best_score</span></a></p></td>
+<td><p>1..1 <br/> float</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="metric.html"><span class="doc std std-doc">metric</span></a></p></td>
+<td><p>0..1 <br/> uriorcurie</p></td>
+<td><p>None</p></td>
+<td><p>direct</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="identifier-and-mapping-information">
+<h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
+<section id="schema-source">
+<h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>from schema: https://w3id.org/linkml/similarity</p></li>
+</ul>
+</section>
+</section>
+<section id="mappings">
+<h2>Mappings<a class="headerlink" href="#mappings" title="Permalink to this headline"></a></h2>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mapping Type</p></th>
+<th class="head"><p>Mapped Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>self</p></td>
+<td><p>sim:TermSetPairwiseSimilarity</p></td>
+</tr>
+<tr class="row-odd"><td><p>native</p></td>
+<td><p>sim:TermSetPairwiseSimilarity</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linkml-source">
+<h2>LinkML Source<a class="headerlink" href="#linkml-source" title="Permalink to this headline"></a></h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<section id="direct">
+<h3>Direct<a class="headerlink" href="#direct" title="Permalink to this headline"></a></h3>
+<details>
+```yaml
+name: TermSetPairwiseSimilarity
+description: A simple pairwise similarity between two sets of concepts/terms
+from_schema: https://w3id.org/linkml/similarity
+rank: 1000
+is_a: PairwiseSimilarity
+slots:
+- subject_termset
+- object_termset
+- subject_best_matches
+- object_best_matches
+- average_score
+- best_score
+- metric
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
+
+### Induced
+
+&lt;details&gt;
+```yaml
+name: TermSetPairwiseSimilarity
+description: A simple pairwise similarity between two sets of concepts/terms
+from_schema: https://w3id.org/linkml/similarity
+rank: 1000
+is_a: PairwiseSimilarity
+attributes:
+  subject_termset:
+    name: subject_termset
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    multivalued: true
+    alias: subject_termset
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: TermInfo
+    inlined: true
+  object_termset:
+    name: object_termset
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    multivalued: true
+    alias: object_termset
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: TermInfo
+    inlined: true
+  subject_best_matches:
+    name: subject_best_matches
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    multivalued: true
+    alias: subject_best_matches
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: BestMatch
+    inlined: true
+  object_best_matches:
+    name: object_best_matches
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    multivalued: true
+    alias: object_best_matches
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: BestMatch
+    inlined: true
+  average_score:
+    name: average_score
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    alias: average_score
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: float
+    required: true
+  best_score:
+    name: best_score
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    alias: best_score
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: float
+    required: true
+  metric:
+    name: metric
+    from_schema: https://w3id.org/linkml/similarity
+    rank: 1000
+    alias: metric
+    owner: TermSetPairwiseSimilarity
+    domain_of:
+    - TermSetPairwiseSimilarity
+    range: uriorcurie
+
+</pre></div>
+</div>
+</details></section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, OAK developers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

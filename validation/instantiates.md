@@ -1,0 +1,72 @@
+# Slot: instantiates
+_The type of the subject_
+
+
+URI: [vm:instantiates](https://w3id.org/linkml/validation-model/instantiates)
+
+
+
+<!-- no inheritance hierarchy -->
+
+
+
+
+## Applicable Classes
+
+| Name | Description |
+| --- | --- |
+[ValidationResult](ValidationResult.md) | An individual result arising from validation of a data instance using a particular rule
+[ExternalReferenceValidationResult](ExternalReferenceValidationResult.md) | A validation result where the check is to determine if a link to an external resource is still valid
+
+
+
+
+
+
+## Properties
+
+* Range: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
+
+
+
+
+
+
+## Alias
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/linkml/validation_results
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: instantiates
+description: The type of the subject
+from_schema: https://w3id.org/linkml/validation_results
+exact_mappings:
+- sh:sourceShape
+rank: 1000
+alias: instantiates
+domain_of:
+- ValidationResult
+range: uriorcurie
+
+```
+</details>

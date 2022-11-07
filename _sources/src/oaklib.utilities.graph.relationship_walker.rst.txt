@@ -1,0 +1,30 @@
+﻿oaklib.utilities.graph.relationship\_walker
+===========================================
+
+.. automodule:: oaklib.utilities.graph.relationship_walker
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      walk_down
+      walk_up
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+
