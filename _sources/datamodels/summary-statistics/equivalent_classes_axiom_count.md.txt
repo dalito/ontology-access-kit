@@ -1,6 +1,8 @@
 # Slot: equivalent_classes_axiom_count
+_Number of equivalent classes axioms in the ontology or subset_
 
-URI: [reporting:equivalent_classes_axiom_count](https://w3id.org/linkml/reportequivalent_classes_axiom_count)
+
+URI: [summary_statistics:equivalent_classes_axiom_count](https://w3id.org/oaklib/summary_statistics.equivalent_classes_axiom_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:equivalent_classes_axiom_count](https://w3id.org/linkml/reporteq
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:equivalent_classes_axiom_count](https://w3id.org/linkml/reporteq
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -52,7 +48,7 @@ URI: [reporting:equivalent_classes_axiom_count](https://w3id.org/linkml/reporteq
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -62,15 +58,16 @@ URI: [reporting:equivalent_classes_axiom_count](https://w3id.org/linkml/reporteq
 <details>
 ```yaml
 name: equivalent_classes_axiom_count
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of equivalent classes axioms in the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: equivalent_classes_axiom_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: owl_statistic_group
-range: string
+range: integer
 
 ```
 </details>

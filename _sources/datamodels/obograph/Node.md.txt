@@ -1,8 +1,11 @@
 # Class: Node
+_A node is a class, property, or other entity in an ontology_
+
 
 
 
 URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
+
 
 
 ```{mermaid}
@@ -17,6 +20,7 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -24,10 +28,12 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1..1 <br/> string | None | direct |
-| [lbl](lbl.md) | 0..1 <br/> string | None | direct |
-| [type](type.md) | 0..1 <br/> string | None | direct |
-| [meta](meta.md) | 0..1 <br/> Meta | None | direct |
+| [id](id.md) | 1..1 <br/> [OboIdentifierString](OboIdentifierString.md) | The identifier of the entity | direct |
+| [lbl](lbl.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the human-readable label of a node | direct |
+| [type](type.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | direct |
+
+
 
 
 
@@ -35,8 +41,7 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Graph](Graph.md) | [nodes](nodes.md) | range | Node |
-
+| [Graph](Graph.md) | [nodes](nodes.md) | range | [Node](Node.md) |
 
 
 
@@ -68,6 +73,9 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 | native | og:Node |
 
 
+
+
+
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -77,6 +85,7 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 <details>
 ```yaml
 name: Node
+description: A node is a class, property, or other entity in an ontology
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 slots:
@@ -94,12 +103,16 @@ class_uri: rdf:Resource
 <details>
 ```yaml
 name: Node
+description: A node is a class, property, or other entity in an ontology
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
   id:
     name: id
+    description: The identifier of the entity
     from_schema: https://github.com/geneontology/obographs
+    see_also:
+    - https://owlcollab.github.io/oboformat/doc/obo-syntax.html#2.5
     rank: 1000
     identifier: true
     alias: id
@@ -107,11 +120,19 @@ attributes:
     domain_of:
     - Graph
     - Node
-    range: string
+    range: OboIdentifierString
   lbl:
     name: lbl
+    description: the human-readable label of a node
+    comments:
+    - the name "lbl" exists for legacy purposes, this should be considered identical
+      to label in rdfs
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - label
+    - name
     rank: 1000
+    slot_uri: rdfs:label
     alias: lbl
     owner: Node
     domain_of:
@@ -129,7 +150,11 @@ attributes:
     range: string
   meta:
     name: meta
+    description: A collection of metadata about either an ontology (graph), an entity,
+      or an axiom
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - annotations
     rank: 1000
     alias: meta
     owner: Node
@@ -137,6 +162,7 @@ attributes:
     - GraphDocument
     - Graph
     - Node
+    - Edge
     - PropertyValue
     - Axiom
     range: Meta

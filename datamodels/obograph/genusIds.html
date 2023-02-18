@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,6 +83,7 @@
              
   <section id="slot-genusids">
 <h1>Slot: genusIds<a class="headerlink" href="#slot-genusids" title="Permalink to this headline"></a></h1>
+<p><em>The set of classes that are the genus of the defined class</em></p>
 <p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/genusIds">og:genusIds</a></p>
 <!-- no inheritance hierarchy -->
 <section id="applicable-classes">
@@ -94,7 +96,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="LogicalDefinitionAxiom.html"><span class="doc std std-doc">LogicalDefinitionAxiom</span></a></p></td>
-<td><p>None</p></td>
+<td><p>An axiom that defines a class in terms of a genus or set of genus classes and…</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,12 +104,22 @@
 <section id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Range: NONE</p></li>
+<li><p>Range: <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></li>
 <li><p>Multivalued: True</p></li>
+<li><p>Recommended: True</p></li>
 </ul>
 </section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>typically, this will be a single class</p></li>
+</ul>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/geneontology/obographs/issues/89">https://github.com/geneontology/obographs/issues/89</a></p></li>
+</ul>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -123,13 +135,20 @@
 <details>
 ```yaml
 name: genusIds
+description: The set of classes that are the genus of the defined class
+comments:
+- typically, this will be a single class
 from_schema: https://github.com/geneontology/obographs
+see_also:
+- https://github.com/geneontology/obographs/issues/89
 rank: 1000
 multivalued: true
 alias: genusIds
 owner: LogicalDefinitionAxiom
 domain_of:
 - LogicalDefinitionAxiom
+range: string
+recommended: true
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>
 </pre></div>
 </div>

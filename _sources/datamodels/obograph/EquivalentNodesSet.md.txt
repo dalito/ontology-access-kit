@@ -1,8 +1,11 @@
 # Class: EquivalentNodesSet
+_A clique of nodes that are all mutually equivalent_
 
 
 
-URI: [og:EquivalentNodesSet](https://github.com/geneontology/obographs/EquivalentNodesSet)
+
+URI: [owl:equivalentClass](http://www.w3.org/2002/07/owl#equivalentClass)
+
 
 
 ```{mermaid}
@@ -19,6 +22,7 @@ URI: [og:EquivalentNodesSet](https://github.com/geneontology/obographs/Equivalen
 
 
 
+
 ## Inheritance
 * [Axiom](Axiom.md)
     * **EquivalentNodesSet**
@@ -29,9 +33,11 @@ URI: [og:EquivalentNodesSet](https://github.com/geneontology/obographs/Equivalen
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [representativeNodeId](representativeNodeId.md) | 0..1 <br/> string | None | direct |
-| [nodeIds](nodeIds.md) | 0..* <br/> string | None | direct |
-| [meta](meta.md) | 0..1 <br/> Meta | None | [Axiom](Axiom.md) |
+| [representativeNodeId](representativeNodeId.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | The identifier of a node that represents the class in an OWL equivalence cliq... | direct |
+| [nodeIds](nodeIds.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | [Axiom](Axiom.md) |
+
+
 
 
 
@@ -39,8 +45,7 @@ URI: [og:EquivalentNodesSet](https://github.com/geneontology/obographs/Equivalen
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Graph](Graph.md) | [equivalentNodesSets](equivalentNodesSets.md) | range | EquivalentNodesSet |
-
+| [Graph](Graph.md) | [equivalentNodesSets](equivalentNodesSets.md) | range | [EquivalentNodesSet](EquivalentNodesSet.md) |
 
 
 
@@ -68,8 +73,11 @@ URI: [og:EquivalentNodesSet](https://github.com/geneontology/obographs/Equivalen
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | og:EquivalentNodesSet |
+| self | owl:equivalentClass |
 | native | og:EquivalentNodesSet |
+
+
+
 
 
 ## LinkML Source
@@ -81,12 +89,14 @@ URI: [og:EquivalentNodesSet](https://github.com/geneontology/obographs/Equivalen
 <details>
 ```yaml
 name: EquivalentNodesSet
+description: A clique of nodes that are all mutually equivalent
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
 slots:
 - representativeNodeId
 - nodeIds
+class_uri: owl:equivalentClass
 
 ```
 </details>
@@ -96,12 +106,15 @@ slots:
 <details>
 ```yaml
 name: EquivalentNodesSet
+description: A clique of nodes that are all mutually equivalent
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
 attributes:
   representativeNodeId:
     name: representativeNodeId
+    description: The identifier of a node that represents the class in an OWL equivalence
+      clique
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     alias: representativeNodeId
@@ -121,7 +134,11 @@ attributes:
     range: string
   meta:
     name: meta
+    description: A collection of metadata about either an ontology (graph), an entity,
+      or an axiom
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - annotations
     rank: 1000
     alias: meta
     owner: EquivalentNodesSet
@@ -129,9 +146,11 @@ attributes:
     - GraphDocument
     - Graph
     - Node
+    - Edge
     - PropertyValue
     - Axiom
     range: Meta
+class_uri: owl:equivalentClass
 
 ```
 </details>

@@ -7,6 +7,7 @@ _maps individual prefix to namespace_
 URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 
 
+
 ```{mermaid}
  classDiagram
     class PrefixDeclaration
@@ -17,6 +18,7 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -24,8 +26,10 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [prefix](prefix.md) | 0..1 <br/> string | The prefix of a prefix declaration. | direct |
-| [namespace](namespace.md) | 0..1 <br/> uri | The namespace associated with a prefix in a prefix declaration. | direct |
+| [prefix](prefix.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | The prefix of a prefix declaration | direct |
+| [namespace](namespace.md) | 0..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | The namespace associated with a prefix in a prefix declaration | direct |
+
+
 
 
 
@@ -33,8 +37,7 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [GraphDocument](GraphDocument.md) | [prefixes](prefixes.md) | range | PrefixDeclaration |
-
+| [GraphDocument](GraphDocument.md) | [prefixes](prefixes.md) | range | [PrefixDeclaration](PrefixDeclaration.md) |
 
 
 
@@ -64,6 +67,9 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 | ---  | ---  |
 | self | sh:PrefixDeclaration |
 | native | og:PrefixDeclaration |
+
+
+
 
 
 ## LinkML Source

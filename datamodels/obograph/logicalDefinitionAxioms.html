@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,6 +83,7 @@
              
   <section id="slot-logicaldefinitionaxioms">
 <h1>Slot: logicalDefinitionAxioms<a class="headerlink" href="#slot-logicaldefinitionaxioms" title="Permalink to this headline"></a></h1>
+<p><em>A list of logical definition axioms that define the meaning of a class in terms of other classes.</em></p>
 <p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/logicalDefinitionAxioms">og:logicalDefinitionAxioms</a></p>
 <!-- no inheritance hierarchy -->
 <section id="applicable-classes">
@@ -94,7 +96,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="Graph.html"><span class="doc std std-doc">Graph</span></a></p></td>
-<td><p>None</p></td>
+<td><p>A graph is a collection of nodes and edges that represents a single ontology</p></td>
 </tr>
 </tbody>
 </table>
@@ -105,9 +107,6 @@
 <li><p>Range: <a class="reference internal" href="LogicalDefinitionAxiom.html"><span class="doc std std-doc">LogicalDefinitionAxiom</span></a></p></li>
 <li><p>Multivalued: True</p></li>
 </ul>
-</section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -123,6 +122,8 @@
 <details>
 ```yaml
 name: logicalDefinitionAxioms
+description: A list of logical definition axioms that define the meaning of a class
+  in terms of other classes.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 multivalued: true
@@ -130,6 +131,8 @@ alias: logicalDefinitionAxioms
 domain_of:
 - Graph
 range: LogicalDefinitionAxiom
+inlined: true
+inlined_as_list: true
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>
 </pre></div>
 </div>

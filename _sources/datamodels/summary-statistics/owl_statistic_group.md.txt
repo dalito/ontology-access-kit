@@ -1,6 +1,6 @@
 # Slot: owl_statistic_group
 
-URI: [reporting:owl_statistic_group](https://w3id.org/linkml/reportowl_statistic_group)
+URI: [summary_statistics:owl_statistic_group](https://w3id.org/oaklib/summary_statistics.owl_statistic_group)
 
 
 
@@ -20,10 +20,6 @@ URI: [reporting:owl_statistic_group](https://w3id.org/linkml/reportowl_statistic
 
 
 
-## Alias
-
-
-
 
 ## Identifier and Mapping Information
 
@@ -36,7 +32,7 @@ URI: [reporting:owl_statistic_group](https://w3id.org/linkml/reportowl_statistic
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -46,7 +42,7 @@ URI: [reporting:owl_statistic_group](https://w3id.org/linkml/reportowl_statistic
 <details>
 ```yaml
 name: owl_statistic_group
-from_schema: https://w3id.org/linkml/summary_statistics
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 alias: owl_statistic_group
 is_grouping_slot: true

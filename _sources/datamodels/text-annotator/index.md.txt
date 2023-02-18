@@ -5,6 +5,8 @@ A datamodel for representing the results of textual named entity recognition ann
 URI: https://w3id.org/linkml/text_annotator
 Name: text-annotator
 
+
+
 ## Classes
 
 | Class | Description |
@@ -23,12 +25,15 @@ Name: text-annotator
 | [annotations](annotations.md) | all annotations |
 | [confidence](confidence.md) |  |
 | [id](id.md) |  |
+| [include_aliases](include_aliases.md) |  |
 | [info](info.md) |  |
 | [is_longest_match](is_longest_match.md) |  |
 | [limit](limit.md) |  |
 | [match_string](match_string.md) |  |
 | [match_type](match_type.md) |  |
 | [matches_whole_text](matches_whole_text.md) |  |
+| [model](model.md) |  |
+| [object_aliases](object_aliases.md) |  |
 | [object_id](object_id.md) |  |
 | [object_label](object_label.md) |  |
 | [object_source](object_source.md) |  |
@@ -42,6 +47,7 @@ Name: text-annotator
 | [subject_start](subject_start.md) |  |
 | [subject_text_id](subject_text_id.md) |  |
 | [text](text.md) |  |
+| [token_exclusion_list](token_exclusion_list.md) |  |
 
 
 ## Enumerations
@@ -56,6 +62,7 @@ Name: text-annotator
 | Type | Description |
 | --- | --- |
 | [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | A binary (true or false) value |
+| [xsd:string](http://www.w3.org/2001/XMLSchema#string) | a compact URI |
 | [xsd:date](http://www.w3.org/2001/XMLSchema#date) | a date (year, month and day) in an idealized calendar |
 | [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | Either a date or a datetime |
 | [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | The combination of a date and time |

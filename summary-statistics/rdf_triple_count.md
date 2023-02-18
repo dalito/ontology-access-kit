@@ -1,6 +1,8 @@
 # Slot: rdf_triple_count
+_Number of RDF triples in the ontology or subset_
 
-URI: [reporting:rdf_triple_count](https://w3id.org/linkml/reportrdf_triple_count)
+
+URI: [summary_statistics:rdf_triple_count](https://w3id.org/oaklib/summary_statistics.rdf_triple_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:rdf_triple_count](https://w3id.org/linkml/reportrdf_triple_count
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:rdf_triple_count](https://w3id.org/linkml/reportrdf_triple_count
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -52,7 +48,7 @@ URI: [reporting:rdf_triple_count](https://w3id.org/linkml/reportrdf_triple_count
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -62,15 +58,16 @@ URI: [reporting:rdf_triple_count](https://w3id.org/linkml/reportrdf_triple_count
 <details>
 ```yaml
 name: rdf_triple_count
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of RDF triples in the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: rdf_triple_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: owl_statistic_group
-range: string
+range: integer
 
 ```
 </details>

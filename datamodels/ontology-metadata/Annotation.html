@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -83,7 +84,7 @@
   <section id="class-annotation">
 <h1>Class: Annotation<a class="headerlink" href="#class-annotation" title="Permalink to this headline"></a></h1>
 <p><em>A reified property-object pair</em></p>
-<p>URI: <a class="reference external" href="http://purl.obolibrary.org/obo/schema/Annotation">omoschema:Annotation</a></p>
+<p>URI: <a class="reference external" href="http://purl.obolibrary.org/obo/omo/schema/Annotation">omoschema:Annotation</a></p>
 <div class="mermaid">
              classDiagram
     class Annotation
@@ -103,13 +104,13 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="predicate.html"><span class="doc std std-doc">predicate</span></a></p></td>
-<td><p>0..1 <br/> None</p></td>
-<td><p>None</p></td>
+<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="object.html"><span class="doc std std-doc">object</span></a></p></td>
-<td><p>0..1 <br/> None</p></td>
-<td><p>None</p></td>
+<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 </tbody>
@@ -129,7 +130,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="Axiom.html"><span class="doc std std-doc">Axiom</span></a></p></td>
 <td><p><a class="reference internal" href="annotations.html"><span class="doc std std-doc">annotations</span></a></p></td>
 <td><p>range</p></td>
-<td><p>Annotation</p></td>
+<td><p><a class="reference internal" href="#"><span class="doc std std-doc">Annotation</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -176,12 +177,10 @@ attributes:
   predicate:
     name: predicate
     from_schema: http://purl.obolibrary.org/obo/omo/schema
-    rank: 1000
     relational_role: PREDICATE
   object:
     name: object
     from_schema: http://purl.obolibrary.org/obo/omo/schema
-    rank: 1000
     relational_role: OBJECT
 represents_relationship: true
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
@@ -198,7 +197,6 @@ attributes:
   predicate:
     name: predicate
     from_schema: http://purl.obolibrary.org/obo/omo/schema
-    rank: 1000
     alias: predicate
     owner: Annotation
     domain_of:
@@ -208,7 +206,6 @@ attributes:
   object:
     name: object
     from_schema: http://purl.obolibrary.org/obo/omo/schema
-    rank: 1000
     alias: object
     owner: Annotation
     domain_of:

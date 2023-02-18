@@ -2,7 +2,8 @@
 
 
 
-URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/schema/HasUserInformation)
+URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/omo/schema/HasUserInformation)
+
 
 
 ```{mermaid}
@@ -36,6 +37,7 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/schema/HasUse
 
 
 
+
 ## Inheritance
 * [AnnotationPropertyMixin](AnnotationPropertyMixin.md)
     * **HasUserInformation**
@@ -46,21 +48,22 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/schema/HasUse
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [comment](comment.md) | 0..* <br/> None | None | direct |
-| [seeAlso](seeAlso.md) | 0..* <br/> Thing | None | direct |
-| [image](image.md) | 0..1 <br/> Thing | None | direct |
-| [example_of_usage](example_of_usage.md) | 0..* <br/> None | None | direct |
-| [curator_note](curator_note.md) | 0..* <br/> None | None | direct |
-| [has_curation_status](has_curation_status.md) | 0..1 <br/> None | None | direct |
-| [depicted_by](depicted_by.md) | 0..* <br/> None | None | direct |
-| [page](page.md) | 0..* <br/> None | None | direct |
+| [comment](comment.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [seeAlso](seeAlso.md) | 0..* <br/> [Thing](Thing.md) |  | direct |
+| [image](image.md) | 0..1 <br/> [Thing](Thing.md) |  | direct |
+| [example_of_usage](example_of_usage.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [curator_note](curator_note.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [has_curation_status](has_curation_status.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [depicted_by](depicted_by.md) | 0..* <br/> [Image](Image.md) |  | direct |
+| [page](page.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+
+
 
 ## Mixin Usage
 
 | mixed into | description |
 | --- | --- |
 | [Term](Term.md) | A NamedThing that includes classes, properties, but not ontologies |
-
 
 
 
@@ -92,6 +95,9 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/schema/HasUse
 | ---  | ---  |
 | self | omoschema:HasUserInformation |
 | native | omoschema:HasUserInformation |
+
+
+
 
 
 ## LinkML Source
@@ -221,7 +227,7 @@ attributes:
     owner: HasUserInformation
     domain_of:
     - HasUserInformation
-    range: string
+    range: Image
   page:
     name: page
     from_schema: http://purl.obolibrary.org/obo/omo/schema

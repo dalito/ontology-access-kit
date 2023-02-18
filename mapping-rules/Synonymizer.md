@@ -5,6 +5,7 @@
 URI: [mrules:Synonymizer](https://w3id.org/linkml/mapping_rules_datamodel/Synonymizer)
 
 
+
 ```{mermaid}
  classDiagram
     class Synonymizer
@@ -18,6 +19,7 @@ URI: [mrules:Synonymizer](https://w3id.org/linkml/mapping_rules_datamodel/Synony
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -25,11 +27,13 @@ URI: [mrules:Synonymizer](https://w3id.org/linkml/mapping_rules_datamodel/Synony
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [the_rule](the_rule.md) | 0..1 <br/> string | Description of the rule. | direct |
-| [match](match.md) | 0..1 <br/> string | Reg-ex rule to match substrings in labels. | direct |
-| [match_scope](match_scope.md) | 0..1 <br/> string | Scope of the reg-ex rule | direct |
-| [replacement](replacement.md) | 0..1 <br/> string | Reg-ex rule to replace substrings in labels | direct |
-| [qualifier](qualifier.md) | 0..1 <br/> string | Type of match for the new synonym generated. | direct |
+| [the_rule](the_rule.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Description of the rule | direct |
+| [match](match.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Reg-ex rule to match substrings in labels | direct |
+| [match_scope](match_scope.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Scope of the reg-ex rule | direct |
+| [replacement](replacement.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Reg-ex rule to replace substrings in labels | direct |
+| [qualifier](qualifier.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Type of match for the new synonym generated | direct |
+
+
 
 
 
@@ -37,8 +41,7 @@ URI: [mrules:Synonymizer](https://w3id.org/linkml/mapping_rules_datamodel/Synony
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [MappingRule](MappingRule.md) | [synonymizer](synonymizer.md) | range | Synonymizer |
-
+| [MappingRule](MappingRule.md) | [synonymizer](synonymizer.md) | range | [Synonymizer](Synonymizer.md) |
 
 
 
@@ -68,6 +71,9 @@ URI: [mrules:Synonymizer](https://w3id.org/linkml/mapping_rules_datamodel/Synony
 | ---  | ---  |
 | self | mrules:Synonymizer |
 | native | mrules:Synonymizer |
+
+
+
 
 
 ## LinkML Source

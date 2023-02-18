@@ -1,6 +1,6 @@
 # Slot: count_statistic
 
-URI: [reporting:count_statistic](https://w3id.org/linkml/reportcount_statistic)
+URI: [summary_statistics:count_statistic](https://w3id.org/oaklib/summary_statistics.count_statistic)
 
 
 
@@ -13,6 +13,7 @@ URI: [reporting:count_statistic](https://w3id.org/linkml/reportcount_statistic)
     * [unsatisfiable_class_count](unsatisfiable_class_count.md)
     * [deprecated_class_count](deprecated_class_count.md)
     * [non_deprecated_class_count](non_deprecated_class_count.md)
+    * [merged_class_count](merged_class_count.md)
     * [class_count_with_text_definitions](class_count_with_text_definitions.md)
     * [class_count_without_text_definitions](class_count_without_text_definitions.md)
     * [property_count](property_count.md)
@@ -25,6 +26,7 @@ URI: [reporting:count_statistic](https://w3id.org/linkml/reportcount_statistic)
     * [named_individual_count](named_individual_count.md)
     * [anonymous_individual_count](anonymous_individual_count.md)
     * [untyped_entity_count](untyped_entity_count.md)
+    * [subset_count](subset_count.md)
     * [owl_axiom_count](owl_axiom_count.md)
     * [rdf_triple_count](rdf_triple_count.md)
     * [subclass_of_axiom_count](subclass_of_axiom_count.md)
@@ -49,10 +51,6 @@ URI: [reporting:count_statistic](https://w3id.org/linkml/reportcount_statistic)
 
 
 
-## Alias
-
-
-
 
 ## Identifier and Mapping Information
 
@@ -65,7 +63,7 @@ URI: [reporting:count_statistic](https://w3id.org/linkml/reportcount_statistic)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -75,7 +73,7 @@ URI: [reporting:count_statistic](https://w3id.org/linkml/reportcount_statistic)
 <details>
 ```yaml
 name: count_statistic
-from_schema: https://w3id.org/linkml/summary_statistics
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 alias: count_statistic
 range: integer

@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,6 +83,7 @@
              
   <section id="slot-propertyid">
 <h1>Slot: propertyId<a class="headerlink" href="#slot-propertyid" title="Permalink to this headline"></a></h1>
+<p><em>in an OWL restriction expression, this is the predicate</em></p>
 <p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/propertyId">og:propertyId</a></p>
 <!-- no inheritance hierarchy -->
 <section id="applicable-classes">
@@ -94,7 +96,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="ExistentialRestrictionExpression.html"><span class="doc std std-doc">ExistentialRestrictionExpression</span></a></p></td>
-<td><p>None</p></td>
+<td><p>An existential restriction (OWL some values from) expression</p></td>
 </tr>
 </tbody>
 </table>
@@ -104,9 +106,6 @@
 <ul class="simple">
 <li><p>Range: <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></li>
 </ul>
-</section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -122,6 +121,7 @@
 <details>
 ```yaml
 name: propertyId
+description: in an OWL restriction expression, this is the predicate
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 alias: propertyId

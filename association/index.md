@@ -8,6 +8,8 @@ as common ontology annotation data models using in the biosciences.
 URI: https://w3id.org/oak/association
 Name: association
 
+
+
 ## Classes
 
 | Class | Description |
@@ -37,6 +39,7 @@ Name: association
 | Type | Description |
 | --- | --- |
 | [xsd:boolean](xsd:boolean) | A binary (true or false) value |
+| [xsd:string](xsd:string) | a compact URI |
 | [xsd:date](xsd:date) | a date (year, month and day) in an idealized calendar |
 | [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | Either a date or a datetime |
 | [xsd:dateTime](xsd:dateTime) | The combination of a date and time |

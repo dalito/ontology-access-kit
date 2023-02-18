@@ -2,7 +2,8 @@
 
 
 
-URI: [omoschema:Expression](http://purl.obolibrary.org/obo/schema/Expression)
+URI: [omoschema:Expression](http://purl.obolibrary.org/obo/omo/schema/Expression)
+
 
 
 ```{mermaid}
@@ -13,6 +14,7 @@ URI: [omoschema:Expression](http://purl.obolibrary.org/obo/schema/Expression)
       
       
 ```
+
 
 
 
@@ -28,11 +30,13 @@ URI: [omoschema:Expression](http://purl.obolibrary.org/obo/schema/Expression)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+
+
+
 ## Mixin Usage
 
 | mixed into | description |
 | --- | --- |
-
 
 
 
@@ -64,6 +68,9 @@ URI: [omoschema:Expression](http://purl.obolibrary.org/obo/schema/Expression)
 | ---  | ---  |
 | self | omoschema:Expression |
 | native | omoschema:Expression |
+
+
+
 
 
 ## LinkML Source

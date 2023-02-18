@@ -5,11 +5,16 @@ A datamodel for data validation results.
 URI: https://w3id.org/linkml/validation_results
 Name: validaton-results
 
+
+
 ## Classes
 
 | Class | Description |
 | --- | --- |
+| [ConstraintComponent](ConstraintComponent.md) |  |
 | [ExternalReferenceValidationResult](ExternalReferenceValidationResult.md) | A validation result where the check is to determine if a link to an external ... |
+| [NamedResource](NamedResource.md) |  |
+| [Node](Node.md) |  |
 | [RepairConfiguration](RepairConfiguration.md) | Configuration parameters for execution of validation repairs |
 | [RepairOperation](RepairOperation.md) | The result of performing an individual repair |
 | [RepairReport](RepairReport.md) | A report that consists of repair operation results |
@@ -27,6 +32,7 @@ Name: validaton-results
 | --- | --- |
 | [dry_run](dry_run.md) |  |
 | [http_response_code](http_response_code.md) |  |
+| [id](id.md) |  |
 | [info](info.md) | additional information about the issue |
 | [instantiates](instantiates.md) | The type of the subject |
 | [max_number_results_per_type](max_number_results_per_type.md) | if set then truncate results such that no more than this number of results ar... |
@@ -62,6 +68,7 @@ Name: validaton-results
 | Type | Description |
 | --- | --- |
 | [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | A binary (true or false) value |
+| [xsd:string](http://www.w3.org/2001/XMLSchema#string) | a compact URI |
 | [xsd:date](http://www.w3.org/2001/XMLSchema#date) | a date (year, month and day) in an idealized calendar |
 | [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | Either a date or a datetime |
 | [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | The combination of a date and time |

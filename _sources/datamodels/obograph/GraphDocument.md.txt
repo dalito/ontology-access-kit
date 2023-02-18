@@ -1,8 +1,11 @@
 # Class: GraphDocument
+_A graph document is a collection of graphs together with a set of prefixes that apply across all of them_
+
 
 
 
 URI: [og:GraphDocument](https://github.com/geneontology/obographs/GraphDocument)
+
 
 
 ```{mermaid}
@@ -16,6 +19,7 @@ URI: [og:GraphDocument](https://github.com/geneontology/obographs/GraphDocument)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -23,9 +27,9 @@ URI: [og:GraphDocument](https://github.com/geneontology/obographs/GraphDocument)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [meta](meta.md) | 0..1 <br/> Meta | None | direct |
-| [graphs](graphs.md) | 0..* <br/> Graph | None | direct |
-| [prefixes](prefixes.md) | 0..* <br/> PrefixDeclaration | maps prefixes to namespaces | direct |
+| [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | direct |
+| [graphs](graphs.md) | 0..* <br/> [Graph](Graph.md) | A list of all graphs (ontologies) in an ontology document | direct |
+| [prefixes](prefixes.md) | 0..* <br/> [PrefixDeclaration](PrefixDeclaration.md) | maps prefixes to namespaces | direct |
 
 
 
@@ -33,6 +37,11 @@ URI: [og:GraphDocument](https://github.com/geneontology/obographs/GraphDocument)
 
 
 
+
+
+## Comments
+
+* A graph document frequently has a single graph but a multi-graph document can be used to represent multiple ontologies in an import closure in a single file.
 
 ## Identifier and Mapping Information
 
@@ -59,6 +68,9 @@ URI: [og:GraphDocument](https://github.com/geneontology/obographs/GraphDocument)
 | native | og:GraphDocument |
 
 
+
+
+
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -68,6 +80,11 @@ URI: [og:GraphDocument](https://github.com/geneontology/obographs/GraphDocument)
 <details>
 ```yaml
 name: GraphDocument
+description: A graph document is a collection of graphs together with a set of prefixes
+  that apply across all of them
+comments:
+- A graph document frequently has a single graph but a multi-graph document can be
+  used to represent multiple ontologies in an import closure in a single file.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 slots:
@@ -83,12 +100,21 @@ slots:
 <details>
 ```yaml
 name: GraphDocument
+description: A graph document is a collection of graphs together with a set of prefixes
+  that apply across all of them
+comments:
+- A graph document frequently has a single graph but a multi-graph document can be
+  used to represent multiple ontologies in an import closure in a single file.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
   meta:
     name: meta
+    description: A collection of metadata about either an ontology (graph), an entity,
+      or an axiom
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - annotations
     rank: 1000
     alias: meta
     owner: GraphDocument
@@ -96,11 +122,13 @@ attributes:
     - GraphDocument
     - Graph
     - Node
+    - Edge
     - PropertyValue
     - Axiom
     range: Meta
   graphs:
     name: graphs
+    description: A list of all graphs (ontologies) in an ontology document.
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     multivalued: true

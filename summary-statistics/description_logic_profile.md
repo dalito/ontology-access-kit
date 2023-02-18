@@ -1,6 +1,8 @@
 # Slot: description_logic_profile
+_Description logic profile (e.g. OWL-EL, OWL-DL) of the ontology or subset_
 
-URI: [reporting:description_logic_profile](https://w3id.org/linkml/reportdescription_logic_profile)
+
+URI: [summary_statistics:description_logic_profile](https://w3id.org/oaklib/summary_statistics.description_logic_profile)
 
 
 
@@ -13,9 +15,7 @@ URI: [reporting:description_logic_profile](https://w3id.org/linkml/reportdescrip
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -31,10 +31,6 @@ URI: [reporting:description_logic_profile](https://w3id.org/linkml/reportdescrip
 
 
 
-## Alias
-
-
-
 
 ## Identifier and Mapping Information
 
@@ -47,7 +43,7 @@ URI: [reporting:description_logic_profile](https://w3id.org/linkml/reportdescrip
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -57,12 +53,13 @@ URI: [reporting:description_logic_profile](https://w3id.org/linkml/reportdescrip
 <details>
 ```yaml
 name: description_logic_profile
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Description logic profile (e.g. OWL-EL, OWL-DL) of the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 alias: description_logic_profile
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: owl_statistic_group
 range: string
 

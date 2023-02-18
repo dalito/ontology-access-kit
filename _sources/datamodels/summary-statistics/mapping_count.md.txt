@@ -1,6 +1,8 @@
 # Slot: mapping_count
+_Number of mappings (including xrefs) in the ontology or subset_
 
-URI: [reporting:mapping_count](https://w3id.org/linkml/reportmapping_count)
+
+URI: [summary_statistics:mapping_count](https://w3id.org/oaklib/summary_statistics.mapping_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:mapping_count](https://w3id.org/linkml/reportmapping_count)
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:mapping_count](https://w3id.org/linkml/reportmapping_count)
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -58,7 +54,7 @@ URI: [reporting:mapping_count](https://w3id.org/linkml/reportmapping_count)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -72,15 +68,16 @@ annotations:
   filter:
     tag: filter
     value: Mapping
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of mappings (including xrefs) in the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: mapping_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: metadata_statistic_group
-range: string
+range: integer
 
 ```
 </details>

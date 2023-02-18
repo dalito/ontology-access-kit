@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,7 +83,7 @@
              
   <section id="slot-count-statistic">
 <h1>Slot: count_statistic<a class="headerlink" href="#slot-count-statistic" title="Permalink to this headline"></a></h1>
-<p>URI: <a class="reference external" href="https://w3id.org/linkml/reportcount_statistic">reporting:count_statistic</a></p>
+<p>URI: <a class="reference external" href="https://w3id.org/oaklib/summary_statistics.count_statistic">summary_statistics:count_statistic</a></p>
 <section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
 <ul class="simple">
@@ -93,6 +94,7 @@
 <li><p><a class="reference internal" href="unsatisfiable_class_count.html"><span class="doc std std-doc">unsatisfiable_class_count</span></a></p></li>
 <li><p><a class="reference internal" href="deprecated_class_count.html"><span class="doc std std-doc">deprecated_class_count</span></a></p></li>
 <li><p><a class="reference internal" href="non_deprecated_class_count.html"><span class="doc std std-doc">non_deprecated_class_count</span></a></p></li>
+<li><p><a class="reference internal" href="merged_class_count.html"><span class="doc std std-doc">merged_class_count</span></a></p></li>
 <li><p><a class="reference internal" href="class_count_with_text_definitions.html"><span class="doc std std-doc">class_count_with_text_definitions</span></a></p></li>
 <li><p><a class="reference internal" href="class_count_without_text_definitions.html"><span class="doc std std-doc">class_count_without_text_definitions</span></a></p></li>
 <li><p><a class="reference internal" href="property_count.html"><span class="doc std std-doc">property_count</span></a></p></li>
@@ -105,6 +107,7 @@
 <li><p><a class="reference internal" href="named_individual_count.html"><span class="doc std std-doc">named_individual_count</span></a></p></li>
 <li><p><a class="reference internal" href="anonymous_individual_count.html"><span class="doc std std-doc">anonymous_individual_count</span></a></p></li>
 <li><p><a class="reference internal" href="untyped_entity_count.html"><span class="doc std std-doc">untyped_entity_count</span></a></p></li>
+<li><p><a class="reference internal" href="subset_count.html"><span class="doc std std-doc">subset_count</span></a></p></li>
 <li><p><a class="reference internal" href="owl_axiom_count.html"><span class="doc std std-doc">owl_axiom_count</span></a></p></li>
 <li><p><a class="reference internal" href="rdf_triple_count.html"><span class="doc std std-doc">rdf_triple_count</span></a></p></li>
 <li><p><a class="reference internal" href="subclass_of_axiom_count.html"><span class="doc std std-doc">subclass_of_axiom_count</span></a></p></li>
@@ -123,15 +126,12 @@
 <li><p>Range: <a class="reference external" href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></p></li>
 </ul>
 </section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
-</section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
 <section id="schema-source">
 <h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><p>from schema: https://w3id.org/linkml/summary_statistics</p></li>
+<li><p>from schema: https://w3id.org/oaklib/summary_statistics</p></li>
 </ul>
 </section>
 </section>
@@ -140,7 +140,7 @@
 <details>
 ```yaml
 name: count_statistic
-from_schema: https://w3id.org/linkml/summary_statistics
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 alias: count_statistic
 range: integer

@@ -47,6 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../datamodels/index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebooks</a></li>
@@ -101,7 +102,7 @@
 
 
 <div class="viewcode-block" id="create_search_configuration"><a class="viewcode-back" href="../../../search-syntax.html#oaklib.interfaces.search_interface.create_search_configuration">[docs]</a><span class="k">def</span> <span class="nf">create_search_configuration</span><span class="p">(</span><span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SearchConfiguration&quot;</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generates a search configuration based on search syntax</span>
 
 <span class="sd">    term is either a plaintext search term, or a search term prefixed by</span>
@@ -141,6 +142,8 @@
                 <span class="n">props</span> <span class="o">=</span> <span class="p">[</span><span class="n">SearchProperty</span><span class="o">.</span><span class="n">LABEL</span><span class="p">]</span>
             <span class="k">elif</span> <span class="n">prop</span> <span class="o">==</span> <span class="s2">&quot;i&quot;</span><span class="p">:</span>
                 <span class="n">props</span> <span class="o">=</span> <span class="p">[</span><span class="n">SearchProperty</span><span class="o">.</span><span class="n">IDENTIFIER</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">prop</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                <span class="n">props</span> <span class="o">=</span> <span class="p">[</span><span class="n">SearchProperty</span><span class="o">.</span><span class="n">MAPPED_IDENTIFIER</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown property code: </span><span class="si">{</span><span class="n">prop</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">cfg</span><span class="o">.</span><span class="n">properties</span> <span class="o">=</span> <span class="p">[</span><span class="n">SearchProperty</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">props</span><span class="p">]</span>
@@ -167,7 +170,7 @@
 
 <div class="viewcode-block" id="SearchConfiguration"><a class="viewcode-back" href="../../../search-syntax.html#oaklib.interfaces.search_interface.SearchConfiguration">[docs]</a><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">SearchConfiguration</span><span class="p">(</span><span class="n">SearchBaseConfiguration</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Parameters for altering behavior of search</span>
 
 <span class="sd">    .. note ::</span>

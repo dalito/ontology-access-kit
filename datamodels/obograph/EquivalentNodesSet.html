@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,7 +83,8 @@
              
   <section id="class-equivalentnodesset">
 <h1>Class: EquivalentNodesSet<a class="headerlink" href="#class-equivalentnodesset" title="Permalink to this headline"></a></h1>
-<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/EquivalentNodesSet">og:EquivalentNodesSet</a></p>
+<p><em>A clique of nodes that are all mutually equivalent</em></p>
+<p>URI: <a class="reference external" href="http://www.w3.org/2002/07/owl#equivalentClass">owl:equivalentClass</a></p>
 <div class="mermaid">
              classDiagram
     class EquivalentNodesSet
@@ -114,18 +116,18 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="representativeNodeId.html"><span class="doc std std-doc">representativeNodeId</span></a></p></td>
-<td><p>0..1 <br/> string</p></td>
-<td><p>None</p></td>
+<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>The identifier of a node that represents the class in an OWL equivalence cliq…</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="nodeIds.html"><span class="doc std std-doc">nodeIds</span></a></p></td>
-<td><p>0..* <br/> string</p></td>
-<td><p>None</p></td>
+<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="meta.html"><span class="doc std std-doc">meta</span></a></p></td>
-<td><p>0..1 <br/> Meta</p></td>
-<td><p>None</p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Meta.html"><span class="doc std std-doc">Meta</span></a></p></td>
+<td><p>A collection of metadata about either an ontology (graph), an entity, or an a…</p></td>
 <td><p><a class="reference internal" href="Axiom.html"><span class="doc std std-doc">Axiom</span></a></p></td>
 </tr>
 </tbody>
@@ -145,7 +147,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="Graph.html"><span class="doc std std-doc">Graph</span></a></p></td>
 <td><p><a class="reference internal" href="equivalentNodesSets.html"><span class="doc std std-doc">equivalentNodesSets</span></a></p></td>
 <td><p>range</p></td>
-<td><p>EquivalentNodesSet</p></td>
+<td><p><a class="reference internal" href="#"><span class="doc std std-doc">EquivalentNodesSet</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -169,7 +171,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>og:EquivalentNodesSet</p></td>
+<td><p>owl:equivalentClass</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
 <td><p>og:EquivalentNodesSet</p></td>
@@ -185,12 +187,14 @@
 <details>
 ```yaml
 name: EquivalentNodesSet
+description: A clique of nodes that are all mutually equivalent
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
 slots:
 - representativeNodeId
 - nodeIds
+class_uri: owl:equivalentClass
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
 
 ### Induced
@@ -198,12 +202,15 @@ slots:
 &lt;details&gt;
 ```yaml
 name: EquivalentNodesSet
+description: A clique of nodes that are all mutually equivalent
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
 attributes:
   representativeNodeId:
     name: representativeNodeId
+    description: The identifier of a node that represents the class in an OWL equivalence
+      clique
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     alias: representativeNodeId
@@ -223,7 +230,11 @@ attributes:
     range: string
   meta:
     name: meta
+    description: A collection of metadata about either an ontology (graph), an entity,
+      or an axiom
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - annotations
     rank: 1000
     alias: meta
     owner: EquivalentNodesSet
@@ -231,9 +242,11 @@ attributes:
     - GraphDocument
     - Graph
     - Node
+    - Edge
     - PropertyValue
     - Axiom
     range: Meta
+class_uri: owl:equivalentClass
 
 </pre></div>
 </div>

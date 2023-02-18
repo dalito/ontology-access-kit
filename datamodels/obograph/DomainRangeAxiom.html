@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,12 +83,14 @@
              
   <section id="class-domainrangeaxiom">
 <h1>Class: DomainRangeAxiom<a class="headerlink" href="#class-domainrangeaxiom" title="Permalink to this headline"></a></h1>
+<p><em>An axiom that represents some combination of domain and range assertions.</em></p>
 <p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/DomainRangeAxiom">og:DomainRangeAxiom</a></p>
 <div class="mermaid">
              classDiagram
     class DomainRangeAxiom
       Axiom &lt;|-- DomainRangeAxiom
       
+      DomainRangeAxiom : allValuesFromEdges
       DomainRangeAxiom : domainClassIds
       DomainRangeAxiom : meta
       DomainRangeAxiom : predicateId
@@ -115,23 +118,28 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="predicateId.html"><span class="doc std std-doc">predicateId</span></a></p></td>
-<td><p>0..1 <br/> string</p></td>
-<td><p>None</p></td>
+<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="domainClassIds.html"><span class="doc std std-doc">domainClassIds</span></a></p></td>
-<td><p>0..* <br/> string</p></td>
-<td><p>None</p></td>
+<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="rangeClassIds.html"><span class="doc std std-doc">rangeClassIds</span></a></p></td>
-<td><p>0..* <br/> string</p></td>
-<td><p>None</p></td>
+<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p></p></td>
 <td><p>direct</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="meta.html"><span class="doc std std-doc">meta</span></a></p></td>
-<td><p>0..1 <br/> Meta</p></td>
-<td><p>None</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="allValuesFromEdges.html"><span class="doc std std-doc">allValuesFromEdges</span></a></p></td>
+<td><p>0..* <br/> <a class="reference internal" href="Edge.html"><span class="doc std std-doc">Edge</span></a></p></td>
+<td><p>A list of edges that represent subclasses of universal restrictions</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="meta.html"><span class="doc std std-doc">meta</span></a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Meta.html"><span class="doc std std-doc">Meta</span></a></p></td>
+<td><p>A collection of metadata about either an ontology (graph), an entity, or an a…</p></td>
 <td><p><a class="reference internal" href="Axiom.html"><span class="doc std std-doc">Axiom</span></a></p></td>
 </tr>
 </tbody>
@@ -151,10 +159,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="Graph.html"><span class="doc std std-doc">Graph</span></a></p></td>
 <td><p><a class="reference internal" href="domainRangeAxioms.html"><span class="doc std std-doc">domainRangeAxioms</span></a></p></td>
 <td><p>range</p></td>
-<td><p>DomainRangeAxiom</p></td>
+<td><p><a class="reference internal" href="#"><span class="doc std std-doc">DomainRangeAxiom</span></a></p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations may merge these but only when semantically valid</p></li>
+</ul>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -191,6 +205,12 @@
 <details>
 ```yaml
 name: DomainRangeAxiom
+description: An axiom that represents some combination of domain and range assertions.
+comments:
+- When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom
+  with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated
+  to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations
+  may merge these but only when semantically valid
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
@@ -198,6 +218,7 @@ slots:
 - predicateId
 - domainClassIds
 - rangeClassIds
+- allValuesFromEdges
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
 
 ### Induced
@@ -205,6 +226,12 @@ slots:
 &lt;details&gt;
 ```yaml
 name: DomainRangeAxiom
+description: An axiom that represents some combination of domain and range assertions.
+comments:
+- When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom
+  with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated
+  to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations
+  may merge these but only when semantically valid
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
@@ -239,9 +266,25 @@ attributes:
     domain_of:
     - DomainRangeAxiom
     range: string
+  allValuesFromEdges:
+    name: allValuesFromEdges
+    description: A list of edges that represent subclasses of universal restrictions
+    from_schema: https://github.com/geneontology/obographs
+    rank: 1000
+    multivalued: true
+    alias: allValuesFromEdges
+    owner: DomainRangeAxiom
+    domain_of:
+    - Graph
+    - DomainRangeAxiom
+    range: Edge
   meta:
     name: meta
+    description: A collection of metadata about either an ontology (graph), an entity,
+      or an axiom
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - annotations
     rank: 1000
     alias: meta
     owner: DomainRangeAxiom
@@ -249,6 +292,7 @@ attributes:
     - GraphDocument
     - Graph
     - Node
+    - Edge
     - PropertyValue
     - Axiom
     range: Meta

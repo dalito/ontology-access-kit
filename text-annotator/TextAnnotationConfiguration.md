@@ -7,14 +7,19 @@ _configuration for search_
 URI: [ann:TextAnnotationConfiguration](https://w3id.org/linkml/text_annotator/TextAnnotationConfiguration)
 
 
+
 ```{mermaid}
  classDiagram
     class TextAnnotationConfiguration
+      TextAnnotationConfiguration : include_aliases
       TextAnnotationConfiguration : limit
       TextAnnotationConfiguration : matches_whole_text
+      TextAnnotationConfiguration : model
       TextAnnotationConfiguration : sources
+      TextAnnotationConfiguration : token_exclusion_list
       
 ```
+
 
 
 
@@ -25,9 +30,13 @@ URI: [ann:TextAnnotationConfiguration](https://w3id.org/linkml/text_annotator/Te
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [matches_whole_text](matches_whole_text.md) | 0..1 <br/> None | None | direct |
-| [sources](sources.md) | 0..* <br/> None | None | direct |
-| [limit](limit.md) | 0..1 <br/> integer | None | direct |
+| [matches_whole_text](matches_whole_text.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [sources](sources.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [limit](limit.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) |  | direct |
+| [token_exclusion_list](token_exclusion_list.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [model](model.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [include_aliases](include_aliases.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
+
 
 
 
@@ -61,6 +70,9 @@ URI: [ann:TextAnnotationConfiguration](https://w3id.org/linkml/text_annotator/Te
 | native | ann:TextAnnotationConfiguration |
 
 
+
+
+
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -89,6 +101,21 @@ attributes:
     from_schema: https://w3id.org/linkml/text_annotator
     rank: 1000
     range: integer
+  token_exclusion_list:
+    name: token_exclusion_list
+    from_schema: https://w3id.org/linkml/text_annotator
+    rank: 1000
+    multivalued: true
+  model:
+    name: model
+    from_schema: https://w3id.org/linkml/text_annotator
+    rank: 1000
+    range: string
+  include_aliases:
+    name: include_aliases
+    from_schema: https://w3id.org/linkml/text_annotator
+    rank: 1000
+    range: boolean
 
 ```
 </details>
@@ -131,6 +158,34 @@ attributes:
     domain_of:
     - TextAnnotationConfiguration
     range: integer
+  token_exclusion_list:
+    name: token_exclusion_list
+    from_schema: https://w3id.org/linkml/text_annotator
+    rank: 1000
+    multivalued: true
+    alias: token_exclusion_list
+    owner: TextAnnotationConfiguration
+    domain_of:
+    - TextAnnotationConfiguration
+    range: string
+  model:
+    name: model
+    from_schema: https://w3id.org/linkml/text_annotator
+    rank: 1000
+    alias: model
+    owner: TextAnnotationConfiguration
+    domain_of:
+    - TextAnnotationConfiguration
+    range: string
+  include_aliases:
+    name: include_aliases
+    from_schema: https://w3id.org/linkml/text_annotator
+    rank: 1000
+    alias: include_aliases
+    owner: TextAnnotationConfiguration
+    domain_of:
+    - TextAnnotationConfiguration
+    range: boolean
 
 ```
 </details>

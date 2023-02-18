@@ -13,7 +13,7 @@ URI: [og:domainClassIds](https://github.com/geneontology/obographs/domainClassId
 
 | Name | Description |
 | --- | --- |
-[DomainRangeAxiom](DomainRangeAxiom.md) | None
+[DomainRangeAxiom](DomainRangeAxiom.md) | An axiom that represents some combination of domain and range assertions
 
 
 
@@ -28,10 +28,6 @@ URI: [og:domainClassIds](https://github.com/geneontology/obographs/domainClassId
 
 
 
-
-
-
-## Alias
 
 
 

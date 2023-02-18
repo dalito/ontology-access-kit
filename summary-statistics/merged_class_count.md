@@ -1,0 +1,84 @@
+# Slot: merged_class_count
+_Number of merged classes (obsoletions with merge reason) in the ontology or subset_
+
+
+URI: [summary_statistics:merged_class_count](https://w3id.org/oaklib/summary_statistics.merged_class_count)
+
+
+
+
+## Inheritance
+
+* [count_statistic](count_statistic.md)
+    * **merged_class_count**
+
+
+
+
+
+## Applicable Classes
+
+| Name | Description |
+| --- | --- |
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
+
+
+
+
+
+
+## Properties
+
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Annotations
+
+| property | value |
+| --- | --- |
+| filter | Class, Deprecated, Merged |
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/oaklib/summary_statistics
+
+
+
+
+## LinkML Source
+
+<details>
+```yaml
+name: merged_class_count
+annotations:
+  filter:
+    tag: filter
+    value: Class, Deprecated, Merged
+description: Number of merged classes (obsoletions with merge reason) in the ontology
+  or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
+rank: 1000
+is_a: count_statistic
+alias: merged_class_count
+owner: UngroupedStatistics
+domain_of:
+- UngroupedStatistics
+slot_group: class_statistic_group
+range: integer
+
+```
+</details>

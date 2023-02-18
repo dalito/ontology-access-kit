@@ -1,18 +1,23 @@
 # Class: Edge
+_An edge is a typed relationship between two nodes_
+
 
 
 
 URI: [og:Edge](https://github.com/geneontology/obographs/Edge)
 
 
+
 ```{mermaid}
  classDiagram
     class Edge
+      Edge : meta
       Edge : obj
       Edge : pred
       Edge : sub
       
 ```
+
 
 
 
@@ -23,9 +28,12 @@ URI: [og:Edge](https://github.com/geneontology/obographs/Edge)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [sub](sub.md) | 0..1 <br/> string | None | direct |
-| [pred](pred.md) | 0..1 <br/> string | None | direct |
-| [obj](obj.md) | 0..1 <br/> string | None | direct |
+| [sub](sub.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the subject of an edge | direct |
+| [pred](pred.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the predicate of an edge | direct |
+| [obj](obj.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the object of an edge | direct |
+| [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | direct |
+
+
 
 
 
@@ -33,8 +41,9 @@ URI: [og:Edge](https://github.com/geneontology/obographs/Edge)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Graph](Graph.md) | [edges](edges.md) | range | Edge |
-
+| [Graph](Graph.md) | [edges](edges.md) | range | [Edge](Edge.md) |
+| [Graph](Graph.md) | [allValuesFromEdges](allValuesFromEdges.md) | range | [Edge](Edge.md) |
+| [DomainRangeAxiom](DomainRangeAxiom.md) | [allValuesFromEdges](allValuesFromEdges.md) | range | [Edge](Edge.md) |
 
 
 
@@ -66,6 +75,9 @@ URI: [og:Edge](https://github.com/geneontology/obographs/Edge)
 | native | og:Edge |
 
 
+
+
+
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -75,12 +87,14 @@ URI: [og:Edge](https://github.com/geneontology/obographs/Edge)
 <details>
 ```yaml
 name: Edge
+description: An edge is a typed relationship between two nodes
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 slots:
 - sub
 - pred
 - obj
+- meta
 
 ```
 </details>
@@ -90,13 +104,16 @@ slots:
 <details>
 ```yaml
 name: Edge
+description: An edge is a typed relationship between two nodes
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
   sub:
     name: sub
+    description: the subject of an edge
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: rdf:subject
     alias: sub
     owner: Edge
     domain_of:
@@ -104,8 +121,10 @@ attributes:
     range: string
   pred:
     name: pred
+    description: the predicate of an edge
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: rdf:predicate
     alias: pred
     owner: Edge
     domain_of:
@@ -115,13 +134,33 @@ attributes:
     range: string
   obj:
     name: obj
+    description: the object of an edge
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: rdf:object
     alias: obj
     owner: Edge
     domain_of:
     - Edge
     range: string
+  meta:
+    name: meta
+    description: A collection of metadata about either an ontology (graph), an entity,
+      or an axiom
+    from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - annotations
+    rank: 1000
+    alias: meta
+    owner: Edge
+    domain_of:
+    - GraphDocument
+    - Graph
+    - Node
+    - Edge
+    - PropertyValue
+    - Axiom
+    range: Meta
 
 ```
 </details>

@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,6 +83,7 @@
              
   <section id="slot-basicpropertyvalues">
 <h1>Slot: basicPropertyValues<a class="headerlink" href="#slot-basicpropertyvalues" title="Permalink to this headline"></a></h1>
+<p><em>A list of open-ended property values that does not correspond to those predefined in this standard, i.e xref, synonyms, definition</em></p>
 <p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/basicPropertyValues">og:basicPropertyValues</a></p>
 <!-- no inheritance hierarchy -->
 <section id="applicable-classes">
@@ -94,7 +96,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="Meta.html"><span class="doc std std-doc">Meta</span></a></p></td>
-<td><p>None</p></td>
+<td><p>A collection of annotations on an entity or ontology or axiom</p></td>
 </tr>
 </tbody>
 </table>
@@ -105,9 +107,6 @@
 <li><p>Range: <a class="reference internal" href="BasicPropertyValue.html"><span class="doc std std-doc">BasicPropertyValue</span></a></p></li>
 <li><p>Multivalued: True</p></li>
 </ul>
-</section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -123,6 +122,8 @@
 <details>
 ```yaml
 name: basicPropertyValues
+description: A list of open-ended property values that does not correspond to those
+  predefined in this standard, i.e xref, synonyms, definition
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 multivalued: true

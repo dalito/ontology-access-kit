@@ -13,8 +13,8 @@ URI: [og:predicateId](https://github.com/geneontology/obographs/predicateId)
 
 | Name | Description |
 | --- | --- |
-[DomainRangeAxiom](DomainRangeAxiom.md) | None
-[PropertyChainAxiom](PropertyChainAxiom.md) | None
+[DomainRangeAxiom](DomainRangeAxiom.md) | An axiom that represents some combination of domain and range assertions
+[PropertyChainAxiom](PropertyChainAxiom.md) | An axiom that represents an OWL property chain, e
 
 
 
@@ -27,10 +27,6 @@ URI: [og:predicateId](https://github.com/geneontology/obographs/predicateId)
 
 
 
-
-
-
-## Alias
 
 
 

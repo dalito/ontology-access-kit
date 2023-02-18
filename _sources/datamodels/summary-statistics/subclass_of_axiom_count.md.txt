@@ -1,6 +1,8 @@
 # Slot: subclass_of_axiom_count
+_Number of subclass axioms in the ontology or subset_
 
-URI: [reporting:subclass_of_axiom_count](https://w3id.org/linkml/reportsubclass_of_axiom_count)
+
+URI: [summary_statistics:subclass_of_axiom_count](https://w3id.org/oaklib/summary_statistics.subclass_of_axiom_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:subclass_of_axiom_count](https://w3id.org/linkml/reportsubclass_
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:subclass_of_axiom_count](https://w3id.org/linkml/reportsubclass_
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -52,7 +48,7 @@ URI: [reporting:subclass_of_axiom_count](https://w3id.org/linkml/reportsubclass_
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -62,15 +58,16 @@ URI: [reporting:subclass_of_axiom_count](https://w3id.org/linkml/reportsubclass_
 <details>
 ```yaml
 name: subclass_of_axiom_count
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of subclass axioms in the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: subclass_of_axiom_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: owl_statistic_group
-range: string
+range: integer
 
 ```
 </details>

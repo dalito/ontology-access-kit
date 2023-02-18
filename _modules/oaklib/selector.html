@@ -47,6 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../datamodels/index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -89,6 +90,7 @@
 <span class="kn">from</span> <span class="nn">oaklib</span> <span class="kn">import</span> <span class="n">datamodels</span> <span class="k">as</span> <span class="n">datamodels_package</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations</span> <span class="kn">import</span> <span class="n">GildaImplementation</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.funowl.funowl_implementation</span> <span class="kn">import</span> <span class="n">FunOwlImplementation</span>
+<span class="kn">from</span> <span class="nn">oaklib.implementations.kgx.kgx_implementation</span> <span class="kn">import</span> <span class="n">KGXImplementation</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.obograph.obograph_implementation</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">OboGraphImplementation</span><span class="p">,</span>
 <span class="p">)</span>
@@ -111,8 +113,14 @@
     <span class="n">SimpleOboImplementation</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.sparql.lov_implementation</span> <span class="kn">import</span> <span class="n">LovImplementation</span>
+<span class="kn">from</span> <span class="nn">oaklib.implementations.sparql.oak_metamodel_implementation</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">OakMetaModelImplementation</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.sparql.sparql_implementation</span> <span class="kn">import</span> <span class="n">SparqlImplementation</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.sqldb.sql_implementation</span> <span class="kn">import</span> <span class="n">SqlImplementation</span>
+<span class="kn">from</span> <span class="nn">oaklib.implementations.translator.translator_implementation</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TranslatorImplementation</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.ubergraph</span> <span class="kn">import</span> <span class="n">UbergraphImplementation</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.uniprot.uniprot_implementation</span> <span class="kn">import</span> <span class="n">UniprotImplementation</span>
 <span class="kn">from</span> <span class="nn">oaklib.implementations.wikidata.wikidata_implementation</span> <span class="kn">import</span> <span class="p">(</span>
@@ -134,6 +142,7 @@
 <span class="c1"># Deprecated?</span>
 <span class="n">SCHEME_DICT</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;sqlite&quot;</span><span class="p">:</span> <span class="n">SqlImplementation</span><span class="p">,</span>
+    <span class="s2">&quot;kgx&quot;</span><span class="p">:</span> <span class="n">KGXImplementation</span><span class="p">,</span>
     <span class="s2">&quot;ubergraph&quot;</span><span class="p">:</span> <span class="n">UbergraphImplementation</span><span class="p">,</span>
     <span class="s2">&quot;ontobee&quot;</span><span class="p">:</span> <span class="n">OntobeeImplementation</span><span class="p">,</span>
     <span class="s2">&quot;uniprot&quot;</span><span class="p">:</span> <span class="n">UniprotImplementation</span><span class="p">,</span>
@@ -153,13 +162,15 @@
     <span class="s2">&quot;obolibrary&quot;</span><span class="p">:</span> <span class="n">ProntoImplementation</span><span class="p">,</span>
     <span class="s2">&quot;prontolib&quot;</span><span class="p">:</span> <span class="n">ProntoImplementation</span><span class="p">,</span>
     <span class="s2">&quot;gilda&quot;</span><span class="p">:</span> <span class="n">GildaImplementation</span><span class="p">,</span>
+    <span class="s2">&quot;translator&quot;</span><span class="p">:</span> <span class="n">TranslatorImplementation</span><span class="p">,</span>
+    <span class="s2">&quot;oak&quot;</span><span class="p">:</span> <span class="n">OakMetaModelImplementation</span><span class="p">,</span>
 <span class="p">}</span>
 
 
 <div class="viewcode-block" id="get_implementation_from_shorthand"><a class="viewcode-back" href="../../selectors.html#oaklib.selector.get_implementation_from_shorthand">[docs]</a><span class="k">def</span> <span class="nf">get_implementation_from_shorthand</span><span class="p">(</span>
     <span class="n">descriptor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BasicOntologyInterface</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    See :ref:`get_resource_from_shorthand`</span>
 
 <span class="sd">    Example:</span>
@@ -223,7 +234,7 @@
 <div class="viewcode-block" id="get_resource_from_shorthand"><a class="viewcode-back" href="../../selectors.html#oaklib.selector.get_resource_from_shorthand">[docs]</a><span class="k">def</span> <span class="nf">get_resource_from_shorthand</span><span class="p">(</span>
     <span class="n">descriptor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">import_depth</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OntologyResource</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Maps from a shorthand descriptor to an OntologyResource.</span>
 
 <span class="sd">    :param descriptor:</span>

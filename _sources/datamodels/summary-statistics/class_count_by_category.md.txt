@@ -1,6 +1,8 @@
 # Slot: class_count_by_category
+_Number of classes grouped by category in the ontology or subset_
 
-URI: [reporting:class_count_by_category](https://w3id.org/linkml/reportclass_count_by_category)
+
+URI: [summary_statistics:class_count_by_category](https://w3id.org/oaklib/summary_statistics.class_count_by_category)
 
 
 
@@ -13,9 +15,7 @@ URI: [reporting:class_count_by_category](https://w3id.org/linkml/reportclass_cou
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -30,10 +30,6 @@ URI: [reporting:class_count_by_category](https://w3id.org/linkml/reportclass_cou
 
 
 
-
-
-
-## Alias
 
 
 
@@ -55,7 +51,7 @@ URI: [reporting:class_count_by_category](https://w3id.org/linkml/reportclass_cou
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -72,13 +68,14 @@ annotations:
   facet:
     tag: facet
     value: Category
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of classes grouped by category in the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 multivalued: true
 alias: class_count_by_category
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: metadata_statistic_group
 range: FacetedCount
 inlined: true

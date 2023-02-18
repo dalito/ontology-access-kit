@@ -1,6 +1,6 @@
 # Slot: predicate
 
-URI: [omoschema:predicate](http://purl.obolibrary.org/obo/schema/predicate)
+URI: [omoschema:predicate](http://purl.obolibrary.org/obo/omo/schema/predicate)
 
 
 
@@ -29,10 +29,6 @@ URI: [omoschema:predicate](http://purl.obolibrary.org/obo/schema/predicate)
 
 
 
-## Alias
-
-
-
 
 ## Identifier and Mapping Information
 
@@ -58,7 +54,6 @@ name: predicate
 from_schema: http://purl.obolibrary.org/obo/omo/schema
 rank: 1000
 alias: predicate
-owner: Annotation
 domain_of:
 - Annotation
 relational_role: PREDICATE

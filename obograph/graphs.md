@@ -1,4 +1,6 @@
 # Slot: graphs
+_A list of all graphs (ontologies) in an ontology document._
+
 
 URI: [og:graphs](https://github.com/geneontology/obographs/graphs)
 
@@ -13,7 +15,7 @@ URI: [og:graphs](https://github.com/geneontology/obographs/graphs)
 
 | Name | Description |
 | --- | --- |
-[GraphDocument](GraphDocument.md) | None
+[GraphDocument](GraphDocument.md) | A graph document is a collection of graphs together with a set of prefixes th...
 
 
 
@@ -28,10 +30,6 @@ URI: [og:graphs](https://github.com/geneontology/obographs/graphs)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -57,6 +55,7 @@ URI: [og:graphs](https://github.com/geneontology/obographs/graphs)
 <details>
 ```yaml
 name: graphs
+description: A list of all graphs (ontologies) in an ontology document.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 multivalued: true

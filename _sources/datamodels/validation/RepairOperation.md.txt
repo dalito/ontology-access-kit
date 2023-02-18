@@ -7,6 +7,7 @@ _The result of performing an individual repair_
 URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperation)
 
 
+
 ```{mermaid}
  classDiagram
     class RepairOperation
@@ -22,6 +23,7 @@ URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperati
 
 
 
+
 ## Inheritance
 * [Result](Result.md)
     * **RepairOperation**
@@ -32,10 +34,12 @@ URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperati
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [repairs](repairs.md) | 0..1 <br/> ValidationResult | None | direct |
-| [modified](modified.md) | 0..1 <br/> boolean | None | direct |
-| [successful](successful.md) | 0..1 <br/> boolean | None | direct |
-| [info](info.md) | 0..1 <br/> string | additional information about the issue | direct |
+| [repairs](repairs.md) | 0..1 <br/> [ValidationResult](ValidationResult.md) |  | direct |
+| [modified](modified.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
+| [successful](successful.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
+| [info](info.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | additional information about the issue | direct |
+
+
 
 
 
@@ -43,8 +47,7 @@ URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperati
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [RepairReport](RepairReport.md) | [results](results.md) | range | RepairOperation |
-
+| [RepairReport](RepairReport.md) | [results](results.md) | range | [RepairOperation](RepairOperation.md) |
 
 
 
@@ -78,6 +81,9 @@ URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperati
 | ---  | ---  |
 | self | vm:RepairOperation |
 | native | vm:RepairOperation |
+
+
+
 
 
 ## LinkML Source

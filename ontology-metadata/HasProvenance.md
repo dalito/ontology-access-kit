@@ -2,7 +2,8 @@
 
 
 
-URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/schema/HasProvenance)
+URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/omo/schema/HasProvenance)
+
 
 
 ```{mermaid}
@@ -46,6 +47,7 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/schema/HasProvenan
 
 
 
+
 ## Inheritance
 * [AnnotationPropertyMixin](AnnotationPropertyMixin.md)
     * **HasProvenance**
@@ -56,26 +58,27 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/schema/HasProvenan
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [created_by](created_by.md) | 0..1 <br/> None | None | direct |
-| [creation_date](creation_date.md) | 0..* <br/> None | None | direct |
-| [contributor](contributor.md) | 0..* <br/> Thing | None | direct |
-| [creator](creator.md) | 0..* <br/> None | None | direct |
-| [created](created.md) | 0..1 <br/> None | when the term came into being | direct |
-| [date](date.md) | 0..* <br/> None | when the term was updated | direct |
-| [isDefinedBy](isDefinedBy.md) | 0..1 <br/> Ontology | None | direct |
-| [editor_note](editor_note.md) | 0..* <br/> narrative text | None | direct |
-| [term_editor](term_editor.md) | 0..* <br/> None | None | direct |
-| [definition_source](definition_source.md) | 0..* <br/> None | None | direct |
-| [ontology_term_requester](ontology_term_requester.md) | 0..1 <br/> None | None | direct |
-| [imported_from](imported_from.md) | 0..* <br/> NamedIndividual | None | direct |
-| [term_tracker_item](term_tracker_item.md) | 0..* <br/> None | None | direct |
+| [created_by](created_by.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [creation_date](creation_date.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [contributor](contributor.md) | 0..* <br/> [Agent](Agent.md) |  | direct |
+| [creator](creator.md) | 0..* <br/> [Agent](Agent.md) |  | direct |
+| [created](created.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | when the term came into being | direct |
+| [date](date.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | when the term was updated | direct |
+| [isDefinedBy](isDefinedBy.md) | 0..1 <br/> [Ontology](Ontology.md) |  | direct |
+| [editor_note](editor_note.md) | 0..* <br/> [NarrativeText](NarrativeText.md) |  | direct |
+| [term_editor](term_editor.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [definition_source](definition_source.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [ontology_term_requester](ontology_term_requester.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [imported_from](imported_from.md) | 0..* <br/> [NamedIndividual](NamedIndividual.md) |  | direct |
+| [term_tracker_item](term_tracker_item.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+
+
 
 ## Mixin Usage
 
 | mixed into | description |
 | --- | --- |
 | [Term](Term.md) | A NamedThing that includes classes, properties, but not ontologies |
-
 
 
 
@@ -107,6 +110,9 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/schema/HasProvenan
 | ---  | ---  |
 | self | omoschema:HasProvenance |
 | native | omoschema:HasProvenance |
+
+
+
 
 
 ## LinkML Source
@@ -193,7 +199,11 @@ attributes:
     owner: HasProvenance
     domain_of:
     - HasProvenance
-    range: Thing
+    range: Agent
+    structured_pattern:
+      syntax: '{orcid_regex}'
+      interpolated: true
+      partial_match: false
   creator:
     name: creator
     from_schema: http://purl.obolibrary.org/obo/omo/schema
@@ -208,7 +218,11 @@ attributes:
     domain_of:
     - HasProvenance
     - Ontology
-    range: string
+    range: Agent
+    structured_pattern:
+      syntax: '{orcid_regex}'
+      interpolated: true
+      partial_match: false
   created:
     name: created
     description: when the term came into being

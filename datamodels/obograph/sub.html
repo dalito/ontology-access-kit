@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,7 +83,8 @@
              
   <section id="slot-sub">
 <h1>Slot: sub<a class="headerlink" href="#slot-sub" title="Permalink to this headline"></a></h1>
-<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/sub">og:sub</a></p>
+<p><em>the subject of an edge</em></p>
+<p>URI: <a class="reference external" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#subject">rdf:subject</a></p>
 <!-- no inheritance hierarchy -->
 <section id="applicable-classes">
 <h2>Applicable Classes<a class="headerlink" href="#applicable-classes" title="Permalink to this headline"></a></h2>
@@ -94,7 +96,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="Edge.html"><span class="doc std std-doc">Edge</span></a></p></td>
-<td><p>None</p></td>
+<td><p>An edge is a typed relationship between two nodes</p></td>
 </tr>
 </tbody>
 </table>
@@ -104,9 +106,6 @@
 <ul class="simple">
 <li><p>Range: <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></li>
 </ul>
-</section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -122,8 +121,10 @@
 <details>
 ```yaml
 name: sub
+description: the subject of an edge
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
+slot_uri: rdf:subject
 alias: sub
 domain_of:
 - Edge

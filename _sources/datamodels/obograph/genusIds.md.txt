@@ -1,4 +1,6 @@
 # Slot: genusIds
+_The set of classes that are the genus of the defined class_
+
 
 URI: [og:genusIds](https://github.com/geneontology/obographs/genusIds)
 
@@ -13,7 +15,7 @@ URI: [og:genusIds](https://github.com/geneontology/obographs/genusIds)
 
 | Name | Description |
 | --- | --- |
-[LogicalDefinitionAxiom](LogicalDefinitionAxiom.md) | None
+[LogicalDefinitionAxiom](LogicalDefinitionAxiom.md) | An axiom that defines a class in terms of a genus or set of genus classes and...
 
 
 
@@ -22,19 +24,25 @@ URI: [og:genusIds](https://github.com/geneontology/obographs/genusIds)
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 * Multivalued: True
 
+* Recommended: True
 
 
 
 
 
 
-## Alias
 
 
+## Comments
 
+* typically, this will be a single class
+
+## See Also
+
+* [https://github.com/geneontology/obographs/issues/89](https://github.com/geneontology/obographs/issues/89)
 
 ## Identifier and Mapping Information
 
@@ -57,13 +65,20 @@ URI: [og:genusIds](https://github.com/geneontology/obographs/genusIds)
 <details>
 ```yaml
 name: genusIds
+description: The set of classes that are the genus of the defined class
+comments:
+- typically, this will be a single class
 from_schema: https://github.com/geneontology/obographs
+see_also:
+- https://github.com/geneontology/obographs/issues/89
 rank: 1000
 multivalued: true
 alias: genusIds
 owner: LogicalDefinitionAxiom
 domain_of:
 - LogicalDefinitionAxiom
+range: string
+recommended: true
 
 ```
 </details>

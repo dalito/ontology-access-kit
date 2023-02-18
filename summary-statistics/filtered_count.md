@@ -1,6 +1,6 @@
 # Slot: filtered_count
 
-URI: [reporting:filtered_count](https://w3id.org/linkml/reportfiltered_count)
+URI: [summary_statistics:filtered_count](https://w3id.org/oaklib/summary_statistics.filtered_count)
 
 
 
@@ -14,6 +14,7 @@ URI: [reporting:filtered_count](https://w3id.org/linkml/reportfiltered_count)
 | Name | Description |
 | --- | --- |
 [FacetedCount](FacetedCount.md) | Counts broken down by a facet
+[ChangeTypeStatistic](ChangeTypeStatistic.md) | statistics for a particular kind of diff
 
 
 
@@ -22,16 +23,10 @@ URI: [reporting:filtered_count](https://w3id.org/linkml/reportfiltered_count)
 
 ## Properties
 
-* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
-* Required: True
+* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
 
 
-
-
-
-
-## Alias
 
 
 
@@ -44,27 +39,17 @@ URI: [reporting:filtered_count](https://w3id.org/linkml/reportfiltered_count)
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/linkml/summary_statistics
-
-
-
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: filtered_count
-from_schema: https://w3id.org/linkml/summary_statistics
-rank: 1000
 alias: filtered_count
-owner: FacetedCount
 domain_of:
 - FacetedCount
-range: integer
-required: true
+- ChangeTypeStatistic
+range: string
 
 ```
 </details>

@@ -2,7 +2,8 @@
 
 
 
-URI: [omoschema:PropertyExpression](http://purl.obolibrary.org/obo/schema/PropertyExpression)
+URI: [omoschema:PropertyExpression](http://purl.obolibrary.org/obo/omo/schema/PropertyExpression)
+
 
 
 ```{mermaid}
@@ -22,6 +23,7 @@ URI: [omoschema:PropertyExpression](http://purl.obolibrary.org/obo/schema/Proper
 
 
 
+
 ## Inheritance
 * [Expression](Expression.md)
     * **PropertyExpression**
@@ -32,7 +34,9 @@ URI: [omoschema:PropertyExpression](http://purl.obolibrary.org/obo/schema/Proper
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [disjointWith](disjointWith.md) | 0..* <br/> None | None | direct |
+| [disjointWith](disjointWith.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+
+
 
 ## Mixin Usage
 
@@ -47,8 +51,7 @@ URI: [omoschema:PropertyExpression](http://purl.obolibrary.org/obo/schema/Proper
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Restriction](Restriction.md) | [onProperty](onProperty.md) | range | PropertyExpression |
-
+| [Restriction](Restriction.md) | [onProperty](onProperty.md) | range | [PropertyExpression](PropertyExpression.md) |
 
 
 
@@ -78,6 +81,9 @@ URI: [omoschema:PropertyExpression](http://purl.obolibrary.org/obo/schema/Proper
 | ---  | ---  |
 | self | omoschema:PropertyExpression |
 | native | omoschema:PropertyExpression |
+
+
+
 
 
 ## LinkML Source

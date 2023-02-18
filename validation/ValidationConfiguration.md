@@ -7,6 +7,7 @@ _Configuration parameters for execution of a validation report_
 URI: [vm:ValidationConfiguration](https://w3id.org/linkml/validation-model/ValidationConfiguration)
 
 
+
 ```{mermaid}
  classDiagram
     class ValidationConfiguration
@@ -18,6 +19,7 @@ URI: [vm:ValidationConfiguration](https://w3id.org/linkml/validation-model/Valid
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -25,9 +27,11 @@ URI: [vm:ValidationConfiguration](https://w3id.org/linkml/validation-model/Valid
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [max_number_results_per_type](max_number_results_per_type.md) | 0..1 <br/> integer | if set then truncate results such that no more than this number of results are reported per type | direct |
-| [type_severity_map](type_severity_map.md) | 0..* <br/> TypeSeverityKeyValue | Allows overriding of severity of a particular type | direct |
-| [schema_path](schema_path.md) | 0..1 <br/> string | allows overriding the default OMO schema | direct |
+| [max_number_results_per_type](max_number_results_per_type.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | if set then truncate results such that no more than this number of results ar... | direct |
+| [type_severity_map](type_severity_map.md) | 0..* <br/> [TypeSeverityKeyValue](TypeSeverityKeyValue.md) | Allows overriding of severity of a particular type | direct |
+| [schema_path](schema_path.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | allows overriding the default OMO schema | direct |
+
+
 
 
 
@@ -35,8 +39,7 @@ URI: [vm:ValidationConfiguration](https://w3id.org/linkml/validation-model/Valid
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [RepairConfiguration](RepairConfiguration.md) | [validation_configuration](validation_configuration.md) | range | ValidationConfiguration |
-
+| [RepairConfiguration](RepairConfiguration.md) | [validation_configuration](validation_configuration.md) | range | [ValidationConfiguration](ValidationConfiguration.md) |
 
 
 
@@ -66,6 +69,9 @@ URI: [vm:ValidationConfiguration](https://w3id.org/linkml/validation-model/Valid
 | ---  | ---  |
 | self | vm:ValidationConfiguration |
 | native | vm:ValidationConfiguration |
+
+
+
 
 
 ## LinkML Source

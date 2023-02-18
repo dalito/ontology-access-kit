@@ -5,6 +5,7 @@
 URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 
 
+
 ```{mermaid}
  classDiagram
     class TermInfo
@@ -15,6 +16,7 @@ URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -22,8 +24,10 @@ URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1..1 <br/> None | None | direct |
-| [label](label.md) | 0..1 <br/> None | None | direct |
+| [id](id.md) | 1..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [label](label.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+
+
 
 
 
@@ -31,9 +35,8 @@ URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [TermSetPairwiseSimilarity](TermSetPairwiseSimilarity.md) | [subject_termset](subject_termset.md) | range | TermInfo |
-| [TermSetPairwiseSimilarity](TermSetPairwiseSimilarity.md) | [object_termset](object_termset.md) | range | TermInfo |
-
+| [TermSetPairwiseSimilarity](TermSetPairwiseSimilarity.md) | [subject_termset](subject_termset.md) | range | [TermInfo](TermInfo.md) |
+| [TermSetPairwiseSimilarity](TermSetPairwiseSimilarity.md) | [object_termset](object_termset.md) | range | [TermInfo](TermInfo.md) |
 
 
 
@@ -63,6 +66,9 @@ URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 | ---  | ---  |
 | self | sim:TermInfo |
 | native | sim:TermInfo |
+
+
+
 
 
 ## LinkML Source

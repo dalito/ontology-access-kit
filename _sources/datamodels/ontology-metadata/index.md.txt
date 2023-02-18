@@ -5,10 +5,13 @@ Schema for ontology metadata
 URI: http://purl.obolibrary.org/obo/omo/schema
 Name: Ontology-Metadata
 
+
+
 ## Classes
 
 | Class | Description |
 | --- | --- |
+| [Agent](Agent.md) |  |
 | [Annotation](Annotation.md) | A reified property-object pair |
 | [AnnotationProperty](AnnotationProperty.md) | A property used in non-logical axioms |
 | [AnnotationPropertyMixin](AnnotationPropertyMixin.md) | Groups all annotation property bundles |
@@ -26,6 +29,8 @@ Name: Ontology-Metadata
 | [HasProvenance](HasProvenance.md) |  |
 | [HasSynonyms](HasSynonyms.md) | a mixin for a class whose members can have synonyms |
 | [HasUserInformation](HasUserInformation.md) |  |
+| [HomoSapiens](HomoSapiens.md) | An individual human being |
+| [Image](Image.md) |  |
 | [NamedIndividual](NamedIndividual.md) | An instance that has a IRI |
 | [NamedObject](NamedObject.md) | Anything with an IRI |
 | [NotObsoleteAspect](NotObsoleteAspect.md) | Auto-classifies anything that is not obsolete |
@@ -179,6 +184,7 @@ Name: Ontology-Metadata
 
 | Enumeration | Description |
 | --- | --- |
+| [DefinitionConstraintComponent](DefinitionConstraintComponent.md) | An extension of SHACL constraint component for constraining definitions |
 
 
 ## Types
@@ -186,6 +192,7 @@ Name: Ontology-Metadata
 | Type | Description |
 | --- | --- |
 | [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | A binary (true or false) value |
+| [xsd:string](http://www.w3.org/2001/XMLSchema#string) | a compact URI |
 | [CURIELiteral](CURIELiteral.md) | A string representation of a CURIE |
 | [xsd:date](http://www.w3.org/2001/XMLSchema#date) | a date (year, month and day) in an idealized calendar |
 | [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | Either a date or a datetime |

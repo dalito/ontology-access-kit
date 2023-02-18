@@ -7,6 +7,7 @@ _A grouping of ontology elements by a shared lexical term_
 URI: [li:LexicalGrouping](https://w3id.org/linkml/lexical_index/LexicalGrouping)
 
 
+
 ```{mermaid}
  classDiagram
     class LexicalGrouping
@@ -17,6 +18,7 @@ URI: [li:LexicalGrouping](https://w3id.org/linkml/lexical_index/LexicalGrouping)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -24,8 +26,10 @@ URI: [li:LexicalGrouping](https://w3id.org/linkml/lexical_index/LexicalGrouping)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [term](term.md) | 0..1 <br/> None | A normalized term that groups ontology elements | direct |
-| [relationships](relationships.md) | 0..* <br/> RelationshipToTerm | All ontology elements grouped and their relationship to the normalized term | direct |
+| [term](term.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | A normalized term that groups ontology elements | direct |
+| [relationships](relationships.md) | 0..* <br/> [RelationshipToTerm](RelationshipToTerm.md) | All ontology elements grouped and their relationship to the normalized term | direct |
+
+
 
 
 
@@ -33,8 +37,7 @@ URI: [li:LexicalGrouping](https://w3id.org/linkml/lexical_index/LexicalGrouping)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [LexicalIndex](LexicalIndex.md) | [groupings](groupings.md) | range | LexicalGrouping |
-
+| [LexicalIndex](LexicalIndex.md) | [groupings](groupings.md) | range | [LexicalGrouping](LexicalGrouping.md) |
 
 
 
@@ -64,6 +67,9 @@ URI: [li:LexicalGrouping](https://w3id.org/linkml/lexical_index/LexicalGrouping)
 | ---  | ---  |
 | self | li:LexicalGrouping |
 | native | li:LexicalGrouping |
+
+
+
 
 
 ## LinkML Source

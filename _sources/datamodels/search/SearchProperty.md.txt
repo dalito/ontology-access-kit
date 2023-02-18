@@ -12,6 +12,7 @@ URI: [SearchProperty](SearchProperty)
 | --- | --- | --- |
 | IDENTIFIER | schema:identifier | The identifier or URI of the entity |
 | REPLACEMENT_IDENTIFIER | schema:identifier | A replacement identifier or URI for the entity |
+| MAPPED_IDENTIFIER | skos:closeMatch | An identifier or URI for a mapping |
 | LABEL | rdfs:label | The preferred label / human readable name of the entity |
 | ALIAS | skos:altLabel | An alias or synonym of the entity |
 | COMMENT | rdfs:comment | A comment on the entity |
@@ -19,6 +20,14 @@ URI: [SearchProperty](SearchProperty)
 | INFORMATIVE_TEXT | None | Any informative text attached to the entity including comments, definitions, ... |
 | ANYTHING | rdf:Property |  |
 
+
+
+
+## Slots
+
+| Name | Description |
+| ---  | --- |
+| [properties](properties.md) | determines which properties are searched over |
 
 
 
@@ -58,6 +67,10 @@ permissible_values:
     text: REPLACEMENT_IDENTIFIER
     description: A replacement identifier or URI for the entity
     meaning: schema:identifier
+  MAPPED_IDENTIFIER:
+    text: MAPPED_IDENTIFIER
+    description: An identifier or URI for a mapping
+    meaning: skos:closeMatch
   LABEL:
     text: LABEL
     description: The preferred label / human readable name of the entity

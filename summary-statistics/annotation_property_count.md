@@ -1,6 +1,8 @@
 # Slot: annotation_property_count
+_Number of annotation properties (metadata properties) in the ontology or subset_
 
-URI: [reporting:annotation_property_count](https://w3id.org/linkml/reportannotation_property_count)
+
+URI: [summary_statistics:annotation_property_count](https://w3id.org/oaklib/summary_statistics.annotation_property_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:annotation_property_count](https://w3id.org/linkml/reportannotat
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:annotation_property_count](https://w3id.org/linkml/reportannotat
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -58,7 +54,7 @@ URI: [reporting:annotation_property_count](https://w3id.org/linkml/reportannotat
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -72,15 +68,17 @@ annotations:
   filter:
     tag: filter
     value: AnnotationProperty
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of annotation properties (metadata properties) in the ontology
+  or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: annotation_property_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: property_statistic_group
-range: string
+range: integer
 
 ```
 </details>

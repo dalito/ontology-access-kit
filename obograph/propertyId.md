@@ -1,4 +1,6 @@
 # Slot: propertyId
+_in an OWL restriction expression, this is the predicate_
+
 
 URI: [og:propertyId](https://github.com/geneontology/obographs/propertyId)
 
@@ -13,7 +15,7 @@ URI: [og:propertyId](https://github.com/geneontology/obographs/propertyId)
 
 | Name | Description |
 | --- | --- |
-[ExistentialRestrictionExpression](ExistentialRestrictionExpression.md) | None
+[ExistentialRestrictionExpression](ExistentialRestrictionExpression.md) | An existential restriction (OWL some values from) expression
 
 
 
@@ -26,10 +28,6 @@ URI: [og:propertyId](https://github.com/geneontology/obographs/propertyId)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -55,6 +53,7 @@ URI: [og:propertyId](https://github.com/geneontology/obographs/propertyId)
 <details>
 ```yaml
 name: propertyId
+description: in an OWL restriction expression, this is the predicate
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 alias: propertyId

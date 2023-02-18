@@ -4,7 +4,8 @@ _Counts broken down by a facet_
 
 
 
-URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
+URI: [summary_statistics:FacetedCount](https://w3id.org/oaklib/summary_statistics.FacetedCount)
+
 
 
 ```{mermaid}
@@ -17,6 +18,7 @@ URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -24,8 +26,10 @@ URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [facet](facet.md) | 0..1 <br/> None | None | direct |
-| [filtered_count](filtered_count.md) | 1..1 <br/> integer | None | direct |
+| [facet](facet.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [filtered_count](filtered_count.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+
+
 
 
 
@@ -33,27 +37,24 @@ URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [SummaryStatisticCollection](SummaryStatisticCollection.md) | [edge_count_by_predicate](edge_count_by_predicate.md) | range | FacetedCount |
-| [SummaryStatisticCollection](SummaryStatisticCollection.md) | [entailed_edge_count_by_predicate](entailed_edge_count_by_predicate.md) | range | FacetedCount |
-| [SummaryStatisticCollection](SummaryStatisticCollection.md) | [synonym_statement_count_by_predicate](synonym_statement_count_by_predicate.md) | range | FacetedCount |
-| [SummaryStatisticCollection](SummaryStatisticCollection.md) | [class_count_by_category](class_count_by_category.md) | range | FacetedCount |
-| [SummaryStatisticCollection](SummaryStatisticCollection.md) | [mapping_statement_count_by_predicate](mapping_statement_count_by_predicate.md) | range | FacetedCount |
-| [GlobalStatistics](GlobalStatistics.md) | [edge_count_by_predicate](edge_count_by_predicate.md) | range | FacetedCount |
-| [GlobalStatistics](GlobalStatistics.md) | [entailed_edge_count_by_predicate](entailed_edge_count_by_predicate.md) | range | FacetedCount |
-| [GlobalStatistics](GlobalStatistics.md) | [synonym_statement_count_by_predicate](synonym_statement_count_by_predicate.md) | range | FacetedCount |
-| [GlobalStatistics](GlobalStatistics.md) | [class_count_by_category](class_count_by_category.md) | range | FacetedCount |
-| [GlobalStatistics](GlobalStatistics.md) | [mapping_statement_count_by_predicate](mapping_statement_count_by_predicate.md) | range | FacetedCount |
-| [FacetStatistics](FacetStatistics.md) | [edge_count_by_predicate](edge_count_by_predicate.md) | range | FacetedCount |
-| [FacetStatistics](FacetStatistics.md) | [entailed_edge_count_by_predicate](entailed_edge_count_by_predicate.md) | range | FacetedCount |
-| [FacetStatistics](FacetStatistics.md) | [synonym_statement_count_by_predicate](synonym_statement_count_by_predicate.md) | range | FacetedCount |
-| [FacetStatistics](FacetStatistics.md) | [class_count_by_category](class_count_by_category.md) | range | FacetedCount |
-| [FacetStatistics](FacetStatistics.md) | [mapping_statement_count_by_predicate](mapping_statement_count_by_predicate.md) | range | FacetedCount |
+| [UngroupedStatistics](UngroupedStatistics.md) | [edge_count_by_predicate](edge_count_by_predicate.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [entailed_edge_count_by_predicate](entailed_edge_count_by_predicate.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [synonym_statement_count_by_predicate](synonym_statement_count_by_predicate.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [class_count_by_subset](class_count_by_subset.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [class_count_by_category](class_count_by_category.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [mapping_statement_count_by_predicate](mapping_statement_count_by_predicate.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [mapping_statement_count_by_object_source](mapping_statement_count_by_object_source.md) | range | [FacetedCount](FacetedCount.md) |
+| [UngroupedStatistics](UngroupedStatistics.md) | [mapping_statement_count_subject_by_object_source](mapping_statement_count_subject_by_object_source.md) | range | [FacetedCount](FacetedCount.md) |
+| [ContributorStatistics](ContributorStatistics.md) | [role_counts](role_counts.md) | range | [FacetedCount](FacetedCount.md) |
 
 
 
 
 
 
+## Comments
+
+* For example, edge counts may be grouped by predicate (relationship type)
 
 ## Identifier and Mapping Information
 
@@ -66,7 +67,7 @@ URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -76,8 +77,11 @@ URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | reporting:FacetedCount |
-| native | reporting:FacetedCount |
+| self | summary_statistics:FacetedCount |
+| native | summary_statistics:FacetedCount |
+
+
+
 
 
 ## LinkML Source
@@ -90,16 +94,21 @@ URI: [reporting:FacetedCount](https://w3id.org/linkml/reportFacetedCount)
 ```yaml
 name: FacetedCount
 description: Counts broken down by a facet
-from_schema: https://w3id.org/linkml/summary_statistics
+comments:
+- For example, edge counts may be grouped by predicate (relationship type)
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 attributes:
   facet:
     name: facet
-    from_schema: https://w3id.org/linkml/summary_statistics
+    description: the facet used to group the counts
+    from_schema: https://w3id.org/oaklib/summary_statistics
+    rank: 1000
     key: true
   filtered_count:
     name: filtered_count
-    from_schema: https://w3id.org/linkml/summary_statistics
+    description: the number of items in the facet
+    from_schema: https://w3id.org/oaklib/summary_statistics
     rank: 1000
     range: integer
     required: true
@@ -113,27 +122,33 @@ attributes:
 ```yaml
 name: FacetedCount
 description: Counts broken down by a facet
-from_schema: https://w3id.org/linkml/summary_statistics
+comments:
+- For example, edge counts may be grouped by predicate (relationship type)
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 attributes:
   facet:
     name: facet
-    from_schema: https://w3id.org/linkml/summary_statistics
+    description: the facet used to group the counts
+    from_schema: https://w3id.org/oaklib/summary_statistics
+    rank: 1000
     key: true
     alias: facet
     owner: FacetedCount
     domain_of:
-    - FacetStatistics
     - FacetedCount
+    - ChangeTypeStatistic
     range: string
   filtered_count:
     name: filtered_count
-    from_schema: https://w3id.org/linkml/summary_statistics
+    description: the number of items in the facet
+    from_schema: https://w3id.org/oaklib/summary_statistics
     rank: 1000
     alias: filtered_count
     owner: FacetedCount
     domain_of:
     - FacetedCount
+    - ChangeTypeStatistic
     range: integer
     required: true
 

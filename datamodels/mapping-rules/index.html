@@ -55,8 +55,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../obograph/index.html">Obographs Datamodel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sssom/index.html">SSSOM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../funowl/index.html">FunOwl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kgcl/index.html">KGCL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../similarity/index.html">Semantic Similarity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../summary-statistics/index.html">Summary Statistics Datamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taxon-constraints/index.html">Taxon Constraints Reporting Datamodel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../validation/index.html">Validation Results Datamodel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lexical-index/index.html">Lexical Index</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Mapping Rules Datamodel</a><ul>
@@ -72,6 +74,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../association/index.html">OAK Association Data Model</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -296,46 +299,49 @@ Name: mapping-rules</p>
 <tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></p></td>
 <td><p>A binary (true or false) value</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>a compact URI</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a></p></td>
 <td><p>a date (year, month and day) in an idealized calendar</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://w3id.org/linkml/DateOrDatetime">linkml:DateOrDatetime</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://w3id.org/linkml/DateOrDatetime">linkml:DateOrDatetime</a></p></td>
 <td><p>Either a date or a datetime</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p></td>
 <td><p>The combination of a date and time</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></p></td>
 <td><p>A real number with arbitrary precision that conforms to the xsd:decimal speci…</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a></p></td>
 <td><p>A real number that conforms to the xsd:double specification</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></p></td>
 <td><p>A real number that conforms to the xsd:float specification</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></p></td>
 <td><p>An integer</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
 <td><p>Prefix part of CURIE</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="xref myst">shex:nonLiteral</span></p></td>
+<tr class="row-even"><td><p><span class="xref myst">shex:nonLiteral</span></p></td>
 <td><p>A URI, CURIE or BNODE that represents a node in a model</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="xref myst">shex:iri</span></p></td>
+<tr class="row-odd"><td><p><span class="xref myst">shex:iri</span></p></td>
 <td><p>A URI or CURIE that represents an object in the model</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
 <td><p>A character string</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p></td>
 <td><p>A time object represents a (local) time of day, independent of any particular…</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
 <td><p>a complete URI</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
 <td><p>a URI or a CURIE</p></td>
 </tr>
 </tbody>

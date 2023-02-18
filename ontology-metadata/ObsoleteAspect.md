@@ -4,7 +4,8 @@ _Auto-classifies anything that is obsolete_
 
 
 
-URI: [omoschema:ObsoleteAspect](http://purl.obolibrary.org/obo/schema/ObsoleteAspect)
+URI: [omoschema:ObsoleteAspect](http://purl.obolibrary.org/obo/omo/schema/ObsoleteAspect)
+
 
 
 ```{mermaid}
@@ -15,6 +16,7 @@ URI: [omoschema:ObsoleteAspect](http://purl.obolibrary.org/obo/schema/ObsoleteAs
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -22,6 +24,9 @@ URI: [omoschema:ObsoleteAspect](http://purl.obolibrary.org/obo/schema/ObsoleteAs
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
+
+
+
 ## Mixin Usage
 
 | mixed into | description |
@@ -34,43 +39,54 @@ URI: [omoschema:ObsoleteAspect](http://purl.obolibrary.org/obo/schema/ObsoleteAs
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [HasLifeCycle](HasLifeCycle.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [HasLifeCycle](HasLifeCycle.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [HasLifeCycle](HasLifeCycle.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [HasLifeCycle](HasLifeCycle.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [Term](Term.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [Term](Term.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [Term](Term.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [Term](Term.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [Class](Class.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [Class](Class.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [Class](Class.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [Class](Class.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [Property](Property.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [Property](Property.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [Property](Property.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [Property](Property.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [AnnotationProperty](AnnotationProperty.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [AnnotationProperty](AnnotationProperty.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [AnnotationProperty](AnnotationProperty.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [AnnotationProperty](AnnotationProperty.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [ObjectProperty](ObjectProperty.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [ObjectProperty](ObjectProperty.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [ObjectProperty](ObjectProperty.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [ObjectProperty](ObjectProperty.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [TransitiveProperty](TransitiveProperty.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [TransitiveProperty](TransitiveProperty.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [TransitiveProperty](TransitiveProperty.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [TransitiveProperty](TransitiveProperty.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [NamedIndividual](NamedIndividual.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [NamedIndividual](NamedIndividual.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [NamedIndividual](NamedIndividual.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [NamedIndividual](NamedIndividual.md) | [consider](consider.md) | domain | ObsoleteAspect |
-| [Subset](Subset.md) | [deprecated](deprecated.md) | domain | ObsoleteAspect |
-| [Subset](Subset.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | ObsoleteAspect |
-| [Subset](Subset.md) | [term_replaced_by](term_replaced_by.md) | domain | ObsoleteAspect |
-| [Subset](Subset.md) | [consider](consider.md) | domain | ObsoleteAspect |
-
+| [HasLifeCycle](HasLifeCycle.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HasLifeCycle](HasLifeCycle.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HasLifeCycle](HasLifeCycle.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HasLifeCycle](HasLifeCycle.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Term](Term.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Term](Term.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Term](Term.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Term](Term.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Class](Class.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Class](Class.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Class](Class.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Class](Class.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Property](Property.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Property](Property.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Property](Property.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Property](Property.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [AnnotationProperty](AnnotationProperty.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [AnnotationProperty](AnnotationProperty.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [AnnotationProperty](AnnotationProperty.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [AnnotationProperty](AnnotationProperty.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [ObjectProperty](ObjectProperty.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [ObjectProperty](ObjectProperty.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [ObjectProperty](ObjectProperty.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [ObjectProperty](ObjectProperty.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [TransitiveProperty](TransitiveProperty.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [TransitiveProperty](TransitiveProperty.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [TransitiveProperty](TransitiveProperty.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [TransitiveProperty](TransitiveProperty.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [NamedIndividual](NamedIndividual.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [NamedIndividual](NamedIndividual.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [NamedIndividual](NamedIndividual.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [NamedIndividual](NamedIndividual.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HomoSapiens](HomoSapiens.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HomoSapiens](HomoSapiens.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HomoSapiens](HomoSapiens.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [HomoSapiens](HomoSapiens.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Agent](Agent.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Agent](Agent.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Agent](Agent.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Agent](Agent.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Image](Image.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Image](Image.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Image](Image.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Image](Image.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Subset](Subset.md) | [deprecated](deprecated.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Subset](Subset.md) | [has_obsolescence_reason](has_obsolescence_reason.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Subset](Subset.md) | [term_replaced_by](term_replaced_by.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
+| [Subset](Subset.md) | [consider](consider.md) | domain | [ObsoleteAspect](ObsoleteAspect.md) |
 
 
 
@@ -100,6 +116,9 @@ URI: [omoschema:ObsoleteAspect](http://purl.obolibrary.org/obo/schema/ObsoleteAs
 | ---  | ---  |
 | self | omoschema:ObsoleteAspect |
 | native | omoschema:ObsoleteAspect |
+
+
+
 
 
 ## LinkML Source

@@ -1,6 +1,8 @@
 # Slot: deprecated_class_count
+_Number of deprecated (obsoleted) classes in the ontology or subset_
 
-URI: [reporting:deprecated_class_count](https://w3id.org/linkml/reportdeprecated_class_count)
+
+URI: [summary_statistics:deprecated_class_count](https://w3id.org/oaklib/summary_statistics.deprecated_class_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:deprecated_class_count](https://w3id.org/linkml/reportdeprecated
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:deprecated_class_count](https://w3id.org/linkml/reportdeprecated
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -58,7 +54,7 @@ URI: [reporting:deprecated_class_count](https://w3id.org/linkml/reportdeprecated
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -72,15 +68,16 @@ annotations:
   filter:
     tag: filter
     value: Class, Deprecated
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of deprecated (obsoleted) classes in the ontology or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: deprecated_class_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
+- UngroupedStatistics
 slot_group: class_statistic_group
-range: string
+range: integer
 
 ```
 </details>

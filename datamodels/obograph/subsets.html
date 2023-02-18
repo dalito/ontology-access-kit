@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../selectors.html">Ontology Implementation Selectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../converters/index.html">Converters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../utilities.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
@@ -82,7 +83,8 @@
              
   <section id="slot-subsets">
 <h1>Slot: subsets<a class="headerlink" href="#slot-subsets" title="Permalink to this headline"></a></h1>
-<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/subsets">og:subsets</a></p>
+<p><em>A list of subsets to which this entity belongs</em></p>
+<p>URI: <a class="reference external" href="http://www.geneontology.org/formats/oboInOwl#inSubset">oio:inSubset</a></p>
 <!-- no inheritance hierarchy -->
 <section id="applicable-classes">
 <h2>Applicable Classes<a class="headerlink" href="#applicable-classes" title="Permalink to this headline"></a></h2>
@@ -94,7 +96,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="Meta.html"><span class="doc std std-doc">Meta</span></a></p></td>
-<td><p>None</p></td>
+<td><p>A collection of annotations on an entity or ontology or axiom</p></td>
 </tr>
 </tbody>
 </table>
@@ -105,9 +107,6 @@
 <li><p>Range: <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></li>
 <li><p>Multivalued: True</p></li>
 </ul>
-</section>
-<section id="alias">
-<h2>Alias<a class="headerlink" href="#alias" title="Permalink to this headline"></a></h2>
 </section>
 <section id="identifier-and-mapping-information">
 <h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this headline"></a></h2>
@@ -123,8 +122,10 @@
 <details>
 ```yaml
 name: subsets
+description: A list of subsets to which this entity belongs
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
+slot_uri: oio:inSubset
 multivalued: true
 alias: subsets
 domain_of:

@@ -1,6 +1,8 @@
 # Slot: untyped_entity_count
+_Number of entities whose type could not be determined in the ontology or subset_
 
-URI: [reporting:untyped_entity_count](https://w3id.org/linkml/reportuntyped_entity_count)
+
+URI: [summary_statistics:untyped_entity_count](https://w3id.org/oaklib/summary_statistics.untyped_entity_count)
 
 
 
@@ -18,9 +20,7 @@ URI: [reporting:untyped_entity_count](https://w3id.org/linkml/reportuntyped_enti
 
 | Name | Description |
 | --- | --- |
-[SummaryStatisticCollection](SummaryStatisticCollection.md) | A summary statistics report object
-[GlobalStatistics](GlobalStatistics.md) | summary statistics for the entire resource
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
+[UngroupedStatistics](UngroupedStatistics.md) | A summary statistics report object
 
 
 
@@ -29,14 +29,10 @@ URI: [reporting:untyped_entity_count](https://w3id.org/linkml/reportuntyped_enti
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [xsd:integer](http://www.w3.org/2001/XMLSchema#integer)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -52,7 +48,7 @@ URI: [reporting:untyped_entity_count](https://w3id.org/linkml/reportuntyped_enti
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/summary_statistics
+* from schema: https://w3id.org/oaklib/summary_statistics
 
 
 
@@ -62,14 +58,16 @@ URI: [reporting:untyped_entity_count](https://w3id.org/linkml/reportuntyped_enti
 <details>
 ```yaml
 name: untyped_entity_count
-from_schema: https://w3id.org/linkml/summary_statistics
+description: Number of entities whose type could not be determined in the ontology
+  or subset
+from_schema: https://w3id.org/oaklib/summary_statistics
 rank: 1000
 is_a: count_statistic
 alias: untyped_entity_count
-owner: SummaryStatisticCollection
+owner: UngroupedStatistics
 domain_of:
-- SummaryStatisticCollection
-range: string
+- UngroupedStatistics
+range: integer
 
 ```
 </details>

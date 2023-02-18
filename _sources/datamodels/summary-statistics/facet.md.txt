@@ -1,6 +1,6 @@
 # Slot: facet
 
-URI: [reporting:facet](https://w3id.org/linkml/reportfacet)
+URI: [summary_statistics:facet](https://w3id.org/oaklib/summary_statistics.facet)
 
 
 
@@ -13,8 +13,8 @@ URI: [reporting:facet](https://w3id.org/linkml/reportfacet)
 
 | Name | Description |
 | --- | --- |
-[FacetStatistics](FacetStatistics.md) | summary statistics for a data facet
 [FacetedCount](FacetedCount.md) | Counts broken down by a facet
+[ChangeTypeStatistic](ChangeTypeStatistic.md) | statistics for a particular kind of diff
 
 
 
@@ -27,10 +27,6 @@ URI: [reporting:facet](https://w3id.org/linkml/reportfacet)
 
 
 
-
-
-
-## Alias
 
 
 
@@ -51,8 +47,8 @@ URI: [reporting:facet](https://w3id.org/linkml/reportfacet)
 name: facet
 alias: facet
 domain_of:
-- FacetStatistics
 - FacetedCount
+- ChangeTypeStatistic
 range: string
 
 ```

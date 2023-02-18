@@ -5,6 +5,7 @@
 URI: [search:SearchResultSet](https://w3id.org/linkml/search_datamodel/SearchResultSet)
 
 
+
 ```{mermaid}
  classDiagram
     class SearchResultSet
@@ -17,6 +18,7 @@ URI: [search:SearchResultSet](https://w3id.org/linkml/search_datamodel/SearchRes
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -24,10 +26,11 @@ URI: [search:SearchResultSet](https://w3id.org/linkml/search_datamodel/SearchRes
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [configuration](configuration.md) | 0..1 <br/> SearchBaseConfiguration | None | direct |
-| [results](results.md) | 0..* <br/> SearchResult | None | direct |
-| [result_count](result_count.md) | 0..1 <br/> integer | None | direct |
-| [cursor](cursor.md) | 0..1 <br/> None | None | direct |
+| [configuration](configuration.md) | 0..1 <br/> [SearchBaseConfiguration](SearchBaseConfiguration.md) |  | direct |
+| [results](results.md) | 0..* <br/> [SearchResult](SearchResult.md) |  | direct |
+| [result_count](result_count.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) |  | direct |
+| [cursor](cursor.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+
 
 
 
@@ -59,6 +62,9 @@ URI: [search:SearchResultSet](https://w3id.org/linkml/search_datamodel/SearchRes
 | ---  | ---  |
 | self | search:SearchResultSet |
 | native | search:SearchResultSet |
+
+
+
 
 
 ## LinkML Source

@@ -1,8 +1,11 @@
 # Class: Meta
+_A collection of annotations on an entity or ontology or axiom_
+
 
 
 
 URI: [og:Meta](https://github.com/geneontology/obographs/Meta)
+
 
 
 ```{mermaid}
@@ -21,6 +24,7 @@ URI: [og:Meta](https://github.com/geneontology/obographs/Meta)
 
 
 
+
 <!-- no inheritance hierarchy -->
 
 
@@ -28,14 +32,16 @@ URI: [og:Meta](https://github.com/geneontology/obographs/Meta)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [subsets](subsets.md) | 0..* <br/> string | None | direct |
-| [version](version.md) | 0..1 <br/> string | None | direct |
-| [comments](comments.md) | 0..* <br/> string | None | direct |
-| [definition](definition.md) | 0..1 <br/> DefinitionPropertyValue | None | direct |
-| [xrefs](xrefs.md) | 0..* <br/> string | None | direct |
-| [synonyms](synonyms.md) | 0..* <br/> SynonymPropertyValue | None | direct |
-| [basicPropertyValues](basicPropertyValues.md) | 0..* <br/> BasicPropertyValue | None | direct |
-| [deprecated](deprecated.md) | 0..1 <br/> boolean | None | direct |
+| [subsets](subsets.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | A list of subsets to which this entity belongs | direct |
+| [version](version.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [comments](comments.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | A list of comments about the entity | direct |
+| [definition](definition.md) | 0..1 <br/> [DefinitionPropertyValue](DefinitionPropertyValue.md) | A definition of an entity | direct |
+| [xrefs](xrefs.md) | 0..* <br/> [XrefString](XrefString.md) | A list of cross references to other entities represented in other ontologies,... | direct |
+| [synonyms](synonyms.md) | 0..* <br/> [SynonymPropertyValue](SynonymPropertyValue.md) | A list of synonym property value assertions for an entity | direct |
+| [basicPropertyValues](basicPropertyValues.md) | 0..* <br/> [BasicPropertyValue](BasicPropertyValue.md) | A list of open-ended property values that does not correspond to those predef... | direct |
+| [deprecated](deprecated.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
+
+
 
 
 
@@ -43,23 +49,28 @@ URI: [og:Meta](https://github.com/geneontology/obographs/Meta)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [GraphDocument](GraphDocument.md) | [meta](meta.md) | range | Meta |
-| [Graph](Graph.md) | [meta](meta.md) | range | Meta |
-| [Node](Node.md) | [meta](meta.md) | range | Meta |
-| [DefinitionPropertyValue](DefinitionPropertyValue.md) | [meta](meta.md) | range | Meta |
-| [BasicPropertyValue](BasicPropertyValue.md) | [meta](meta.md) | range | Meta |
-| [XrefPropertyValue](XrefPropertyValue.md) | [meta](meta.md) | range | Meta |
-| [SynonymPropertyValue](SynonymPropertyValue.md) | [meta](meta.md) | range | Meta |
-| [PropertyValue](PropertyValue.md) | [meta](meta.md) | range | Meta |
-| [Axiom](Axiom.md) | [meta](meta.md) | range | Meta |
-| [DomainRangeAxiom](DomainRangeAxiom.md) | [meta](meta.md) | range | Meta |
-| [EquivalentNodesSet](EquivalentNodesSet.md) | [meta](meta.md) | range | Meta |
-| [LogicalDefinitionAxiom](LogicalDefinitionAxiom.md) | [meta](meta.md) | range | Meta |
-| [PropertyChainAxiom](PropertyChainAxiom.md) | [meta](meta.md) | range | Meta |
+| [GraphDocument](GraphDocument.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [Graph](Graph.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [Node](Node.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [Edge](Edge.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [DefinitionPropertyValue](DefinitionPropertyValue.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [BasicPropertyValue](BasicPropertyValue.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [XrefPropertyValue](XrefPropertyValue.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [SynonymPropertyValue](SynonymPropertyValue.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [PropertyValue](PropertyValue.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [Axiom](Axiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [DomainRangeAxiom](DomainRangeAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [EquivalentNodesSet](EquivalentNodesSet.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [LogicalDefinitionAxiom](LogicalDefinitionAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [PropertyChainAxiom](PropertyChainAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
 
 
 
 
+## Aliases
+
+
+* annotation collection
 
 
 
@@ -88,6 +99,9 @@ URI: [og:Meta](https://github.com/geneontology/obographs/Meta)
 | native | og:Meta |
 
 
+
+
+
 ## LinkML Source
 
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
@@ -97,7 +111,10 @@ URI: [og:Meta](https://github.com/geneontology/obographs/Meta)
 <details>
 ```yaml
 name: Meta
+description: A collection of annotations on an entity or ontology or axiom
 from_schema: https://github.com/geneontology/obographs
+aliases:
+- annotation collection
 rank: 1000
 slots:
 - subsets
@@ -127,7 +144,10 @@ slot_usage:
 <details>
 ```yaml
 name: Meta
+description: A collection of annotations on an entity or ontology or axiom
 from_schema: https://github.com/geneontology/obographs
+aliases:
+- annotation collection
 rank: 1000
 slot_usage:
   xrefs:
@@ -142,8 +162,10 @@ slot_usage:
 attributes:
   subsets:
     name: subsets
+    description: A list of subsets to which this entity belongs
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: oio:inSubset
     multivalued: true
     alias: subsets
     owner: Meta
@@ -154,6 +176,7 @@ attributes:
     name: version
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: owl:versionInfo
     alias: version
     owner: Meta
     domain_of:
@@ -161,8 +184,14 @@ attributes:
     range: string
   comments:
     name: comments
+    description: A list of comments about the entity
+    comments:
+    - for historic reasons obo format only supports a single comment per entity. This
+      limitation is not carried over here, but users should be aware that multiple
+      comments will not be supported in converting back to obo format.
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: rdfs:comment
     multivalued: true
     alias: comments
     owner: Meta
@@ -171,8 +200,10 @@ attributes:
     range: string
   definition:
     name: definition
+    description: A definition of an entity
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: IAO:0000115
     alias: definition
     owner: Meta
     domain_of:
@@ -180,6 +211,9 @@ attributes:
     range: DefinitionPropertyValue
   xrefs:
     name: xrefs
+    description: A list of cross references to other entities represented in other
+      ontologies, vocabularies, databases, or websites. The semantics of xrefs are
+      intentionally weak, and most closely align with rdfs:seeAlso
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     multivalued: true
@@ -193,6 +227,7 @@ attributes:
     range: XrefPropertyValue
   synonyms:
     name: synonyms
+    description: A list of synonym property value assertions for an entity
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     multivalued: true
@@ -203,6 +238,8 @@ attributes:
     range: SynonymPropertyValue
   basicPropertyValues:
     name: basicPropertyValues
+    description: A list of open-ended property values that does not correspond to
+      those predefined in this standard, i.e xref, synonyms, definition
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     multivalued: true
@@ -215,6 +252,7 @@ attributes:
     name: deprecated
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    slot_uri: owl:deprecated
     alias: deprecated
     owner: Meta
     domain_of:

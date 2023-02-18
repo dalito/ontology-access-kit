@@ -2,7 +2,8 @@
 
 
 
-URI: [omoschema:HasMappings](http://purl.obolibrary.org/obo/schema/HasMappings)
+URI: [omoschema:HasMappings](http://purl.obolibrary.org/obo/omo/schema/HasMappings)
+
 
 
 ```{mermaid}
@@ -30,6 +31,7 @@ URI: [omoschema:HasMappings](http://purl.obolibrary.org/obo/schema/HasMappings)
 
 
 
+
 ## Inheritance
 * [AnnotationPropertyMixin](AnnotationPropertyMixin.md)
     * **HasMappings**
@@ -40,18 +42,19 @@ URI: [omoschema:HasMappings](http://purl.obolibrary.org/obo/schema/HasMappings)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [broadMatch](broadMatch.md) | 0..* <br/> Thing | None | direct |
-| [closeMatch](closeMatch.md) | 0..* <br/> Thing | None | direct |
-| [exactMatch](exactMatch.md) | 0..* <br/> Thing | None | direct |
-| [narrowMatch](narrowMatch.md) | 0..* <br/> Thing | None | direct |
-| [database_cross_reference](database_cross_reference.md) | 0..* <br/> CURIELiteral | None | direct |
+| [broadMatch](broadMatch.md) | 0..* <br/> [Thing](Thing.md) |  | direct |
+| [closeMatch](closeMatch.md) | 0..* <br/> [Thing](Thing.md) |  | direct |
+| [exactMatch](exactMatch.md) | 0..* <br/> [Thing](Thing.md) |  | direct |
+| [narrowMatch](narrowMatch.md) | 0..* <br/> [Thing](Thing.md) |  | direct |
+| [database_cross_reference](database_cross_reference.md) | 0..* <br/> [CURIELiteral](CURIELiteral.md) |  | direct |
+
+
 
 ## Mixin Usage
 
 | mixed into | description |
 | --- | --- |
 | [Term](Term.md) | A NamedThing that includes classes, properties, but not ontologies |
-
 
 
 
@@ -83,6 +86,9 @@ URI: [omoschema:HasMappings](http://purl.obolibrary.org/obo/schema/HasMappings)
 | ---  | ---  |
 | self | omoschema:HasMappings |
 | native | omoschema:HasMappings |
+
+
+
 
 
 ## LinkML Source
