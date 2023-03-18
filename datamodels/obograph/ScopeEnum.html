@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Enum: ScopeEnum</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/obograph/ScopeEnum.md.txt" rel="nofollow"> View page source</a>
@@ -97,19 +101,19 @@
 <tbody>
 <tr class="row-even"><td><p>hasExactSynonym</p></td>
 <td><p>oio:hasExactSynonym</p></td>
-<td><p></p></td>
+<td><p>The synonym represents the exact meaning of the node</p></td>
 </tr>
 <tr class="row-odd"><td><p>hasNarrowSynonym</p></td>
 <td><p>oio:hasNarrowSynonym</p></td>
-<td><p></p></td>
+<td><p>The synonym represents something narrower in meaning than the node</p></td>
 </tr>
 <tr class="row-even"><td><p>hasBroadSynonym</p></td>
 <td><p>oio:hasBroadSynonym</p></td>
-<td><p></p></td>
+<td><p>The synonym represents something broader in meaning than the node</p></td>
 </tr>
 <tr class="row-odd"><td><p>hasRelatedSynonym</p></td>
 <td><p>oio:hasRelatedSynonym</p></td>
-<td><p></p></td>
+<td><p>The synonym represents something closely related in meaning than the node, bu…</p></td>
 </tr>
 </tbody>
 </table>
@@ -149,15 +153,20 @@ rank: 1000
 permissible_values:
   hasExactSynonym:
     text: hasExactSynonym
+    description: The synonym represents the exact meaning of the node.
     meaning: oio:hasExactSynonym
   hasNarrowSynonym:
     text: hasNarrowSynonym
+    description: The synonym represents something narrower in meaning than the node.
     meaning: oio:hasNarrowSynonym
   hasBroadSynonym:
     text: hasBroadSynonym
+    description: The synonym represents something broader in meaning than the node.
     meaning: oio:hasBroadSynonym
   hasRelatedSynonym:
     text: hasRelatedSynonym
+    description: The synonym represents something closely related in meaning than
+      the node, but in not exact, broad, or narrow.
     meaning: oio:hasRelatedSynonym
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>
 </pre></div>

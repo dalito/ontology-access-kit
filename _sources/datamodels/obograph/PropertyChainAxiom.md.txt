@@ -4,7 +4,7 @@ _An axiom that represents an OWL property chain, e.g. R <- R1 o ... o Rn_
 
 
 
-URI: [og:PropertyChainAxiom](https://github.com/geneontology/obographs/PropertyChainAxiom)
+URI: [obographs:PropertyChainAxiom](https://github.com/geneontology/obographs/PropertyChainAxiom)
 
 
 
@@ -14,8 +14,13 @@ URI: [og:PropertyChainAxiom](https://github.com/geneontology/obographs/PropertyC
       Axiom <|-- PropertyChainAxiom
       
       PropertyChainAxiom : chainPredicateIds
+        
       PropertyChainAxiom : meta
+        
+          PropertyChainAxiom ..> Meta : meta
+        
       PropertyChainAxiom : predicateId
+        
       
 ```
 
@@ -33,8 +38,8 @@ URI: [og:PropertyChainAxiom](https://github.com/geneontology/obographs/PropertyC
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [predicateId](predicateId.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
-| [chainPredicateIds](chainPredicateIds.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | A list of identifiers of predicates that form the precedent clause of a prope... | direct |
+| [predicateId](predicateId.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [chainPredicateIds](chainPredicateIds.md) | 0..* <br/> [String](String.md) | A list of identifiers of predicates that form the precedent clause of a prope... | direct |
 | [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | [Axiom](Axiom.md) |
 
 
@@ -73,8 +78,8 @@ URI: [og:PropertyChainAxiom](https://github.com/geneontology/obographs/PropertyC
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | og:PropertyChainAxiom |
-| native | og:PropertyChainAxiom |
+| self | obographs:PropertyChainAxiom |
+| native | obographs:PropertyChainAxiom |
 
 
 

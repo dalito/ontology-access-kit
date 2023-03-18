@@ -12,9 +12,15 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
  classDiagram
     class Node
       Node : id
+        
       Node : lbl
+        
       Node : meta
+        
+          Node ..> Meta : meta
+        
       Node : type
+        
       
 ```
 
@@ -28,9 +34,9 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1..1 <br/> [OboIdentifierString](OboIdentifierString.md) | The identifier of the entity | direct |
-| [lbl](lbl.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the human-readable label of a node | direct |
-| [type](type.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [id](id.md) | 1..1 <br/> [OboIdentifierString](OboIdentifierString.md) | The unique identifier of the entity | direct |
+| [lbl](lbl.md) | 0..1 <br/> [String](String.md) | the human-readable label of a node | direct |
+| [type](type.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | direct |
 
 
@@ -70,7 +76,7 @@ URI: [rdf:Resource](http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | rdf:Resource |
-| native | og:Node |
+| native | obographs:Node |
 
 
 
@@ -109,7 +115,7 @@ rank: 1000
 attributes:
   id:
     name: id
-    description: The identifier of the entity
+    description: The unique identifier of the entity
     from_schema: https://github.com/geneontology/obographs
     see_also:
     - https://owlcollab.github.io/oboformat/doc/obo-syntax.html#2.5
@@ -120,6 +126,8 @@ attributes:
     domain_of:
     - Graph
     - Node
+    - SubsetDefinition
+    - SynonymTypeDefinition
     range: OboIdentifierString
   lbl:
     name: lbl
@@ -138,6 +146,8 @@ attributes:
     domain_of:
     - Graph
     - Node
+    - SubsetDefinition
+    - SynonymTypeDefinition
     range: string
   type:
     name: type

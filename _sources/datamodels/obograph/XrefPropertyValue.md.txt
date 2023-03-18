@@ -4,7 +4,7 @@ _A property value that represents an assertion about an external reference to an
 
 
 
-URI: [og:XrefPropertyValue](https://github.com/geneontology/obographs/XrefPropertyValue)
+URI: [obographs:XrefPropertyValue](https://github.com/geneontology/obographs/XrefPropertyValue)
 
 
 
@@ -13,10 +13,20 @@ URI: [og:XrefPropertyValue](https://github.com/geneontology/obographs/XrefProper
     class XrefPropertyValue
       PropertyValue <|-- XrefPropertyValue
       
+      XrefPropertyValue : lang
+        
       XrefPropertyValue : meta
+        
+          XrefPropertyValue ..> Meta : meta
+        
       XrefPropertyValue : pred
+        
       XrefPropertyValue : val
+        
+      XrefPropertyValue : valType
+        
       XrefPropertyValue : xrefs
+        
       
 ```
 
@@ -34,10 +44,12 @@ URI: [og:XrefPropertyValue](https://github.com/geneontology/obographs/XrefProper
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [pred](pred.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the predicate of an edge | [PropertyValue](PropertyValue.md) |
-| [val](val.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | The textual representation of the external reference, e | [PropertyValue](PropertyValue.md) |
+| [pred](pred.md) | 0..1 <br/> [String](String.md) | the predicate of an edge | [PropertyValue](PropertyValue.md) |
+| [val](val.md) | 0..1 <br/> [String](String.md) | The textual representation of the external reference, e | [PropertyValue](PropertyValue.md) |
 | [xrefs](xrefs.md) | 0..* <br/> [XrefString](XrefString.md) | A list of cross references to other entities represented in other ontologies,... | [PropertyValue](PropertyValue.md) |
 | [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | [PropertyValue](PropertyValue.md) |
+| [valType](valType.md) | 0..1 <br/> [String](String.md) | the datatype of a property value | [PropertyValue](PropertyValue.md) |
+| [lang](lang.md) | 0..1 <br/> [String](String.md) | the language of a property value | [PropertyValue](PropertyValue.md) |
 
 
 
@@ -75,8 +87,8 @@ URI: [og:XrefPropertyValue](https://github.com/geneontology/obographs/XrefProper
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | og:XrefPropertyValue |
-| native | og:XrefPropertyValue |
+| self | obographs:XrefPropertyValue |
+| native | obographs:XrefPropertyValue |
 
 
 
@@ -102,7 +114,6 @@ slot_usage:
     description: The textual representation of the external reference, e.g. "PMID:12345"
     domain_of:
     - PropertyValue
-    - PropertyValue
     role: xref
 
 ```
@@ -124,7 +135,6 @@ slot_usage:
     description: The textual representation of the external reference, e.g. "PMID:12345"
     domain_of:
     - PropertyValue
-    - PropertyValue
     role: xref
 attributes:
   pred:
@@ -139,6 +149,7 @@ attributes:
     - Edge
     - SynonymPropertyValue
     - PropertyValue
+    - SynonymTypeDefinition
     range: string
   val:
     name: val
@@ -150,7 +161,6 @@ attributes:
     owner: XrefPropertyValue
     domain_of:
     - PropertyValue
-    - PropertyValue
     role: xref
     range: string
   xrefs:
@@ -159,6 +169,8 @@ attributes:
       ontologies, vocabularies, databases, or websites. The semantics of xrefs are
       intentionally weak, and most closely align with rdfs:seeAlso
     from_schema: https://github.com/geneontology/obographs
+    exact_mappings:
+    - oio:hasDbXref
     close_mappings:
     - rdfs:seeAlso
     rank: 1000
@@ -187,6 +199,29 @@ attributes:
     - PropertyValue
     - Axiom
     range: Meta
+  valType:
+    name: valType
+    description: the datatype of a property value
+    from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - value type
+    - datatype
+    rank: 1000
+    alias: valType
+    owner: XrefPropertyValue
+    domain_of:
+    - PropertyValue
+    range: string
+  lang:
+    name: lang
+    description: the language of a property value
+    from_schema: https://github.com/geneontology/obographs
+    rank: 1000
+    alias: lang
+    owner: XrefPropertyValue
+    domain_of:
+    - PropertyValue
+    range: string
 
 ```
 </details>

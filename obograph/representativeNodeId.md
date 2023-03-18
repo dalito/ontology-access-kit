@@ -2,7 +2,7 @@
 _The identifier of a node that represents the class in an OWL equivalence clique_
 
 
-URI: [og:representativeNodeId](https://github.com/geneontology/obographs/representativeNodeId)
+URI: [obographs:representativeNodeId](https://github.com/geneontology/obographs/representativeNodeId)
 
 
 
@@ -24,7 +24,7 @@ URI: [og:representativeNodeId](https://github.com/geneontology/obographs/represe
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 

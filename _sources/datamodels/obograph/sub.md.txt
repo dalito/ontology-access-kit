@@ -15,7 +15,7 @@ URI: [rdf:subject](http://www.w3.org/1999/02/22-rdf-syntax-ns#subject)
 
 | Name | Description |
 | --- | --- |
-[Edge](Edge.md) | An edge is a typed relationship between two nodes
+[Edge](Edge.md) | An edge is a simple typed relationship between two nodes
 
 
 
@@ -24,11 +24,19 @@ URI: [rdf:subject](http://www.w3.org/1999/02/22-rdf-syntax-ns#subject)
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 
 
+
+## Aliases
+
+
+* subject
+* source
+* child
+* head
 
 
 
@@ -55,6 +63,11 @@ URI: [rdf:subject](http://www.w3.org/1999/02/22-rdf-syntax-ns#subject)
 name: sub
 description: the subject of an edge
 from_schema: https://github.com/geneontology/obographs
+aliases:
+- subject
+- source
+- child
+- head
 rank: 1000
 slot_uri: rdf:subject
 alias: sub

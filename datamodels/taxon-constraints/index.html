@@ -29,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -96,7 +100,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Datamodels</a></li>
       <li class="breadcrumb-item active">Taxon Constraints Reporting Datamodel</li>
       <li class="wy-breadcrumbs-aside">
@@ -152,64 +156,67 @@ Name: taxon-constraints</p>
 <tr class="row-even"><td><p><a class="reference internal" href="asserted.html"><span class="doc std std-doc">asserted</span></a></p></td>
 <td><p>holds if the constraint is asserted in the source ontology, rather than infer…</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="comments.html"><span class="doc std std-doc">comments</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="candidate.html"><span class="doc std std-doc">candidate</span></a></p></td>
+<td><p>true if this is a proposed candidate constraint</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="comments.html"><span class="doc std std-doc">comments</span></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="contradicted_by.html"><span class="doc std std-doc">contradicted_by</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="contradicted_by.html"><span class="doc std std-doc">contradicted_by</span></a></p></td>
 <td><p>If the taxon constraint conflicts with another,  then this is the set of taxo…</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="description.html"><span class="doc std std-doc">description</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="description.html"><span class="doc std std-doc">description</span></a></p></td>
 <td><p>A description of the term</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="evolutionary.html"><span class="doc std std-doc">evolutionary</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="evolutionary.html"><span class="doc std std-doc">evolutionary</span></a></p></td>
 <td><p>holds if the constraint is an evolutionary statement</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="id.html"><span class="doc std std-doc">id</span></a></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="id.html"><span class="doc std std-doc">id</span></a></p></td>
+<td><p>the OBO CURIE for the term</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="label.html"><span class="doc std std-doc">label</span></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="label.html"><span class="doc std std-doc">label</span></a></p></td>
+<td><p>the human readable name or label of the term</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="never_in.html"><span class="doc std std-doc">never_in</span></a></p></td>
-<td><p>The term AND its descendants MUST NOT be in the specified taxon, or a descend…</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="never_in.html"><span class="doc std std-doc">never_in</span></a></p></td>
+<td><p>Points to a taxon constraint that states the SubjectTerm is NEVER found in a …</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="only_in.html"><span class="doc std std-doc">only_in</span></a></p></td>
-<td><p>The term AND its descendants MUST be in the specified taxon, or a descendant …</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="only_in.html"><span class="doc std std-doc">only_in</span></a></p></td>
+<td><p>Points to a taxon constraint that states the SubjectTerm is ONLY found in a t…</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="predicate.html"><span class="doc std std-doc">predicate</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="predicate.html"><span class="doc std std-doc">predicate</span></a></p></td>
 <td><p>The relationship type for the contraint (e</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="predicates.html"><span class="doc std std-doc">predicates</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="predicates.html"><span class="doc std std-doc">predicates</span></a></p></td>
 <td><p>The predicates that connect the subject term to the via_terms</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="present_in.html"><span class="doc std std-doc">present_in</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="present_in.html"><span class="doc std std-doc">present_in</span></a></p></td>
 <td><p>The term MAY be in the specified taxon, or a descendant of that taxon</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="present_in_ancestor_of.html"><span class="doc std std-doc">present_in_ancestor_of</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="present_in_ancestor_of.html"><span class="doc std std-doc">present_in_ancestor_of</span></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="redundant.html"><span class="doc std std-doc">redundant</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="redundant.html"><span class="doc std std-doc">redundant</span></a></p></td>
 <td><p>True if this is redundant within the set of constraints of the same type (nev…</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="redundant_with.html"><span class="doc std std-doc">redundant_with</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="redundant_with.html"><span class="doc std std-doc">redundant_with</span></a></p></td>
 <td><p>If the taxon constraint is redundant, then this is the set of taxon constrain…</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="redundant_with_only_in.html"><span class="doc std std-doc">redundant_with_only_in</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="redundant_with_only_in.html"><span class="doc std std-doc">redundant_with_only_in</span></a></p></td>
 <td><p>True for never in constraints that are subsumed by an only in</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="sources.html"><span class="doc std std-doc">sources</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="sources.html"><span class="doc std std-doc">sources</span></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="subject.html"><span class="doc std std-doc">subject</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="subject.html"><span class="doc std std-doc">subject</span></a></p></td>
 <td><p>The term to which the constraint applies</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="taxon.html"><span class="doc std std-doc">taxon</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="taxon.html"><span class="doc std std-doc">taxon</span></a></p></td>
 <td><p>The taxon which this constraint is about</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="unsatisfiable.html"><span class="doc std std-doc">unsatisfiable</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="unsatisfiable.html"><span class="doc std std-doc">unsatisfiable</span></a></p></td>
 <td><p>If true then some combination of taxon constraints plus ontology lead to cont…</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="via_terms.html"><span class="doc std std-doc">via_terms</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="via_terms.html"><span class="doc std std-doc">via_terms</span></a></p></td>
 <td><p>For inferred taxon constraints, this is the term or terms that have the taxon…</p></td>
 </tr>
 </tbody>
@@ -234,52 +241,49 @@ Name: taxon-constraints</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Boolean.html"><span class="doc std std-doc">Boolean</span></a></p></td>
 <td><p>A binary (true or false) value</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
-<td><p>a compact URI</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Date.html"><span class="doc std std-doc">Date</span></a></p></td>
 <td><p>a date (year, month and day) in an idealized calendar</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://w3id.org/linkml/DateOrDatetime">linkml:DateOrDatetime</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="DateOrDatetime.html"><span class="doc std std-doc">DateOrDatetime</span></a></p></td>
 <td><p>Either a date or a datetime</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Datetime.html"><span class="doc std std-doc">Datetime</span></a></p></td>
 <td><p>The combination of a date and time</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Decimal.html"><span class="doc std std-doc">Decimal</span></a></p></td>
 <td><p>A real number with arbitrary precision that conforms to the xsd:decimal speci…</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#double">xsd:double</a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Double.html"><span class="doc std std-doc">Double</span></a></p></td>
 <td><p>A real number that conforms to the xsd:double specification</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Float.html"><span class="doc std std-doc">Float</span></a></p></td>
 <td><p>A real number that conforms to the xsd:float specification</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Integer.html"><span class="doc std std-doc">Integer</span></a></p></td>
 <td><p>An integer</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Ncname.html"><span class="doc std std-doc">Ncname</span></a></p></td>
 <td><p>Prefix part of CURIE</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="xref myst">shex:nonLiteral</span></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Nodeidentifier.html"><span class="doc std std-doc">Nodeidentifier</span></a></p></td>
 <td><p>A URI, CURIE or BNODE that represents a node in a model</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="xref myst">shex:iri</span></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Objectidentifier.html"><span class="doc std std-doc">Objectidentifier</span></a></p></td>
 <td><p>A URI or CURIE that represents an object in the model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>A character string</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Time.html"><span class="doc std std-doc">Time</span></a></p></td>
 <td><p>A time object represents a (local) time of day, independent of any particular…</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="Uri.html"><span class="doc std std-doc">Uri</span></a></p></td>
 <td><p>a complete URI</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="Uriorcurie.html"><span class="doc std std-doc">Uriorcurie</span></a></p></td>
 <td><p>a URI or a CURIE</p></td>
 </tr>
 </tbody>

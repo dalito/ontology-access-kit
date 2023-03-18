@@ -1,5 +1,5 @@
 # Class: PrefixDeclaration
-_maps individual prefix to namespace_
+_A mapping between an individual prefix (e.g. GO) and a namespace (e.g. http://purl.obolibrary.org/obo/GO_)_
 
 
 
@@ -12,7 +12,9 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
  classDiagram
     class PrefixDeclaration
       PrefixDeclaration : namespace
+        
       PrefixDeclaration : prefix
+        
       
 ```
 
@@ -26,8 +28,8 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [prefix](prefix.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | The prefix of a prefix declaration | direct |
-| [namespace](namespace.md) | 0..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | The namespace associated with a prefix in a prefix declaration | direct |
+| [prefix](prefix.md) | 0..1 <br/> [String](String.md) | The prefix of a prefix declaration | direct |
+| [namespace](namespace.md) | 0..1 <br/> [Uri](Uri.md) | The namespace associated with a prefix in a prefix declaration | direct |
 
 
 
@@ -38,6 +40,7 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [GraphDocument](GraphDocument.md) | [prefixes](prefixes.md) | range | [PrefixDeclaration](PrefixDeclaration.md) |
+| [Graph](Graph.md) | [prefixes](prefixes.md) | range | [PrefixDeclaration](PrefixDeclaration.md) |
 
 
 
@@ -66,7 +69,7 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | sh:PrefixDeclaration |
-| native | og:PrefixDeclaration |
+| native | obographs:PrefixDeclaration |
 
 
 
@@ -81,16 +84,20 @@ URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
 <details>
 ```yaml
 name: PrefixDeclaration
-description: maps individual prefix to namespace
+description: A mapping between an individual prefix (e.g. GO) and a namespace (e.g.
+  http://purl.obolibrary.org/obo/GO_)
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
   prefix:
     name: prefix
     description: The prefix of a prefix declaration.
+    comments:
+    - It is strongly recommended that the prefix is a valid NCName
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     slot_uri: sh:prefix
+    key: true
     range: string
   namespace:
     name: namespace
@@ -109,16 +116,20 @@ class_uri: sh:PrefixDeclaration
 <details>
 ```yaml
 name: PrefixDeclaration
-description: maps individual prefix to namespace
+description: A mapping between an individual prefix (e.g. GO) and a namespace (e.g.
+  http://purl.obolibrary.org/obo/GO_)
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
   prefix:
     name: prefix
     description: The prefix of a prefix declaration.
+    comments:
+    - It is strongly recommended that the prefix is a valid NCName
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     slot_uri: sh:prefix
+    key: true
     alias: prefix
     owner: PrefixDeclaration
     domain_of:

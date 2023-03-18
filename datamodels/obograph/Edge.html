@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: Edge</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/obograph/Edge.md.txt" rel="nofollow"> View page source</a>
@@ -83,15 +87,21 @@
              
   <section id="class-edge">
 <h1>Class: Edge<a class="headerlink" href="#class-edge" title="Permalink to this headline"></a></h1>
-<p><em>An edge is a typed relationship between two nodes</em></p>
-<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/Edge">og:Edge</a></p>
+<p><em>An edge is a simple typed relationship between two nodes. When mapping to OWL, an edge represents either (a) s SubClassOf o (b) s SubClassOf p some o (c) s p o (where s and o are individuals) (d) s SubPropertyOf o (e) s EquivalentTo o (f) s type o</em></p>
+<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/Edge">obographs:Edge</a></p>
 <div class="mermaid">
              classDiagram
     class Edge
       Edge : meta
+        
+          Edge ..&gt; Meta : meta
+        
       Edge : obj
+        
       Edge : pred
+        
       Edge : sub
+        
       
         </div><!-- no inheritance hierarchy -->
 <section id="slots">
@@ -106,17 +116,17 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="sub.html"><span class="doc std std-doc">sub</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>the subject of an edge</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pred.html"><span class="doc std std-doc">pred</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>the predicate of an edge</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="obj.html"><span class="doc std std-doc">obj</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>the object of an edge</p></td>
 <td><p>direct</p></td>
 </tr>
@@ -176,10 +186,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>og:Edge</p></td>
+<td><p>obographs:Edge</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>og:Edge</p></td>
+<td><p>obographs:Edge</p></td>
 </tr>
 </tbody>
 </table>
@@ -192,7 +202,10 @@
 <details>
 ```yaml
 name: Edge
-description: An edge is a typed relationship between two nodes
+description: An edge is a simple typed relationship between two nodes. When mapping
+  to OWL, an edge represents either (a) s SubClassOf o (b) s SubClassOf p some o (c)
+  s p o (where s and o are individuals) (d) s SubPropertyOf o (e) s EquivalentTo o
+  (f) s type o
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 slots:
@@ -207,7 +220,10 @@ slots:
 &lt;details&gt;
 ```yaml
 name: Edge
-description: An edge is a typed relationship between two nodes
+description: An edge is a simple typed relationship between two nodes. When mapping
+  to OWL, an edge represents either (a) s SubClassOf o (b) s SubClassOf p some o (c)
+  s p o (where s and o are individuals) (d) s SubPropertyOf o (e) s EquivalentTo o
+  (f) s type o
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
@@ -215,6 +231,11 @@ attributes:
     name: sub
     description: the subject of an edge
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - subject
+    - source
+    - child
+    - head
     rank: 1000
     slot_uri: rdf:subject
     alias: sub
@@ -234,11 +255,17 @@ attributes:
     - Edge
     - SynonymPropertyValue
     - PropertyValue
+    - SynonymTypeDefinition
     range: string
   obj:
     name: obj
     description: the object of an edge
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - object
+    - target
+    - parent
+    - tail
     rank: 1000
     slot_uri: rdf:object
     alias: obj

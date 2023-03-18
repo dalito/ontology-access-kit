@@ -15,7 +15,7 @@ URI: [sh:namespace](https://w3id.org/shacl/namespace)
 
 | Name | Description |
 | --- | --- |
-[PrefixDeclaration](PrefixDeclaration.md) | maps individual prefix to namespace
+[PrefixDeclaration](PrefixDeclaration.md) | A mapping between an individual prefix (e
 
 
 
@@ -24,7 +24,7 @@ URI: [sh:namespace](https://w3id.org/shacl/namespace)
 
 ## Properties
 
-* Range: [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
+* Range: [Uri](Uri.md)
 
 
 

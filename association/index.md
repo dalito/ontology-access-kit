@@ -15,16 +15,24 @@ Name: association
 | Class | Description |
 | --- | --- |
 | [Association](Association.md) | A generic association between a thing (subject) and another thing (object) |
+| [NegatedAssociation](NegatedAssociation.md) | A negated association between a thing (subject) and another thing (object) |
+| [ParserConfiguration](ParserConfiguration.md) |  |
 | [PropertyValue](PropertyValue.md) | A generic tag-value that can be associated with an association |
+| [RollupGroup](RollupGroup.md) |  |
 
 
 ## Slots
 
 | Slot | Description |
 | --- | --- |
+| [associations](associations.md) |  |
+| [group_object](group_object.md) | An ontology entity that is the ancestor of the objects in the group's  |
+| [include_association_attributes](include_association_attributes.md) | If true, then the parser will include non S/P/O properties as additional attr... |
 | [object](object.md) | An ontology entity that is associated with the subject |
 | [predicate](predicate.md) | The type of relationship between the subject and object |
+| [preserve_negated_associations](preserve_negated_associations.md) | If true, then the parser will keep negated associations in the output |
 | [property_values](property_values.md) |  |
+| [sub_groups](sub_groups.md) | Container for groups within a rollup group |
 | [subject](subject.md) | The thing which the association is about |
 
 
@@ -38,22 +46,21 @@ Name: association
 
 | Type | Description |
 | --- | --- |
-| [xsd:boolean](xsd:boolean) | A binary (true or false) value |
-| [xsd:string](xsd:string) | a compact URI |
-| [xsd:date](xsd:date) | a date (year, month and day) in an idealized calendar |
-| [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | Either a date or a datetime |
-| [xsd:dateTime](xsd:dateTime) | The combination of a date and time |
-| [xsd:decimal](xsd:decimal) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
-| [xsd:double](xsd:double) | A real number that conforms to the xsd:double specification |
-| [xsd:float](xsd:float) | A real number that conforms to the xsd:float specification |
-| [xsd:integer](xsd:integer) | An integer |
-| [xsd:string](xsd:string) | Prefix part of CURIE |
-| [shex:nonLiteral](shex:nonLiteral) | A URI, CURIE or BNODE that represents a node in a model |
-| [shex:iri](shex:iri) | A URI or CURIE that represents an object in the model |
-| [xsd:string](xsd:string) | A character string |
-| [xsd:dateTime](xsd:dateTime) | A time object represents a (local) time of day, independent of any particular... |
-| [xsd:anyURI](xsd:anyURI) | a complete URI |
-| [xsd:anyURI](xsd:anyURI) | a URI or a CURIE |
+| [Boolean](Boolean.md) | A binary (true or false) value |
+| [Date](Date.md) | a date (year, month and day) in an idealized calendar |
+| [DateOrDatetime](DateOrDatetime.md) | Either a date or a datetime |
+| [Datetime](Datetime.md) | The combination of a date and time |
+| [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
+| [Double](Double.md) | A real number that conforms to the xsd:double specification |
+| [Float](Float.md) | A real number that conforms to the xsd:float specification |
+| [Integer](Integer.md) | An integer |
+| [Ncname](Ncname.md) | Prefix part of CURIE |
+| [Nodeidentifier](Nodeidentifier.md) | A URI, CURIE or BNODE that represents a node in a model |
+| [Objectidentifier](Objectidentifier.md) | A URI or CURIE that represents an object in the model |
+| [String](String.md) | A character string |
+| [Time](Time.md) | A time object represents a (local) time of day, independent of any particular... |
+| [Uri](Uri.md) | a complete URI |
+| [Uriorcurie](Uriorcurie.md) | a URI or a CURIE |
 
 
 ## Subsets

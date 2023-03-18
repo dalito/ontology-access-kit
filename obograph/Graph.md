@@ -1,5 +1,5 @@
 # Class: Graph
-_A graph is a collection of nodes and edges that represents a single ontology_
+_A graph is a collection of nodes and edges and other axioms that represents a single ontology._
 
 
 
@@ -12,15 +12,53 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
  classDiagram
     class Graph
       Graph : allValuesFromEdges
+        
+          Graph ..> Edge : allValuesFromEdges
+        
       Graph : domainRangeAxioms
+        
+          Graph ..> DomainRangeAxiom : domainRangeAxioms
+        
       Graph : edges
+        
+          Graph ..> Edge : edges
+        
       Graph : equivalentNodesSets
+        
+          Graph ..> EquivalentNodesSet : equivalentNodesSets
+        
       Graph : id
+        
       Graph : lbl
+        
       Graph : logicalDefinitionAxioms
+        
+          Graph ..> LogicalDefinitionAxiom : logicalDefinitionAxioms
+        
       Graph : meta
+        
+          Graph ..> Meta : meta
+        
       Graph : nodes
+        
+          Graph ..> Node : nodes
+        
+      Graph : prefixes
+        
+          Graph ..> PrefixDeclaration : prefixes
+        
       Graph : propertyChainAxioms
+        
+          Graph ..> PropertyChainAxiom : propertyChainAxioms
+        
+      Graph : subsetDefinitions
+        
+          Graph ..> SubsetDefinition : subsetDefinitions
+        
+      Graph : synonymTypeDefinitions
+        
+          Graph ..> SynonymTypeDefinition : synonymTypeDefinitions
+        
       
 ```
 
@@ -34,8 +72,11 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1..1 <br/> [OboIdentifierString](OboIdentifierString.md) | The identifier of the entity | direct |
-| [lbl](lbl.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the human-readable label of a node | direct |
+| [id](id.md) | 1..1 <br/> [OboIdentifierString](OboIdentifierString.md) | The unique identifier of the entity | direct |
+| [lbl](lbl.md) | 0..1 <br/> [String](String.md) | the human-readable label of a node | direct |
+| [prefixes](prefixes.md) | 0..* <br/> [PrefixDeclaration](PrefixDeclaration.md) | A collection of mappings between prefixes and namespaces, used to map CURIEs ... | direct |
+| [subsetDefinitions](subsetDefinitions.md) | 0..* <br/> [SubsetDefinition](SubsetDefinition.md) |  | direct |
+| [synonymTypeDefinitions](synonymTypeDefinitions.md) | 0..* <br/> [SynonymTypeDefinition](SynonymTypeDefinition.md) |  | direct |
 | [meta](meta.md) | 0..1 <br/> [Meta](Meta.md) | A collection of metadata about either an ontology (graph), an entity, or an a... | direct |
 | [nodes](nodes.md) | 0..* <br/> [Node](Node.md) | All nodes present in a graph | direct |
 | [edges](edges.md) | 0..* <br/> [Edge](Edge.md) | All edges present in a graph | direct |
@@ -82,7 +123,7 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | owl:Ontology |
-| native | og:Graph |
+| native | obographs:Graph |
 
 
 
@@ -97,12 +138,16 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
 <details>
 ```yaml
 name: Graph
-description: A graph is a collection of nodes and edges that represents a single ontology
+description: A graph is a collection of nodes and edges and other axioms that represents
+  a single ontology.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 slots:
 - id
 - lbl
+- prefixes
+- subsetDefinitions
+- synonymTypeDefinitions
 - meta
 - nodes
 - edges
@@ -121,13 +166,14 @@ class_uri: owl:Ontology
 <details>
 ```yaml
 name: Graph
-description: A graph is a collection of nodes and edges that represents a single ontology
+description: A graph is a collection of nodes and edges and other axioms that represents
+  a single ontology.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 attributes:
   id:
     name: id
-    description: The identifier of the entity
+    description: The unique identifier of the entity
     from_schema: https://github.com/geneontology/obographs
     see_also:
     - https://owlcollab.github.io/oboformat/doc/obo-syntax.html#2.5
@@ -138,6 +184,8 @@ attributes:
     domain_of:
     - Graph
     - Node
+    - SubsetDefinition
+    - SynonymTypeDefinition
     range: OboIdentifierString
   lbl:
     name: lbl
@@ -156,7 +204,46 @@ attributes:
     domain_of:
     - Graph
     - Node
+    - SubsetDefinition
+    - SynonymTypeDefinition
     range: string
+  prefixes:
+    name: prefixes
+    description: A collection of mappings between prefixes and namespaces, used to
+      map CURIEs (e.g. GO:0008150) to IRIs (e.g. http://purl.obolibrary.org/obo/GO_0008150)
+    from_schema: https://github.com/geneontology/obographs
+    rank: 1000
+    slot_uri: sh:declare
+    multivalued: true
+    alias: prefixes
+    owner: Graph
+    domain_of:
+    - GraphDocument
+    - Graph
+    range: PrefixDeclaration
+    inlined: true
+  subsetDefinitions:
+    name: subsetDefinitions
+    from_schema: https://github.com/geneontology/obographs
+    rank: 1000
+    multivalued: true
+    alias: subsetDefinitions
+    owner: Graph
+    domain_of:
+    - Graph
+    range: SubsetDefinition
+    inlined: true
+  synonymTypeDefinitions:
+    name: synonymTypeDefinitions
+    from_schema: https://github.com/geneontology/obographs
+    rank: 1000
+    multivalued: true
+    alias: synonymTypeDefinitions
+    owner: Graph
+    domain_of:
+    - Graph
+    range: SynonymTypeDefinition
+    inlined: true
   meta:
     name: meta
     description: A collection of metadata about either an ontology (graph), an entity,

@@ -12,18 +12,47 @@ URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
  classDiagram
     class TaxonConstraint
       TaxonConstraint : asserted
+        
+      TaxonConstraint : candidate
+        
       TaxonConstraint : comments
+        
       TaxonConstraint : contradicted_by
+        
+          TaxonConstraint ..> TaxonConstraint : contradicted_by
+        
       TaxonConstraint : evolutionary
+        
       TaxonConstraint : predicate
+        
+          TaxonConstraint ..> PredicateTerm : predicate
+        
       TaxonConstraint : predicates
+        
+          TaxonConstraint ..> PredicateTerm : predicates
+        
       TaxonConstraint : redundant
+        
       TaxonConstraint : redundant_with
+        
+          TaxonConstraint ..> TaxonConstraint : redundant_with
+        
       TaxonConstraint : redundant_with_only_in
+        
       TaxonConstraint : sources
+        
       TaxonConstraint : subject
+        
+          TaxonConstraint ..> SubjectTerm : subject
+        
       TaxonConstraint : taxon
+        
+          TaxonConstraint ..> Taxon : taxon
+        
       TaxonConstraint : via_terms
+        
+          TaxonConstraint ..> SubjectTerm : via_terms
+        
       
 ```
 
@@ -39,17 +68,18 @@ URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
 | ---  | --- | --- | --- |
 | [subject](subject.md) | 0..1 <br/> [SubjectTerm](SubjectTerm.md) | The term to which the constraint applies | direct |
 | [predicate](predicate.md) | 0..1 <br/> [PredicateTerm](PredicateTerm.md) | The relationship type for the contraint (e | direct |
-| [asserted](asserted.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | holds if the constraint is asserted in the source ontology, rather than infer... | direct |
-| [evolutionary](evolutionary.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | holds if the constraint is an evolutionary statement | direct |
-| [redundant](redundant.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | True if this is redundant within the set of constraints of the same type (nev... | direct |
-| [redundant_with_only_in](redundant_with_only_in.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | True for never in constraints that are subsumed by an only in | direct |
+| [asserted](asserted.md) | 0..1 <br/> [Boolean](Boolean.md) | holds if the constraint is asserted in the source ontology, rather than infer... | direct |
+| [evolutionary](evolutionary.md) | 0..1 <br/> [Boolean](Boolean.md) | holds if the constraint is an evolutionary statement | direct |
+| [redundant](redundant.md) | 0..1 <br/> [Boolean](Boolean.md) | True if this is redundant within the set of constraints of the same type (nev... | direct |
+| [redundant_with_only_in](redundant_with_only_in.md) | 0..1 <br/> [Boolean](Boolean.md) | True for never in constraints that are subsumed by an only in | direct |
 | [taxon](taxon.md) | 0..1 <br/> [Taxon](Taxon.md) | The taxon which this constraint is about | direct |
 | [redundant_with](redundant_with.md) | 0..* <br/> [TaxonConstraint](TaxonConstraint.md) | If the taxon constraint is redundant, then this is the set of taxon constrain... | direct |
 | [contradicted_by](contradicted_by.md) | 0..* <br/> [TaxonConstraint](TaxonConstraint.md) | If the taxon constraint conflicts with another,  then this is the set of taxo... | direct |
 | [via_terms](via_terms.md) | 0..* <br/> [SubjectTerm](SubjectTerm.md) | For inferred taxon constraints, this is the term or terms that have the taxon... | direct |
 | [predicates](predicates.md) | 0..* <br/> [PredicateTerm](PredicateTerm.md) | The predicates that connect the subject term to the via_terms | direct |
-| [sources](sources.md) | 0..* <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |  | direct |
-| [comments](comments.md) | 0..* <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
+| [sources](sources.md) | 0..* <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
+| [comments](comments.md) | 0..* <br/> [String](String.md) |  | direct |
+| [candidate](candidate.md) | 0..1 <br/> [Boolean](Boolean.md) | true if this is a proposed candidate constraint | direct |
 
 
 
@@ -115,6 +145,8 @@ attributes:
   subject:
     name: subject
     description: The term to which the constraint applies
+    comments:
+    - this is a reciprocal slot and will be the same as the containing SubjectTerm
     from_schema: https://w3id.org/linkml/taxon_constraints
     rank: 1000
     slot_uri: rdf:subject
@@ -209,6 +241,12 @@ attributes:
     rank: 1000
     multivalued: true
     range: string
+  candidate:
+    name: candidate
+    description: true if this is a proposed candidate constraint
+    from_schema: https://w3id.org/linkml/taxon_constraints
+    rank: 1000
+    range: boolean
 class_uri: rdf:Statement
 
 ```
@@ -226,6 +264,8 @@ attributes:
   subject:
     name: subject
     description: The term to which the constraint applies
+    comments:
+    - this is a reciprocal slot and will be the same as the containing SubjectTerm
     from_schema: https://w3id.org/linkml/taxon_constraints
     rank: 1000
     slot_uri: rdf:subject
@@ -372,6 +412,16 @@ attributes:
     domain_of:
     - TaxonConstraint
     range: string
+  candidate:
+    name: candidate
+    description: true if this is a proposed candidate constraint
+    from_schema: https://w3id.org/linkml/taxon_constraints
+    rank: 1000
+    alias: candidate
+    owner: TaxonConstraint
+    domain_of:
+    - TaxonConstraint
+    range: boolean
 class_uri: rdf:Statement
 
 ```

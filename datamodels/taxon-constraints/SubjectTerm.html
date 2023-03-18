@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: SubjectTerm</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/taxon-constraints/SubjectTerm.md.txt" rel="nofollow"> View page source</a>
@@ -91,13 +95,29 @@
       Term &lt;|-- SubjectTerm
       
       SubjectTerm : description
+        
       SubjectTerm : id
+        
       SubjectTerm : label
+        
       SubjectTerm : never_in
+        
+          SubjectTerm ..&gt; TaxonConstraint : never_in
+        
       SubjectTerm : only_in
+        
+          SubjectTerm ..&gt; TaxonConstraint : only_in
+        
       SubjectTerm : present_in
+        
+          SubjectTerm ..&gt; TaxonConstraint : present_in
+        
       SubjectTerm : present_in_ancestor_of
+        
+          SubjectTerm ..&gt; TaxonConstraint : present_in_ancestor_of
+        
       SubjectTerm : unsatisfiable
+        
       
         </div><section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
@@ -121,23 +141,23 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="description.html"><span class="doc std std-doc">description</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>A description of the term</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="unsatisfiable.html"><span class="doc std std-doc">unsatisfiable</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Boolean.html"><span class="doc std std-doc">Boolean</span></a></p></td>
 <td><p>If true then some combination of taxon constraints plus ontology lead to cont…</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="only_in.html"><span class="doc std std-doc">only_in</span></a></p></td>
 <td><p>0..* <br/> <a class="reference internal" href="TaxonConstraint.html"><span class="doc std std-doc">TaxonConstraint</span></a></p></td>
-<td><p>The term AND its descendants MUST be in the specified taxon, or a descendant …</p></td>
+<td><p>Points to a taxon constraint that states the SubjectTerm is ONLY found in a t…</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="never_in.html"><span class="doc std std-doc">never_in</span></a></p></td>
 <td><p>0..* <br/> <a class="reference internal" href="TaxonConstraint.html"><span class="doc std std-doc">TaxonConstraint</span></a></p></td>
-<td><p>The term AND its descendants MUST NOT be in the specified taxon, or a descend…</p></td>
+<td><p>Points to a taxon constraint that states the SubjectTerm is NEVER found in a …</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="present_in.html"><span class="doc std std-doc">present_in</span></a></p></td>
@@ -151,13 +171,13 @@
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="id.html"><span class="doc std std-doc">id</span></a></p></td>
-<td><p>1..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#anyURI">xsd:anyURI</a></p></td>
-<td><p></p></td>
+<td><p>1..1 <br/> <a class="reference internal" href="Uriorcurie.html"><span class="doc std std-doc">Uriorcurie</span></a></p></td>
+<td><p>the OBO CURIE for the term</p></td>
 <td><p><a class="reference internal" href="Term.html"><span class="doc std std-doc">Term</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="label.html"><span class="doc std std-doc">label</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
-<td><p></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
+<td><p>the human readable name or label of the term</p></td>
 <td><p><a class="reference internal" href="Term.html"><span class="doc std std-doc">Term</span></a></p></td>
 </tr>
 </tbody>
@@ -242,8 +262,9 @@ attributes:
     range: boolean
   only_in:
     name: only_in
-    description: 'The term AND its descendants MUST be in the specified taxon, or
-      a descendant of that taxon
+    description: 'Points to a taxon constraint that states the SubjectTerm is ONLY
+      found in a taxon or descendant. Formally, the term AND its descendants MUST
+      be in the specified taxon, or a descendant of that taxon
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &#39;
 comments:
 - Note that we conflate between the RO &quot;only in taxon&quot; and &quot;in taxon&quot; relations
@@ -257,8 +278,9 @@ range: TaxonConstraint
 </div>
 <p>never_in:
 name: never_in
-description: ‘The term AND its descendants MUST NOT be in the specified taxon,
-or a descendant of that taxon</p>
+description: ‘Points to a taxon constraint that states the SubjectTerm is NEVER
+found in a taxon or descendant. Formally, the term AND its descendants MUST
+NOT be in the specified taxon, or a descendant of that taxon</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &#39;
 from_schema: https://w3id.org/linkml/taxon_constraints
 rank: 1000
@@ -321,8 +343,9 @@ attributes:
     range: boolean
   only_in:
     name: only_in
-    description: &#39;The term AND its descendants MUST be in the specified taxon, or
-      a descendant of that taxon
+    description: &#39;Points to a taxon constraint that states the SubjectTerm is ONLY
+      found in a taxon or descendant. Formally, the term AND its descendants MUST
+      be in the specified taxon, or a descendant of that taxon
 
       &#39;
     comments:
@@ -339,8 +362,9 @@ attributes:
     range: TaxonConstraint
   never_in:
     name: never_in
-    description: &#39;The term AND its descendants MUST NOT be in the specified taxon,
-      or a descendant of that taxon
+    description: &#39;Points to a taxon constraint that states the SubjectTerm is NEVER
+      found in a taxon or descendant. Formally, the term AND its descendants MUST
+      NOT be in the specified taxon, or a descendant of that taxon
 
       &#39;
     from_schema: https://w3id.org/linkml/taxon_constraints
@@ -379,6 +403,7 @@ attributes:
     range: TaxonConstraint
   id:
     name: id
+    description: the OBO CURIE for the term
     from_schema: https://w3id.org/linkml/taxon_constraints
     rank: 1000
     identifier: true
@@ -389,6 +414,7 @@ attributes:
     range: uriorcurie
   label:
     name: label
+    description: the human readable name or label of the term
     from_schema: https://w3id.org/linkml/taxon_constraints
     rank: 1000
     slot_uri: rdfs:label

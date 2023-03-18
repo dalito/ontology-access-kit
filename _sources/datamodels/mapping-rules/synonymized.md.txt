@@ -1,6 +1,6 @@
 # Slot: synonymized
 
-URI: [li:synonymized](https://w3id.org/linkml/lexical_index/synonymized)
+URI: [mappingrules:synonymized](https://w3id.org/oak/mapping-rules-datamodel/synonymized)
 
 
 
@@ -22,7 +22,7 @@ URI: [li:synonymized](https://w3id.org/linkml/lexical_index/synonymized)
 
 ## Properties
 
-* Range: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
+* Range: [Boolean](Boolean.md)
 
 
 
@@ -41,7 +41,7 @@ URI: [li:synonymized](https://w3id.org/linkml/lexical_index/synonymized)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/lexical_index
+* from schema: https://w3id.org/oak/mapping-rules-datamodel
 
 
 
@@ -51,7 +51,7 @@ URI: [li:synonymized](https://w3id.org/linkml/lexical_index/synonymized)
 <details>
 ```yaml
 name: synonymized
-from_schema: https://w3id.org/linkml/lexical_index
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 alias: synonymized
 owner: RelationshipToTerm

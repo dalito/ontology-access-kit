@@ -14,7 +14,9 @@ URI: [tc:Taxon](https://w3id.org/linkml/taxon_constraints/Taxon)
       Term <|-- Taxon
       
       Taxon : id
+        
       Taxon : label
+        
       
 ```
 
@@ -32,8 +34,8 @@ URI: [tc:Taxon](https://w3id.org/linkml/taxon_constraints/Taxon)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 1..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |  | [Term](Term.md) |
-| [label](label.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | [Term](Term.md) |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | the OBO CURIE for the term | [Term](Term.md) |
+| [label](label.md) | 0..1 <br/> [String](String.md) | the human readable name or label of the term | [Term](Term.md) |
 
 
 
@@ -130,6 +132,7 @@ is_a: Term
 attributes:
   id:
     name: id
+    description: the OBO CURIE for the term
     from_schema: https://w3id.org/linkml/taxon_constraints
     rank: 1000
     identifier: true
@@ -140,6 +143,7 @@ attributes:
     range: uriorcurie
   label:
     name: label
+    description: the human readable name or label of the term
     from_schema: https://w3id.org/linkml/taxon_constraints
     rank: 1000
     slot_uri: rdfs:label

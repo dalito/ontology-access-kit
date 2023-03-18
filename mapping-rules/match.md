@@ -2,7 +2,7 @@
 _Reg-ex rule to match substrings in labels._
 
 
-URI: [mrules:match](https://w3id.org/linkml/mapping_rules_datamodel/match)
+URI: [mappingrules:match](https://w3id.org/oak/mapping-rules-datamodel/match)
 
 
 
@@ -24,7 +24,7 @@ URI: [mrules:match](https://w3id.org/linkml/mapping_rules_datamodel/match)
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 
@@ -43,7 +43,7 @@ URI: [mrules:match](https://w3id.org/linkml/mapping_rules_datamodel/match)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/mapping_rules_datamodel
+* from schema: https://w3id.org/oak/mapping-rules-datamodel
 
 
 
@@ -54,7 +54,7 @@ URI: [mrules:match](https://w3id.org/linkml/mapping_rules_datamodel/match)
 ```yaml
 name: match
 description: Reg-ex rule to match substrings in labels.
-from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 alias: match
 owner: Synonymizer

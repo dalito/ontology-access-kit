@@ -1,6 +1,6 @@
 # Slot: nodeIds
 
-URI: [og:nodeIds](https://github.com/geneontology/obographs/nodeIds)
+URI: [obographs:nodeIds](https://github.com/geneontology/obographs/nodeIds)
 
 
 
@@ -22,7 +22,7 @@ URI: [og:nodeIds](https://github.com/geneontology/obographs/nodeIds)
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 * Multivalued: True
 
 

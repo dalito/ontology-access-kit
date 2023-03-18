@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: Postcondition</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/mapping-rules/Postcondition.md.txt" rel="nofollow"> View page source</a>
@@ -83,12 +87,14 @@
              
   <section id="class-postcondition">
 <h1>Class: Postcondition<a class="headerlink" href="#class-postcondition" title="Permalink to this headline"></a></h1>
-<p>URI: <a class="reference external" href="https://w3id.org/linkml/mapping_rules_datamodel/Postcondition">mrules:Postcondition</a></p>
+<p>URI: <a class="reference external" href="https://w3id.org/oak/mapping-rules-datamodel/Postcondition">mappingrules:Postcondition</a></p>
 <div class="mermaid">
              classDiagram
     class Postcondition
       Postcondition : predicate_id
+        
       Postcondition : weight
+        
       
         </div><!-- no inheritance hierarchy -->
 <section id="slots">
@@ -103,12 +109,12 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="predicate_id.html"><span class="doc std std-doc">predicate_id</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="weight.html"><span class="doc std std-doc">weight</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Float.html"><span class="doc std std-doc">Float</span></a></p></td>
 <td><p>Weighting of the rule, positive increases the confidence, negative decreases</p></td>
 <td><p>direct</p></td>
 </tr>
@@ -139,7 +145,7 @@
 <section id="schema-source">
 <h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><p>from schema: https://w3id.org/linkml/mapping_rules_datamodel</p></li>
+<li><p>from schema: https://w3id.org/oak/mapping-rules-datamodel</p></li>
 </ul>
 </section>
 </section>
@@ -153,10 +159,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>mrules:Postcondition</p></td>
+<td><p>mappingrules:Postcondition</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>mrules:Postcondition</p></td>
+<td><p>mappingrules:Postcondition</p></td>
 </tr>
 </tbody>
 </table>
@@ -169,7 +175,7 @@
 <details>
 ```yaml
 name: Postcondition
-from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 attributes:
   predicate_id:
@@ -177,13 +183,13 @@ attributes:
     comments:
     - if the rule is invertible, then the predicate is inverted, e.g. skos broad becomes
       narrow
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
   weight:
     name: weight
     description: Weighting of the rule, positive increases the confidence, negative
       decreases
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     see_also:
     - https://en.wikipedia.org/wiki/Logit
     - https://upload.wikimedia.org/wikipedia/commons/5/57/Logit.png
@@ -196,7 +202,7 @@ attributes:
 &lt;details&gt;
 ```yaml
 name: Postcondition
-from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 attributes:
   predicate_id:
@@ -204,7 +210,7 @@ attributes:
     comments:
     - if the rule is invertible, then the predicate is inverted, e.g. skos broad becomes
       narrow
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     alias: predicate_id
     owner: Postcondition
@@ -215,7 +221,7 @@ attributes:
     name: weight
     description: Weighting of the rule, positive increases the confidence, negative
       decreases
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     see_also:
     - https://en.wikipedia.org/wiki/Logit
     - https://upload.wikimedia.org/wikipedia/commons/5/57/Logit.png

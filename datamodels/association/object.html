@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Slot: object</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/association/object.md.txt" rel="nofollow"> View page source</a>
@@ -98,7 +102,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="Association.html"><span class="doc std std-doc">Association</span></a></p></td>
 <td><p>A generic association between a thing (subject) and another thing (object)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="PropertyValue.html"><span class="doc std std-doc">PropertyValue</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="NegatedAssociation.html"><span class="doc std std-doc">NegatedAssociation</span></a></p></td>
+<td><p>A negated association between a thing (subject) and another thing (object)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="PropertyValue.html"><span class="doc std std-doc">PropertyValue</span></a></p></td>
 <td><p>A generic tag-value that can be associated with an association</p></td>
 </tr>
 </tbody>
@@ -107,7 +114,7 @@
 <section id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Range: <span class="xref myst">xsd:anyURI</span></p></li>
+<li><p>Range: <a class="reference internal" href="Uriorcurie.html"><span class="doc std std-doc">Uriorcurie</span></a></p></li>
 </ul>
 </section>
 <section id="identifier-and-mapping-information">
@@ -133,6 +140,7 @@ slot_uri: rdf:object
 alias: object
 domain_of:
 - Association
+- NegatedAssociation
 - PropertyValue
 range: uriorcurie
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>

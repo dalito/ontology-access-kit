@@ -12,9 +12,15 @@ URI: [oa:Annotation](http://www.w3.org/ns/oa#Annotation)
  classDiagram
     class Association
       Association : object
+        
       Association : predicate
+        
       Association : property_values
+        
+          Association ..> PropertyValue : property_values
+        
       Association : subject
+        
       
 ```
 
@@ -28,13 +34,20 @@ URI: [oa:Annotation](http://www.w3.org/ns/oa#Annotation)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [subject](subject.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI) | The thing which the association is about | direct |
-| [predicate](predicate.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI) | The type of relationship between the subject and object | direct |
-| [object](object.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI) | An ontology entity that is associated with the subject | direct |
+| [subject](subject.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The thing which the association is about | direct |
+| [predicate](predicate.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The type of relationship between the subject and object | direct |
+| [object](object.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | An ontology entity that is associated with the subject | direct |
 | [property_values](property_values.md) | 0..* <br/> [PropertyValue](PropertyValue.md) |  | direct |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [RollupGroup](RollupGroup.md) | [associations](associations.md) | range | [Association](Association.md) |
 
 
 
@@ -63,7 +76,7 @@ URI: [oa:Annotation](http://www.w3.org/ns/oa#Annotation)
 | Mapping Type | Mapped Value |
 | ---  | ---  |
 | self | oa:Annotation |
-| native | assoc:Association |
+| native | ontoassoc:Association |
 
 
 
@@ -112,6 +125,7 @@ attributes:
     owner: Association
     domain_of:
     - Association
+    - NegatedAssociation
     range: uriorcurie
   predicate:
     name: predicate
@@ -123,6 +137,7 @@ attributes:
     owner: Association
     domain_of:
     - Association
+    - NegatedAssociation
     - PropertyValue
     range: uriorcurie
   object:
@@ -137,6 +152,7 @@ attributes:
     owner: Association
     domain_of:
     - Association
+    - NegatedAssociation
     - PropertyValue
     range: uriorcurie
   property_values:
@@ -148,6 +164,7 @@ attributes:
     owner: Association
     domain_of:
     - Association
+    - NegatedAssociation
     range: PropertyValue
     inlined: true
 class_uri: oa:Annotation

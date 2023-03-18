@@ -16,6 +16,7 @@ URI: [rdf:object](rdf:object)
 | Name | Description |
 | --- | --- |
 [Association](Association.md) | A generic association between a thing (subject) and another thing (object)
+[NegatedAssociation](NegatedAssociation.md) | A negated association between a thing (subject) and another thing (object)
 [PropertyValue](PropertyValue.md) | A generic tag-value that can be associated with an association
 
 
@@ -25,7 +26,7 @@ URI: [rdf:object](rdf:object)
 
 ## Properties
 
-* Range: [xsd:anyURI](xsd:anyURI)
+* Range: [Uriorcurie](Uriorcurie.md)
 
 
 
@@ -63,6 +64,7 @@ slot_uri: rdf:object
 alias: object
 domain_of:
 - Association
+- NegatedAssociation
 - PropertyValue
 range: uriorcurie
 

@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: PropertyValue</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/obograph/PropertyValue.md.txt" rel="nofollow"> View page source</a>
@@ -87,7 +91,7 @@
 <ul class="simple">
 <li><p><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</p></li>
 </ul>
-<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/PropertyValue">og:PropertyValue</a></p>
+<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/PropertyValue">obographs:PropertyValue</a></p>
 <div class="mermaid">
              classDiagram
     class PropertyValue
@@ -96,10 +100,20 @@
       PropertyValue &lt;|-- XrefPropertyValue
       PropertyValue &lt;|-- SynonymPropertyValue
       
+      PropertyValue : lang
+        
       PropertyValue : meta
+        
+          PropertyValue ..&gt; Meta : meta
+        
       PropertyValue : pred
+        
       PropertyValue : val
+        
+      PropertyValue : valType
+        
       PropertyValue : xrefs
+        
       
         </div><section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
@@ -126,12 +140,12 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="pred.html"><span class="doc std std-doc">pred</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>the predicate of an edge</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="val.html"><span class="doc std std-doc">val</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>the value of a property</p></td>
 <td><p>direct</p></td>
 </tr>
@@ -143,6 +157,16 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="meta.html"><span class="doc std std-doc">meta</span></a></p></td>
 <td><p>0..1 <br/> <a class="reference internal" href="Meta.html"><span class="doc std std-doc">Meta</span></a></p></td>
 <td><p>A collection of metadata about either an ontology (graph), an entity, or an a…</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="valType.html"><span class="doc std std-doc">valType</span></a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
+<td><p>the datatype of a property value</p></td>
+<td><p>direct</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="lang.html"><span class="doc std std-doc">lang</span></a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
+<td><p>the language of a property value</p></td>
 <td><p>direct</p></td>
 </tr>
 </tbody>
@@ -179,10 +203,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>og:PropertyValue</p></td>
+<td><p>obographs:PropertyValue</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>og:PropertyValue</p></td>
+<td><p>obographs:PropertyValue</p></td>
 </tr>
 </tbody>
 </table>
@@ -212,6 +236,8 @@ slots:
 - val
 - xrefs
 - meta
+- valType
+- lang
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
 
 ### Induced
@@ -244,11 +270,14 @@ attributes:
     - Edge
     - SynonymPropertyValue
     - PropertyValue
+    - SynonymTypeDefinition
     range: string
   val:
     name: val
     description: the value of a property
     from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - value
     rank: 1000
     slot_uri: rdf:object
     alias: val
@@ -262,6 +291,8 @@ attributes:
       ontologies, vocabularies, databases, or websites. The semantics of xrefs are
       intentionally weak, and most closely align with rdfs:seeAlso
     from_schema: https://github.com/geneontology/obographs
+    exact_mappings:
+    - oio:hasDbXref
     close_mappings:
     - rdfs:seeAlso
     rank: 1000
@@ -290,6 +321,29 @@ attributes:
     - PropertyValue
     - Axiom
     range: Meta
+  valType:
+    name: valType
+    description: the datatype of a property value
+    from_schema: https://github.com/geneontology/obographs
+    aliases:
+    - value type
+    - datatype
+    rank: 1000
+    alias: valType
+    owner: PropertyValue
+    domain_of:
+    - PropertyValue
+    range: string
+  lang:
+    name: lang
+    description: the language of a property value
+    from_schema: https://github.com/geneontology/obographs
+    rank: 1000
+    alias: lang
+    owner: PropertyValue
+    domain_of:
+    - PropertyValue
+    range: string
 
 </pre></div>
 </div>

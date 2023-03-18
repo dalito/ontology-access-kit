@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: GroupedStatistics</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/summary-statistics/GroupedStatistics.md.txt" rel="nofollow"> View page source</a>
@@ -91,11 +95,27 @@
       SummaryStatisticsReport &lt;|-- GroupedStatistics
       
       GroupedStatistics : agents
+        
+          GroupedStatistics ..&gt; Agent : agents
+        
       GroupedStatistics : compared_with
+        
+          GroupedStatistics ..&gt; Ontology : compared_with
+        
       GroupedStatistics : id
+        
       GroupedStatistics : ontologies
+        
+          GroupedStatistics ..&gt; Ontology : ontologies
+        
       GroupedStatistics : partitions
+        
+          GroupedStatistics ..&gt; UngroupedStatistics : partitions
+        
       GroupedStatistics : was_generated_by
+        
+          GroupedStatistics ..&gt; SummaryStatisticsCalculationActivity : was_generated_by
+        
       
         </div><section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
@@ -124,7 +144,7 @@
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="id.html"><span class="doc std std-doc">id</span></a></p></td>
-<td><p>1..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>1..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Unique handle for this report</p></td>
 <td><p><a class="reference internal" href="SummaryStatisticsReport.html"><span class="doc std std-doc">SummaryStatisticsReport</span></a></p></td>
 </tr>

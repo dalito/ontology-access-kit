@@ -2,7 +2,7 @@
 _A list of identifiers of predicates that form the precedent clause of a property chain rule_
 
 
-URI: [og:chainPredicateIds](https://github.com/geneontology/obographs/chainPredicateIds)
+URI: [obographs:chainPredicateIds](https://github.com/geneontology/obographs/chainPredicateIds)
 
 
 
@@ -24,7 +24,7 @@ URI: [og:chainPredicateIds](https://github.com/geneontology/obographs/chainPredi
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 * Multivalued: True
 
 

@@ -2,7 +2,7 @@
 _Any parameters to be applied to the transformation algorithm_
 
 
-URI: [li:params](https://w3id.org/linkml/lexical_index/params)
+URI: [mappingrules:params](https://w3id.org/oak/mapping-rules-datamodel/params)
 
 
 
@@ -24,7 +24,7 @@ URI: [li:params](https://w3id.org/linkml/lexical_index/params)
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 
 
 
@@ -43,7 +43,7 @@ URI: [li:params](https://w3id.org/linkml/lexical_index/params)
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/lexical_index
+* from schema: https://w3id.org/oak/mapping-rules-datamodel
 
 
 
@@ -54,7 +54,7 @@ URI: [li:params](https://w3id.org/linkml/lexical_index/params)
 ```yaml
 name: params
 description: Any parameters to be applied to the transformation algorithm
-from_schema: https://w3id.org/linkml/lexical_index
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 alias: params
 owner: LexicalTransformation

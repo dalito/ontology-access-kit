@@ -2,7 +2,7 @@
 _The class that is defined by this axiom_
 
 
-URI: [og:definedClassId](https://github.com/geneontology/obographs/definedClassId)
+URI: [obographs:definedClassId](https://github.com/geneontology/obographs/definedClassId)
 
 
 
@@ -24,7 +24,7 @@ URI: [og:definedClassId](https://github.com/geneontology/obographs/definedClassI
 
 ## Properties
 
-* Range: [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+* Range: [String](String.md)
 * Required: True
 
 

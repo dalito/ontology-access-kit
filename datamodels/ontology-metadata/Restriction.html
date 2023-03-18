@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: Restriction</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/ontology-metadata/Restriction.md.txt" rel="nofollow"> View page source</a>
@@ -91,16 +95,37 @@
       AnonymousClassExpression &lt;|-- Restriction
       
       Restriction : allValuesFrom
+        
       Restriction : cardinality
+        
       Restriction : complementOf
+        
       Restriction : disjointWith
+        
       Restriction : equivalentClass
+        
+          Restriction ..&gt; ClassExpression : equivalentClass
+        
       Restriction : intersectionOf
+        
+          Restriction ..&gt; ClassExpression : intersectionOf
+        
       Restriction : oneOf
+        
+          Restriction ..&gt; ClassExpression : oneOf
+        
       Restriction : onProperty
+        
+          Restriction ..&gt; PropertyExpression : onProperty
+        
       Restriction : someValuesFrom
+        
       Restriction : subClassOf
+        
+          Restriction ..&gt; ClassExpression : subClassOf
+        
       Restriction : unionOf
+        
       
         </div><section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
@@ -133,17 +158,17 @@
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="someValuesFrom.html"><span class="doc std std-doc">someValuesFrom</span></a></p></td>
-<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..* <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="allValuesFrom.html"><span class="doc std std-doc">allValuesFrom</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="disjointWith.html"><span class="doc std std-doc">disjointWith</span></a></p></td>
-<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..* <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p><a class="reference internal" href="ClassExpression.html"><span class="doc std std-doc">ClassExpression</span></a></p></td>
 </tr>
@@ -163,12 +188,12 @@
 <td><p><a class="reference internal" href="ClassExpression.html"><span class="doc std std-doc">ClassExpression</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="cardinality.html"><span class="doc std std-doc">cardinality</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p><a class="reference internal" href="ClassExpression.html"><span class="doc std std-doc">ClassExpression</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="complementOf.html"><span class="doc std std-doc">complementOf</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p><a class="reference internal" href="ClassExpression.html"><span class="doc std std-doc">ClassExpression</span></a></p></td>
 </tr>
@@ -178,7 +203,7 @@
 <td><p><a class="reference internal" href="ClassExpression.html"><span class="doc std std-doc">ClassExpression</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="unionOf.html"><span class="doc std std-doc">unionOf</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p><a class="reference internal" href="ClassExpression.html"><span class="doc std std-doc">ClassExpression</span></a></p></td>
 </tr>

@@ -4,7 +4,7 @@ _A generic tag-value that can be associated with an association._
 
 
 
-URI: [assoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
+URI: [ontoassoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
 
 
 
@@ -12,7 +12,9 @@ URI: [assoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
  classDiagram
     class PropertyValue
       PropertyValue : object
+        
       PropertyValue : predicate
+        
       
 ```
 
@@ -26,8 +28,8 @@ URI: [assoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [predicate](predicate.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI) | The type of relationship between the subject and object | direct |
-| [object](object.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI) | An ontology entity that is associated with the subject | direct |
+| [predicate](predicate.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The type of relationship between the subject and object | direct |
+| [object](object.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | An ontology entity that is associated with the subject | direct |
 
 
 
@@ -38,6 +40,7 @@ URI: [assoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [Association](Association.md) | [property_values](property_values.md) | range | [PropertyValue](PropertyValue.md) |
+| [NegatedAssociation](NegatedAssociation.md) | [property_values](property_values.md) | range | [PropertyValue](PropertyValue.md) |
 
 
 
@@ -65,8 +68,8 @@ URI: [assoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | assoc:PropertyValue |
-| native | assoc:PropertyValue |
+| self | ontoassoc:PropertyValue |
+| native | ontoassoc:PropertyValue |
 
 
 
@@ -110,6 +113,7 @@ attributes:
     owner: PropertyValue
     domain_of:
     - Association
+    - NegatedAssociation
     - PropertyValue
     range: uriorcurie
   object:
@@ -124,6 +128,7 @@ attributes:
     owner: PropertyValue
     domain_of:
     - Association
+    - NegatedAssociation
     - PropertyValue
     range: uriorcurie
 

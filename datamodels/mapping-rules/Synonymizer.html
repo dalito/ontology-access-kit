@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: Synonymizer</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/mapping-rules/Synonymizer.md.txt" rel="nofollow"> View page source</a>
@@ -83,15 +87,20 @@
              
   <section id="class-synonymizer">
 <h1>Class: Synonymizer<a class="headerlink" href="#class-synonymizer" title="Permalink to this headline"></a></h1>
-<p>URI: <a class="reference external" href="https://w3id.org/linkml/mapping_rules_datamodel/Synonymizer">mrules:Synonymizer</a></p>
+<p>URI: <a class="reference external" href="https://w3id.org/oak/mapping-rules-datamodel/Synonymizer">mappingrules:Synonymizer</a></p>
 <div class="mermaid">
              classDiagram
     class Synonymizer
       Synonymizer : match
+        
       Synonymizer : match_scope
+        
       Synonymizer : qualifier
+        
       Synonymizer : replacement
+        
       Synonymizer : the_rule
+        
       
         </div><!-- no inheritance hierarchy -->
 <section id="slots">
@@ -106,27 +115,27 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="the_rule.html"><span class="doc std std-doc">the_rule</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Description of the rule</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="match.html"><span class="doc std std-doc">match</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Reg-ex rule to match substrings in labels</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="match_scope.html"><span class="doc std std-doc">match_scope</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Scope of the reg-ex rule</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="replacement.html"><span class="doc std std-doc">replacement</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Reg-ex rule to replace substrings in labels</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="qualifier.html"><span class="doc std std-doc">qualifier</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Type of match for the new synonym generated</p></td>
 <td><p>direct</p></td>
 </tr>
@@ -157,7 +166,7 @@
 <section id="schema-source">
 <h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><p>from schema: https://w3id.org/linkml/mapping_rules_datamodel</p></li>
+<li><p>from schema: https://w3id.org/oak/mapping-rules-datamodel</p></li>
 </ul>
 </section>
 </section>
@@ -171,10 +180,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>mrules:Synonymizer</p></td>
+<td><p>mappingrules:Synonymizer</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>mrules:Synonymizer</p></td>
+<td><p>mappingrules:Synonymizer</p></td>
 </tr>
 </tbody>
 </table>
@@ -187,37 +196,37 @@
 <details>
 ```yaml
 name: Synonymizer
-from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 attributes:
   the_rule:
     name: the_rule
     description: Description of the rule.
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     range: string
   match:
     name: match
     description: Reg-ex rule to match substrings in labels.
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     range: string
   match_scope:
     name: match_scope
     description: Scope of the reg-ex rule
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     range: string
   replacement:
     name: replacement
     description: Reg-ex rule to replace substrings in labels
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     range: string
   qualifier:
     name: qualifier
     description: Type of match for the new synonym generated.
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     range: string
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
@@ -227,13 +236,13 @@ attributes:
 &lt;details&gt;
 ```yaml
 name: Synonymizer
-from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 attributes:
   the_rule:
     name: the_rule
     description: Description of the rule.
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     alias: the_rule
     owner: Synonymizer
@@ -243,7 +252,7 @@ attributes:
   match:
     name: match
     description: Reg-ex rule to match substrings in labels.
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     alias: match
     owner: Synonymizer
@@ -253,7 +262,7 @@ attributes:
   match_scope:
     name: match_scope
     description: Scope of the reg-ex rule
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     alias: match_scope
     owner: Synonymizer
@@ -263,7 +272,7 @@ attributes:
   replacement:
     name: replacement
     description: Reg-ex rule to replace substrings in labels
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     alias: replacement
     owner: Synonymizer
@@ -273,7 +282,7 @@ attributes:
   qualifier:
     name: qualifier
     description: Type of match for the new synonym generated.
-    from_schema: https://w3id.org/linkml/mapping_rules_datamodel
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     alias: qualifier
     owner: Synonymizer

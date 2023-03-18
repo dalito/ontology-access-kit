@@ -4,7 +4,7 @@ _A user-specified configuration that determines how a particular search operatio
 
 
 
-URI: [search:SearchBaseConfiguration](https://w3id.org/linkml/search_datamodel/SearchBaseConfiguration)
+URI: [ontosearch:SearchBaseConfiguration](https://w3id.org/oak/search-datamodel/SearchBaseConfiguration)
 
 
 
@@ -12,16 +12,31 @@ URI: [search:SearchBaseConfiguration](https://w3id.org/linkml/search_datamodel/S
  classDiagram
     class SearchBaseConfiguration
       SearchBaseConfiguration : categories
+        
       SearchBaseConfiguration : cursor
+        
       SearchBaseConfiguration : force_case_insensitive
+        
       SearchBaseConfiguration : include_obsoletes_in_results
+        
       SearchBaseConfiguration : is_complete
+        
       SearchBaseConfiguration : is_fuzzy
+        
       SearchBaseConfiguration : is_partial
+        
       SearchBaseConfiguration : limit
+        
       SearchBaseConfiguration : properties
+        
+          SearchBaseConfiguration ..> SearchProperty : properties
+        
       SearchBaseConfiguration : search_terms
+        
       SearchBaseConfiguration : syntax
+        
+          SearchBaseConfiguration ..> SearchTermSyntax : syntax
+        
       
 ```
 
@@ -38,14 +53,14 @@ URI: [search:SearchBaseConfiguration](https://w3id.org/linkml/search_datamodel/S
 | [search_terms](search_terms.md) | 0..* <br/> [SearchTerm](SearchTerm.md) | An individual search term | direct |
 | [syntax](syntax.md) | 0..1 <br/> [SearchTermSyntax](SearchTermSyntax.md) | Determines how the search term is interpreted | direct |
 | [properties](properties.md) | 0..* <br/> [SearchProperty](SearchProperty.md) | determines which properties are searched over | direct |
-| [limit](limit.md) | 0..1 <br/> [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | the maximum number of search results to be returned in one batch | direct |
-| [cursor](cursor.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) |  | direct |
-| [is_partial](is_partial.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | allows matches where the search term is a subset of the full span | direct |
-| [is_complete](is_complete.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
-| [include_obsoletes_in_results](include_obsoletes_in_results.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
-| [is_fuzzy](is_fuzzy.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
-| [categories](categories.md) | 0..* <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | categories that should be matched | direct |
-| [force_case_insensitive](force_case_insensitive.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | force case insensitive matching | direct |
+| [limit](limit.md) | 0..1 <br/> [Integer](Integer.md) | the maximum number of search results to be returned in one batch | direct |
+| [cursor](cursor.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [is_partial](is_partial.md) | 0..1 <br/> [Boolean](Boolean.md) | allows matches where the search term is a subset of the full span | direct |
+| [is_complete](is_complete.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [include_obsoletes_in_results](include_obsoletes_in_results.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [is_fuzzy](is_fuzzy.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
+| [categories](categories.md) | 0..* <br/> [Uriorcurie](Uriorcurie.md) | categories that should be matched | direct |
+| [force_case_insensitive](force_case_insensitive.md) | 0..1 <br/> [Boolean](Boolean.md) | force case insensitive matching | direct |
 
 
 
@@ -79,7 +94,7 @@ URI: [search:SearchBaseConfiguration](https://w3id.org/linkml/search_datamodel/S
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/search_datamodel
+* from schema: https://w3id.org/oak/search-datamodel
 
 
 
@@ -89,8 +104,8 @@ URI: [search:SearchBaseConfiguration](https://w3id.org/linkml/search_datamodel/S
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | search:SearchBaseConfiguration |
-| native | search:SearchBaseConfiguration |
+| self | ontosearch:SearchBaseConfiguration |
+| native | ontosearch:SearchBaseConfiguration |
 
 
 
@@ -109,7 +124,7 @@ description: A user-specified configuration that determines how a particular sea
   operation works
 todos:
 - rename this SearchConfiguration
-from_schema: https://w3id.org/linkml/search_datamodel
+from_schema: https://w3id.org/oak/search-datamodel
 rank: 1000
 attributes:
   search_terms:
@@ -120,70 +135,70 @@ attributes:
     - This slot is optional when the configuration is used to paramterize multiple
       searches
     - If multiple terms are provided this is treated as a union query
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
     range: SearchTerm
   syntax:
     name: syntax
     description: Determines how the search term is interpreted
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: SearchTermSyntax
   properties:
     name: properties
     description: determines which properties are searched over
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
     range: SearchProperty
   limit:
     name: limit
     description: the maximum number of search results to be returned in one batch
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: integer
   cursor:
     name: cursor
     description: when the number of search results exceed the limit this can be used
       to iterate through results
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: integer
   is_partial:
     name: is_partial
     description: allows matches where the search term is a subset of the full span
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: boolean
   is_complete:
     name: is_complete
     deprecated: use is_partial
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: boolean
   include_obsoletes_in_results:
     name: include_obsoletes_in_results
     deprecated: use properties to explicitly list properties
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: boolean
   is_fuzzy:
     name: is_fuzzy
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: boolean
   categories:
     name: categories
     description: categories that should be matched
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
     range: uriorcurie
   force_case_insensitive:
     name: force_case_insensitive
     description: force case insensitive matching
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: boolean
 
@@ -199,7 +214,7 @@ description: A user-specified configuration that determines how a particular sea
   operation works
 todos:
 - rename this SearchConfiguration
-from_schema: https://w3id.org/linkml/search_datamodel
+from_schema: https://w3id.org/oak/search-datamodel
 rank: 1000
 attributes:
   search_terms:
@@ -210,7 +225,7 @@ attributes:
     - This slot is optional when the configuration is used to paramterize multiple
       searches
     - If multiple terms are provided this is treated as a union query
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
     alias: search_terms
@@ -221,7 +236,7 @@ attributes:
   syntax:
     name: syntax
     description: Determines how the search term is interpreted
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: syntax
     owner: SearchBaseConfiguration
@@ -231,7 +246,7 @@ attributes:
   properties:
     name: properties
     description: determines which properties are searched over
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
     alias: properties
@@ -242,7 +257,7 @@ attributes:
   limit:
     name: limit
     description: the maximum number of search results to be returned in one batch
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: limit
     owner: SearchBaseConfiguration
@@ -253,7 +268,7 @@ attributes:
     name: cursor
     description: when the number of search results exceed the limit this can be used
       to iterate through results
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: cursor
     owner: SearchBaseConfiguration
@@ -264,7 +279,7 @@ attributes:
   is_partial:
     name: is_partial
     description: allows matches where the search term is a subset of the full span
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: is_partial
     owner: SearchBaseConfiguration
@@ -274,7 +289,7 @@ attributes:
   is_complete:
     name: is_complete
     deprecated: use is_partial
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: is_complete
     owner: SearchBaseConfiguration
@@ -284,7 +299,7 @@ attributes:
   include_obsoletes_in_results:
     name: include_obsoletes_in_results
     deprecated: use properties to explicitly list properties
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: include_obsoletes_in_results
     owner: SearchBaseConfiguration
@@ -293,7 +308,7 @@ attributes:
     range: boolean
   is_fuzzy:
     name: is_fuzzy
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: is_fuzzy
     owner: SearchBaseConfiguration
@@ -303,7 +318,7 @@ attributes:
   categories:
     name: categories
     description: categories that should be matched
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
     alias: categories
@@ -314,7 +329,7 @@ attributes:
   force_case_insensitive:
     name: force_case_insensitive
     description: force case insensitive matching
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: force_case_insensitive
     owner: SearchBaseConfiguration

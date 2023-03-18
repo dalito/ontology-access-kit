@@ -13,7 +13,7 @@ URI: [owl:deprecated](http://www.w3.org/2002/07/owl#deprecated)
 
 | Name | Description |
 | --- | --- |
-[Meta](Meta.md) | A collection of annotations on an entity or ontology or axiom
+[Meta](Meta.md) | A collection of annotations on an entity or ontology or edge or axiom
 
 
 
@@ -22,7 +22,7 @@ URI: [owl:deprecated](http://www.w3.org/2002/07/owl#deprecated)
 
 ## Properties
 
-* Range: [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
+* Range: [Boolean](Boolean.md)
 
 
 

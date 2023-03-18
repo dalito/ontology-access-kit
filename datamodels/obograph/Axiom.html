@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: Axiom</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/obograph/Axiom.md.txt" rel="nofollow"> View page source</a>
@@ -83,7 +87,7 @@
              
   <section id="class-axiom">
 <h1>Class: Axiom<a class="headerlink" href="#class-axiom" title="Permalink to this headline"></a></h1>
-<p>_A generic grouping for any OWL axiom that is not captured by existing constructs in this standard.
+<p>_A generic grouping for any OWL axiom or group of axioms that is not captured by existing constructs in this standard.
 _</p>
 <ul class="simple">
 <li><p><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</p></li>
@@ -98,6 +102,9 @@ _</p>
       Axiom &lt;|-- PropertyChainAxiom
       
       Axiom : meta
+        
+          Axiom ..&gt; Meta : meta
+        
       
         </div><section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
@@ -153,7 +160,7 @@ _</p>
 <td><p>owl:Axiom</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>og:Axiom</p></td>
+<td><p>obographs:Axiom</p></td>
 </tr>
 </tbody>
 </table>
@@ -166,8 +173,8 @@ _</p>
 <details>
 ```yaml
 name: Axiom
-description: 'A generic grouping for any OWL axiom that is not captured by existing
-  constructs in this standard.
+description: 'A generic grouping for any OWL axiom or group of axioms that is not
+  captured by existing constructs in this standard.
 <p>‘
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
@@ -184,8 +191,8 @@ class_uri: owl:Axiom</p></li>
 &lt;details&gt;
 ```yaml
 name: Axiom
-description: &#39;A generic grouping for any OWL axiom that is not captured by existing
-  constructs in this standard.
+description: &#39;A generic grouping for any OWL axiom or group of axioms that is not
+  captured by existing constructs in this standard.
 
   &#39;
 from_schema: https://github.com/geneontology/obographs

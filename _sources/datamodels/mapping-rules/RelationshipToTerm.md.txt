@@ -4,7 +4,7 @@ _A relationship of an ontology element to a lexical term_
 
 
 
-URI: [li:RelationshipToTerm](https://w3id.org/linkml/lexical_index/RelationshipToTerm)
+URI: [mappingrules:RelationshipToTerm](https://w3id.org/oak/mapping-rules-datamodel/RelationshipToTerm)
 
 
 
@@ -12,11 +12,19 @@ URI: [li:RelationshipToTerm](https://w3id.org/linkml/lexical_index/RelationshipT
  classDiagram
     class RelationshipToTerm
       RelationshipToTerm : element
+        
       RelationshipToTerm : element_term
+        
       RelationshipToTerm : pipeline
+        
+          RelationshipToTerm ..> LexicalTransformationPipeline : pipeline
+        
       RelationshipToTerm : predicate
+        
       RelationshipToTerm : source
+        
       RelationshipToTerm : synonymized
+        
       
 ```
 
@@ -30,12 +38,12 @@ URI: [li:RelationshipToTerm](https://w3id.org/linkml/lexical_index/RelationshipT
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [predicate](predicate.md) | 0..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |  | direct |
-| [element](element.md) | 0..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |  | direct |
-| [element_term](element_term.md) | 0..1 <br/> [xsd:string](http://www.w3.org/2001/XMLSchema#string) | the original term used in the element | direct |
-| [source](source.md) | 0..1 <br/> [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) |  | direct |
+| [predicate](predicate.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
+| [element](element.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
+| [element_term](element_term.md) | 0..1 <br/> [String](String.md) | the original term used in the element | direct |
+| [source](source.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
 | [pipeline](pipeline.md) | 0..* <br/> [LexicalTransformationPipeline](LexicalTransformationPipeline.md) |  | direct |
-| [synonymized](synonymized.md) | 0..1 <br/> [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) |  | direct |
+| [synonymized](synonymized.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
 
 
 
@@ -63,7 +71,7 @@ URI: [li:RelationshipToTerm](https://w3id.org/linkml/lexical_index/RelationshipT
 ### Schema Source
 
 
-* from schema: https://w3id.org/linkml/lexical_index
+* from schema: https://w3id.org/oak/mapping-rules-datamodel
 
 
 
@@ -73,8 +81,8 @@ URI: [li:RelationshipToTerm](https://w3id.org/linkml/lexical_index/RelationshipT
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | li:RelationshipToTerm |
-| native | li:RelationshipToTerm |
+| self | mappingrules:RelationshipToTerm |
+| native | mappingrules:RelationshipToTerm |
 
 
 
@@ -90,38 +98,38 @@ URI: [li:RelationshipToTerm](https://w3id.org/linkml/lexical_index/RelationshipT
 ```yaml
 name: RelationshipToTerm
 description: A relationship of an ontology element to a lexical term
-from_schema: https://w3id.org/linkml/lexical_index
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 attributes:
   predicate:
     name: predicate
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     range: uriorcurie
   element:
     name: element
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     range: uriorcurie
   element_term:
     name: element_term
     description: the original term used in the element
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
   source:
     name: source
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     range: uriorcurie
   pipeline:
     name: pipeline
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
     range: LexicalTransformationPipeline
   synonymized:
     name: synonymized
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     range: boolean
 
@@ -134,12 +142,12 @@ attributes:
 ```yaml
 name: RelationshipToTerm
 description: A relationship of an ontology element to a lexical term
-from_schema: https://w3id.org/linkml/lexical_index
+from_schema: https://w3id.org/oak/mapping-rules-datamodel
 rank: 1000
 attributes:
   predicate:
     name: predicate
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     alias: predicate
     owner: RelationshipToTerm
@@ -148,7 +156,7 @@ attributes:
     range: uriorcurie
   element:
     name: element
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     alias: element
     owner: RelationshipToTerm
@@ -158,7 +166,7 @@ attributes:
   element_term:
     name: element_term
     description: the original term used in the element
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     alias: element_term
     owner: RelationshipToTerm
@@ -167,7 +175,7 @@ attributes:
     range: string
   source:
     name: source
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     alias: source
     owner: RelationshipToTerm
@@ -176,7 +184,7 @@ attributes:
     range: uriorcurie
   pipeline:
     name: pipeline
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
     alias: pipeline
@@ -186,7 +194,7 @@ attributes:
     range: LexicalTransformationPipeline
   synonymized:
     name: synonymized
-    from_schema: https://w3id.org/linkml/lexical_index
+    from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     alias: synonymized
     owner: RelationshipToTerm

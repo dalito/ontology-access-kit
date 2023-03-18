@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: SearchResult</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/search/SearchResult.md.txt" rel="nofollow"> View page source</a>
@@ -84,18 +88,26 @@
   <section id="class-searchresult">
 <h1>Class: SearchResult<a class="headerlink" href="#class-searchresult" title="Permalink to this headline"></a></h1>
 <p><em>An individual search result</em></p>
-<p>URI: <a class="reference external" href="https://w3id.org/linkml/search_datamodel/SearchResult">search:SearchResult</a></p>
+<p>URI: <a class="reference external" href="https://w3id.org/oak/search-datamodel/SearchResult">ontosearch:SearchResult</a></p>
 <div class="mermaid">
              classDiagram
     class SearchResult
       SearchResult : matches_full_search_term
+        
       SearchResult : object_id
+        
       SearchResult : object_label
+        
       SearchResult : object_match_field
+        
       SearchResult : object_source
+        
       SearchResult : object_source_version
+        
       SearchResult : rank
+        
       SearchResult : snippet
+        
       
         </div><!-- no inheritance hierarchy -->
 <section id="slots">
@@ -110,42 +122,42 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="rank.html"><span class="doc std std-doc">rank</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Integer.html"><span class="doc std std-doc">Integer</span></a></p></td>
 <td><p>For relevancy-ranked results, this indicates the relevancy, with low numbers …</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="object_id.html"><span class="doc std std-doc">object_id</span></a></p></td>
-<td><p>1..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>1..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>The CURIE of the matched term</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="object_label.html"><span class="doc std std-doc">object_label</span></a></p></td>
-<td><p>0..1 <em>recommended</em> <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <em>recommended</em> <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>The label/name of the matched term</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="object_source.html"><span class="doc std std-doc">object_source</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>The ontology or other source that contains the matched term</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="object_source_version.html"><span class="doc std std-doc">object_source_version</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>Version IRI or version string of the source of the object term</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="object_match_field.html"><span class="doc std std-doc">object_match_field</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>The field/property in which the match was found</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="matches_full_search_term.html"><span class="doc std std-doc">matches_full_search_term</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Boolean.html"><span class="doc std std-doc">Boolean</span></a></p></td>
 <td><p>Does the matched field match the full string</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="snippet.html"><span class="doc std std-doc">snippet</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p>shows how the field was matched</p></td>
 <td><p>direct</p></td>
 </tr>
@@ -176,7 +188,7 @@
 <section id="schema-source">
 <h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this headline"></a></h3>
 <ul class="simple">
-<li><p>from schema: https://w3id.org/linkml/search_datamodel</p></li>
+<li><p>from schema: https://w3id.org/oak/search-datamodel</p></li>
 </ul>
 </section>
 </section>
@@ -190,10 +202,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>search:SearchResult</p></td>
+<td><p>ontosearch:SearchResult</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>search:SearchResult</p></td>
+<td><p>ontosearch:SearchResult</p></td>
 </tr>
 </tbody>
 </table>
@@ -207,58 +219,58 @@
 ```yaml
 name: SearchResult
 description: An individual search result
-from_schema: https://w3id.org/linkml/search_datamodel
+from_schema: https://w3id.org/oak/search-datamodel
 rank: 1000
 attributes:
   rank:
     name: rank
     description: For relevancy-ranked results, this indicates the relevancy, with
       low numbers being the most relevant
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: integer
   object_id:
     name: object_id
     description: The CURIE of the matched term
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_id
     required: true
   object_label:
     name: object_label
     description: The label/name of the matched term
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_label
     recommended: true
   object_source:
     name: object_source
     description: The ontology or other source that contains the matched term
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_source
   object_source_version:
     name: object_source_version
     description: Version IRI or version string of the source of the object term.
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_source_version
   object_match_field:
     name: object_match_field
     description: The field/property in which the match was found
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_match_field
   matches_full_search_term:
     name: matches_full_search_term
     description: Does the matched field match the full string
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     range: boolean
   snippet:
     name: snippet
     description: shows how the field was matched
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
 
@@ -268,14 +280,14 @@ attributes:
 ```yaml
 name: SearchResult
 description: An individual search result
-from_schema: https://w3id.org/linkml/search_datamodel
+from_schema: https://w3id.org/oak/search-datamodel
 rank: 1000
 attributes:
   rank:
     name: rank
     description: For relevancy-ranked results, this indicates the relevancy, with
       low numbers being the most relevant
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: rank
     owner: SearchResult
@@ -285,7 +297,7 @@ attributes:
   object_id:
     name: object_id
     description: The CURIE of the matched term
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_id
     alias: object_id
@@ -297,7 +309,7 @@ attributes:
   object_label:
     name: object_label
     description: The label/name of the matched term
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_label
     alias: object_label
@@ -309,7 +321,7 @@ attributes:
   object_source:
     name: object_source
     description: The ontology or other source that contains the matched term
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_source
     alias: object_source
@@ -320,7 +332,7 @@ attributes:
   object_source_version:
     name: object_source_version
     description: Version IRI or version string of the source of the object term.
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_source_version
     alias: object_source_version
@@ -331,7 +343,7 @@ attributes:
   object_match_field:
     name: object_match_field
     description: The field/property in which the match was found
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_match_field
     alias: object_match_field
@@ -342,7 +354,7 @@ attributes:
   matches_full_search_term:
     name: matches_full_search_term
     description: Does the matched field match the full string
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: matches_full_search_term
     owner: SearchResult
@@ -352,7 +364,7 @@ attributes:
   snippet:
     name: snippet
     description: shows how the field was matched
-    from_schema: https://w3id.org/linkml/search_datamodel
+    from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     alias: snippet
     owner: SearchResult

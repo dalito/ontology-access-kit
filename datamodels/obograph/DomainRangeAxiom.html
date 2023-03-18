@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Class: DomainRangeAxiom</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/obograph/DomainRangeAxiom.md.txt" rel="nofollow"> View page source</a>
@@ -83,18 +87,27 @@
              
   <section id="class-domainrangeaxiom">
 <h1>Class: DomainRangeAxiom<a class="headerlink" href="#class-domainrangeaxiom" title="Permalink to this headline"></a></h1>
-<p><em>An axiom that represents some combination of domain and range assertions.</em></p>
-<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/DomainRangeAxiom">og:DomainRangeAxiom</a></p>
+<p><em>This groups potentially multiple axioms that constrain the usage of a property depending on some combination of domain and range.</em></p>
+<p>URI: <a class="reference external" href="https://github.com/geneontology/obographs/DomainRangeAxiom">obographs:DomainRangeAxiom</a></p>
 <div class="mermaid">
              classDiagram
     class DomainRangeAxiom
       Axiom &lt;|-- DomainRangeAxiom
       
       DomainRangeAxiom : allValuesFromEdges
+        
+          DomainRangeAxiom ..&gt; Edge : allValuesFromEdges
+        
       DomainRangeAxiom : domainClassIds
+        
       DomainRangeAxiom : meta
+        
+          DomainRangeAxiom ..&gt; Meta : meta
+        
       DomainRangeAxiom : predicateId
+        
       DomainRangeAxiom : rangeClassIds
+        
       
         </div><section id="inheritance">
 <h2>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline"></a></h2>
@@ -118,17 +131,17 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="predicateId.html"><span class="doc std std-doc">predicateId</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="domainClassIds.html"><span class="doc std std-doc">domainClassIds</span></a></p></td>
-<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..* <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="rangeClassIds.html"><span class="doc std std-doc">rangeClassIds</span></a></p></td>
-<td><p>0..* <br/> <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></td>
+<td><p>0..* <br/> <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></td>
 <td><p></p></td>
 <td><p>direct</p></td>
 </tr>
@@ -167,7 +180,7 @@
 <section id="comments">
 <h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations may merge these but only when semantically valid</p></li>
+<li><p>When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations may merge these, but only when semantically valid.</p></li>
 </ul>
 </section>
 <section id="identifier-and-mapping-information">
@@ -189,10 +202,10 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>self</p></td>
-<td><p>og:DomainRangeAxiom</p></td>
+<td><p>obographs:DomainRangeAxiom</p></td>
 </tr>
 <tr class="row-odd"><td><p>native</p></td>
-<td><p>og:DomainRangeAxiom</p></td>
+<td><p>obographs:DomainRangeAxiom</p></td>
 </tr>
 </tbody>
 </table>
@@ -205,12 +218,13 @@
 <details>
 ```yaml
 name: DomainRangeAxiom
-description: An axiom that represents some combination of domain and range assertions.
+description: This groups potentially multiple axioms that constrain the usage of a
+  property depending on some combination of domain and range.
 comments:
 - When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom
   with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated
   to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations
-  may merge these but only when semantically valid
+  may merge these, but only when semantically valid.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom
@@ -226,12 +240,13 @@ slots:
 &lt;details&gt;
 ```yaml
 name: DomainRangeAxiom
-description: An axiom that represents some combination of domain and range assertions.
+description: This groups potentially multiple axioms that constrain the usage of a
+  property depending on some combination of domain and range.
 comments:
 - When converting from OWL, an OWL domain axiom may be translated to a DomainRangeAxiom
   with a domainClassIds, and no rangeClassIds. An OWL range axiom may be translated
   to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations
-  may merge these but only when semantically valid
+  may merge these, but only when semantically valid.
 from_schema: https://github.com/geneontology/obographs
 rank: 1000
 is_a: Axiom

@@ -27,11 +27,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> oaklib
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +74,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Slot: lbl</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/datamodels/obograph/lbl.md.txt" rel="nofollow"> View page source</a>
@@ -96,10 +100,16 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="Graph.html"><span class="doc std std-doc">Graph</span></a></p></td>
-<td><p>A graph is a collection of nodes and edges that represents a single ontology</p></td>
+<td><p>A graph is a collection of nodes and edges and other axioms that represents a…</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="Node.html"><span class="doc std std-doc">Node</span></a></p></td>
 <td><p>A node is a class, property, or other entity in an ontology</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="SubsetDefinition.html"><span class="doc std std-doc">SubsetDefinition</span></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="SynonymTypeDefinition.html"><span class="doc std std-doc">SynonymTypeDefinition</span></a></p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -107,7 +117,7 @@
 <section id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline"></a></h2>
 <ul class="simple">
-<li><p>Range: <a class="reference external" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></p></li>
+<li><p>Range: <a class="reference internal" href="String.html"><span class="doc std std-doc">String</span></a></p></li>
 </ul>
 </section>
 <section id="aliases">
@@ -151,6 +161,8 @@ alias: lbl
 domain_of:
 - Graph
 - Node
+- SubsetDefinition
+- SynonymTypeDefinition
 range: string
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;/</span><span class="n">details</span><span class="o">&gt;</span>
 </pre></div>

@@ -23,14 +23,15 @@ Name: taxon-constraints
 | Slot | Description |
 | --- | --- |
 | [asserted](asserted.md) | holds if the constraint is asserted in the source ontology, rather than infer... |
+| [candidate](candidate.md) | true if this is a proposed candidate constraint |
 | [comments](comments.md) |  |
 | [contradicted_by](contradicted_by.md) | If the taxon constraint conflicts with another,  then this is the set of taxo... |
 | [description](description.md) | A description of the term |
 | [evolutionary](evolutionary.md) | holds if the constraint is an evolutionary statement |
-| [id](id.md) |  |
-| [label](label.md) |  |
-| [never_in](never_in.md) | The term AND its descendants MUST NOT be in the specified taxon, or a descend... |
-| [only_in](only_in.md) | The term AND its descendants MUST be in the specified taxon, or a descendant ... |
+| [id](id.md) | the OBO CURIE for the term |
+| [label](label.md) | the human readable name or label of the term |
+| [never_in](never_in.md) | Points to a taxon constraint that states the SubjectTerm is NEVER found in a ... |
+| [only_in](only_in.md) | Points to a taxon constraint that states the SubjectTerm is ONLY found in a t... |
 | [predicate](predicate.md) | The relationship type for the contraint (e |
 | [predicates](predicates.md) | The predicates that connect the subject term to the via_terms |
 | [present_in](present_in.md) | The term MAY be in the specified taxon, or a descendant of that taxon |
@@ -55,22 +56,21 @@ Name: taxon-constraints
 
 | Type | Description |
 | --- | --- |
-| [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean) | A binary (true or false) value |
-| [xsd:string](http://www.w3.org/2001/XMLSchema#string) | a compact URI |
-| [xsd:date](http://www.w3.org/2001/XMLSchema#date) | a date (year, month and day) in an idealized calendar |
-| [linkml:DateOrDatetime](https://w3id.org/linkml/DateOrDatetime) | Either a date or a datetime |
-| [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | The combination of a date and time |
-| [xsd:decimal](http://www.w3.org/2001/XMLSchema#decimal) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
-| [xsd:double](http://www.w3.org/2001/XMLSchema#double) | A real number that conforms to the xsd:double specification |
-| [xsd:float](http://www.w3.org/2001/XMLSchema#float) | A real number that conforms to the xsd:float specification |
-| [xsd:integer](http://www.w3.org/2001/XMLSchema#integer) | An integer |
-| [xsd:string](http://www.w3.org/2001/XMLSchema#string) | Prefix part of CURIE |
-| [shex:nonLiteral](shex:nonLiteral) | A URI, CURIE or BNODE that represents a node in a model |
-| [shex:iri](shex:iri) | A URI or CURIE that represents an object in the model |
-| [xsd:string](http://www.w3.org/2001/XMLSchema#string) | A character string |
-| [xsd:dateTime](http://www.w3.org/2001/XMLSchema#dateTime) | A time object represents a (local) time of day, independent of any particular... |
-| [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | a complete URI |
-| [xsd:anyURI](http://www.w3.org/2001/XMLSchema#anyURI) | a URI or a CURIE |
+| [Boolean](Boolean.md) | A binary (true or false) value |
+| [Date](Date.md) | a date (year, month and day) in an idealized calendar |
+| [DateOrDatetime](DateOrDatetime.md) | Either a date or a datetime |
+| [Datetime](Datetime.md) | The combination of a date and time |
+| [Decimal](Decimal.md) | A real number with arbitrary precision that conforms to the xsd:decimal speci... |
+| [Double](Double.md) | A real number that conforms to the xsd:double specification |
+| [Float](Float.md) | A real number that conforms to the xsd:float specification |
+| [Integer](Integer.md) | An integer |
+| [Ncname](Ncname.md) | Prefix part of CURIE |
+| [Nodeidentifier](Nodeidentifier.md) | A URI, CURIE or BNODE that represents a node in a model |
+| [Objectidentifier](Objectidentifier.md) | A URI or CURIE that represents an object in the model |
+| [String](String.md) | A character string |
+| [Time](Time.md) | A time object represents a (local) time of day, independent of any particular... |
+| [Uri](Uri.md) | a complete URI |
+| [Uriorcurie](Uriorcurie.md) | a URI or a CURIE |
 
 
 ## Subsets
