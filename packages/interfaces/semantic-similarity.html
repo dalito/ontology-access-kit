@@ -24,7 +24,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Class Enrichment Calculation Interface" href="class-enrichment.html" />
+    <link rel="next" title="Association Provider" href="association-provider.html" />
     <link rel="prev" title="Patcher Interface" href="patcher.html" /> 
 </head>
 
@@ -63,14 +63,15 @@
 <li class="toctree-l3"><a class="reference internal" href="mapping-provider.html">Mapping Provider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="obograph.html">OboGraph Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="text-annotator.html">Text Annotator Interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="owl.html">OWL Interface</a></li>
 <li class="toctree-l3"><a class="reference internal" href="summary-statistics.html">Summary Statistics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patcher.html">Patcher Interface</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Semantic Similarity Interface</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#oaklib.interfaces.semsim_interface.SemanticSimilarityInterface"><code class="docutils literal notranslate"><span class="pre">SemanticSimilarityInterface</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="association-provider.html">Association Provider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="class-enrichment.html">Class Enrichment Calculation Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="owl.html">OWL Interface</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../implementations/index.html">Implementations</a></li>
@@ -117,7 +118,7 @@
 <span id="id1"></span><h1>Semantic Similarity Interface<a class="headerlink" href="#semantic-similarity-interface" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="oaklib.interfaces.semsim_interface.SemanticSimilarityInterface">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oaklib.interfaces.semsim_interface.</span></span><span class="sig-name descname"><span class="pre">SemanticSimilarityInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource:</span> <span class="pre">~oaklib.resource.OntologyResource</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multilingual:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preferred_language:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_owl_top_and_bottom:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_metamodel_mapper:</span> <span class="pre">~oaklib.mappers.ontology_metadata_mapper.OntologyMetadataMapper</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_converter:</span> <span class="pre">~curies.api.Converter</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_relax_axioms:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_lookups:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/oaklib/interfaces/semsim_interface.html#SemanticSimilarityInterface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.interfaces.semsim_interface.SemanticSimilarityInterface" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oaklib.interfaces.semsim_interface.</span></span><span class="sig-name descname"><span class="pre">SemanticSimilarityInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource:</span> <span class="pre">~oaklib.resource.OntologyResource</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_multilingual:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_owl_top_and_bottom:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_metamodel_mapper:</span> <span class="pre">~oaklib.mappers.ontology_metadata_mapper.OntologyMetadataMapper</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_converter:</span> <span class="pre">~curies.api.Converter</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_relax_axioms:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_lookups:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/oaklib/interfaces/semsim_interface.html#SemanticSimilarityInterface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.interfaces.semsim_interface.SemanticSimilarityInterface" title="Permalink to this definition"></a></dt>
 <dd><p>An interface for calculating similarity measures between pairs of terms or
 collections of terms</p>
 <dl class="py method">
@@ -283,12 +284,6 @@ the whole corpus:</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="oaklib.interfaces.semsim_interface.SemanticSimilarityInterface.preferred_language">
-<span class="sig-name descname"><span class="pre">preferred_language</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#oaklib.interfaces.semsim_interface.SemanticSimilarityInterface.preferred_language" title="Permalink to this definition"></a></dt>
-<dd><p>The preferred language for labels and other lexical entities</p>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="oaklib.interfaces.semsim_interface.SemanticSimilarityInterface.autosave">
 <span class="sig-name descname"><span class="pre">autosave</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#oaklib.interfaces.semsim_interface.SemanticSimilarityInterface.autosave" title="Permalink to this definition"></a></dt>
 <dd><p>For adapters that wrap a transactional source (e.g sqlite), this controls
@@ -310,7 +305,7 @@ whether results should be auto-committed after each operation</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="patcher.html" class="btn btn-neutral float-left" title="Patcher Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="class-enrichment.html" class="btn btn-neutral float-right" title="Class Enrichment Calculation Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="association-provider.html" class="btn btn-neutral float-right" title="Association Provider" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
