@@ -1,10 +1,14 @@
 # Class: ExistentialRestrictionExpression
+
+
 _An existential restriction (OWL some values from) expression_
 
 
 
 
+
 URI: [owl:Restriction](http://www.w3.org/2002/07/owl#Restriction)
+
 
 
 
@@ -40,6 +44,8 @@ URI: [owl:Restriction](http://www.w3.org/2002/07/owl#Restriction)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [LogicalDefinitionAxiom](LogicalDefinitionAxiom.md) | [restrictions](restrictions.md) | range | [ExistentialRestrictionExpression](ExistentialRestrictionExpression.md) |
+| [DisjointClassExpressionsAxiom](DisjointClassExpressionsAxiom.md) | [classExpressions](classExpressions.md) | range | [ExistentialRestrictionExpression](ExistentialRestrictionExpression.md) |
+| [DisjointClassExpressionsAxiom](DisjointClassExpressionsAxiom.md) | [unionEquivalentToExpression](unionEquivalentToExpression.md) | range | [ExistentialRestrictionExpression](ExistentialRestrictionExpression.md) |
 
 
 
@@ -110,7 +116,6 @@ comments:
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - some values from expression
-rank: 1000
 slots:
 - fillerId
 - propertyId
@@ -136,7 +141,6 @@ comments:
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - some values from expression
-rank: 1000
 attributes:
   fillerId:
     name: fillerId

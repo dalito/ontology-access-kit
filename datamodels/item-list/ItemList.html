@@ -12,13 +12,13 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../_static/js/theme.js"></script>
@@ -50,13 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -84,7 +84,7 @@
            <div itemprop="articleBody">
              
   <section id="class-itemlist">
-<h1>Class: ItemList<a class="headerlink" href="#class-itemlist" title="Permalink to this heading"></a></h1>
+<h1>Class: ItemList<a class="headerlink" href="#class-itemlist" title="Link to this heading"></a></h1>
 <p><em>a list of entities plus metadata</em></p>
 <p>URI: <a class="reference external" href="http://schema.org/ItemList">schema:ItemList</a></p>
 <div class="mermaid">
@@ -100,11 +100,11 @@
         
       ItemList : itemListElements
         
-          ItemList ..&gt; ListItem : itemListElements
+          ItemList --&gt; ListItem : itemListElements
         
       ItemList : itemMetadataMap
         
-          ItemList ..&gt; ListItem : itemMetadataMap
+          ItemList --&gt; ListItem : itemMetadataMap
         
       ItemList : keywords
         
@@ -112,14 +112,14 @@
         
       ItemList : numberOfItems
         
-          ItemList ..&gt; ItemListOrderType : numberOfItems
+          ItemList --&gt; ItemListOrderType : numberOfItems
         
       ItemList : wasGeneratedBy
         
       
         </div><!-- no inheritance hierarchy -->
 <section id="slots">
-<h2>Slots<a class="headerlink" href="#slots" title="Permalink to this heading"></a></h2>
+<h2>Slots<a class="headerlink" href="#slots" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -130,18 +130,18 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="id.html"><span class="std std-doc">id</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="std std-doc">String</span></a></p></td>
-<td><p></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Uriorcurie.html"><span class="std std-doc">Uriorcurie</span></a></p></td>
+<td><p>The identifier of the list</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="name.html"><span class="std std-doc">name</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="std std-doc">String</span></a></p></td>
-<td><p></p></td>
+<td><p>0..1 <em>recommended</em> <br/> <a class="reference internal" href="String.html"><span class="std std-doc">String</span></a></p></td>
+<td><p>The name of the list</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="description.html"><span class="std std-doc">description</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="std std-doc">String</span></a></p></td>
-<td><p></p></td>
+<td><p>0..1 <em>recommended</em> <br/> <a class="reference internal" href="String.html"><span class="std std-doc">String</span></a></p></td>
+<td><p>A description of the list</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="itemListElements.html"><span class="std std-doc">itemListElements</span></a></p></td>
@@ -183,7 +183,7 @@
 </table>
 </section>
 <section id="usages">
-<h2>Usages<a class="headerlink" href="#usages" title="Permalink to this heading"></a></h2>
+<h2>Usages<a class="headerlink" href="#usages" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>used by</p></th>
@@ -201,17 +201,23 @@
 </tbody>
 </table>
 </section>
+<section id="aliases">
+<h2>Aliases<a class="headerlink" href="#aliases" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>list</p></li>
+</ul>
+</section>
 <section id="identifier-and-mapping-information">
-<h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this heading"></a></h2>
+<h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Link to this heading"></a></h2>
 <section id="schema-source">
-<h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this heading"></a></h3>
+<h3>Schema Source<a class="headerlink" href="#schema-source" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>from schema: https://w3id.org/oak/item-list</p></li>
 </ul>
 </section>
 </section>
 <section id="mappings">
-<h2>Mappings<a class="headerlink" href="#mappings" title="Permalink to this heading"></a></h2>
+<h2>Mappings<a class="headerlink" href="#mappings" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Mapping Type</p></th>
@@ -232,37 +238,57 @@
 </table>
 </section>
 <section id="linkml-source">
-<h2>LinkML Source<a class="headerlink" href="#linkml-source" title="Permalink to this heading"></a></h2>
+<h2>LinkML Source<a class="headerlink" href="#linkml-source" title="Link to this heading"></a></h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <section id="direct">
-<h3>Direct<a class="headerlink" href="#direct" title="Permalink to this heading"></a></h3>
+<h3>Direct<a class="headerlink" href="#direct" title="Link to this heading"></a></h3>
 <details>
 ```yaml
 name: ItemList
 description: a list of entities plus metadata
 from_schema: https://w3id.org/oak/item-list
+aliases:
+- list
 close_mappings:
 - rdf:List
-rank: 1000
 attributes:
   id:
     name: id
     description: The identifier of the list
+    comments:
+    - this is optional and hence declared as an identifier
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - ItemList
+    - Thing
     range: uriorcurie
   name:
     name: name
     description: The name of the list
+    examples:
+    - description: mTOR-pathway
+    - description: my-shopping-list
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - ItemList
+    - Thing
     range: string
+    recommended: true
   description:
     name: description
     description: A description of the list
+    examples:
+    - description: A list of genes in the mTOR pathway
+    - description: A list of items to buy at the supermarket
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - ItemList
+    - Thing
     range: string
+    recommended: true
   itemListElements:
     name: itemListElements
     description: The entities in the list, represented as a simple list
@@ -271,6 +297,8 @@ attributes:
     singular_name: itemListElement
     slot_uri: schema:itemListElement
     multivalued: true
+    domain_of:
+    - ItemList
     range: ListItem
     inlined: false
   numberOfItems:
@@ -279,6 +307,8 @@ attributes:
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     slot_uri: schema:numberOfItems
+    domain_of:
+    - ItemList
     range: ItemListOrderType
   itemMetadataMap:
     name: itemMetadataMap
@@ -286,6 +316,8 @@ attributes:
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     multivalued: true
+    domain_of:
+    - ItemList
     range: ListItem
     inlined: true
   categories:
@@ -299,6 +331,8 @@ attributes:
     singular_name: category
     slot_uri: dcterms:subject
     multivalued: true
+    domain_of:
+    - ItemList
     range: uriorcurie
   keywords:
     name: keywords
@@ -308,6 +342,8 @@ attributes:
     singular_name: keyword
     slot_uri: schema:keywords
     multivalued: true
+    domain_of:
+    - ItemList
     range: string
   additionalType:
     name: additionalType
@@ -321,6 +357,8 @@ attributes:
     rank: 1000
     slot_uri: schema:additionalType
     multivalued: true
+    domain_of:
+    - ItemList
     range: uriorcurie
   wasGeneratedBy:
     name: wasGeneratedBy
@@ -330,6 +368,8 @@ attributes:
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     multivalued: true
+    domain_of:
+    - ItemList
     range: uriorcurie
 class_uri: schema:ItemList
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
@@ -341,24 +381,30 @@ class_uri: schema:ItemList
 name: ItemList
 description: a list of entities plus metadata
 from_schema: https://w3id.org/oak/item-list
+aliases:
+- list
 close_mappings:
 - rdf:List
-rank: 1000
 attributes:
   id:
     name: id
     description: The identifier of the list
+    comments:
+    - this is optional and hence declared as an identifier
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     alias: id
     owner: ItemList
     domain_of:
     - ItemList
-    - ListItem
+    - Thing
     range: uriorcurie
   name:
     name: name
     description: The name of the list
+    examples:
+    - description: mTOR-pathway
+    - description: my-shopping-list
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     alias: name
@@ -367,9 +413,13 @@ attributes:
     - ItemList
     - Thing
     range: string
+    recommended: true
   description:
     name: description
     description: A description of the list
+    examples:
+    - description: A list of genes in the mTOR pathway
+    - description: A list of items to buy at the supermarket
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     alias: description
@@ -378,6 +428,7 @@ attributes:
     - ItemList
     - Thing
     range: string
+    recommended: true
   itemListElements:
     name: itemListElements
     description: The entities in the list, represented as a simple list
@@ -490,7 +541,7 @@ class_uri: schema:ItemList
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

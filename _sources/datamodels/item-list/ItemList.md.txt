@@ -1,10 +1,14 @@
 # Class: ItemList
+
+
 _a list of entities plus metadata_
 
 
 
 
+
 URI: [schema:ItemList](http://schema.org/ItemList)
+
 
 
 
@@ -21,11 +25,11 @@ URI: [schema:ItemList](http://schema.org/ItemList)
         
       ItemList : itemListElements
         
-          ItemList ..> ListItem : itemListElements
+          ItemList --> ListItem : itemListElements
         
       ItemList : itemMetadataMap
         
-          ItemList ..> ListItem : itemMetadataMap
+          ItemList --> ListItem : itemMetadataMap
         
       ItemList : keywords
         
@@ -33,7 +37,7 @@ URI: [schema:ItemList](http://schema.org/ItemList)
         
       ItemList : numberOfItems
         
-          ItemList ..> ItemListOrderType : numberOfItems
+          ItemList --> ItemListOrderType : numberOfItems
         
       ItemList : wasGeneratedBy
         
@@ -50,9 +54,9 @@ URI: [schema:ItemList](http://schema.org/ItemList)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [name](name.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The identifier of the list | direct |
+| [name](name.md) | 0..1 _recommended_ <br/> [String](String.md) | The name of the list | direct |
+| [description](description.md) | 0..1 _recommended_ <br/> [String](String.md) | A description of the list | direct |
 | [itemListElements](itemListElements.md) | 0..* <br/> [ListItem](ListItem.md) | The entities in the list, represented as a simple list | direct |
 | [numberOfItems](numberOfItems.md) | 0..1 <br/> [ItemListOrderType](ItemListOrderType.md) | The order of the items in the list | direct |
 | [itemMetadataMap](itemMetadataMap.md) | 0..* <br/> [ListItem](ListItem.md) | The entities in the list, represented as a map keyed by item id | direct |
@@ -73,6 +77,11 @@ URI: [schema:ItemList](http://schema.org/ItemList)
 
 
 
+
+## Aliases
+
+
+* list
 
 
 
@@ -116,28 +125,48 @@ URI: [schema:ItemList](http://schema.org/ItemList)
 name: ItemList
 description: a list of entities plus metadata
 from_schema: https://w3id.org/oak/item-list
+aliases:
+- list
 close_mappings:
 - rdf:List
-rank: 1000
 attributes:
   id:
     name: id
     description: The identifier of the list
+    comments:
+    - this is optional and hence declared as an identifier
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - ItemList
+    - Thing
     range: uriorcurie
   name:
     name: name
     description: The name of the list
+    examples:
+    - description: mTOR-pathway
+    - description: my-shopping-list
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - ItemList
+    - Thing
     range: string
+    recommended: true
   description:
     name: description
     description: A description of the list
+    examples:
+    - description: A list of genes in the mTOR pathway
+    - description: A list of items to buy at the supermarket
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - ItemList
+    - Thing
     range: string
+    recommended: true
   itemListElements:
     name: itemListElements
     description: The entities in the list, represented as a simple list
@@ -146,6 +175,8 @@ attributes:
     singular_name: itemListElement
     slot_uri: schema:itemListElement
     multivalued: true
+    domain_of:
+    - ItemList
     range: ListItem
     inlined: false
   numberOfItems:
@@ -154,6 +185,8 @@ attributes:
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     slot_uri: schema:numberOfItems
+    domain_of:
+    - ItemList
     range: ItemListOrderType
   itemMetadataMap:
     name: itemMetadataMap
@@ -161,6 +194,8 @@ attributes:
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     multivalued: true
+    domain_of:
+    - ItemList
     range: ListItem
     inlined: true
   categories:
@@ -174,6 +209,8 @@ attributes:
     singular_name: category
     slot_uri: dcterms:subject
     multivalued: true
+    domain_of:
+    - ItemList
     range: uriorcurie
   keywords:
     name: keywords
@@ -183,6 +220,8 @@ attributes:
     singular_name: keyword
     slot_uri: schema:keywords
     multivalued: true
+    domain_of:
+    - ItemList
     range: string
   additionalType:
     name: additionalType
@@ -196,6 +235,8 @@ attributes:
     rank: 1000
     slot_uri: schema:additionalType
     multivalued: true
+    domain_of:
+    - ItemList
     range: uriorcurie
   wasGeneratedBy:
     name: wasGeneratedBy
@@ -205,6 +246,8 @@ attributes:
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     multivalued: true
+    domain_of:
+    - ItemList
     range: uriorcurie
 class_uri: schema:ItemList
 
@@ -218,24 +261,30 @@ class_uri: schema:ItemList
 name: ItemList
 description: a list of entities plus metadata
 from_schema: https://w3id.org/oak/item-list
+aliases:
+- list
 close_mappings:
 - rdf:List
-rank: 1000
 attributes:
   id:
     name: id
     description: The identifier of the list
+    comments:
+    - this is optional and hence declared as an identifier
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     alias: id
     owner: ItemList
     domain_of:
     - ItemList
-    - ListItem
+    - Thing
     range: uriorcurie
   name:
     name: name
     description: The name of the list
+    examples:
+    - description: mTOR-pathway
+    - description: my-shopping-list
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     alias: name
@@ -244,9 +293,13 @@ attributes:
     - ItemList
     - Thing
     range: string
+    recommended: true
   description:
     name: description
     description: A description of the list
+    examples:
+    - description: A list of genes in the mTOR pathway
+    - description: A list of items to buy at the supermarket
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     alias: description
@@ -255,6 +308,7 @@ attributes:
     - ItemList
     - Thing
     range: string
+    recommended: true
   itemListElements:
     name: itemListElements
     description: The entities in the list, represented as a simple list

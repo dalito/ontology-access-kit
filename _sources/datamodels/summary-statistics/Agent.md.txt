@@ -1,10 +1,14 @@
 # Class: Agent
+
+
 _An agent_
 
 
 
 
+
 URI: [prov:Agent](http://www.w3.org/ns/prov#Agent)
+
 
 
 
@@ -28,7 +32,7 @@ URI: [prov:Agent](http://www.w3.org/ns/prov#Agent)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 1..1 <br/> [String](String.md) | the unique identifier for the agent | direct |
 | [label](label.md) | 0..1 <br/> [String](String.md) | the label for the agent | direct |
 
 
@@ -89,20 +93,27 @@ URI: [prov:Agent](http://www.w3.org/ns/prov#Agent)
 name: Agent
 description: An agent
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   id:
     name: id
     description: the unique identifier for the agent
     from_schema: https://w3id.org/oak/summary_statistics
     identifier: true
+    domain_of:
+    - SummaryStatisticsReport
+    - Ontology
+    - Agent
+    - ContributorRole
     range: string
+    required: true
   label:
     name: label
     description: the label for the agent
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: rdfs:label
+    domain_of:
+    - Agent
     range: string
 class_uri: prov:Agent
 
@@ -116,7 +127,6 @@ class_uri: prov:Agent
 name: Agent
 description: An agent
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   id:
     name: id
@@ -131,6 +141,7 @@ attributes:
     - Agent
     - ContributorRole
     range: string
+    required: true
   label:
     name: label
     description: the label for the agent

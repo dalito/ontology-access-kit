@@ -1,5 +1,8 @@
 # Slot: search_terms
+
+
 _An individual search term. The syntax is determined by the syntax slot_
+
 
 
 URI: [ontosearch:search_terms](https://w3id.org/oak/search-datamodel/search_terms)
@@ -13,9 +16,10 @@ URI: [ontosearch:search_terms](https://w3id.org/oak/search-datamodel/search_term
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[SearchBaseConfiguration](SearchBaseConfiguration.md) | A user-specified configuration that determines how a particular search operat...
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[SearchBaseConfiguration](SearchBaseConfiguration.md) | A user-specified configuration that determines how a particular search operat... |  no  |
+
 
 
 
@@ -25,10 +29,8 @@ URI: [ontosearch:search_terms](https://w3id.org/oak/search-datamodel/search_term
 ## Properties
 
 * Range: [SearchTerm](SearchTerm.md)
+
 * Multivalued: True
-
-
-
 
 
 
@@ -36,7 +38,7 @@ URI: [ontosearch:search_terms](https://w3id.org/oak/search-datamodel/search_term
 
 ## Comments
 
-* This slot is optional when the configuration is used to paramterize multiple searches
+* This slot is optional when the configuration is used to parameterize multiple searches
 * If multiple terms are provided this is treated as a union query
 
 ## Identifier and Mapping Information
@@ -62,7 +64,7 @@ URI: [ontosearch:search_terms](https://w3id.org/oak/search-datamodel/search_term
 name: search_terms
 description: An individual search term. The syntax is determined by the syntax slot
 comments:
-- This slot is optional when the configuration is used to paramterize multiple searches
+- This slot is optional when the configuration is used to parameterize multiple searches
 - If multiple terms are provided this is treated as a union query
 from_schema: https://w3id.org/oak/search-datamodel
 rank: 1000

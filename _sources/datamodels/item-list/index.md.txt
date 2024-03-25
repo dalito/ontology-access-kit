@@ -3,6 +3,7 @@
 A data model for representing simple lists of entities such as genes. The data model is based on the schema.org ItemList class.
 
 URI: https://w3id.org/oak/item-list
+
 Name: itemList
 
 
@@ -14,7 +15,8 @@ Name: itemList
 | [ItemList](ItemList.md) | a list of entities plus metadata |
 | [ItemListCollection](ItemListCollection.md) | a set of item lists |
 | [ListItem](ListItem.md) | an item in an item list |
-| [Thing](Thing.md) |  |
+| [Thing](Thing.md) | None |
+
 
 
 ## Slots
@@ -24,8 +26,8 @@ Name: itemList
 | [additionalType](additionalType.md) | An additional type for the item, typically used for adding more specific type... |
 | [categories](categories.md) | Controlled terms used to categorize an element |
 | [description](description.md) | A description of the list |
+| [elementId](elementId.md) | The identifier of the item |
 | [id](id.md) | The identifier of the list |
-| [identifier](identifier.md) | The identifier of the item |
 | [identifiers](identifiers.md) | A list of identifiers for the item |
 | [idType](idType.md) | The type of the identifier |
 | [item](item.md) | The item represented by the list item |
@@ -62,9 +64,12 @@ Name: itemList
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
 | [Integer](Integer.md) | An integer |
+| [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |
+| [Jsonpointer](Jsonpointer.md) | A string encoding a JSON Pointer |
 | [Ncname](Ncname.md) | Prefix part of CURIE |
 | [Nodeidentifier](Nodeidentifier.md) | A URI, CURIE or BNODE that represents a node in a model |
 | [Objectidentifier](Objectidentifier.md) | A URI or CURIE that represents an object in the model |
+| [Sparqlpath](Sparqlpath.md) | A string encoding a SPARQL Property Path |
 | [String](String.md) | A character string |
 | [Time](Time.md) | A time object represents a (local) time of day, independent of any particular... |
 | [Uri](Uri.md) | a complete URI |

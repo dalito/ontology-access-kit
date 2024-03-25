@@ -1,10 +1,14 @@
 # Class: FacetedCount
+
+
 _Counts broken down by a facet_
 
 
 
 
+
 URI: [summary_statistics:FacetedCount](https://w3id.org/oaklib/summary_statistics.FacetedCount)
+
 
 
 
@@ -28,8 +32,8 @@ URI: [summary_statistics:FacetedCount](https://w3id.org/oaklib/summary_statistic
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [facet](facet.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [filtered_count](filtered_count.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [facet](facet.md) | 0..1 <br/> [String](String.md) | the facet used to group the counts | direct |
+| [filtered_count](filtered_count.md) | 1..1 <br/> [Integer](Integer.md) | the number of items in the facet | direct |
 
 
 
@@ -99,7 +103,6 @@ description: Counts broken down by a facet
 comments:
 - For example, edge counts may be grouped by predicate (relationship type)
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   facet:
     name: facet
@@ -107,11 +110,18 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     key: true
+    domain_of:
+    - FacetedCount
+    - ChangeTypeStatistic
+    required: true
   filtered_count:
     name: filtered_count
     description: the number of items in the facet
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
+    domain_of:
+    - FacetedCount
+    - ChangeTypeStatistic
     range: integer
     required: true
 
@@ -127,7 +137,6 @@ description: Counts broken down by a facet
 comments:
 - For example, edge counts may be grouped by predicate (relationship type)
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   facet:
     name: facet
@@ -141,6 +150,7 @@ attributes:
     - FacetedCount
     - ChangeTypeStatistic
     range: string
+    required: true
   filtered_count:
     name: filtered_count
     description: the number of items in the facet

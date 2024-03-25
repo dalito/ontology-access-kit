@@ -1,5 +1,8 @@
 # Class: ItemListCollection
+
+
 _a set of item lists_
+
 
 
 
@@ -8,12 +11,13 @@ URI: [itemList:ItemListCollection](https://w3id.org/linkml/item-list/ItemListCol
 
 
 
+
 ```{mermaid}
  classDiagram
     class ItemListCollection
       ItemListCollection : itemLists
         
-          ItemListCollection ..> ItemList : itemLists
+          ItemListCollection --> ItemList : itemLists
         
       
 ```
@@ -36,7 +40,16 @@ URI: [itemList:ItemListCollection](https://w3id.org/linkml/item-list/ItemListCol
 
 
 
+## Aliases
 
+
+* item list catalog
+
+
+
+## Comments
+
+* this is used for when you wish to pass around multiple lists.
 
 ## Identifier and Mapping Information
 
@@ -76,14 +89,19 @@ URI: [itemList:ItemListCollection](https://w3id.org/linkml/item-list/ItemListCol
 ```yaml
 name: ItemListCollection
 description: a set of item lists
+comments:
+- this is used for when you wish to pass around multiple lists.
 from_schema: https://w3id.org/oak/item-list
-rank: 1000
+aliases:
+- item list catalog
 attributes:
   itemLists:
     name: itemLists
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     multivalued: true
+    domain_of:
+    - ItemListCollection
     range: ItemList
     inlined: true
 
@@ -96,8 +114,11 @@ attributes:
 ```yaml
 name: ItemListCollection
 description: a set of item lists
+comments:
+- this is used for when you wish to pass around multiple lists.
 from_schema: https://w3id.org/oak/item-list
-rank: 1000
+aliases:
+- item list catalog
 attributes:
   itemLists:
     name: itemLists

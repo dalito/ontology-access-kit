@@ -1,10 +1,14 @@
 # Class: MappingRuleCollection
+
+
 _A collection of mapping rules_
 
 
 
 
+
 URI: [mappingrules:MappingRuleCollection](https://w3id.org/oak/mapping-rules-datamodel/MappingRuleCollection)
+
 
 
 
@@ -15,7 +19,7 @@ URI: [mappingrules:MappingRuleCollection](https://w3id.org/oak/mapping-rules-dat
         
       MappingRuleCollection : rules
         
-          MappingRuleCollection ..> MappingRule : rules
+          MappingRuleCollection --> MappingRule : rules
         
       
 ```
@@ -80,7 +84,6 @@ URI: [mappingrules:MappingRuleCollection](https://w3id.org/oak/mapping-rules-dat
 name: MappingRuleCollection
 description: A collection of mapping rules
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   rules:
     name: rules
@@ -88,12 +91,16 @@ attributes:
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - MappingRuleCollection
     range: MappingRule
     inlined: true
   minimum_confidence:
     name: minimum_confidence
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
+    domain_of:
+    - MappingRuleCollection
     range: float
 tree_root: true
 
@@ -107,7 +114,6 @@ tree_root: true
 name: MappingRuleCollection
 description: A collection of mapping rules
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   rules:
     name: rules

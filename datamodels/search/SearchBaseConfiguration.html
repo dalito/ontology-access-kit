@@ -12,13 +12,13 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../_static/js/theme.js"></script>
@@ -50,13 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -84,7 +84,7 @@
            <div itemprop="articleBody">
              
   <section id="class-searchbaseconfiguration">
-<h1>Class: SearchBaseConfiguration<a class="headerlink" href="#class-searchbaseconfiguration" title="Permalink to this heading"></a></h1>
+<h1>Class: SearchBaseConfiguration<a class="headerlink" href="#class-searchbaseconfiguration" title="Link to this heading"></a></h1>
 <p><em>A user-specified configuration that determines how a particular search operation works</em></p>
 <p>URI: <a class="reference external" href="https://w3id.org/oak/search-datamodel/SearchBaseConfiguration">ontosearch:SearchBaseConfiguration</a></p>
 <div class="mermaid">
@@ -108,18 +108,18 @@
         
       SearchBaseConfiguration : properties
         
-          SearchBaseConfiguration ..&gt; SearchProperty : properties
+          SearchBaseConfiguration --&gt; SearchProperty : properties
         
       SearchBaseConfiguration : search_terms
         
       SearchBaseConfiguration : syntax
         
-          SearchBaseConfiguration ..&gt; SearchTermSyntax : syntax
+          SearchBaseConfiguration --&gt; SearchTermSyntax : syntax
         
       
         </div><!-- no inheritance hierarchy -->
 <section id="slots">
-<h2>Slots<a class="headerlink" href="#slots" title="Permalink to this heading"></a></h2>
+<h2>Slots<a class="headerlink" href="#slots" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -150,8 +150,8 @@
 <td><p>direct</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="cursor.html"><span class="std std-doc">cursor</span></a></p></td>
-<td><p>0..1 <br/> <a class="reference internal" href="String.html"><span class="std std-doc">String</span></a></p></td>
-<td><p></p></td>
+<td><p>0..1 <br/> <a class="reference internal" href="Integer.html"><span class="std std-doc">Integer</span></a></p></td>
+<td><p>when the number of search results exceed the limit this can be used to iterat…</p></td>
 <td><p>direct</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="is_partial.html"><span class="std std-doc">is_partial</span></a></p></td>
@@ -188,7 +188,7 @@
 </table>
 </section>
 <section id="usages">
-<h2>Usages<a class="headerlink" href="#usages" title="Permalink to this heading"></a></h2>
+<h2>Usages<a class="headerlink" href="#usages" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>used by</p></th>
@@ -217,22 +217,22 @@
 </table>
 </section>
 <section id="todos">
-<h2>TODOs<a class="headerlink" href="#todos" title="Permalink to this heading"></a></h2>
+<h2>TODOs<a class="headerlink" href="#todos" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>rename this SearchConfiguration</p></li>
 </ul>
 </section>
 <section id="identifier-and-mapping-information">
-<h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permalink to this heading"></a></h2>
+<h2>Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Link to this heading"></a></h2>
 <section id="schema-source">
-<h3>Schema Source<a class="headerlink" href="#schema-source" title="Permalink to this heading"></a></h3>
+<h3>Schema Source<a class="headerlink" href="#schema-source" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>from schema: https://w3id.org/oak/search-datamodel</p></li>
 </ul>
 </section>
 </section>
 <section id="mappings">
-<h2>Mappings<a class="headerlink" href="#mappings" title="Permalink to this heading"></a></h2>
+<h2>Mappings<a class="headerlink" href="#mappings" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Mapping Type</p></th>
@@ -250,10 +250,10 @@
 </table>
 </section>
 <section id="linkml-source">
-<h2>LinkML Source<a class="headerlink" href="#linkml-source" title="Permalink to this heading"></a></h2>
+<h2>LinkML Source<a class="headerlink" href="#linkml-source" title="Link to this heading"></a></h2>
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <section id="direct">
-<h3>Direct<a class="headerlink" href="#direct" title="Permalink to this heading"></a></h3>
+<h3>Direct<a class="headerlink" href="#direct" title="Link to this heading"></a></h3>
 <details>
 ```yaml
 name: SearchBaseConfiguration
@@ -262,25 +262,28 @@ description: A user-specified configuration that determines how a particular sea
 todos:
 - rename this SearchConfiguration
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   search_terms:
     name: search_terms
     description: An individual search term. The syntax is determined by the syntax
       slot
     comments:
-    - This slot is optional when the configuration is used to paramterize multiple
+    - This slot is optional when the configuration is used to parameterize multiple
       searches
     - If multiple terms are provided this is treated as a union query
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchBaseConfiguration
     range: SearchTerm
   syntax:
     name: syntax
     description: Determines how the search term is interpreted
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: SearchTermSyntax
   properties:
     name: properties
@@ -288,12 +291,16 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchBaseConfiguration
     range: SearchProperty
   limit:
     name: limit
     description: the maximum number of search results to be returned in one batch
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: integer
   cursor:
     name: cursor
@@ -301,29 +308,40 @@ attributes:
       to iterate through results
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
+    - SearchResultSet
     range: integer
   is_partial:
     name: is_partial
     description: allows matches where the search term is a subset of the full span
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   is_complete:
     name: is_complete
     deprecated: use is_partial
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   include_obsoletes_in_results:
     name: include_obsoletes_in_results
     deprecated: use properties to explicitly list properties
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   is_fuzzy:
     name: is_fuzzy
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   categories:
     name: categories
@@ -331,12 +349,16 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchBaseConfiguration
     range: uriorcurie
   force_case_insensitive:
     name: force_case_insensitive
     description: force case insensitive matching
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;/details&gt;
 
@@ -350,14 +372,13 @@ description: A user-specified configuration that determines how a particular sea
 todos:
 - rename this SearchConfiguration
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   search_terms:
     name: search_terms
     description: An individual search term. The syntax is determined by the syntax
       slot
     comments:
-    - This slot is optional when the configuration is used to paramterize multiple
+    - This slot is optional when the configuration is used to parameterize multiple
       searches
     - If multiple terms are provided this is treated as a union query
     from_schema: https://w3id.org/oak/search-datamodel
@@ -486,7 +507,7 @@ attributes:
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

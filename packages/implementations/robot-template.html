@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROBOT Template Adapter &mdash; oaklib  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=046fa432"></script>
+        <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LLM Adapter" href="llm.html" />
+    <link rel="prev" title="PantherDB Adapter" href="pantherdb.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            oaklib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">OAK Library Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interfaces/index.html">Interfaces</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Implementations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pronto.html">Pronto / OBO Files Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sqldb.html">SQL Database Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ols.html">Ontology Lookup Service (OLS) Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="simple_obo.html">Simple OBO Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="obograph.html">OBO Graph Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bioportal.html">Bioportal Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sparql.html">Sparql Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ubergraph.html">Ubergraph Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ontobee.html">Ontobee Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ols.html">Ontology Lookup Service (OLS) Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gilda.html">Gilda Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregator.html">Aggregator Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pantherdb.html">PantherDB Adapter</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ROBOT Template Adapter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#command-line-examples">Command Line Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="llm.html">LLM Adapter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../selectors.html">Ontology Adapter Selectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converters/index.html">Converters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datamodels/index.html">Datamodels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">oaklib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">OAK Library Documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Implementations</a></li>
+      <li class="breadcrumb-item active">ROBOT Template Adapter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/packages/implementations/robot-template.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="robot-template-adapter">
+<span id="robot-template-implementation"></span><h1>ROBOT Template Adapter<a class="headerlink" href="#robot-template-adapter" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is experimental and incomplete.</p>
+</div>
+<p>This is an extension of the abstract <span class="xref std std-ref">TabularInterface</span> adapter that provides
+access to a collection of <a class="reference external" href="http://robot.obolibrary.org/template">ROBOT templates</a>.</p>
+<p>Note that it does <em>NOT</em> use the ROBOT tool itself to access these, it uses custom
+code that only implements a portion of the spec.</p>
+<p>One of the main driving use cases here is to enable KGCL commands with ontologies that use ROBOT
+templates.</p>
+<p>For example, the <a class="reference external" href="https://github.com/obi-ontology/obi/tree/016ca67c7e6f31a048780cee56afde24d4af7125/src/ontology/templates">OBI templates folder on GitHub</a>
+contains a collection of ROBOT templates.</p>
+<ul class="simple">
+<li><p>assays.tsv</p></li>
+<li><p>biobank-specimens.tsv</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Assuming these are in a local path <code class="docutils literal notranslate"><span class="pre">my/path/templates</span></code>, you can use a selector:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>runoak<span class="w"> </span>-i<span class="w"> </span>robottemplate:my/path/templates<span class="w"> </span>COMMAND<span class="w"> </span>...
+</pre></div>
+</div>
+<p>Or in python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">oaklib</span> <span class="kn">import</span> <span class="n">get_adapter</span>
+<span class="n">adapter</span> <span class="o">=</span> <span class="n">get_adapter</span><span class="p">(</span><span class="s1">&#39;robottemplate:my/path/templatestemplates&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that this does NOT trigger compilation of the templates into OWL - this implementation works
+on the templates as a collection of TSVs, facilitating update operations.</p>
+<section id="command-line-examples">
+<h2>Command Line Examples<a class="headerlink" href="#command-line-examples" title="Link to this heading"></a></h2>
+<p>From here we assume your templates are in a local folder <code class="docutils literal notranslate"><span class="pre">./templates</span></code>.</p>
+<section id="basic-operations">
+<h3>Basic operations<a class="headerlink" href="#basic-operations" title="Link to this heading"></a></h3>
+<p>Currently very few operations are supported, but you can do basic things like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>runoak<span class="w"> </span>-i<span class="w"> </span>robottemplate:templates<span class="w"> </span>info<span class="w"> </span>OBI:0002516
+</pre></div>
+</div>
+<p>Returns:</p>
+<ul class="simple">
+<li><p>OBI:0002516 ! brain specimen</p></li>
+</ul>
+<p>Or limited search:</p>
+<blockquote>
+<div><p>runoak -i robottemplate:templates info l~brain</p>
+</div></blockquote>
+<p>Returns:</p>
+<ul class="simple">
+<li><p>OBI:0002516 ! brain specimen</p></li>
+<li><p>OBI:0003357 ! brain region atlas image data set</p></li>
+<li><p>…</p></li>
+</ul>
+</section>
+<section id="applying-kgcl-commands">
+<h3>Applying KGCL commands<a class="headerlink" href="#applying-kgcl-commands" title="Link to this heading"></a></h3>
+<p>You can also apply KGCL commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>runoak<span class="w"> </span>-i<span class="w"> </span>robottemplate:templates<span class="w"> </span>apply<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;rename OBI:0002516 from &#39;brain specimen&#39; to &#39;brain sample&#39;&quot;</span><span class="w"> </span>-o<span class="w"> </span>new_templates
+</pre></div>
+</div>
+<p>This will create a new copy of all templates in <code class="docutils literal notranslate"><span class="pre">new_templates</span></code>, with the label
+column modified in biobank-specimens.tsv</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>only a small subset of KGCL is implemented so far.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pantherdb.html" class="btn btn-neutral float-left" title="PantherDB Adapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="llm.html" class="btn btn-neutral float-right" title="LLM Adapter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

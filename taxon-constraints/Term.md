@@ -1,5 +1,8 @@
 # Class: Term
+
+
 _An ontology term. In this model this is either the SubjectTerm of a taxon constraint, or an actual taxon_
+
 
 
 
@@ -7,6 +10,7 @@ _An ontology term. In this model this is either the SubjectTerm of a taxon const
 
 
 URI: [owl:Class](http://www.w3.org/2002/07/owl#Class)
+
 
 
 
@@ -91,7 +95,6 @@ name: Term
 description: An ontology term. In this model this is either the SubjectTerm of a taxon
   constraint, or an actual taxon
 from_schema: https://w3id.org/oak/taxon_constraints
-rank: 1000
 abstract: true
 attributes:
   id:
@@ -100,13 +103,18 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     identifier: true
+    domain_of:
+    - Term
     range: uriorcurie
+    required: true
   label:
     name: label
     description: the human readable name or label of the term
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     slot_uri: rdfs:label
+    domain_of:
+    - Term
     range: string
 class_uri: owl:Class
 
@@ -121,7 +129,6 @@ name: Term
 description: An ontology term. In this model this is either the SubjectTerm of a taxon
   constraint, or an actual taxon
 from_schema: https://w3id.org/oak/taxon_constraints
-rank: 1000
 abstract: true
 attributes:
   id:

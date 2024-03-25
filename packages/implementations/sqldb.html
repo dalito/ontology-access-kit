@@ -12,13 +12,13 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../_static/js/theme.js"></script>
@@ -52,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Package Documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">OAK Library Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/index.html">Interfaces</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Implementations</a><ul class="current">
@@ -73,6 +73,9 @@
 <li class="toctree-l3"><a class="reference internal" href="ols.html">Ontology Lookup Service (OLS) Adapter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gilda.html">Gilda Adapter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aggregator.html">Aggregator Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pantherdb.html">PantherDB Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot-template.html">ROBOT Template Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm.html">LLM Adapter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../selectors.html">Ontology Adapter Selectors</a></li>
@@ -83,9 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -102,7 +105,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../index.html">Package Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">OAK Library Documentation</a></li>
           <li class="breadcrumb-item"><a href="index.html">Implementations</a></li>
       <li class="breadcrumb-item active">SQL Database Adapter</li>
       <li class="wy-breadcrumbs-aside">
@@ -115,7 +118,7 @@
            <div itemprop="articleBody">
              
   <section id="sql-database-adapter">
-<span id="sql-implementation"></span><h1>SQL Database Adapter<a class="headerlink" href="#sql-database-adapter" title="Permalink to this heading"></a></h1>
+<span id="sql-implementation"></span><h1>SQL Database Adapter<a class="headerlink" href="#sql-database-adapter" title="Link to this heading"></a></h1>
 <p>This wraps either a local or remote SQL Database</p>
 <p>The schema is assumed to follow:</p>
 <ul class="simple">
@@ -124,34 +127,48 @@
 <p>This uses the rdftab library to build an RDF-level <cite>statements</cite> table, on which numerous SQL Views
 are layered, providing higher level access</p>
 <section id="initialization">
-<h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this heading"></a></h2>
+<h2>Initialization<a class="headerlink" href="#initialization" title="Link to this heading"></a></h2>
 <p>If you omit a scheme and specify a filesystem path ending with <code class="code docutils literal notranslate"><span class="pre">.db</span></code> then the SqlDatabase implementation is selected, with
 sqlite as a sub-scheme.</p>
 <p>You can explicitly specify a sqlite database via a selector <code class="code docutils literal notranslate"><span class="pre">sqlite:path/to/sqlitefile.db</span></code></p>
 </section>
 <section id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading"></a></h2>
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="oaklib.implementations.sqldb.sql_implementation.SqlImplementation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oaklib.implementations.sqldb.sql_implementation.</span></span><span class="sig-name descname"><span class="pre">SqlImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource:</span> <span class="pre">~oaklib.resource.OntologyResource</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_multilingual:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_owl_top_and_bottom:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_metamodel_mapper:</span> <span class="pre">~oaklib.mappers.ontology_metadata_mapper.OntologyMetadataMapper</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_converter:</span> <span class="pre">~curies.api.Converter</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_relax_axioms:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_lookups:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">functional_writer:</span> <span class="pre">&lt;module</span> <span class="pre">'funowl.writers.FunctionalWriter'</span> <span class="pre">from</span> <span class="pre">'/home/runner/.cache/pypoetry/virtualenvs/oaklib-5bvmowLS-py3.9/lib/python3.9/site-packages/funowl/writers/FunctionalWriter.py'&gt;</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_session:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_connection:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_ontology_metadata_model:</span> <span class="pre">~linkml_runtime.utils.schemaview.SchemaView</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_prefix_map:</span> <span class="pre">~typing.Mapping[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_information_content_cache:</span> <span class="pre">~typing.Dict[~typing.Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_relationships_by_subject_index:</span> <span class="pre">~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~typing.List[~typing.Tuple[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_items_for_in_clause:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">can_store_associations:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/oaklib/implementations/sqldb/sql_implementation.html#SqlImplementation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.implementations.sqldb.sql_implementation.SqlImplementation" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oaklib.implementations.sqldb.sql_implementation.</span></span><span class="sig-name descname"><span class="pre">SqlImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource:</span> <span class="pre">~oaklib.resource.OntologyResource</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_multilingual:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_owl_top_and_bottom:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_metamodel_mapper:</span> <span class="pre">~oaklib.mappers.ontology_metadata_mapper.OntologyMetadataMapper</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_converter:</span> <span class="pre">~curies.api.Converter</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_relax_axioms:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_lookups:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_cache:</span> <span class="pre">~oaklib.utilities.keyval_cache.KeyValCache</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_edge_index:</span> <span class="pre">~oaklib.indexes.edge_index.EdgeIndex</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_entailed_edge_index:</span> <span class="pre">~oaklib.indexes.edge_index.EdgeIndex</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">functional_writer:</span> <span class="pre">&lt;module</span> <span class="pre">'funowl.writers.FunctionalWriter'</span> <span class="pre">from</span> <span class="pre">'/home/runner/.cache/pypoetry/virtualenvs/oaklib-5bvmowLS-py3.9/lib/python3.9/site-packages/funowl/writers/FunctionalWriter.py'&gt;</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_association_index:</span> <span class="pre">~oaklib.utilities.associations.association_index.AssociationIndex</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalizers:</span> <span class="pre">~typing.List[~oaklib.interfaces.association_provider_interface.EntityNormalizer]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_session:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_connection:</span> <span class="pre">~typing.Any</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_ontology_metadata_model:</span> <span class="pre">~linkml_runtime.utils.schemaview.SchemaView</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_prefix_map:</span> <span class="pre">~typing.Mapping[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_information_content_cache:</span> <span class="pre">~typing.Dict[~typing.Tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">float]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_relationships_by_subject_index:</span> <span class="pre">~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~typing.List[~typing.Tuple[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]]]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_items_for_in_clause:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">can_store_associations:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/oaklib/implementations/sqldb/sql_implementation.html#SqlImplementation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.implementations.sqldb.sql_implementation.SqlImplementation" title="Link to this definition"></a></dt>
 <dd><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">OntologyInterface</span></code> implementation that wraps a SQL Relational Database.</p>
-<p>This could be a local file (accessed via SQL Lite) or a local/remote server (e.g PostgreSQL).</p>
+<p>Currently this must be a SQLite database. PostgreSQL support is planned.</p>
 <p>To connect, either use SqlImplementation directly:</p>
-<p>Or use a selector:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">oaklib.implementations.sqldb.sql_implementation</span> <span class="kn">import</span> <span class="n">SqlImplementation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">oaklib.resource</span> <span class="kn">import</span> <span class="n">OntologyResource</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adapter</span> <span class="o">=</span> <span class="n">SqlImplementation</span><span class="p">(</span><span class="n">OntologyResource</span><span class="p">(</span><span class="s2">&quot;tests/input/go-nucleus.db&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">oaklib</span> <span class="kn">import</span> <span class="n">get_adapter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adapter</span> <span class="o">=</span> <span class="n">get_adapter</span><span class="p">(</span><span class="s2">&quot;sqlite:tests/input/go-nucleus.db&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you can also load from the semantic-sql repository:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">adapter</span> <span class="o">=</span> <span class="n">get_adapter</span><span class="p">(</span><span class="s2">&quot;sqlite:obo:obi&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>The schema is assumed to follow the <a class="reference external" href="https://github.com/incatools/semantic-sql">semantic-sql</a> schema.</p>
 <p>This uses SQLAlchemy ORM Models:</p>
 <ul class="simple">
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Statements</span></code></p></li>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Edge</span></code></p></li>
 </ul>
-<p>See also:</p>
+<section id="see-also">
+<h3>See Also<a class="headerlink" href="#see-also" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://incatools.github.io/ontology-access-kit/intro/tutorial07.html">Tutorial</a></p></li>
 <li><p><a class="reference external" href="https://incatools.github.io/ontology-access-kit/implementations/sqldb.html">SQL Implementation</a></p></li>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="oaklib.implementations.sqldb.sql_implementation.SqlImplementation.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OntologyResource</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OntologyInterface</span></span></span><a class="headerlink" href="#oaklib.implementations.sqldb.sql_implementation.SqlImplementation.create" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OntologyResource</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OntologyInterface</span></span></span><a class="headerlink" href="#oaklib.implementations.sqldb.sql_implementation.SqlImplementation.create" title="Link to this definition"></a></dt>
 <dd><p>Creates a new ontology interface from a resource</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -163,29 +180,30 @@ sqlite as a sub-scheme.</p>
 </dl>
 </dd></dl>
 
+</section>
 </dd></dl>
 
 </section>
 <section id="sql-alchemy-orm-model">
-<h2>SQL Alchemy ORM Model<a class="headerlink" href="#sql-alchemy-orm-model" title="Permalink to this heading"></a></h2>
+<h2>SQL Alchemy ORM Model<a class="headerlink" href="#sql-alchemy-orm-model" title="Link to this heading"></a></h2>
 <p>We use the SQLA Models from the <a class="reference external" href="https://github.com/incatools/semantic-sql">semantic-sql</a> project.</p>
 <p>This is under-the-hood and users of oaklib don’t need to know the details. However, if you ever need to
 craft a custom complex query this can provide a useful way to do this.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="semsql.sqla.semsql.Statements">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semsql.sqla.semsql.</span></span><span class="sig-name descname"><span class="pre">Statements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/semsql/sqla/semsql.html#Statements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#semsql.sqla.semsql.Statements" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semsql.sqla.semsql.</span></span><span class="sig-name descname"><span class="pre">Statements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/semsql/sqla/semsql.html#Statements"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#semsql.sqla.semsql.Statements" title="Link to this definition"></a></dt>
 <dd><p>Represents an RDF triple</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="semsql.sqla.semsql.Edge">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semsql.sqla.semsql.</span></span><span class="sig-name descname"><span class="pre">Edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/semsql/sqla/semsql.html#Edge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#semsql.sqla.semsql.Edge" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semsql.sqla.semsql.</span></span><span class="sig-name descname"><span class="pre">Edge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/semsql/sqla/semsql.html#Edge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#semsql.sqla.semsql.Edge" title="Link to this definition"></a></dt>
 <dd><p>A relation graph edge that connects two entities by a predicate. Note an edge is distinct from a statement, in that an axiom such as A SubClassOf R some B is represented as multiple statements, but is a single relation graph edge</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="semsql.sqla.semsql.EntailedEdge">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semsql.sqla.semsql.</span></span><span class="sig-name descname"><span class="pre">EntailedEdge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/semsql/sqla/semsql.html#EntailedEdge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#semsql.sqla.semsql.EntailedEdge" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">semsql.sqla.semsql.</span></span><span class="sig-name descname"><span class="pre">EntailedEdge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/semsql/sqla/semsql.html#EntailedEdge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#semsql.sqla.semsql.EntailedEdge" title="Link to this definition"></a></dt>
 <dd><p>A relation graph edge that is inferred</p>
 </dd></dl>
 
@@ -203,7 +221,7 @@ craft a custom complex query this can provide a useful way to do this.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

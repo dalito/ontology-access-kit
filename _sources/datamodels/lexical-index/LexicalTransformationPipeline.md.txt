@@ -1,10 +1,14 @@
 # Class: LexicalTransformationPipeline
+
+
 _A collection of atomic lexical transformations that are applied in serial fashion_
 
 
 
 
+
 URI: [ontolexindex:LexicalTransformationPipeline](https://w3id.org/oak/lexical-index/LexicalTransformationPipeline)
+
 
 
 
@@ -17,7 +21,7 @@ URI: [ontolexindex:LexicalTransformationPipeline](https://w3id.org/oak/lexical-i
         
       LexicalTransformationPipeline : transformations
         
-          LexicalTransformationPipeline ..> LexicalTransformation : transformations
+          LexicalTransformationPipeline --> LexicalTransformation : transformations
         
       
 ```
@@ -95,7 +99,6 @@ name: LexicalTransformationPipeline
 description: A collection of atomic lexical transformations that are applied in serial
   fashion
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 is_a: Activity
 attributes:
   name:
@@ -103,11 +106,16 @@ attributes:
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     key: true
+    domain_of:
+    - LexicalTransformationPipeline
+    required: true
   transformations:
     name: transformations
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
+    domain_of:
+    - LexicalTransformationPipeline
     range: LexicalTransformation
 
 ```
@@ -121,7 +129,6 @@ name: LexicalTransformationPipeline
 description: A collection of atomic lexical transformations that are applied in serial
   fashion
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 is_a: Activity
 attributes:
   name:
@@ -134,6 +141,7 @@ attributes:
     domain_of:
     - LexicalTransformationPipeline
     range: string
+    required: true
   transformations:
     name: transformations
     from_schema: https://w3id.org/oak/lexical-index

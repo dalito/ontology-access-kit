@@ -11,13 +11,13 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/clipboard.min.js"></script>
-        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../../_static/js/theme.js"></script>
@@ -49,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -83,11 +83,12 @@
            <div itemprop="articleBody">
              
   <h1>Source code for oaklib.interfaces.text_annotator_interface</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">TextIOWrapper</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Optional</span>
 
 <span class="kn">from</span> <span class="nn">oaklib.datamodels.lexical_index</span> <span class="kn">import</span> <span class="n">LexicalIndex</span>
 <span class="kn">from</span> <span class="nn">oaklib.datamodels.mapping_rules_datamodel</span> <span class="kn">import</span> <span class="n">MappingRuleCollection</span>
@@ -121,7 +122,9 @@
     <span class="p">)</span>
 
 
-<div class="viewcode-block" id="TextAnnotatorInterface"><a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface">[docs]</a><span class="k">class</span> <span class="nc">TextAnnotatorInterface</span><span class="p">(</span><span class="n">BasicOntologyInterface</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<div class="viewcode-block" id="TextAnnotatorInterface">
+<a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface">[docs]</a>
+<span class="k">class</span> <span class="nc">TextAnnotatorInterface</span><span class="p">(</span><span class="n">BasicOntologyInterface</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Finds occurrences of ontology terms in text.</span>
 
@@ -143,11 +146,18 @@
 <span class="sd">    the need for a local indexing step. For example, the :ref:`bioportal_implementation` will use</span>
 <span class="sd">    the OntoPortal annotate endpoint which is pre-indexed over all &gt;1000 ontologies in bioportal.</span>
 
-
-
 <span class="sd">    All return payloads conform to the `TextAnnotation` data model:</span>
 
 <span class="sd">     - `&lt;https://w3id.org/oak/text-annotator&gt;`_</span>
+
+<span class="sd">    Additional plugins may be available to provide more advanced functionality:</span>
+
+<span class="sd">    - `OAK SciSpacy plugin &lt;https://pypi.org/project/oakx-spacy/&gt;`_ - provides a Spacy pipeline component</span>
+<span class="sd">    - `OAK OGER plugin &lt;https://pypi.org/project/oakx-oger/&gt;`_ - provides a OGER pipeline component</span>
+
+<span class="sd">    For more advanced extraction use cases, see:</span>
+
+<span class="sd">    - `OntoGPT &lt;https://github.com/monarch-initiative/ontogpt&gt;`_ - LLM-based NER and schema extraction</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">lexical_index</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LexicalIndex</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -162,7 +172,9 @@
 <span class="sd">    Mapping rules to apply to the results of the annotation, including synonymizer rules.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="TextAnnotatorInterface.annotate_text"><a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface.annotate_text">[docs]</a>    <span class="k">def</span> <span class="nf">annotate_text</span><span class="p">(</span>
+<div class="viewcode-block" id="TextAnnotatorInterface.annotate_text">
+<a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface.annotate_text">[docs]</a>
+    <span class="k">def</span> <span class="nf">annotate_text</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text</span><span class="p">:</span> <span class="n">TEXT</span><span class="p">,</span>
         <span class="n">configuration</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TextAnnotationConfiguration</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -171,9 +183,12 @@
 <span class="sd">        Annotate a piece of text.</span>
 
 <span class="sd">        &gt;&gt;&gt; from oaklib import get_adapter</span>
-<span class="sd">        &gt;&gt;&gt; adapter = get_adapter(&quot;go.db&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; for annotation in adapter.annotate_text(&quot;The mitochondrion is a membrane-bound organelle&quot;):</span>
-<span class="sd">        &gt;&gt;&gt;     print(annotation)</span>
+<span class="sd">        &gt;&gt;&gt; adapter = get_adapter(&quot;tests/input/go-nucleus.obo&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; for annotation in adapter.annotate_text(&quot;The nucleus is a organelle with a membrane&quot;):</span>
+<span class="sd">        ...     print(annotation.object_id, annotation.object_label, annotation.subject_start, annotation.subject_end)</span>
+<span class="sd">        GO:0005634 nucleus 5 11</span>
+<span class="sd">        GO:0016020 membrane 35 42</span>
+<span class="sd">        GO:0043226 organelle 18 26</span>
 
 <span class="sd">        :param text: Text to be annotated.</span>
 <span class="sd">        :param configuration: Text annotation configuration.</span>
@@ -215,16 +230,17 @@
                     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> can&#39;t be used to match partial text&quot;</span>
                 <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Indexing ontology...&quot;</span><span class="p">)</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache_directory</span><span class="p">:</span>
                 <span class="n">index_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">scheme</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">slug</span><span class="si">}</span><span class="s2">-index.yaml&quot;</span>
                 <span class="n">index_path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cache_directory</span><span class="p">)</span> <span class="o">/</span> <span class="n">index_name</span><span class="p">)</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Caching to </span><span class="si">{</span><span class="n">index_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">index_path</span> <span class="o">=</span> <span class="kc">None</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">lexical_index</span> <span class="o">=</span> <span class="n">create_or_load_lexical_index</span><span class="p">(</span>
-                <span class="n">index_path</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">mapping_rule_collection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rule_collection</span>
-            <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">lexical_index</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Indexing ontology...&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">lexical_index</span> <span class="o">=</span> <span class="n">create_or_load_lexical_index</span><span class="p">(</span>
+                    <span class="n">index_path</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">mapping_rule_collection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">rule_collection</span>
+                <span class="p">)</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Performing naive search using lexical index&quot;</span><span class="p">)</span>
             <span class="n">li</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lexical_index</span>
             <span class="n">text_lower</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
@@ -249,12 +265,16 @@
                         <span class="p">)</span>
                         <span class="k">yield</span> <span class="n">ann</span></div>
 
-<div class="viewcode-block" id="TextAnnotatorInterface.annotate_file"><a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface.annotate_file">[docs]</a>    <span class="k">def</span> <span class="nf">annotate_file</span><span class="p">(</span>
+
+<div class="viewcode-block" id="TextAnnotatorInterface.annotate_file">
+<a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface.annotate_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">annotate_file</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">text_file</span><span class="p">:</span> <span class="n">TextIOWrapper</span><span class="p">,</span>
         <span class="n">configuration</span><span class="p">:</span> <span class="n">TextAnnotationConfiguration</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">TextAnnotation</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Annotate text in a file.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Annotate text in a file.</span>
 
 <span class="sd">        :param text_file: Text file that is iterated line-by-line.</span>
 <span class="sd">        :param configuration: Text annotation configuration, defaults to None.</span>
@@ -263,7 +283,59 @@
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text_file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
             <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
             <span class="n">annotation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotate_text</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
-            <span class="k">yield from</span> <span class="n">annotation</span></div></div>
+            <span class="k">yield from</span> <span class="n">annotation</span></div>
+
+
+<div class="viewcode-block" id="TextAnnotatorInterface.annotate_tabular_file">
+<a class="viewcode-back" href="../../../packages/interfaces/text-annotator.html#oaklib.interfaces.text_annotator_interface.TextAnnotatorInterface.annotate_tabular_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">annotate_tabular_file</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">text_file</span><span class="p">:</span> <span class="n">TextIOWrapper</span><span class="p">,</span>
+        <span class="n">delimiter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">configuration</span><span class="p">:</span> <span class="n">TextAnnotationConfiguration</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">match_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">result_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;matched_id&quot;</span><span class="p">,</span>
+        <span class="n">result_label_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;matched_label&quot;</span><span class="p">,</span>
+        <span class="n">match_multiple</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">include_unmatched</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Annotate text in a file.</span>
+
+<span class="sd">        :param text_file: Text file that is iterated line-by-line.</span>
+<span class="sd">        :param configuration: Text annotation configuration, defaults to None.</span>
+<span class="sd">        :yield: Annotation of each line.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">configuration</span><span class="p">:</span>
+            <span class="n">configuration</span> <span class="o">=</span> <span class="n">TextAnnotationConfiguration</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">match_column</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must provide a match column&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">delimiter</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">text_file</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tsv&quot;</span><span class="p">):</span>
+                <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span>
+            <span class="k">elif</span> <span class="n">text_file</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">):</span>
+                <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must provide a delimiter&quot;</span><span class="p">)</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">text_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">match_column</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing match column </span><span class="si">{</span><span class="n">match_column</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">row</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">match_column</span><span class="p">]</span>
+            <span class="n">has_result</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">ann</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">annotate_text</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">configuration</span><span class="p">):</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">result_column</span><span class="p">]</span> <span class="o">=</span> <span class="n">ann</span><span class="o">.</span><span class="n">object_id</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">result_label_column</span><span class="p">]</span> <span class="o">=</span> <span class="n">ann</span><span class="o">.</span><span class="n">object_label</span>
+                <span class="n">has_result</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">yield</span> <span class="n">row</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">match_multiple</span><span class="p">:</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">has_result</span> <span class="ow">and</span> <span class="n">include_unmatched</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">result_column</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">result_label_column</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                <span class="k">yield</span> <span class="n">row</span></div>
+</div>
+
 </pre></div>
 
            </div>
@@ -273,7 +345,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

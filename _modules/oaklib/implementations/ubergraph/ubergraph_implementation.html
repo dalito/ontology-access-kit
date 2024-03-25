@@ -11,13 +11,13 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/clipboard.min.js"></script>
-        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../../../_static/js/theme.js"></script>
@@ -49,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -103,7 +103,7 @@
 <span class="kn">from</span> <span class="nn">oaklib.interfaces</span> <span class="kn">import</span> <span class="n">SubsetterInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.basic_ontology_interface</span> <span class="kn">import</span> <span class="n">RELATIONSHIP</span><span class="p">,</span> <span class="n">RELATIONSHIP_MAP</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.mapping_provider_interface</span> <span class="kn">import</span> <span class="n">MappingProviderInterface</span>
-<span class="kn">from</span> <span class="nn">oaklib.interfaces.obograph_interface</span> <span class="kn">import</span> <span class="n">OboGraphInterface</span>
+<span class="kn">from</span> <span class="nn">oaklib.interfaces.obograph_interface</span> <span class="kn">import</span> <span class="n">GraphTraversalMethod</span><span class="p">,</span> <span class="n">OboGraphInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.rdf_interface</span> <span class="kn">import</span> <span class="n">TRIPLE</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.relation_graph_interface</span> <span class="kn">import</span> <span class="n">RelationGraphInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.search_interface</span> <span class="kn">import</span> <span class="n">SearchInterface</span>
@@ -118,7 +118,9 @@
 <span class="p">]</span>
 
 
-<div class="viewcode-block" id="RelationGraphEnum"><a class="viewcode-back" href="../../../../packages/implementations/ubergraph.html#oaklib.implementations.ubergraph.ubergraph_implementation.RelationGraphEnum">[docs]</a><span class="k">class</span> <span class="nc">RelationGraphEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<div class="viewcode-block" id="RelationGraphEnum">
+<a class="viewcode-back" href="../../../../packages/implementations/ubergraph.html#oaklib.implementations.ubergraph.ubergraph_implementation.RelationGraphEnum">[docs]</a>
+<span class="k">class</span> <span class="nc">RelationGraphEnum</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    triples in UG are organized into different graphs</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -129,7 +131,10 @@
     <span class="n">normalizedInformationContent</span> <span class="o">=</span> <span class="s2">&quot;http://reasoner.renci.org/vocab/normalizedInformationContent&quot;</span></div>
 
 
-<div class="viewcode-block" id="UbergraphImplementation"><a class="viewcode-back" href="../../../../packages/implementations/ubergraph.html#oaklib.implementations.ubergraph.ubergraph_implementation.UbergraphImplementation">[docs]</a><span class="nd">@dataclass</span>
+
+<div class="viewcode-block" id="UbergraphImplementation">
+<a class="viewcode-back" href="../../../../packages/implementations/ubergraph.html#oaklib.implementations.ubergraph.ubergraph_implementation.UbergraphImplementation">[docs]</a>
+<span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">UbergraphImplementation</span><span class="p">(</span>
     <span class="n">AbstractSparqlImplementation</span><span class="p">,</span>
     <span class="n">RelationGraphInterface</span><span class="p">,</span>
@@ -149,11 +154,17 @@
 
 <span class="sd">    An UbergraphImplementation can be initialed by:</span>
 
-<span class="sd">        .. packages:: python</span>
+<span class="sd">    &gt;&gt;&gt; from oaklib.implementations.ubergraph.ubergraph_implementation import UbergraphImplementation</span>
+<span class="sd">    &gt;&gt;&gt; adapter = UbergraphImplementation()</span>
 
-<span class="sd">           &gt;&gt;&gt;  oi = UbergraphImplementation()</span>
+<span class="sd">    or</span>
 
-<span class="sd">        The default ubergraph endpoint will be assumed</span>
+<span class="sd">    &gt;&gt;&gt; from oaklib import get_adapter</span>
+<span class="sd">    &gt;&gt;&gt; adapter = get_adapter(&quot;ubergraph:&quot;)</span>
+
+<span class="sd">    to use a specific ontology or named graph within ubergraph:</span>
+
+<span class="sd">    &gt;&gt;&gt; adapter = get_adapter(&quot;ubergraph:cl&quot;)</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -361,8 +372,14 @@
         <span class="k">return</span> <span class="n">obograph</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;query&quot;</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">edges</span><span class="o">=</span><span class="n">edges</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">ancestors</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">start_curies</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]],</span> <span class="n">predicates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start_curies</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]],</span>
+        <span class="n">predicates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reflexive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">method</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphTraversalMethod</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="ow">and</span> <span class="n">method</span> <span class="o">==</span> <span class="n">GraphTraversalMethod</span><span class="o">.</span><span class="n">HOP</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;HOP not implemented for ubergraph&quot;</span><span class="p">)</span>
         <span class="c1"># TODO: DRY</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">start_curies</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">start_curies</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_curies</span><span class="p">]</span>
@@ -382,8 +399,14 @@
             <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">uri_to_curie</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;o&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">descendants</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">start_curies</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]],</span> <span class="n">predicates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start_curies</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]],</span>
+        <span class="n">predicates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reflexive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">method</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphTraversalMethod</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="ow">and</span> <span class="n">method</span> <span class="o">==</span> <span class="n">GraphTraversalMethod</span><span class="o">.</span><span class="n">HOP</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;HOP not implemented for ubergraph&quot;</span><span class="p">)</span>
         <span class="c1"># TODO: DRY</span>
         <span class="n">query_uris</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">curie_to_sparql</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span> <span class="k">for</span> <span class="n">curie</span> <span class="ow">in</span> <span class="n">start_curies</span><span class="p">]</span>
         <span class="n">where</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;?s ?p ?o&quot;</span><span class="p">,</span> <span class="s2">&quot;?s a owl:Class&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;VALUES ?o </span><span class="se">{{</span><span class="s1"> </span><span class="si">{</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query_uris</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="se">}}</span><span class="s1">&#39;</span><span class="p">]</span>
@@ -561,6 +584,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">yield</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">_as_rdf_obj</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">triple</span><span class="p">)])</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total triples: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>
@@ -570,7 +594,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

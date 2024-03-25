@@ -1,5 +1,8 @@
 # Class: LexicalIndex
+
+
 _An index over an ontology keyed by lexical unit_
+
 
 
 
@@ -8,16 +11,17 @@ URI: [mappingrules:LexicalIndex](https://w3id.org/oak/mapping-rules-datamodel/Le
 
 
 
+
 ```{mermaid}
  classDiagram
     class LexicalIndex
       LexicalIndex : groupings
         
-          LexicalIndex ..> LexicalGrouping : groupings
+          LexicalIndex --> LexicalGrouping : groupings
         
       LexicalIndex : pipelines
         
-          LexicalIndex ..> LexicalTransformationPipeline : pipelines
+          LexicalIndex --> LexicalTransformationPipeline : pipelines
         
       
 ```
@@ -82,7 +86,6 @@ URI: [mappingrules:LexicalIndex](https://w3id.org/oak/mapping-rules-datamodel/Le
 name: LexicalIndex
 description: An index over an ontology keyed by lexical unit
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   groupings:
     name: groupings
@@ -90,6 +93,8 @@ attributes:
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
+    domain_of:
+    - LexicalIndex
     range: LexicalGrouping
     inlined: true
   pipelines:
@@ -98,6 +103,8 @@ attributes:
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
+    domain_of:
+    - LexicalIndex
     range: LexicalTransformationPipeline
     inlined: true
 
@@ -111,7 +118,6 @@ attributes:
 name: LexicalIndex
 description: An index over an ontology keyed by lexical unit
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   groupings:
     name: groupings

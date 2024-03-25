@@ -1,10 +1,14 @@
 # Class: PredicateTerm
+
+
 _A term that represents a relationship type_
 
 
 
 
+
 URI: [tc:PredicateTerm](https://w3id.org/linkml/taxon_constraints/PredicateTerm)
+
 
 
 
@@ -102,7 +106,6 @@ id_prefixes:
 - RO
 description: A term that represents a relationship type
 from_schema: https://w3id.org/oak/taxon_constraints
-rank: 1000
 is_a: Term
 
 ```
@@ -117,7 +120,6 @@ id_prefixes:
 - RO
 description: A term that represents a relationship type
 from_schema: https://w3id.org/oak/taxon_constraints
-rank: 1000
 is_a: Term
 attributes:
   id:
@@ -131,6 +133,7 @@ attributes:
     domain_of:
     - Term
     range: uriorcurie
+    required: true
   label:
     name: label
     description: the human readable name or label of the term

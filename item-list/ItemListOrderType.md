@@ -1,10 +1,13 @@
 # Enum: ItemListOrderType
 
 
+
+
 _The order of the items in the list_
 
 
-URI: [ItemListOrderType](ItemListOrderType)
+
+URI: [ItemListOrderType](ItemListOrderType.md)
 
 ## Permissible Values
 

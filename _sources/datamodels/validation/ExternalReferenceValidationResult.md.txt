@@ -1,10 +1,14 @@
 # Class: ExternalReferenceValidationResult
+
+
 _A validation result where the check is to determine if a link to an external resource is still valid_
 
 
 
 
+
 URI: [vm:ExternalReferenceValidationResult](https://w3id.org/linkml/validation-model/ExternalReferenceValidationResult)
+
 
 
 
@@ -19,35 +23,35 @@ URI: [vm:ExternalReferenceValidationResult](https://w3id.org/linkml/validation-m
         
       ExternalReferenceValidationResult : instantiates
         
-          ExternalReferenceValidationResult ..> Node : instantiates
+          ExternalReferenceValidationResult --> Node : instantiates
         
       ExternalReferenceValidationResult : number_of_attempts
         
       ExternalReferenceValidationResult : object
         
-          ExternalReferenceValidationResult ..> Node : object
+          ExternalReferenceValidationResult --> Node : object
         
       ExternalReferenceValidationResult : object_str
         
       ExternalReferenceValidationResult : predicate
         
-          ExternalReferenceValidationResult ..> Node : predicate
+          ExternalReferenceValidationResult --> Node : predicate
         
       ExternalReferenceValidationResult : severity
         
-          ExternalReferenceValidationResult ..> severity_options : severity
+          ExternalReferenceValidationResult --> severity_options : severity
         
       ExternalReferenceValidationResult : source
         
       ExternalReferenceValidationResult : subject
         
-          ExternalReferenceValidationResult ..> Node : subject
+          ExternalReferenceValidationResult --> Node : subject
         
       ExternalReferenceValidationResult : time_checked
         
       ExternalReferenceValidationResult : type
         
-          ExternalReferenceValidationResult ..> ConstraintComponent : type
+          ExternalReferenceValidationResult --> ConstraintComponent : type
         
       ExternalReferenceValidationResult : url
         
@@ -131,26 +135,33 @@ name: ExternalReferenceValidationResult
 description: A validation result where the check is to determine if a link to an external
   resource is still valid
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: ValidationResult
 attributes:
   url:
     name: url
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - ExternalReferenceValidationResult
   time_checked:
     name: time_checked
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - ExternalReferenceValidationResult
   number_of_attempts:
     name: number_of_attempts
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - ExternalReferenceValidationResult
     range: integer
   http_response_code:
     name: http_response_code
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - ExternalReferenceValidationResult
     range: integer
 
 ```
@@ -164,7 +175,6 @@ name: ExternalReferenceValidationResult
 description: A validation result where the check is to determine if a link to an external
   resource is still valid
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: ValidationResult
 attributes:
   url:
@@ -304,6 +314,7 @@ attributes:
     owner: ExternalReferenceValidationResult
     domain_of:
     - ValidationResult
+    - MappingValidationResult
     - RepairOperation
     range: string
 

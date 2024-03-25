@@ -6,6 +6,7 @@ URI: [owl:Restriction](http://www.w3.org/2002/07/owl#Restriction)
 
 
 
+
 ```{mermaid}
  classDiagram
     class Restriction
@@ -22,25 +23,25 @@ URI: [owl:Restriction](http://www.w3.org/2002/07/owl#Restriction)
         
       Restriction : equivalentClass
         
-          Restriction ..> ClassExpression : equivalentClass
+          Restriction --> ClassExpression : equivalentClass
         
       Restriction : intersectionOf
         
-          Restriction ..> ClassExpression : intersectionOf
+          Restriction --> ClassExpression : intersectionOf
         
       Restriction : oneOf
         
-          Restriction ..> ClassExpression : oneOf
+          Restriction --> ClassExpression : oneOf
         
       Restriction : onProperty
         
-          Restriction ..> PropertyExpression : onProperty
+          Restriction --> PropertyExpression : onProperty
         
       Restriction : someValuesFrom
         
       Restriction : subClassOf
         
-          Restriction ..> ClassExpression : subClassOf
+          Restriction --> ClassExpression : subClassOf
         
       Restriction : unionOf
         
@@ -126,7 +127,6 @@ URI: [owl:Restriction](http://www.w3.org/2002/07/owl#Restriction)
 ```yaml
 name: Restriction
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnonymousClassExpression
 mixin: true
 mixins:
@@ -146,7 +146,6 @@ class_uri: owl:Restriction
 ```yaml
 name: Restriction
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnonymousClassExpression
 mixin: true
 mixins:

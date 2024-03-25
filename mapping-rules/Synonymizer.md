@@ -6,6 +6,7 @@ URI: [mappingrules:Synonymizer](https://w3id.org/oak/mapping-rules-datamodel/Syn
 
 
 
+
 ```{mermaid}
  classDiagram
     class Synonymizer
@@ -13,9 +14,15 @@ URI: [mappingrules:Synonymizer](https://w3id.org/oak/mapping-rules-datamodel/Syn
         
       Synonymizer : match_scope
         
+      Synonymizer : prefix
+        
       Synonymizer : qualifier
         
       Synonymizer : replacement
+        
+      Synonymizer : tests
+        
+          Synonymizer --> Test : tests
         
       Synonymizer : the_rule
         
@@ -37,6 +44,8 @@ URI: [mappingrules:Synonymizer](https://w3id.org/oak/mapping-rules-datamodel/Syn
 | [match_scope](match_scope.md) | 0..1 <br/> [String](String.md) | Scope of the reg-ex rule | direct |
 | [replacement](replacement.md) | 0..1 <br/> [String](String.md) | Reg-ex rule to replace substrings in labels | direct |
 | [qualifier](qualifier.md) | 0..1 <br/> [String](String.md) | Type of match for the new synonym generated | direct |
+| [prefix](prefix.md) | 0..1 <br/> [String](String.md) | The rule applies to nodes of a specific prefix | direct |
+| [tests](tests.md) | 0..1 <br/> [Test](Test.md) | Unit tests for each rules | direct |
 
 
 
@@ -91,38 +100,64 @@ URI: [mappingrules:Synonymizer](https://w3id.org/oak/mapping-rules-datamodel/Syn
 ```yaml
 name: Synonymizer
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   the_rule:
     name: the_rule
     description: Description of the rule.
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
+    domain_of:
+    - Synonymizer
     range: string
   match:
     name: match
     description: Reg-ex rule to match substrings in labels.
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
+    domain_of:
+    - Synonymizer
     range: string
   match_scope:
     name: match_scope
     description: Scope of the reg-ex rule
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
+    domain_of:
+    - Synonymizer
     range: string
   replacement:
     name: replacement
     description: Reg-ex rule to replace substrings in labels
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
+    domain_of:
+    - Synonymizer
     range: string
   qualifier:
     name: qualifier
     description: Type of match for the new synonym generated.
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
+    domain_of:
+    - Synonymizer
     range: string
+  prefix:
+    name: prefix
+    description: The rule applies to nodes of a specific prefix.
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
+    rank: 1000
+    domain_of:
+    - Synonymizer
+    - Test
+    range: string
+  tests:
+    name: tests
+    description: Unit tests for each rules.
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
+    rank: 1000
+    domain_of:
+    - Synonymizer
+    range: Test
 
 ```
 </details>
@@ -133,7 +168,6 @@ attributes:
 ```yaml
 name: Synonymizer
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   the_rule:
     name: the_rule
@@ -185,6 +219,27 @@ attributes:
     domain_of:
     - Synonymizer
     range: string
+  prefix:
+    name: prefix
+    description: The rule applies to nodes of a specific prefix.
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
+    rank: 1000
+    alias: prefix
+    owner: Synonymizer
+    domain_of:
+    - Synonymizer
+    - Test
+    range: string
+  tests:
+    name: tests
+    description: Unit tests for each rules.
+    from_schema: https://w3id.org/oak/mapping-rules-datamodel
+    rank: 1000
+    alias: tests
+    owner: Synonymizer
+    domain_of:
+    - Synonymizer
+    range: Test
 
 ```
 </details>

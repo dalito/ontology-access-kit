@@ -1,5 +1,10 @@
 # Slot: token_exclusion_list
 
+
+_A list of tokens to exclude from the annotation process_
+
+
+
 URI: [ann:token_exclusion_list](https://w3id.org/linkml/text_annotator/token_exclusion_list)
 
 
@@ -11,9 +16,10 @@ URI: [ann:token_exclusion_list](https://w3id.org/linkml/text_annotator/token_exc
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[TextAnnotationConfiguration](TextAnnotationConfiguration.md) | configuration for search
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[TextAnnotationConfiguration](TextAnnotationConfiguration.md) | configuration for search |  no  |
+
 
 
 
@@ -23,10 +29,8 @@ URI: [ann:token_exclusion_list](https://w3id.org/linkml/text_annotator/token_exc
 ## Properties
 
 * Range: [String](String.md)
+
 * Multivalued: True
-
-
-
 
 
 
@@ -53,6 +57,7 @@ URI: [ann:token_exclusion_list](https://w3id.org/linkml/text_annotator/token_exc
 <details>
 ```yaml
 name: token_exclusion_list
+description: A list of tokens to exclude from the annotation process
 from_schema: https://w3id.org/oak/text_annotator
 rank: 1000
 multivalued: true

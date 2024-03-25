@@ -1,5 +1,8 @@
 # Class: Axiom
+
+
 _A logical or non-logical statement_
+
 
 
 
@@ -8,24 +11,25 @@ URI: [owl:Axiom](http://www.w3.org/2002/07/owl#Axiom)
 
 
 
+
 ```{mermaid}
  classDiagram
     class Axiom
       Axiom : annotatedProperty
         
-          Axiom ..> AnnotationProperty : annotatedProperty
+          Axiom --> AnnotationProperty : annotatedProperty
         
       Axiom : annotatedSource
         
-          Axiom ..> NamedObject : annotatedSource
+          Axiom --> NamedObject : annotatedSource
         
       Axiom : annotatedTarget
         
-          Axiom ..> Any : annotatedTarget
+          Axiom --> Any : annotatedTarget
         
       Axiom : annotations
         
-          Axiom ..> Annotation : annotations
+          Axiom --> Annotation : annotations
         
       Axiom : comment
         
@@ -41,13 +45,13 @@ URI: [owl:Axiom](http://www.w3.org/2002/07/owl#Axiom)
         
       Axiom : has_axiom_label
         
-          Axiom ..> Thing : has_axiom_label
+          Axiom --> Thing : has_axiom_label
         
       Axiom : has_exact_synonym
         
       Axiom : has_synonym_type
         
-          Axiom ..> AnnotationProperty : has_synonym_type
+          Axiom --> AnnotationProperty : has_synonym_type
         
       Axiom : is_a_defining_property_chain_axiom
         
@@ -61,7 +65,7 @@ URI: [owl:Axiom](http://www.w3.org/2002/07/owl#Axiom)
         
       Axiom : seeAlso
         
-          Axiom ..> Thing : seeAlso
+          Axiom --> Thing : seeAlso
         
       Axiom : source
         
@@ -95,7 +99,7 @@ URI: [owl:Axiom](http://www.w3.org/2002/07/owl#Axiom)
 | [date_retrieved](date_retrieved.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [evidence](evidence.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [external_ontology](external_ontology.md) | 0..* <br/> [String](String.md) |  | direct |
-| [database_cross_reference](database_cross_reference.md) | 0..* <br/> [CURIELiteral](CURIELiteral.md) |  | direct |
+| [database_cross_reference](database_cross_reference.md) | 0..* <br/> [CURIELiteral](CURIELiteral.md) | Uses to indicate the source of an axiom | direct |
 | [has_exact_synonym](has_exact_synonym.md) | 0..* <br/> [LabelType](LabelType.md) |  | direct |
 | [has_synonym_type](has_synonym_type.md) | 0..* <br/> [AnnotationProperty](AnnotationProperty.md) |  | direct |
 | [comment](comment.md) | 0..* <br/> [String](String.md) |  | direct |
@@ -152,7 +156,6 @@ description: A logical or non-logical statement
 from_schema: http://purl.obolibrary.org/obo/omo/schema
 exact_mappings:
 - rdf:Statement
-rank: 1000
 slots:
 - annotatedProperty
 - annotatedSource
@@ -201,7 +204,6 @@ description: A logical or non-logical statement
 from_schema: http://purl.obolibrary.org/obo/omo/schema
 exact_mappings:
 - rdf:Statement
-rank: 1000
 slot_usage:
   database_cross_reference:
     name: database_cross_reference

@@ -1,5 +1,8 @@
 # Class: GraphDocument
+
+
 _A graph document is a collection of graphs together with a set of prefixes that apply across all of them_
+
 
 
 
@@ -8,20 +11,21 @@ URI: [obographs:GraphDocument](https://github.com/geneontology/obographs/GraphDo
 
 
 
+
 ```{mermaid}
  classDiagram
     class GraphDocument
       GraphDocument : graphs
         
-          GraphDocument ..> Graph : graphs
+          GraphDocument --> Graph : graphs
         
       GraphDocument : meta
         
-          GraphDocument ..> Meta : meta
+          GraphDocument --> Meta : meta
         
       GraphDocument : prefixes
         
-          GraphDocument ..> PrefixDeclaration : prefixes
+          GraphDocument --> PrefixDeclaration : prefixes
         
       
 ```
@@ -95,7 +99,6 @@ comments:
 - A graph document frequently has a single graph but a multi-graph document can be
   used to represent multiple ontologies in an import closure in a single file.
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 slots:
 - meta
 - graphs
@@ -115,7 +118,6 @@ comments:
 - A graph document frequently has a single graph but a multi-graph document can be
   used to represent multiple ontologies in an import closure in a single file.
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 attributes:
   meta:
     name: meta

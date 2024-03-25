@@ -11,9 +11,10 @@ URI: [sim:match_source](https://w3id.org/linkml/similarity/match_source)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[BestMatch](BestMatch.md) | 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[BestMatch](BestMatch.md) |  |  no  |
+
 
 
 
@@ -24,7 +25,7 @@ URI: [sim:match_source](https://w3id.org/linkml/similarity/match_source)
 
 * Range: [String](String.md)
 
-
+* Required: True
 
 
 
@@ -65,6 +66,7 @@ owner: BestMatch
 domain_of:
 - BestMatch
 range: string
+required: true
 
 ```
 </details>

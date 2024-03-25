@@ -3,6 +3,7 @@
 A datamodel for specifying lexical mapping rules.
 
 URI: https://w3id.org/oak/mapping-rules-datamodel
+
 Name: mapping-rules-datamodel
 
 
@@ -12,17 +13,19 @@ Name: mapping-rules-datamodel
 | Class | Description |
 | --- | --- |
 | [Activity](Activity.md) | Generic grouping for any lexical operation |
-| [Any](Any.md) |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LexicalTransformation](LexicalTransformation.md) | An atomic lexical transformation applied on a term (string) yielding a transformed string |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LexicalTransformationPipeline](LexicalTransformationPipeline.md) | A collection of atomic lexical transformations that are applied in serial fashion |
+| [Any](Any.md) | None |
 | [LexicalGrouping](LexicalGrouping.md) | A grouping of ontology elements by a shared lexical term |
 | [LexicalIndex](LexicalIndex.md) | An index over an ontology keyed by lexical unit |
-| [LexicalTransformation](LexicalTransformation.md) | An atomic lexical transformation applied on a term (string) yielding a transf... |
-| [LexicalTransformationPipeline](LexicalTransformationPipeline.md) | A collection of atomic lexical transformations that are applied in serial fas... |
-| [MappingRule](MappingRule.md) | An individual mapping rule, if preconditions match the postconditions are app... |
+| [MappingRule](MappingRule.md) | An individual mapping rule, if preconditions match the postconditions are applied |
 | [MappingRuleCollection](MappingRuleCollection.md) | A collection of mapping rules |
-| [Postcondition](Postcondition.md) |  |
+| [Postcondition](Postcondition.md) | None |
 | [Precondition](Precondition.md) | A pattern to be matched against an individual SSSOM mapping |
 | [RelationshipToTerm](RelationshipToTerm.md) | A relationship of an ontology element to a lexical term |
-| [Synonymizer](Synonymizer.md) |  |
+| [Synonymizer](Synonymizer.md) | None |
+| [Test](Test.md) | None |
+
 
 
 ## Slots
@@ -33,6 +36,7 @@ Name: mapping-rules-datamodel
 | [element](element.md) |  |
 | [element_term](element_term.md) | the original term used in the element |
 | [groupings](groupings.md) | all groupings |
+| [input](input.md) | Input string for the rule |
 | [mapping_source_one_of](mapping_source_one_of.md) |  |
 | [match](match.md) | Reg-ex rule to match substrings in labels |
 | [match_scope](match_scope.md) | Scope of the reg-ex rule |
@@ -41,6 +45,7 @@ Name: mapping-rules-datamodel
 | [object_match_field_one_of](object_match_field_one_of.md) |  |
 | [object_source_one_of](object_source_one_of.md) |  |
 | [oneway](oneway.md) | if true then subject and object can be switched and predicate inverted |
+| [output](output.md) | Output based on the rule |
 | [params](params.md) | Any parameters to be applied to the transformation algorithm |
 | [pipeline](pipeline.md) |  |
 | [pipelines](pipelines.md) | all pipelines used to build the index |
@@ -49,6 +54,7 @@ Name: mapping-rules-datamodel
 | [predicate](predicate.md) |  |
 | [predicate_id](predicate_id.md) |  |
 | [predicate_id_one_of](predicate_id_one_of.md) |  |
+| [prefix](prefix.md) | The rule applies to nodes of a specific prefix |
 | [qualifier](qualifier.md) | Type of match for the new synonym generated |
 | [relationships](relationships.md) | All ontology elements grouped and their relationship to the normalized term |
 | [replacement](replacement.md) | Reg-ex rule to replace substrings in labels |
@@ -59,6 +65,7 @@ Name: mapping-rules-datamodel
 | [synonymized](synonymized.md) |  |
 | [synonymizer](synonymizer.md) | Normalizing rules to labels |
 | [term](term.md) | A normalized term that groups ontology elements |
+| [tests](tests.md) | Unit tests for each rules |
 | [the_rule](the_rule.md) | Description of the rule |
 | [transformations](transformations.md) |  |
 | [transformations_included_in](transformations_included_in.md) |  |
@@ -86,9 +93,12 @@ Name: mapping-rules-datamodel
 | [Double](Double.md) | A real number that conforms to the xsd:double specification |
 | [Float](Float.md) | A real number that conforms to the xsd:float specification |
 | [Integer](Integer.md) | An integer |
+| [Jsonpath](Jsonpath.md) | A string encoding a JSON Path |
+| [Jsonpointer](Jsonpointer.md) | A string encoding a JSON Pointer |
 | [Ncname](Ncname.md) | Prefix part of CURIE |
 | [Nodeidentifier](Nodeidentifier.md) | A URI, CURIE or BNODE that represents a node in a model |
 | [Objectidentifier](Objectidentifier.md) | A URI or CURIE that represents an object in the model |
+| [Sparqlpath](Sparqlpath.md) | A string encoding a SPARQL Property Path |
 | [String](String.md) | A character string |
 | [Time](Time.md) | A time object represents a (local) time of day, independent of any particular... |
 | [Uri](Uri.md) | a complete URI |

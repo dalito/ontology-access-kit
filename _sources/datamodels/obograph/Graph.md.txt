@@ -1,5 +1,8 @@
 # Class: Graph
+
+
 _A graph is a collection of nodes and edges and other axioms that represents a single ontology._
+
 
 
 
@@ -8,24 +11,25 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
 
 
 
+
 ```{mermaid}
  classDiagram
     class Graph
       Graph : allValuesFromEdges
         
-          Graph ..> Edge : allValuesFromEdges
+          Graph --> Edge : allValuesFromEdges
         
       Graph : domainRangeAxioms
         
-          Graph ..> DomainRangeAxiom : domainRangeAxioms
+          Graph --> DomainRangeAxiom : domainRangeAxioms
         
       Graph : edges
         
-          Graph ..> Edge : edges
+          Graph --> Edge : edges
         
       Graph : equivalentNodesSets
         
-          Graph ..> EquivalentNodesSet : equivalentNodesSets
+          Graph --> EquivalentNodesSet : equivalentNodesSets
         
       Graph : id
         
@@ -33,31 +37,31 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
         
       Graph : logicalDefinitionAxioms
         
-          Graph ..> LogicalDefinitionAxiom : logicalDefinitionAxioms
+          Graph --> LogicalDefinitionAxiom : logicalDefinitionAxioms
         
       Graph : meta
         
-          Graph ..> Meta : meta
+          Graph --> Meta : meta
         
       Graph : nodes
         
-          Graph ..> Node : nodes
+          Graph --> Node : nodes
         
       Graph : prefixes
         
-          Graph ..> PrefixDeclaration : prefixes
+          Graph --> PrefixDeclaration : prefixes
         
       Graph : propertyChainAxioms
         
-          Graph ..> PropertyChainAxiom : propertyChainAxioms
+          Graph --> PropertyChainAxiom : propertyChainAxioms
         
       Graph : subsetDefinitions
         
-          Graph ..> SubsetDefinition : subsetDefinitions
+          Graph --> SubsetDefinition : subsetDefinitions
         
       Graph : synonymTypeDefinitions
         
-          Graph ..> SynonymTypeDefinition : synonymTypeDefinitions
+          Graph --> SynonymTypeDefinition : synonymTypeDefinitions
         
       
 ```
@@ -141,7 +145,6 @@ name: Graph
 description: A graph is a collection of nodes and edges and other axioms that represents
   a single ontology.
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 slots:
 - id
 - lbl
@@ -169,7 +172,6 @@ name: Graph
 description: A graph is a collection of nodes and edges and other axioms that represents
   a single ontology.
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 attributes:
   id:
     name: id
@@ -187,6 +189,7 @@ attributes:
     - SubsetDefinition
     - SynonymTypeDefinition
     range: OboIdentifierString
+    required: true
   lbl:
     name: lbl
     description: the human-readable label of a node
@@ -266,7 +269,7 @@ attributes:
     name: nodes
     description: All nodes present in a graph. This includes class nodes as well as
       supporting nodes, including nodes representing relationship types, subsets,
-      annotation proeprties, etc
+      annotation properties, etc
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     multivalued: true

@@ -1,10 +1,14 @@
 # Class: ValidationReport
+
+
 _A report that consists of validation results_
 
 
 
 
+
 URI: [sh:ValidationReport](http://www.w3.org/ns/shacl#ValidationReport)
+
 
 
 
@@ -15,7 +19,7 @@ URI: [sh:ValidationReport](http://www.w3.org/ns/shacl#ValidationReport)
       
       ValidationReport : results
         
-          ValidationReport ..> ValidationResult : results
+          ValidationReport --> ValidationResult : results
         
       
 ```
@@ -89,7 +93,6 @@ description: A report that consists of validation results
 todos:
 - add prov object
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: Report
 slot_usage:
   results:
@@ -111,7 +114,6 @@ description: A report that consists of validation results
 todos:
 - add prov object
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: Report
 slot_usage:
   results:

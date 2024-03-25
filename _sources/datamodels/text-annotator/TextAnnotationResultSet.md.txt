@@ -1,5 +1,8 @@
 # Class: TextAnnotationResultSet
+
+
 _A collection of annotation results_
+
 
 
 
@@ -8,12 +11,13 @@ URI: [ann:TextAnnotationResultSet](https://w3id.org/linkml/text_annotator/TextAn
 
 
 
+
 ```{mermaid}
  classDiagram
     class TextAnnotationResultSet
       TextAnnotationResultSet : annotations
         
-          TextAnnotationResultSet ..> TextAnnotation : annotations
+          TextAnnotationResultSet --> TextAnnotation : annotations
         
       
 ```
@@ -77,7 +81,6 @@ URI: [ann:TextAnnotationResultSet](https://w3id.org/linkml/text_annotator/TextAn
 name: TextAnnotationResultSet
 description: A collection of annotation results
 from_schema: https://w3id.org/oak/text_annotator
-rank: 1000
 attributes:
   annotations:
     name: annotations
@@ -85,6 +88,8 @@ attributes:
     from_schema: https://w3id.org/oak/text_annotator
     rank: 1000
     multivalued: true
+    domain_of:
+    - TextAnnotationResultSet
     range: TextAnnotation
     inlined: true
 
@@ -98,7 +103,6 @@ attributes:
 name: TextAnnotationResultSet
 description: A collection of annotation results
 from_schema: https://w3id.org/oak/text_annotator
-rank: 1000
 attributes:
   annotations:
     name: annotations

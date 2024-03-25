@@ -11,9 +11,10 @@ URI: [sim:id](https://w3id.org/linkml/similarity/id)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[TermInfo](TermInfo.md) | 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[TermInfo](TermInfo.md) |  |  no  |
+
 
 
 
@@ -24,7 +25,7 @@ URI: [sim:id](https://w3id.org/linkml/similarity/id)
 
 * Range: [String](String.md)
 
-
+* Required: True
 
 
 
@@ -59,6 +60,7 @@ owner: TermInfo
 domain_of:
 - TermInfo
 range: string
+required: true
 
 ```
 </details>

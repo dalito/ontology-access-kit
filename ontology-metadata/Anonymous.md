@@ -1,5 +1,8 @@
 # Class: Anonymous
+
+
 _Abstract root class for all anonymous (non-named; lacking an identifier) expressions_
+
 
 
 
@@ -7,6 +10,7 @@ _Abstract root class for all anonymous (non-named; lacking an identifier) expres
 
 
 URI: [omoschema:Anonymous](http://purl.obolibrary.org/obo/omo/schema/Anonymous)
+
 
 
 
@@ -81,7 +85,6 @@ name: Anonymous
 description: Abstract root class for all anonymous (non-named; lacking an identifier)
   expressions
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 abstract: true
 
 ```
@@ -95,7 +98,6 @@ name: Anonymous
 description: Abstract root class for all anonymous (non-named; lacking an identifier)
   expressions
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 abstract: true
 
 ```

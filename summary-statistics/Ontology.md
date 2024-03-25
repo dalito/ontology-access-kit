@@ -1,10 +1,14 @@
 # Class: Ontology
+
+
 _An ontology_
 
 
 
 
+
 URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
+
 
 
 
@@ -36,7 +40,7 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 1..1 <br/> [String](String.md) | the unique identifier for the resource | direct |
 | [description](description.md) | 0..1 <br/> [String](String.md) | a description of the resource | direct |
 | [title](title.md) | 0..1 <br/> [String](String.md) | the title of the resource | direct |
 | [prefix](prefix.md) | 0..1 <br/> [String](String.md) | the prefix for the ontology | direct |
@@ -102,20 +106,27 @@ URI: [owl:Ontology](http://www.w3.org/2002/07/owl#Ontology)
 name: Ontology
 description: An ontology
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   id:
     name: id
     description: the unique identifier for the resource
     from_schema: https://w3id.org/oak/summary_statistics
     identifier: true
+    domain_of:
+    - SummaryStatisticsReport
+    - Ontology
+    - Agent
+    - ContributorRole
     range: string
+    required: true
   description:
     name: description
     description: a description of the resource
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: dcterms:description
+    domain_of:
+    - Ontology
     range: string
   title:
     name: title
@@ -123,6 +134,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: dcterms:title
+    domain_of:
+    - Ontology
     range: string
   prefix:
     name: prefix
@@ -130,6 +143,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: sh:prefix
+    domain_of:
+    - Ontology
     range: string
   version:
     name: version
@@ -137,6 +152,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: owl:versionIRI
+    domain_of:
+    - Ontology
     range: string
   version_info:
     name: version_info
@@ -144,6 +161,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: owl:versionInfo
+    domain_of:
+    - Ontology
     range: string
 class_uri: owl:Ontology
 
@@ -157,7 +176,6 @@ class_uri: owl:Ontology
 name: Ontology
 description: An ontology
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   id:
     name: id
@@ -172,6 +190,7 @@ attributes:
     - Agent
     - ContributorRole
     range: string
+    required: true
   description:
     name: description
     description: a description of the resource

@@ -1,5 +1,8 @@
 # Class: SummaryStatisticsCalculationActivity
+
+
 _An activity that calculates summary statistics for an ontology_
+
 
 
 
@@ -8,12 +11,13 @@ URI: [summary_statistics:SummaryStatisticsCalculationActivity](https://w3id.org/
 
 
 
+
 ```{mermaid}
  classDiagram
     class SummaryStatisticsCalculationActivity
       SummaryStatisticsCalculationActivity : acted_on_behalf_of
         
-          SummaryStatisticsCalculationActivity ..> Agent : acted_on_behalf_of
+          SummaryStatisticsCalculationActivity --> Agent : acted_on_behalf_of
         
       SummaryStatisticsCalculationActivity : ended_at_time
         
@@ -21,7 +25,7 @@ URI: [summary_statistics:SummaryStatisticsCalculationActivity](https://w3id.org/
         
       SummaryStatisticsCalculationActivity : was_associated_with
         
-          SummaryStatisticsCalculationActivity ..> Agent : was_associated_with
+          SummaryStatisticsCalculationActivity --> Agent : was_associated_with
         
       
 ```
@@ -97,7 +101,6 @@ URI: [summary_statistics:SummaryStatisticsCalculationActivity](https://w3id.org/
 name: SummaryStatisticsCalculationActivity
 description: An activity that calculates summary statistics for an ontology
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   started_at_time:
     name: started_at_time
@@ -105,6 +108,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: prov:startedAtTime
+    domain_of:
+    - SummaryStatisticsCalculationActivity
     range: datetime
   ended_at_time:
     name: ended_at_time
@@ -112,6 +117,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: prov:endedAtTime
+    domain_of:
+    - SummaryStatisticsCalculationActivity
     range: datetime
   was_associated_with:
     name: was_associated_with
@@ -119,6 +126,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: prov:wasAssociatedWith
+    domain_of:
+    - SummaryStatisticsCalculationActivity
     range: Agent
   acted_on_behalf_of:
     name: acted_on_behalf_of
@@ -126,6 +135,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     slot_uri: prov:actedOnBehalfOf
+    domain_of:
+    - SummaryStatisticsCalculationActivity
     range: Agent
 
 ```
@@ -138,7 +149,6 @@ attributes:
 name: SummaryStatisticsCalculationActivity
 description: An activity that calculates summary statistics for an ontology
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   started_at_time:
     name: started_at_time

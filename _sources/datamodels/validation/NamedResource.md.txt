@@ -6,6 +6,7 @@ URI: [vm:NamedResource](https://w3id.org/linkml/validation-model/NamedResource)
 
 
 
+
 ```{mermaid}
  classDiagram
     class NamedResource
@@ -80,14 +81,16 @@ URI: [vm:NamedResource](https://w3id.org/linkml/validation-model/NamedResource)
 ```yaml
 name: NamedResource
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 attributes:
   id:
     name: id
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
     identifier: true
+    domain_of:
+    - NamedResource
     range: uriorcurie
+    required: true
 
 ```
 </details>
@@ -98,7 +101,6 @@ attributes:
 ```yaml
 name: NamedResource
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 attributes:
   id:
     name: id

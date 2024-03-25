@@ -6,6 +6,7 @@ URI: [oio:SubsetProperty](http://www.geneontology.org/formats/oboInOwl#SubsetPro
 
 
 
+
 ```{mermaid}
  classDiagram
     class SubsetDefinition
@@ -82,7 +83,6 @@ URI: [oio:SubsetProperty](http://www.geneontology.org/formats/oboInOwl#SubsetPro
 ```yaml
 name: SubsetDefinition
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 slots:
 - id
 - lbl
@@ -97,7 +97,6 @@ class_uri: oio:SubsetProperty
 ```yaml
 name: SubsetDefinition
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 attributes:
   id:
     name: id
@@ -115,6 +114,7 @@ attributes:
     - SubsetDefinition
     - SynonymTypeDefinition
     range: OboIdentifierString
+    required: true
   lbl:
     name: lbl
     description: the human-readable label of a node

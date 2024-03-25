@@ -6,6 +6,7 @@ URI: [sim:BestMatch](https://w3id.org/linkml/similarity/BestMatch)
 
 
 
+
 ```{mermaid}
  classDiagram
     class BestMatch
@@ -25,7 +26,7 @@ URI: [sim:BestMatch](https://w3id.org/linkml/similarity/BestMatch)
         
       BestMatch : similarity
         
-          BestMatch ..> TermPairwiseSimilarity : similarity
+          BestMatch --> TermPairwiseSimilarity : similarity
         
       
 ```
@@ -44,7 +45,7 @@ URI: [sim:BestMatch](https://w3id.org/linkml/similarity/BestMatch)
 | [match_source_label](match_source_label.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [match_target](match_target.md) | 0..1 <br/> [String](String.md) | the entity matches | direct |
 | [match_target_label](match_target_label.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [score](score.md) | 0..1 <br/> [String](String.md) | Abstract base slot for different kinds of scores | direct |
+| [score](score.md) | 1..1 <br/> [Float](Float.md) |  | direct |
 | [match_subsumer](match_subsumer.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) |  | direct |
 | [match_subsumer_label](match_subsumer_label.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [similarity](similarity.md) | 1..1 <br/> [TermPairwiseSimilarity](TermPairwiseSimilarity.md) |  | direct |
@@ -103,7 +104,6 @@ URI: [sim:BestMatch](https://w3id.org/linkml/similarity/BestMatch)
 ```yaml
 name: BestMatch
 from_schema: https://w3id.org/oak/similarity
-rank: 1000
 attributes:
   match_source:
     name: match_source
@@ -112,37 +112,54 @@ attributes:
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
     identifier: true
+    domain_of:
+    - BestMatch
+    required: true
   match_source_label:
     name: match_source_label
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
+    domain_of:
+    - BestMatch
   match_target:
     name: match_target
     description: the entity matches
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
+    domain_of:
+    - BestMatch
   match_target_label:
     name: match_target_label
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
+    domain_of:
+    - BestMatch
   score:
     name: score
     from_schema: https://w3id.org/oak/similarity
+    domain_of:
+    - BestMatch
     range: float
     required: true
   match_subsumer:
     name: match_subsumer
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
+    domain_of:
+    - BestMatch
     range: uriorcurie
   match_subsumer_label:
     name: match_subsumer_label
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
+    domain_of:
+    - BestMatch
   similarity:
     name: similarity
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
+    domain_of:
+    - BestMatch
     range: TermPairwiseSimilarity
     required: true
 
@@ -155,7 +172,6 @@ attributes:
 ```yaml
 name: BestMatch
 from_schema: https://w3id.org/oak/similarity
-rank: 1000
 attributes:
   match_source:
     name: match_source
@@ -169,6 +185,7 @@ attributes:
     domain_of:
     - BestMatch
     range: string
+    required: true
   match_source_label:
     name: match_source_label
     from_schema: https://w3id.org/oak/similarity

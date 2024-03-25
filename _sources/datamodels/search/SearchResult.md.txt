@@ -1,10 +1,14 @@
 # Class: SearchResult
+
+
 _An individual search result_
 
 
 
 
+
 URI: [ontosearch:SearchResult](https://w3id.org/oak/search-datamodel/SearchResult)
+
 
 
 
@@ -103,7 +107,6 @@ URI: [ontosearch:SearchResult](https://w3id.org/oak/search-datamodel/SearchResul
 name: SearchResult
 description: An individual search result
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   rank:
     name: rank
@@ -111,6 +114,8 @@ attributes:
       low numbers being the most relevant
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchResult
     range: integer
   object_id:
     name: object_id
@@ -118,6 +123,8 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_id
+    domain_of:
+    - SearchResult
     required: true
   object_label:
     name: object_label
@@ -125,6 +132,8 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_label
+    domain_of:
+    - SearchResult
     recommended: true
   object_source:
     name: object_source
@@ -132,29 +141,39 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_source
+    domain_of:
+    - SearchResult
   object_source_version:
     name: object_source_version
     description: Version IRI or version string of the source of the object term.
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_source_version
+    domain_of:
+    - SearchResult
   object_match_field:
     name: object_match_field
     description: The field/property in which the match was found
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     slot_uri: sssom:object_match_field
+    domain_of:
+    - SearchResult
   matches_full_search_term:
     name: matches_full_search_term
     description: Does the matched field match the full string
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchResult
     range: boolean
   snippet:
     name: snippet
     description: shows how the field was matched
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchResult
 
 ```
 </details>
@@ -166,7 +185,6 @@ attributes:
 name: SearchResult
 description: An individual search result
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   rank:
     name: rank

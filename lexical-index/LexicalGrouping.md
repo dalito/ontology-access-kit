@@ -1,5 +1,8 @@
 # Class: LexicalGrouping
+
+
 _A grouping of ontology elements by a shared lexical term_
+
 
 
 
@@ -8,12 +11,13 @@ URI: [ontolexindex:LexicalGrouping](https://w3id.org/oak/lexical-index/LexicalGr
 
 
 
+
 ```{mermaid}
  classDiagram
     class LexicalGrouping
       LexicalGrouping : relationships
         
-          LexicalGrouping ..> RelationshipToTerm : relationships
+          LexicalGrouping --> RelationshipToTerm : relationships
         
       LexicalGrouping : term
         
@@ -87,7 +91,6 @@ URI: [ontolexindex:LexicalGrouping](https://w3id.org/oak/lexical-index/LexicalGr
 name: LexicalGrouping
 description: A grouping of ontology elements by a shared lexical term
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 attributes:
   term:
     name: term
@@ -95,6 +98,9 @@ attributes:
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     key: true
+    domain_of:
+    - LexicalGrouping
+    required: true
   relationships:
     name: relationships
     description: All ontology elements grouped and their relationship to the normalized
@@ -102,6 +108,8 @@ attributes:
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
+    domain_of:
+    - LexicalGrouping
     range: RelationshipToTerm
 
 ```
@@ -114,7 +122,6 @@ attributes:
 name: LexicalGrouping
 description: A grouping of ontology elements by a shared lexical term
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 attributes:
   term:
     name: term
@@ -127,6 +134,7 @@ attributes:
     domain_of:
     - LexicalGrouping
     range: string
+    required: true
   relationships:
     name: relationships
     description: All ontology elements grouped and their relationship to the normalized

@@ -12,19 +12,19 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Ontology Adapter Selectors" href="../selectors.html" />
+    <link rel="next" title="PantherDB Adapter" href="pantherdb.html" />
     <link rel="prev" title="Gilda Adapter" href="gilda.html" /> 
 </head>
 
@@ -52,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Package Documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">OAK Library Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../interfaces/index.html">Interfaces</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Implementations</a><ul class="current">
@@ -68,10 +68,12 @@
 <li class="toctree-l3"><a class="reference internal" href="ols.html">Ontology Lookup Service (OLS) Adapter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="gilda.html">Gilda Adapter</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Aggregator Adapter</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#command-line-usage">Command Line Usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#documentation">Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="pantherdb.html">PantherDB Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="robot-template.html">ROBOT Template Adapter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="llm.html">LLM Adapter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../selectors.html">Ontology Adapter Selectors</a></li>
@@ -82,9 +84,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -101,7 +103,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../index.html">Package Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">OAK Library Documentation</a></li>
           <li class="breadcrumb-item"><a href="index.html">Implementations</a></li>
       <li class="breadcrumb-item active">Aggregator Adapter</li>
       <li class="wy-breadcrumbs-aside">
@@ -114,34 +116,41 @@
            <div itemprop="articleBody">
              
   <section id="aggregator-adapter">
-<span id="aggregator-implementation"></span><h1>Aggregator Adapter<a class="headerlink" href="#aggregator-adapter" title="Permalink to this heading"></a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Highly incomplete!</p>
+<span id="aggregator-implementation"></span><h1>Aggregator Adapter<a class="headerlink" href="#aggregator-adapter" title="Link to this heading"></a></h1>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="oaklib.implementations.aggregator.aggregator_implementation.AggregatorImplementation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oaklib.implementations.aggregator.aggregator_implementation.</span></span><span class="sig-name descname"><span class="pre">AggregatorImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource:</span> <span class="pre">~oaklib.resource.OntologyResource</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_multilingual:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_owl_top_and_bottom:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_metamodel_mapper:</span> <span class="pre">~oaklib.mappers.ontology_metadata_mapper.OntologyMetadataMapper</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_converter:</span> <span class="pre">~curies.api.Converter</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_relax_axioms:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_lookups:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_cache:</span> <span class="pre">~oaklib.utilities.keyval_cache.KeyValCache</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_edge_index:</span> <span class="pre">~oaklib.indexes.edge_index.EdgeIndex</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_entailed_edge_index:</span> <span class="pre">~oaklib.indexes.edge_index.EdgeIndex</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">implementations:</span> <span class="pre">~typing.List[~oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/oaklib/implementations/aggregator/aggregator_implementation.html#AggregatorImplementation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.implementations.aggregator.aggregator_implementation.AggregatorImplementation" title="Link to this definition"></a></dt>
+<dd><p>An OAK adapter that wraps multiple implementations and integrates results together.</p>
+<p>This allows for multiple implementations to be wrapped, with calls to
+the aggregator farming out queries to multiple implementations, and weaving
+the results together.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">oaklib</span> <span class="kn">import</span> <span class="n">get_adapter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">oaklib.implementations</span> <span class="kn">import</span> <span class="n">AggregatorImplementation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">oaklib.datamodels.search</span> <span class="kn">import</span> <span class="n">SearchConfiguration</span><span class="p">,</span> <span class="n">SearchTermSyntax</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hp</span> <span class="o">=</span> <span class="n">get_adapter</span><span class="p">(</span><span class="s2">&quot;sqlite:obo:hp&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mp</span> <span class="o">=</span> <span class="n">get_adapter</span><span class="p">(</span><span class="s2">&quot;sqlite:obo:mp&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="n">SearchConfiguration</span><span class="p">(</span><span class="n">syntax</span><span class="o">=</span><span class="n">SearchTermSyntax</span><span class="o">.</span><span class="n">REGULAR_EXPRESSION</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">agg</span> <span class="o">=</span> <span class="n">AggregatorImplementation</span><span class="p">(</span><span class="n">implementations</span><span class="o">=</span><span class="p">[</span><span class="n">hp</span><span class="p">,</span> <span class="n">mp</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">agg</span><span class="o">.</span><span class="n">basic_search</span><span class="p">(</span><span class="s2">&quot;parathyroid&quot;</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="n">cfg</span><span class="p">)):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="p">,</span> <span class="n">agg</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">entity</span><span class="p">))</span>
+
+<span class="go">...</span>
+<span class="go">HP:0000860 Parathyroid hypoplasia</span>
+<span class="go">...</span>
+<span class="go">MP:0000680 absent parathyroid glands</span>
+<span class="go">...</span>
+</pre></div>
 </div>
-<p>This wraps any number of other implementations, multiplexing queries and aggregating results, treating
-as if it were a single unified endpoints</p>
 <section id="command-line-usage">
-<h2>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Permalink to this heading"></a></h2>
+<h3>Command Line Usage<a class="headerlink" href="#command-line-usage" title="Link to this heading"></a></h3>
 <p>Use the <code class="code docutils literal notranslate"><span class="pre">--add</span></code> (<code class="code docutils literal notranslate"><span class="pre">-a</span></code>) option before the main command to add additional implementations.</p>
 <p>E.g</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">runoak</span> <span class="o">-</span><span class="n">i</span> <span class="n">db</span><span class="o">/</span><span class="n">mp</span><span class="o">.</span><span class="n">db</span> <span class="o">-</span><span class="n">a</span> <span class="n">db</span><span class="o">/</span><span class="n">hp</span><span class="o">.</span><span class="n">db</span> <span class="n">COMMAND</span> <span class="p">[</span><span class="n">COMMAND</span> <span class="n">OPTIONS</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
-<section id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="oaklib.implementations.aggregator.aggregator_implementation.AggregatorImplementation">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">oaklib.implementations.aggregator.aggregator_implementation.</span></span><span class="sig-name descname"><span class="pre">AggregatorImplementation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource:</span> <span class="pre">~oaklib.resource.OntologyResource</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strict:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_multilingual:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_owl_top_and_bottom:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_metamodel_mapper:</span> <span class="pre">~oaklib.mappers.ontology_metadata_mapper.OntologyMetadataMapper</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_converter:</span> <span class="pre">~curies.api.Converter</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_relax_axioms:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache_lookups:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">implementations:</span> <span class="pre">~typing.List[~oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/oaklib/implementations/aggregator/aggregator_implementation.html#AggregatorImplementation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.implementations.aggregator.aggregator_implementation.AggregatorImplementation" title="Permalink to this definition"></a></dt>
-<dd><p>Wraps multiple implementations and integrates results together.</p>
-<p>This allows for multiple implementations to be wrapped, with calls to
-the aggregator farming out queries to multiple implementations, and weaving
-the results together.</p>
-<p>Documentation:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://incatools.github.io/ontology-access-kit/implementations/aggregator.html">Aggregator Implementation</a></p></li>
-</ul>
 </dd></dl>
 
 </section>
@@ -152,13 +161,13 @@ the results together.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="gilda.html" class="btn btn-neutral float-left" title="Gilda Adapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../selectors.html" class="btn btn-neutral float-right" title="Ontology Adapter Selectors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="pantherdb.html" class="btn btn-neutral float-right" title="PantherDB Adapter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

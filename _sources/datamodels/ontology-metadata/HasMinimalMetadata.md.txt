@@ -1,10 +1,14 @@
 # Class: HasMinimalMetadata
+
+
 _Absolute minimum metadata model_
 
 
 
 
+
 URI: [omoschema:HasMinimalMetadata](http://purl.obolibrary.org/obo/omo/schema/HasMinimalMetadata)
+
 
 
 
@@ -95,7 +99,6 @@ URI: [omoschema:HasMinimalMetadata](http://purl.obolibrary.org/obo/omo/schema/Ha
 name: HasMinimalMetadata
 description: Absolute minimum metadata model
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 slots:
@@ -112,7 +115,6 @@ slots:
 name: HasMinimalMetadata
 description: Absolute minimum metadata model
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 attributes:

@@ -1,10 +1,14 @@
 # Class: ContributorRole
+
+
 _A role that a contributor can have_
 
 
 
 
+
 URI: [sh:ContributorRole](https://w3id.org/shacl/ContributorRole)
+
 
 
 
@@ -26,7 +30,7 @@ URI: [sh:ContributorRole](https://w3id.org/shacl/ContributorRole)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | the unique identifier for the role | direct |
 
 
 
@@ -75,14 +79,19 @@ URI: [sh:ContributorRole](https://w3id.org/shacl/ContributorRole)
 name: ContributorRole
 description: A role that a contributor can have
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   id:
     name: id
     description: the unique identifier for the role
     from_schema: https://w3id.org/oak/summary_statistics
     identifier: true
+    domain_of:
+    - SummaryStatisticsReport
+    - Ontology
+    - Agent
+    - ContributorRole
     range: uriorcurie
+    required: true
 class_uri: sh:ContributorRole
 
 ```
@@ -95,7 +104,6 @@ class_uri: sh:ContributorRole
 name: ContributorRole
 description: A role that a contributor can have
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   id:
     name: id
@@ -110,6 +118,7 @@ attributes:
     - Agent
     - ContributorRole
     range: uriorcurie
+    required: true
 class_uri: sh:ContributorRole
 
 ```

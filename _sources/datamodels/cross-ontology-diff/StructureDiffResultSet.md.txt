@@ -1,10 +1,14 @@
 # Class: StructureDiffResultSet
+
+
 _A collection of relational diff results_
 
 
 
 
+
 URI: [xodiff:StructureDiffResultSet](https://w3id.org/oak/cross-ontology-diff/StructureDiffResultSet)
+
 
 
 
@@ -15,7 +19,7 @@ URI: [xodiff:StructureDiffResultSet](https://w3id.org/oak/cross-ontology-diff/St
         
       StructureDiffResultSet : results
         
-          StructureDiffResultSet ..> RelationalDiff : results
+          StructureDiffResultSet --> RelationalDiff : results
         
       StructureDiffResultSet : right_source
         
@@ -83,7 +87,6 @@ URI: [xodiff:StructureDiffResultSet](https://w3id.org/oak/cross-ontology-diff/St
 name: StructureDiffResultSet
 description: A collection of relational diff results
 from_schema: https://w3id.org/oak/cross-ontology-diff
-rank: 1000
 attributes:
   results:
     name: results
@@ -91,6 +94,8 @@ attributes:
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
     multivalued: true
+    domain_of:
+    - StructureDiffResultSet
     range: RelationalDiff
     inlined: true
   left_source:
@@ -98,12 +103,16 @@ attributes:
     description: Ontology source for left entities
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
+    domain_of:
+    - StructureDiffResultSet
     range: Source
   right_source:
     name: right_source
     description: Ontology source for right entities
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
+    domain_of:
+    - StructureDiffResultSet
     range: Source
 
 ```
@@ -116,7 +125,6 @@ attributes:
 name: StructureDiffResultSet
 description: A collection of relational diff results
 from_schema: https://w3id.org/oak/cross-ontology-diff
-rank: 1000
 attributes:
   results:
     name: results

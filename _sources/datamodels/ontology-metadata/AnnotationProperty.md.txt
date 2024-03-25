@@ -1,10 +1,14 @@
 # Class: AnnotationProperty
+
+
 _A property used in non-logical axioms_
 
 
 
 
+
 URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
+
 
 
 
@@ -21,27 +25,27 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : broadMatch
         
-          AnnotationProperty ..> Property : broadMatch
+          AnnotationProperty --> Property : broadMatch
         
       AnnotationProperty : category
         
       AnnotationProperty : closeMatch
         
-          AnnotationProperty ..> Property : closeMatch
+          AnnotationProperty --> Property : closeMatch
         
       AnnotationProperty : comment
         
       AnnotationProperty : conformsTo
         
-          AnnotationProperty ..> Thing : conformsTo
+          AnnotationProperty --> Thing : conformsTo
         
       AnnotationProperty : consider
         
-          AnnotationProperty ..> Any : consider
+          AnnotationProperty --> Any : consider
         
       AnnotationProperty : contributor
         
-          AnnotationProperty ..> Agent : contributor
+          AnnotationProperty --> Agent : contributor
         
       AnnotationProperty : created
         
@@ -51,7 +55,7 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : creator
         
-          AnnotationProperty ..> Agent : creator
+          AnnotationProperty --> Agent : creator
         
       AnnotationProperty : curator_note
         
@@ -65,7 +69,7 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : depicted_by
         
-          AnnotationProperty ..> Image : depicted_by
+          AnnotationProperty --> Image : depicted_by
         
       AnnotationProperty : deprecated
         
@@ -77,17 +81,17 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : exactMatch
         
-          AnnotationProperty ..> Property : exactMatch
+          AnnotationProperty --> Property : exactMatch
         
       AnnotationProperty : example_of_usage
         
       AnnotationProperty : excluded_from_QC_check
         
-          AnnotationProperty ..> Thing : excluded_from_QC_check
+          AnnotationProperty --> Thing : excluded_from_QC_check
         
       AnnotationProperty : excluded_subClassOf
         
-          AnnotationProperty ..> Class : excluded_subClassOf
+          AnnotationProperty --> Class : excluded_subClassOf
         
       AnnotationProperty : excluded_synonym
         
@@ -113,15 +117,15 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : image
         
-          AnnotationProperty ..> Thing : image
+          AnnotationProperty --> Thing : image
         
       AnnotationProperty : imported_from
         
-          AnnotationProperty ..> NamedIndividual : imported_from
+          AnnotationProperty --> NamedIndividual : imported_from
         
       AnnotationProperty : in_subset
         
-          AnnotationProperty ..> Subset : in_subset
+          AnnotationProperty --> Subset : in_subset
         
       AnnotationProperty : is_class_level
         
@@ -131,13 +135,13 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : isDefinedBy
         
-          AnnotationProperty ..> Ontology : isDefinedBy
+          AnnotationProperty --> Ontology : isDefinedBy
         
       AnnotationProperty : label
         
       AnnotationProperty : narrowMatch
         
-          AnnotationProperty ..> Property : narrowMatch
+          AnnotationProperty --> Property : narrowMatch
         
       AnnotationProperty : OBO_foundry_unique_label
         
@@ -149,19 +153,19 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
         
       AnnotationProperty : seeAlso
         
-          AnnotationProperty ..> Thing : seeAlso
+          AnnotationProperty --> Thing : seeAlso
         
       AnnotationProperty : shorthand
         
       AnnotationProperty : should_conform_to
         
-          AnnotationProperty ..> Thing : should_conform_to
+          AnnotationProperty --> Thing : should_conform_to
         
       AnnotationProperty : term_editor
         
       AnnotationProperty : term_replaced_by
         
-          AnnotationProperty ..> Any : term_replaced_by
+          AnnotationProperty --> Any : term_replaced_by
         
       AnnotationProperty : term_tracker_item
         
@@ -301,7 +305,6 @@ URI: [owl:AnnotationProperty](http://www.w3.org/2002/07/owl#AnnotationProperty)
 name: AnnotationProperty
 description: A property used in non-logical axioms
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: Property
 slots:
 - shorthand
@@ -317,7 +320,6 @@ class_uri: owl:AnnotationProperty
 name: AnnotationProperty
 description: A property used in non-logical axioms
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: Property
 attributes:
   shorthand:

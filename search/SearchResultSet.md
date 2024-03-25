@@ -6,12 +6,13 @@ URI: [ontosearch:SearchResultSet](https://w3id.org/oak/search-datamodel/SearchRe
 
 
 
+
 ```{mermaid}
  classDiagram
     class SearchResultSet
       SearchResultSet : configuration
         
-          SearchResultSet ..> SearchBaseConfiguration : configuration
+          SearchResultSet --> SearchBaseConfiguration : configuration
         
       SearchResultSet : cursor
         
@@ -19,7 +20,7 @@ URI: [ontosearch:SearchResultSet](https://w3id.org/oak/search-datamodel/SearchRe
         
       SearchResultSet : results
         
-          SearchResultSet ..> SearchResult : results
+          SearchResultSet --> SearchResult : results
         
       
 ```
@@ -37,7 +38,7 @@ URI: [ontosearch:SearchResultSet](https://w3id.org/oak/search-datamodel/SearchRe
 | [configuration](configuration.md) | 0..1 <br/> [SearchBaseConfiguration](SearchBaseConfiguration.md) |  | direct |
 | [results](results.md) | 0..* <br/> [SearchResult](SearchResult.md) |  | direct |
 | [result_count](result_count.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
-| [cursor](cursor.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [cursor](cursor.md) | 0..1 <br/> [Integer](Integer.md) |  | direct |
 
 
 
@@ -85,27 +86,35 @@ URI: [ontosearch:SearchResultSet](https://w3id.org/oak/search-datamodel/SearchRe
 ```yaml
 name: SearchResultSet
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   configuration:
     name: configuration
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchResultSet
     range: SearchBaseConfiguration
   results:
     name: results
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchResultSet
     range: SearchResult
   result_count:
     name: result_count
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchResultSet
     range: integer
   cursor:
     name: cursor
     from_schema: https://w3id.org/oak/search-datamodel
+    domain_of:
+    - SearchBaseConfiguration
+    - SearchResultSet
     range: integer
 
 ```
@@ -117,7 +126,6 @@ attributes:
 ```yaml
 name: SearchResultSet
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   configuration:
     name: configuration

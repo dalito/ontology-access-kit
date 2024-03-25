@@ -1,10 +1,14 @@
 # Class: TaxonConstraint
+
+
 _An individual taxon constraint_
 
 
 
 
+
 URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
+
 
 
 
@@ -19,23 +23,23 @@ URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
         
       TaxonConstraint : contradicted_by
         
-          TaxonConstraint ..> TaxonConstraint : contradicted_by
+          TaxonConstraint --> TaxonConstraint : contradicted_by
         
       TaxonConstraint : evolutionary
         
       TaxonConstraint : predicate
         
-          TaxonConstraint ..> PredicateTerm : predicate
+          TaxonConstraint --> PredicateTerm : predicate
         
       TaxonConstraint : predicates
         
-          TaxonConstraint ..> PredicateTerm : predicates
+          TaxonConstraint --> PredicateTerm : predicates
         
       TaxonConstraint : redundant
         
       TaxonConstraint : redundant_with
         
-          TaxonConstraint ..> TaxonConstraint : redundant_with
+          TaxonConstraint --> TaxonConstraint : redundant_with
         
       TaxonConstraint : redundant_with_only_in
         
@@ -43,15 +47,15 @@ URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
         
       TaxonConstraint : subject
         
-          TaxonConstraint ..> SubjectTerm : subject
+          TaxonConstraint --> SubjectTerm : subject
         
       TaxonConstraint : taxon
         
-          TaxonConstraint ..> Taxon : taxon
+          TaxonConstraint --> Taxon : taxon
         
       TaxonConstraint : via_terms
         
-          TaxonConstraint ..> SubjectTerm : via_terms
+          TaxonConstraint --> SubjectTerm : via_terms
         
       
 ```
@@ -67,7 +71,7 @@ URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
 | [subject](subject.md) | 0..1 <br/> [SubjectTerm](SubjectTerm.md) | The term to which the constraint applies | direct |
-| [predicate](predicate.md) | 0..1 <br/> [PredicateTerm](PredicateTerm.md) | The relationship type for the contraint (e | direct |
+| [predicate](predicate.md) | 0..1 <br/> [PredicateTerm](PredicateTerm.md) | The relationship type for the constraint (e | direct |
 | [asserted](asserted.md) | 0..1 <br/> [Boolean](Boolean.md) | holds if the constraint is asserted in the source ontology, rather than infer... | direct |
 | [evolutionary](evolutionary.md) | 0..1 <br/> [Boolean](Boolean.md) | holds if the constraint is an evolutionary statement | direct |
 | [redundant](redundant.md) | 0..1 <br/> [Boolean](Boolean.md) | True if this is redundant within the set of constraints of the same type (nev... | direct |
@@ -140,7 +144,6 @@ URI: [rdf:Statement](http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement)
 name: TaxonConstraint
 description: An individual taxon constraint
 from_schema: https://w3id.org/oak/taxon_constraints
-rank: 1000
 attributes:
   subject:
     name: subject
@@ -150,16 +153,20 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     slot_uri: rdf:subject
+    domain_of:
+    - TaxonConstraint
     range: SubjectTerm
   predicate:
     name: predicate
-    description: The relationship type for the contraint (e.g. in_taxon, never_in
+    description: The relationship type for the constraint (e.g. in_taxon, never_in
       taxon)
     todos:
     - define a value set of this
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     slot_uri: rdf:predicate
+    domain_of:
+    - TaxonConstraint
     range: PredicateTerm
   asserted:
     name: asserted
@@ -167,12 +174,16 @@ attributes:
       than inferred by rules or reasoning
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
+    domain_of:
+    - TaxonConstraint
     range: boolean
   evolutionary:
     name: evolutionary
     description: holds if the constraint is an evolutionary statement
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
+    domain_of:
+    - TaxonConstraint
     range: boolean
   redundant:
     name: redundant
@@ -180,12 +191,16 @@ attributes:
       type (never vs only)
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
+    domain_of:
+    - TaxonConstraint
     range: boolean
   redundant_with_only_in:
     name: redundant_with_only_in
     description: True for never in constraints that are subsumed by an only in
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
+    domain_of:
+    - TaxonConstraint
     range: boolean
   taxon:
     name: taxon
@@ -194,6 +209,8 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     slot_uri: rdf:object
+    domain_of:
+    - TaxonConstraint
     range: Taxon
     inlined: true
   redundant_with:
@@ -203,6 +220,8 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     multivalued: true
+    domain_of:
+    - TaxonConstraint
     range: TaxonConstraint
   contradicted_by:
     name: contradicted_by
@@ -211,6 +230,8 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     multivalued: true
+    domain_of:
+    - TaxonConstraint
     range: TaxonConstraint
   via_terms:
     name: via_terms
@@ -219,6 +240,8 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     multivalued: true
+    domain_of:
+    - TaxonConstraint
     range: SubjectTerm
     inlined: true
     inlined_as_list: true
@@ -228,24 +251,32 @@ attributes:
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     multivalued: true
+    domain_of:
+    - TaxonConstraint
     range: PredicateTerm
   sources:
     name: sources
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     multivalued: true
+    domain_of:
+    - TaxonConstraint
     range: uriorcurie
   comments:
     name: comments
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
     multivalued: true
+    domain_of:
+    - TaxonConstraint
     range: string
   candidate:
     name: candidate
     description: true if this is a proposed candidate constraint
     from_schema: https://w3id.org/oak/taxon_constraints
     rank: 1000
+    domain_of:
+    - TaxonConstraint
     range: boolean
 class_uri: rdf:Statement
 
@@ -259,7 +290,6 @@ class_uri: rdf:Statement
 name: TaxonConstraint
 description: An individual taxon constraint
 from_schema: https://w3id.org/oak/taxon_constraints
-rank: 1000
 attributes:
   subject:
     name: subject
@@ -276,7 +306,7 @@ attributes:
     range: SubjectTerm
   predicate:
     name: predicate
-    description: The relationship type for the contraint (e.g. in_taxon, never_in
+    description: The relationship type for the constraint (e.g. in_taxon, never_in
       taxon)
     todos:
     - define a value set of this

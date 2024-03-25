@@ -1,7 +1,6 @@
 # Subset: AllotropeRequiredProfile
 
-URI: [AllotropeRequiredProfile](AllotropeRequiredProfile)
-
+URI: [AllotropeRequiredProfile](AllotropeRequiredProfile.md)
 
 
 
@@ -26,10 +25,182 @@ URI: [AllotropeRequiredProfile](AllotropeRequiredProfile)
 
 
 
-## Classes in subset
 
-| Class | Description |
-| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -42,8 +213,4 @@ URI: [AllotropeRequiredProfile](AllotropeRequiredProfile)
 | [label](label.md) |  |
 
 
-## Enumerations in subset
-
-| Enumeration | Description |
-| --- | --- |
 

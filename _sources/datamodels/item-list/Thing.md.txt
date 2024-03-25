@@ -6,12 +6,13 @@ URI: [schema:Thing](http://schema.org/Thing)
 
 
 
+
 ```{mermaid}
  classDiagram
     class Thing
       Thing : description
         
-      Thing : identifier
+      Thing : id
         
       Thing : identifiers
         
@@ -34,11 +35,11 @@ URI: [schema:Thing](http://schema.org/Thing)
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [identifier](identifier.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The identifier of the item | direct |
-| [name](name.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 1..1 <br/> [Uriorcurie](Uriorcurie.md) | The identifier of the item | direct |
+| [name](name.md) | 0..1 <br/> [String](String.md) | The name of the item | direct |
 | [url](url.md) | 0..1 <br/> [Uri](Uri.md) | A URL for the item | direct |
 | [identifiers](identifiers.md) | 0..* <br/> [Uriorcurie](Uriorcurie.md) | A list of identifiers for the item | direct |
-| [description](description.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [description](description.md) | 0..1 <br/> [String](String.md) | A description of the item | direct |
 | [type](type.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | The type of the item | direct |
 
 
@@ -94,27 +95,35 @@ URI: [schema:Thing](http://schema.org/Thing)
 ```yaml
 name: Thing
 from_schema: https://w3id.org/oak/item-list
-rank: 1000
 attributes:
-  identifier:
-    name: identifier
+  id:
+    name: id
     description: The identifier of the item. Note this can be a 'proper' CURIE ID
       or any other unique field, for example symbol
     from_schema: https://w3id.org/oak/item-list
-    rank: 1000
     slot_uri: schema:identifier
+    identifier: true
+    domain_of:
+    - ItemList
+    - Thing
     range: uriorcurie
+    required: true
   name:
     name: name
     description: The name of the item
     from_schema: https://w3id.org/oak/item-list
     slot_uri: rdfs:label
+    domain_of:
+    - ItemList
+    - Thing
     range: string
   url:
     name: url
     description: A URL for the item
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - Thing
     range: uri
   identifiers:
     name: identifiers
@@ -123,11 +132,16 @@ attributes:
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
     multivalued: true
+    domain_of:
+    - Thing
     range: uriorcurie
   description:
     name: description
     description: A description of the item
     from_schema: https://w3id.org/oak/item-list
+    domain_of:
+    - ItemList
+    - Thing
     range: string
   type:
     name: type
@@ -137,6 +151,8 @@ attributes:
     - value: schema:Person
     from_schema: https://w3id.org/oak/item-list
     rank: 1000
+    domain_of:
+    - Thing
     range: uriorcurie
 class_uri: schema:Thing
 
@@ -149,20 +165,21 @@ class_uri: schema:Thing
 ```yaml
 name: Thing
 from_schema: https://w3id.org/oak/item-list
-rank: 1000
 attributes:
-  identifier:
-    name: identifier
+  id:
+    name: id
     description: The identifier of the item. Note this can be a 'proper' CURIE ID
       or any other unique field, for example symbol
     from_schema: https://w3id.org/oak/item-list
-    rank: 1000
     slot_uri: schema:identifier
-    alias: identifier
+    identifier: true
+    alias: id
     owner: Thing
     domain_of:
+    - ItemList
     - Thing
     range: uriorcurie
+    required: true
   name:
     name: name
     description: The name of the item

@@ -1,10 +1,14 @@
 # Class: NotObsoleteAspect
+
+
 _Auto-classifies anything that is not obsolete_
 
 
 
 
+
 URI: [omoschema:NotObsoleteAspect](http://purl.obolibrary.org/obo/omo/schema/NotObsoleteAspect)
+
 
 
 
@@ -96,7 +100,6 @@ URI: [omoschema:NotObsoleteAspect](http://purl.obolibrary.org/obo/omo/schema/Not
 name: NotObsoleteAspect
 description: Auto-classifies anything that is not obsolete
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 mixin: true
 rules:
 - postconditions:
@@ -121,7 +124,6 @@ classification_rules:
 name: NotObsoleteAspect
 description: Auto-classifies anything that is not obsolete
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 mixin: true
 rules:
 - postconditions:

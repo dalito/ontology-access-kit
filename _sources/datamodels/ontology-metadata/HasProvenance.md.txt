@@ -6,6 +6,7 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/omo/schema/HasProv
 
 
 
+
 ```{mermaid}
  classDiagram
     class HasProvenance
@@ -17,7 +18,7 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/omo/schema/HasProv
       
       HasProvenance : contributor
         
-          HasProvenance ..> Agent : contributor
+          HasProvenance --> Agent : contributor
         
       HasProvenance : created
         
@@ -27,7 +28,7 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/omo/schema/HasProv
         
       HasProvenance : creator
         
-          HasProvenance ..> Agent : creator
+          HasProvenance --> Agent : creator
         
       HasProvenance : date
         
@@ -37,11 +38,11 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/omo/schema/HasProv
         
       HasProvenance : imported_from
         
-          HasProvenance ..> NamedIndividual : imported_from
+          HasProvenance --> NamedIndividual : imported_from
         
       HasProvenance : isDefinedBy
         
-          HasProvenance ..> Ontology : isDefinedBy
+          HasProvenance --> Ontology : isDefinedBy
         
       HasProvenance : ontology_term_requester
         
@@ -133,7 +134,6 @@ URI: [omoschema:HasProvenance](http://purl.obolibrary.org/obo/omo/schema/HasProv
 ```yaml
 name: HasProvenance
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 slots:
@@ -160,7 +160,6 @@ slots:
 ```yaml
 name: HasProvenance
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 attributes:

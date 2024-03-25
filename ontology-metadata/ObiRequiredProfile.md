@@ -1,7 +1,6 @@
 # Subset: ObiRequiredProfile
 
-URI: [ObiRequiredProfile](ObiRequiredProfile)
-
+URI: [ObiRequiredProfile](ObiRequiredProfile.md)
 
 
 
@@ -22,10 +21,182 @@ URI: [ObiRequiredProfile](ObiRequiredProfile)
 
 
 
-## Classes in subset
 
-| Class | Description |
-| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,8 +209,4 @@ URI: [ObiRequiredProfile](ObiRequiredProfile)
 | [label](label.md) |  |
 
 
-## Enumerations in subset
-
-| Enumeration | Description |
-| --- | --- |
 

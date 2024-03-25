@@ -6,6 +6,7 @@ URI: [oio:SynonymType](http://www.geneontology.org/formats/oboInOwl#SynonymType)
 
 
 
+
 ```{mermaid}
  classDiagram
     class SynonymTypeDefinition
@@ -85,7 +86,6 @@ URI: [oio:SynonymType](http://www.geneontology.org/formats/oboInOwl#SynonymType)
 ```yaml
 name: SynonymTypeDefinition
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 slots:
 - id
 - lbl
@@ -101,7 +101,6 @@ class_uri: oio:SynonymType
 ```yaml
 name: SynonymTypeDefinition
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 attributes:
   id:
     name: id
@@ -119,6 +118,7 @@ attributes:
     - SubsetDefinition
     - SynonymTypeDefinition
     range: OboIdentifierString
+    required: true
   lbl:
     name: lbl
     description: the human-readable label of a node

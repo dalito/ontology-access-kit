@@ -1,10 +1,14 @@
 # Class: NamedObject
+
+
 _Anything with an IRI_
 
 
 
 
+
 URI: [omoschema:NamedObject](http://purl.obolibrary.org/obo/omo/schema/NamedObject)
+
 
 
 
@@ -109,7 +113,6 @@ aliases:
 - named entity
 - identified object
 - IRI
-rank: 1000
 is_a: Thing
 slots:
 - id
@@ -128,7 +131,6 @@ aliases:
 - named entity
 - identified object
 - IRI
-rank: 1000
 is_a: Thing
 attributes:
   id:

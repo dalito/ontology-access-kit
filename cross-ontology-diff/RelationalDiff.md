@@ -1,29 +1,56 @@
 # Class: RelationalDiff
-_A relational diff expresses the difference between an edge in one ontology, and an edge (or lack of edge) in
-another ontology (or a different version of the same ontology). The diff is from the perspective of one
-ontology (the one on the "left" side).
 
-For every edge in the left ontology, the subject and object are mapped to the right ontology.
-If mappings cannot be found then the diff is categorized as missing mappings.
-The predicate is also mapped, with the reflexivity assumption.
 
-for every mapped subject and object pair (the "right" subject and object), the entailed relationship
-is examined to determine if it consistent with the left predicate.
+_A relational diff expresses the difference between an edge in one ontology, and an edge (or lack of edge) in_
 
-```
-left_object    <--- mapped to ---> right_object
-   ^                                  ^
-   |                                  |
-   |                                  |
-   | left                             | right
-   | predicate                        | predicate
-   |                                  |
-   |                                  |
-left_subject   <--- mapped to ---> right_subject
-```
+_another ontology (or a different version of the same ontology). The diff is from the perspective of one_
 
-The above figure gives hows the basic structure. Classification of the edge is done from the perspective
-of the left edge._
+_ontology (the one on the "left" side)._
+
+__
+
+_For every edge in the left ontology, the subject and object are mapped to the right ontology._
+
+_If mappings cannot be found then the diff is categorized as missing mappings._
+
+_The predicate is also mapped, with the reflexivity assumption._
+
+__
+
+_for every mapped subject and object pair (the "right" subject and object), the entailed relationship_
+
+_is examined to determine if it consistent with the left predicate._
+
+__
+
+_```_
+
+_left_object    <--- mapped to ---> right_object_
+
+_   ^                                  ^_
+
+_   |                                  |_
+
+_   |                                  |_
+
+_   | left                             | right_
+
+_   | predicate                        | predicate_
+
+_   |                                  |_
+
+_   |                                  |_
+
+_left_subject   <--- mapped to ---> right_subject_
+
+_```_
+
+__
+
+_The above figure gives hows the basic structure. Classification of the edge is done from the perspective_
+
+_of the left edge._
+
 
 
 
@@ -32,12 +59,13 @@ URI: [xodiff:RelationalDiff](https://w3id.org/oak/cross-ontology-diff/Relational
 
 
 
+
 ```{mermaid}
  classDiagram
     class RelationalDiff
       RelationalDiff : category
         
-          RelationalDiff ..> DiffCategory : category
+          RelationalDiff --> DiffCategory : category
         
       RelationalDiff : left_object_id
         
@@ -57,7 +85,7 @@ URI: [xodiff:RelationalDiff](https://w3id.org/oak/cross-ontology-diff/Relational
         
       RelationalDiff : object_mapping_cardinality
         
-          RelationalDiff ..> MappingCardinalityEnum : object_mapping_cardinality
+          RelationalDiff --> MappingCardinalityEnum : object_mapping_cardinality
         
       RelationalDiff : object_mapping_predicate
         
@@ -77,7 +105,7 @@ URI: [xodiff:RelationalDiff](https://w3id.org/oak/cross-ontology-diff/Relational
         
       RelationalDiff : subject_mapping_cardinality
         
-          RelationalDiff ..> MappingCardinalityEnum : subject_mapping_cardinality
+          RelationalDiff --> MappingCardinalityEnum : subject_mapping_cardinality
         
       RelationalDiff : subject_mapping_predicate
         
@@ -107,8 +135,8 @@ URI: [xodiff:RelationalDiff](https://w3id.org/oak/cross-ontology-diff/Relational
 | [right_subject_label](right_subject_label.md) | 0..1 <br/> [Label](Label.md) | The name of the subject (child) of the matched/right edge, if matchable | direct |
 | [right_object_label](right_object_label.md) | 0..1 <br/> [Label](Label.md) | The name of the object (parent) of the matched/right edge, if matchable | direct |
 | [right_predicate_labels](right_predicate_labels.md) | 0..* <br/> [Label](Label.md) | The names corresponding to the right_predicate_ids | direct |
-| [left_subject_is_functional](left_subject_is_functional.md) | 0..1 <br/> [Boolean](Boolean.md) | True if a subject mapping is present, and maps uniquely within the same ontol... | direct |
-| [left_object_is_functional](left_object_is_functional.md) | 0..1 <br/> [Boolean](Boolean.md) | True if an object mapping is present, and maps uniquely within the same ontol... | direct |
+| [left_subject_is_functional](left_subject_is_functional.md) | 0..1 <br/> [String](String.md) | True if a subject mapping is present, and maps uniquely within the same ontol... | direct |
+| [left_object_is_functional](left_object_is_functional.md) | 0..1 <br/> [String](String.md) | True if an object mapping is present, and maps uniquely within the same ontol... | direct |
 | [subject_mapping_predicate](subject_mapping_predicate.md) | 0..1 <br/> [EntityReference](EntityReference.md) | The mapping predicate that holds between left_subject_id and right_subject_id | direct |
 | [object_mapping_predicate](object_mapping_predicate.md) | 0..1 <br/> [EntityReference](EntityReference.md) | The mapping predicate that holds between left_object_id and right_object_id | direct |
 | [right_intermediate_ids](right_intermediate_ids.md) | 0..* <br/> [EntityReference](EntityReference.md) |  | direct |
@@ -184,13 +212,14 @@ description: "A relational diff expresses the difference between an edge in one 
   \ hows the basic structure. Classification of the edge is done from the perspective\n\
   of the left edge."
 from_schema: https://w3id.org/oak/cross-ontology-diff
-rank: 1000
 attributes:
   category:
     name: category
     description: Each match (or lack of match) is placed into exactly one category
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
+    domain_of:
+    - RelationalDiff
     range: DiffCategory
   left_subject_id:
     name: left_subject_id
@@ -200,6 +229,8 @@ attributes:
     mixins:
     - left_side
     - subject
+    domain_of:
+    - RelationalDiff
     range: EntityReference
     required: true
   left_object_id:
@@ -210,6 +241,8 @@ attributes:
     mixins:
     - left_side
     - object
+    domain_of:
+    - RelationalDiff
     range: EntityReference
     required: true
   left_predicate_id:
@@ -220,6 +253,8 @@ attributes:
     mixins:
     - left_side
     - predicate
+    domain_of:
+    - RelationalDiff
     range: EntityReference
     required: true
   left_subject_label:
@@ -231,6 +266,8 @@ attributes:
     - left_side
     - subject
     - label
+    domain_of:
+    - RelationalDiff
     range: Label
   left_object_label:
     name: left_object_label
@@ -241,6 +278,8 @@ attributes:
     - left_side
     - object
     - label
+    domain_of:
+    - RelationalDiff
     range: Label
   left_predicate_label:
     name: left_predicate_label
@@ -251,6 +290,8 @@ attributes:
     - left_side
     - predicate
     - label
+    domain_of:
+    - RelationalDiff
     range: Label
   right_subject_id:
     name: right_subject_id
@@ -260,6 +301,8 @@ attributes:
     mixins:
     - right_side
     - subject
+    domain_of:
+    - RelationalDiff
     range: EntityReference
   right_object_id:
     name: right_object_id
@@ -269,6 +312,8 @@ attributes:
     mixins:
     - right_side
     - object
+    domain_of:
+    - RelationalDiff
     range: EntityReference
   right_predicate_ids:
     name: right_predicate_ids
@@ -284,6 +329,8 @@ attributes:
     - right_side
     - predicate
     multivalued: true
+    domain_of:
+    - RelationalDiff
     range: EntityReference
   right_subject_label:
     name: right_subject_label
@@ -294,6 +341,8 @@ attributes:
     - right_side
     - subject
     - label
+    domain_of:
+    - RelationalDiff
     range: Label
   right_object_label:
     name: right_object_label
@@ -304,6 +353,8 @@ attributes:
     - right_side
     - object
     - label
+    domain_of:
+    - RelationalDiff
     range: Label
   right_predicate_labels:
     name: right_predicate_labels
@@ -315,6 +366,8 @@ attributes:
     - predicate
     - label
     multivalued: true
+    domain_of:
+    - RelationalDiff
     range: Label
   left_subject_is_functional:
     name: left_subject_is_functional
@@ -325,6 +378,8 @@ attributes:
     mixins:
     - left_side
     - is_functional
+    domain_of:
+    - RelationalDiff
   left_object_is_functional:
     name: left_object_is_functional
     description: True if an object mapping is present, and maps uniquely within the
@@ -334,6 +389,8 @@ attributes:
     mixins:
     - left_side
     - is_functional
+    domain_of:
+    - RelationalDiff
   subject_mapping_predicate:
     name: subject_mapping_predicate
     description: The mapping predicate that holds between left_subject_id and right_subject_id
@@ -342,6 +399,8 @@ attributes:
     mixins:
     - subject
     - predicate
+    domain_of:
+    - RelationalDiff
     range: EntityReference
   object_mapping_predicate:
     name: object_mapping_predicate
@@ -351,24 +410,32 @@ attributes:
     mixins:
     - subject
     - predicate
+    domain_of:
+    - RelationalDiff
     range: EntityReference
   right_intermediate_ids:
     name: right_intermediate_ids
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
     multivalued: true
+    domain_of:
+    - RelationalDiff
     range: EntityReference
   subject_mapping_cardinality:
     name: subject_mapping_cardinality
     description: The mapping cardinality of the subject pair
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
+    domain_of:
+    - RelationalDiff
     range: MappingCardinalityEnum
   object_mapping_cardinality:
     name: object_mapping_cardinality
     description: The mapping cardinality of the object pair
     from_schema: https://w3id.org/oak/cross-ontology-diff
     rank: 1000
+    domain_of:
+    - RelationalDiff
     range: MappingCardinalityEnum
 
 ```
@@ -396,7 +463,6 @@ description: "A relational diff expresses the difference between an edge in one 
   \ hows the basic structure. Classification of the edge is done from the perspective\n\
   of the left edge."
 from_schema: https://w3id.org/oak/cross-ontology-diff
-rank: 1000
 attributes:
   category:
     name: category

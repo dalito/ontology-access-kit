@@ -1,7 +1,6 @@
 # Subset: GoRecommendedProfile
 
-URI: [GoRecommendedProfile](GoRecommendedProfile)
-
+URI: [GoRecommendedProfile](GoRecommendedProfile.md)
 
 
 
@@ -22,22 +21,183 @@ URI: [GoRecommendedProfile](GoRecommendedProfile)
 
 
 
-## Classes in subset
-
-| Class | Description |
-| --- | --- |
 
 
 
 
-## Slots in subset
-
-| Slot | Description |
-| --- | --- |
 
 
-## Enumerations in subset
 
-| Enumeration | Description |
-| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -6,6 +6,7 @@ URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 
 
 
+
 ```{mermaid}
  classDiagram
     class TermInfo
@@ -83,18 +84,22 @@ URI: [sim:TermInfo](https://w3id.org/linkml/similarity/TermInfo)
 ```yaml
 name: TermInfo
 from_schema: https://w3id.org/oak/similarity
-rank: 1000
 attributes:
   id:
     name: id
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
     identifier: true
+    domain_of:
+    - TermInfo
+    required: true
   label:
     name: label
     from_schema: https://w3id.org/oak/similarity
     rank: 1000
     slot_uri: rdfs:label
+    domain_of:
+    - TermInfo
 
 ```
 </details>
@@ -105,7 +110,6 @@ attributes:
 ```yaml
 name: TermInfo
 from_schema: https://w3id.org/oak/similarity
-rank: 1000
 attributes:
   id:
     name: id
@@ -117,6 +121,7 @@ attributes:
     domain_of:
     - TermInfo
     range: string
+    required: true
   label:
     name: label
     from_schema: https://w3id.org/oak/similarity

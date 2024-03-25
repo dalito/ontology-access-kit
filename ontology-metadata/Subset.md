@@ -1,10 +1,14 @@
 # Class: Subset
+
+
 _A collection of terms grouped for some purpose_
 
 
 
 
+
 URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
+
 
 
 
@@ -17,27 +21,27 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : broadMatch
         
-          Subset ..> Property : broadMatch
+          Subset --> Property : broadMatch
         
       Subset : category
         
       Subset : closeMatch
         
-          Subset ..> Property : closeMatch
+          Subset --> Property : closeMatch
         
       Subset : comment
         
       Subset : conformsTo
         
-          Subset ..> Thing : conformsTo
+          Subset --> Thing : conformsTo
         
       Subset : consider
         
-          Subset ..> Any : consider
+          Subset --> Any : consider
         
       Subset : contributor
         
-          Subset ..> Agent : contributor
+          Subset --> Agent : contributor
         
       Subset : created
         
@@ -47,7 +51,7 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : creator
         
-          Subset ..> Agent : creator
+          Subset --> Agent : creator
         
       Subset : curator_note
         
@@ -61,7 +65,7 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : depicted_by
         
-          Subset ..> Image : depicted_by
+          Subset --> Image : depicted_by
         
       Subset : deprecated
         
@@ -73,17 +77,17 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : exactMatch
         
-          Subset ..> Property : exactMatch
+          Subset --> Property : exactMatch
         
       Subset : example_of_usage
         
       Subset : excluded_from_QC_check
         
-          Subset ..> Thing : excluded_from_QC_check
+          Subset --> Thing : excluded_from_QC_check
         
       Subset : excluded_subClassOf
         
-          Subset ..> Class : excluded_subClassOf
+          Subset --> Class : excluded_subClassOf
         
       Subset : excluded_synonym
         
@@ -109,15 +113,15 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : image
         
-          Subset ..> Thing : image
+          Subset --> Thing : image
         
       Subset : imported_from
         
-          Subset ..> NamedIndividual : imported_from
+          Subset --> NamedIndividual : imported_from
         
       Subset : in_subset
         
-          Subset ..> Subset : in_subset
+          Subset --> Subset : in_subset
         
       Subset : is_class_level
         
@@ -127,13 +131,13 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : isDefinedBy
         
-          Subset ..> Ontology : isDefinedBy
+          Subset --> Ontology : isDefinedBy
         
       Subset : label
         
       Subset : narrowMatch
         
-          Subset ..> Property : narrowMatch
+          Subset --> Property : narrowMatch
         
       Subset : OBO_foundry_unique_label
         
@@ -145,19 +149,19 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
         
       Subset : seeAlso
         
-          Subset ..> Thing : seeAlso
+          Subset --> Thing : seeAlso
         
       Subset : shorthand
         
       Subset : should_conform_to
         
-          Subset ..> Thing : should_conform_to
+          Subset --> Thing : should_conform_to
         
       Subset : term_editor
         
       Subset : term_replaced_by
         
-          Subset ..> Any : term_replaced_by
+          Subset --> Any : term_replaced_by
         
       Subset : term_tracker_item
         
@@ -307,7 +311,6 @@ URI: [oio:Subset](http://www.geneontology.org/formats/oboInOwl#Subset)
 name: Subset
 description: A collection of terms grouped for some purpose
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationProperty
 class_uri: oio:Subset
 
@@ -321,7 +324,6 @@ class_uri: oio:Subset
 name: Subset
 description: A collection of terms grouped for some purpose
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationProperty
 attributes:
   shorthand:

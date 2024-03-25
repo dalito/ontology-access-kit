@@ -1,10 +1,14 @@
 # Class: Annotation
+
+
 _A reified property-object pair_
 
 
 
 
+
 URI: [omoschema:Annotation](http://purl.obolibrary.org/obo/omo/schema/Annotation)
+
 
 
 
@@ -85,15 +89,18 @@ URI: [omoschema:Annotation](http://purl.obolibrary.org/obo/omo/schema/Annotation
 name: Annotation
 description: A reified property-object pair
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 attributes:
   predicate:
     name: predicate
     from_schema: http://purl.obolibrary.org/obo/omo/schema
+    domain_of:
+    - Annotation
     relational_role: PREDICATE
   object:
     name: object
     from_schema: http://purl.obolibrary.org/obo/omo/schema
+    domain_of:
+    - Annotation
     relational_role: OBJECT
 represents_relationship: true
 
@@ -107,7 +114,6 @@ represents_relationship: true
 name: Annotation
 description: A reified property-object pair
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 attributes:
   predicate:
     name: predicate

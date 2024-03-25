@@ -11,13 +11,13 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../_static/clipboard.min.js"></script>
-        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../../_static/js/theme.js"></script>
@@ -49,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -93,18 +93,91 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SearchConfiguration&quot;</span><span class="p">,</span> <span class="s2">&quot;SearchInterface&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="SearchInterface"><a class="viewcode-back" href="../../../packages/interfaces/search.html#oaklib.interfaces.search_interface.SearchInterface">[docs]</a><span class="k">class</span> <span class="nc">SearchInterface</span><span class="p">(</span><span class="n">BasicOntologyInterface</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
+<div class="viewcode-block" id="SearchInterface">
+<a class="viewcode-back" href="../../../packages/interfaces/search.html#oaklib.interfaces.search_interface.SearchInterface">[docs]</a>
+<span class="k">class</span> <span class="nc">SearchInterface</span><span class="p">(</span><span class="n">BasicOntologyInterface</span><span class="p">,</span> <span class="n">ABC</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    An Ontology Interface that supports text-based search</span>
+<span class="sd">    An Ontology Interface that supports text-based search.</span>
+
+<span class="sd">    The search interface provides a largely implementation-neutral way to query an ontology. It allows for</span>
+
+<span class="sd">    - exact or partial matches</span>
+<span class="sd">    - matching the beginning of a term</span>
+<span class="sd">    - regular expression search</span>
+
+<span class="sd">    It also allows you to control which metadata elements are searched over (typically labels and aliases)</span>
+
+<span class="sd">    Implementations may differ in their behavior. Some implementations may not be able to honor specific requests.</span>
+<span class="sd">    For example, the :ref:`SqlDatabaseImplementation` implementation may not be able to fulfil regular</span>
+<span class="sd">    expression queries.</span>
+
+<span class="sd">    Some endpoints may return results that are ranked by relevance, others may be arbitrary</span>
+
+<span class="sd">    Command Line</span>
+<span class="sd">    ------------</span>
+
+<span class="sd">    A good way to explore this interface is via the search subcommand:</span>
+
+<span class="sd">    Ubergraph uses relevancy ranking:</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        runoak -i ubergraph:uberon search limb</span>
+
+<span class="sd">    Exact match for a label using sqlite:</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        runoak -i db/cl.db search l=neuron</span>
+
+<span class="sd">    Inexact match for a label or synonym using sqlite:</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        poetry run runoak -i db/cl.db search .~neuron</span>
+
+<span class="sd">    Datamodels</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    Search uses `&lt;https://w3id.org/oak/search&gt;`_ to specify both an input query and search results,</span>
+<span class="sd">     see :ref:`datamodels`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="SearchInterface.basic_search"><a class="viewcode-back" href="../../../packages/interfaces/search.html#oaklib.interfaces.search_interface.SearchInterface.basic_search">[docs]</a>    <span class="k">def</span> <span class="nf">basic_search</span><span class="p">(</span>
+<div class="viewcode-block" id="SearchInterface.basic_search">
+<a class="viewcode-back" href="../../../packages/interfaces/search.html#oaklib.interfaces.search_interface.SearchInterface.basic_search">[docs]</a>
+    <span class="k">def</span> <span class="nf">basic_search</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">search_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SearchConfiguration</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Search over ontology using the specified search term.</span>
 
-<span class="sd">        The search term may be a CURIE, label, or alias</span>
+<span class="sd">        Searching over aliases (synonyms) as well as labels:</span>
+
+<span class="sd">        &gt;&gt;&gt; from oaklib import get_adapter</span>
+<span class="sd">        &gt;&gt;&gt; from oaklib.datamodels.search import SearchProperty, SearchConfiguration</span>
+<span class="sd">        &gt;&gt;&gt; uberon = get_adapter(&quot;sqlite:obo:uberon&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; config = SearchConfiguration(properties=[SearchProperty.ALIAS])</span>
+<span class="sd">        &gt;&gt;&gt; for curie in uberon.basic_search(&quot;hand&quot;, config=config):</span>
+<span class="sd">        ...     print(curie, uberon.label(curie))</span>
+<span class="sd">        UBERON:0002398 manus</span>
+
+<span class="sd">        Searching over mapped identifiers (xrefs):</span>
+
+<span class="sd">        &gt;&gt;&gt; config = SearchConfiguration(properties=[SearchProperty.MAPPED_IDENTIFIER])</span>
+<span class="sd">        &gt;&gt;&gt; for curie in uberon.basic_search(&quot;FMA:9712&quot;, config=config):</span>
+<span class="sd">        ...     print(curie, uberon.label(curie))</span>
+<span class="sd">        UBERON:0002398 manus</span>
+
+<span class="sd">        Partial search:</span>
+
+<span class="sd">        &gt;&gt;&gt; config = SearchConfiguration(is_partial=True, properties=[SearchProperty.ALIAS])</span>
+<span class="sd">        &gt;&gt;&gt; for curie in sorted(uberon.basic_search(&quot;hand&quot;, config=config)):</span>
+<span class="sd">        ...     print(curie, uberon.label(curie))</span>
+<span class="sd">        &lt;BLANKLINE&gt;</span>
+<span class="sd">        ...</span>
+<span class="sd">        UBERON:0007723 interphalangeal joint of manual digit 1</span>
+<span class="sd">        UBERON:0007729 interphalangeal joint of manual digit 2</span>
+<span class="sd">        ...</span>
 
 <span class="sd">        :param search_term:</span>
 <span class="sd">        :param config:</span>
@@ -112,7 +185,10 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-<div class="viewcode-block" id="SearchInterface.multiterm_search"><a class="viewcode-back" href="../../../packages/interfaces/search.html#oaklib.interfaces.search_interface.SearchInterface.multiterm_search">[docs]</a>    <span class="k">def</span> <span class="nf">multiterm_search</span><span class="p">(</span>
+
+<div class="viewcode-block" id="SearchInterface.multiterm_search">
+<a class="viewcode-back" href="../../../packages/interfaces/search.html#oaklib.interfaces.search_interface.SearchInterface.multiterm_search">[docs]</a>
+    <span class="k">def</span> <span class="nf">multiterm_search</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">search_terms</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SearchConfiguration</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -131,7 +207,9 @@
                     <span class="k">if</span> <span class="n">curie</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
                         <span class="k">continue</span>
                     <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
-                    <span class="k">yield</span> <span class="n">curie</span></div></div>
+                    <span class="k">yield</span> <span class="n">curie</span></div>
+</div>
+
 </pre></div>
 
            </div>
@@ -141,7 +219,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

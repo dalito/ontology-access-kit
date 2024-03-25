@@ -6,6 +6,7 @@ URI: [omoschema:ClassExpression](http://purl.obolibrary.org/obo/omo/schema/Class
 
 
 
+
 ```{mermaid}
  classDiagram
     class ClassExpression
@@ -24,19 +25,19 @@ URI: [omoschema:ClassExpression](http://purl.obolibrary.org/obo/omo/schema/Class
         
       ClassExpression : equivalentClass
         
-          ClassExpression ..> ClassExpression : equivalentClass
+          ClassExpression --> ClassExpression : equivalentClass
         
       ClassExpression : intersectionOf
         
-          ClassExpression ..> ClassExpression : intersectionOf
+          ClassExpression --> ClassExpression : intersectionOf
         
       ClassExpression : oneOf
         
-          ClassExpression ..> ClassExpression : oneOf
+          ClassExpression --> ClassExpression : oneOf
         
       ClassExpression : subClassOf
         
-          ClassExpression ..> ClassExpression : subClassOf
+          ClassExpression --> ClassExpression : subClassOf
         
       ClassExpression : unionOf
         
@@ -137,7 +138,6 @@ URI: [omoschema:ClassExpression](http://purl.obolibrary.org/obo/omo/schema/Class
 ```yaml
 name: ClassExpression
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: Expression
 mixin: true
 slots:
@@ -159,7 +159,6 @@ slots:
 ```yaml
 name: ClassExpression
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: Expression
 mixin: true
 attributes:

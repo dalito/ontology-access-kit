@@ -12,13 +12,13 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../_static/js/theme.js"></script>
@@ -52,18 +52,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How-To Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="validate-an-obo-ontology.html">How to Validate an OBO ontology using Obo Metadata Ontology schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="write-a-plugin.html">How to write a plugin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fhir-conversions.html">FHIR Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-llms.html">How to use Large Language Models (LLMs) with OAK</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -91,7 +92,7 @@
            <div itemprop="articleBody">
              
   <section id="how-to-guides">
-<span id="howtos"></span><h1>How-To Guides<a class="headerlink" href="#how-to-guides" title="Permalink to this heading"></a></h1>
+<span id="howtos"></span><h1>How-To Guides<a class="headerlink" href="#how-to-guides" title="Link to this heading"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>many of these guides are in-progress</p>
@@ -132,6 +133,28 @@
 <li class="toctree-l2"><a class="reference internal" href="fhir-conversions.html#config-file">Config file</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="use-llms.html">How to use Large Language Models (LLMs) with OAK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="use-llms.html#llm-frameworks-that-use-oak">LLM frameworks that use OAK</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#ontogpt">OntoGPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#curategpt">CurateGPT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#talisman">Talisman</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use-llms.html#using-oak-in-conjunction-with-existing-llm-tools">Using OAK in conjunction with existing LLM tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use-llms.html#oak-llm-adapter">OAK LLM Adapter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#annotation">Annotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#suggesting-definitions">Suggesting Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#validating-mappings">Validating Mappings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="use-llms.html#selecting-alternative-models">Selecting alternative models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#installing-llm-plugins">Installing LLM plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#mixtral-via-ollama-and-litellm">Mixtral via Ollama and LiteLLM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use-llms.html#mixtral-via-groq-and-litellm">Mixtral via groq and LiteLLM</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -147,7 +170,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

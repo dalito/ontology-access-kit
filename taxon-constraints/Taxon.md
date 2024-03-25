@@ -1,10 +1,14 @@
 # Class: Taxon
+
+
 _A term that represents a taxonomic group, may be at species level of a higher level_
 
 
 
 
+
 URI: [tc:Taxon](https://w3id.org/linkml/taxon_constraints/Taxon)
+
 
 
 
@@ -108,7 +112,6 @@ description: A term that represents a taxonomic group, may be at species level o
 from_schema: https://w3id.org/oak/taxon_constraints
 exact_mappings:
 - NCBITaxon:1
-rank: 1000
 is_a: Term
 
 ```
@@ -127,7 +130,6 @@ description: A term that represents a taxonomic group, may be at species level o
 from_schema: https://w3id.org/oak/taxon_constraints
 exact_mappings:
 - NCBITaxon:1
-rank: 1000
 is_a: Term
 attributes:
   id:
@@ -141,6 +143,7 @@ attributes:
     domain_of:
     - Term
     range: uriorcurie
+    required: true
   label:
     name: label
     description: the human readable name or label of the term

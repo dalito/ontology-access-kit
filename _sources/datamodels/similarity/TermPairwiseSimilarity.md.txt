@@ -1,10 +1,14 @@
 # Class: TermPairwiseSimilarity
+
+
 _A simple pairwise similarity between two atomic concepts/terms_
 
 
 
 
+
 URI: [sim:TermPairwiseSimilarity](https://w3id.org/linkml/similarity/TermPairwiseSimilarity)
+
 
 
 
@@ -20,6 +24,8 @@ URI: [sim:TermPairwiseSimilarity](https://w3id.org/linkml/similarity/TermPairwis
       TermPairwiseSimilarity : ancestor_label
         
       TermPairwiseSimilarity : ancestor_source
+        
+      TermPairwiseSimilarity : cosine_similarity
         
       TermPairwiseSimilarity : dice_similarity
         
@@ -73,6 +79,7 @@ URI: [sim:TermPairwiseSimilarity](https://w3id.org/linkml/similarity/TermPairwis
 | [subject_information_content](subject_information_content.md) | 0..1 <br/> [NegativeLogValue](NegativeLogValue.md) | The IC of the subject | direct |
 | [ancestor_information_content](ancestor_information_content.md) | 0..1 <br/> [NegativeLogValue](NegativeLogValue.md) | The IC of the object | direct |
 | [jaccard_similarity](jaccard_similarity.md) | 0..1 <br/> [ZeroToOne](ZeroToOne.md) | The number of concepts in the intersection divided by the number in the union | direct |
+| [cosine_similarity](cosine_similarity.md) | 0..1 <br/> [Float](Float.md) | the dot product of two node embeddings divided by the product of their length... | direct |
 | [dice_similarity](dice_similarity.md) | 0..1 <br/> [ZeroToOne](ZeroToOne.md) |  | direct |
 | [phenodigm_score](phenodigm_score.md) | 0..1 <br/> [NonNegativeFloat](NonNegativeFloat.md) | the geometric mean of the jaccard similarity and the information content | direct |
 
@@ -130,7 +137,6 @@ URI: [sim:TermPairwiseSimilarity](https://w3id.org/linkml/similarity/TermPairwis
 name: TermPairwiseSimilarity
 description: A simple pairwise similarity between two atomic concepts/terms
 from_schema: https://w3id.org/oak/similarity
-rank: 1000
 is_a: PairwiseSimilarity
 slots:
 - subject_id
@@ -146,6 +152,7 @@ slots:
 - subject_information_content
 - ancestor_information_content
 - jaccard_similarity
+- cosine_similarity
 - dice_similarity
 - phenodigm_score
 
@@ -159,7 +166,6 @@ slots:
 name: TermPairwiseSimilarity
 description: A simple pairwise similarity between two atomic concepts/terms
 from_schema: https://w3id.org/oak/similarity
-rank: 1000
 is_a: PairwiseSimilarity
 attributes:
   subject_id:
@@ -306,6 +312,18 @@ attributes:
     domain_of:
     - TermPairwiseSimilarity
     range: ZeroToOne
+  cosine_similarity:
+    name: cosine_similarity
+    description: the dot product of two node embeddings divided by the product of
+      their lengths
+    from_schema: https://w3id.org/oak/similarity
+    rank: 1000
+    is_a: score
+    alias: cosine_similarity
+    owner: TermPairwiseSimilarity
+    domain_of:
+    - TermPairwiseSimilarity
+    range: float
   dice_similarity:
     name: dice_similarity
     from_schema: https://w3id.org/oak/similarity

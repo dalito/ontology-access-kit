@@ -1,10 +1,13 @@
 # Enum: DefinitionConstraintComponent
 
 
+
+
 _An extension of SHACL constraint component for constraining definitions_
 
 
-URI: [DefinitionConstraintComponent](DefinitionConstraintComponent)
+
+URI: [DefinitionConstraintComponent](DefinitionConstraintComponent.md)
 
 ## Permissible Values
 

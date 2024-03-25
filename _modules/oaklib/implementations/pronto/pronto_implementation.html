@@ -11,13 +11,13 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/clipboard.min.js"></script>
-        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../../../_static/js/theme.js"></script>
@@ -49,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -126,12 +126,15 @@
     <span class="n">SCOPE_TO_SYNONYM_PRED_MAP</span><span class="p">,</span>
     <span class="n">SEMAPV</span><span class="p">,</span>
     <span class="n">SKOS_CLOSE_MATCH</span><span class="p">,</span>
+    <span class="n">SKOS_MATCH_PREDICATES</span><span class="p">,</span>
     <span class="n">TERM_REPLACED_BY</span><span class="p">,</span>
     <span class="n">TERMS_MERGED</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="kn">from</span> <span class="nn">oaklib.inference.relation_graph_reasoner</span> <span class="kn">import</span> <span class="n">RelationGraphReasoner</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces</span> <span class="kn">import</span> <span class="n">TextAnnotatorInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.basic_ontology_interface</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ALIAS_MAP</span><span class="p">,</span>
+    <span class="n">DEFINITION</span><span class="p">,</span>
     <span class="n">LANGUAGE_TAG</span><span class="p">,</span>
     <span class="n">METADATA_MAP</span><span class="p">,</span>
     <span class="n">PRED_CURIE</span><span class="p">,</span>
@@ -147,6 +150,7 @@
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.merge_interface</span> <span class="kn">import</span> <span class="n">MergeInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.obograph_interface</span> <span class="kn">import</span> <span class="n">OboGraphInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.obolegacy_interface</span> <span class="kn">import</span> <span class="n">OboLegacyInterface</span>
+<span class="kn">from</span> <span class="nn">oaklib.interfaces.owl_interface</span> <span class="kn">import</span> <span class="n">OwlInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.patcher_interface</span> <span class="kn">import</span> <span class="n">PatcherInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.rdf_interface</span> <span class="kn">import</span> <span class="n">RdfInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.search_interface</span> <span class="kn">import</span> <span class="n">SearchInterface</span>
@@ -156,7 +160,11 @@
 <span class="kn">from</span> <span class="nn">oaklib.interfaces.validator_interface</span> <span class="kn">import</span> <span class="n">ValidatorInterface</span>
 <span class="kn">from</span> <span class="nn">oaklib.resource</span> <span class="kn">import</span> <span class="n">OntologyResource</span>
 <span class="kn">from</span> <span class="nn">oaklib.types</span> <span class="kn">import</span> <span class="n">CURIE</span><span class="p">,</span> <span class="n">SUBSET_CURIE</span>
+<span class="kn">from</span> <span class="nn">oaklib.utilities.axioms.logical_definition_utilities</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">logical_definition_matches</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">oaklib.utilities.kgcl_utilities</span> <span class="kn">import</span> <span class="n">tidy_change_object</span>
+<span class="kn">from</span> <span class="nn">oaklib.utilities.mapping.sssom_utils</span> <span class="kn">import</span> <span class="n">inject_mapping_sources</span>
 
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">pronto</span><span class="o">.</span><span class="n">warnings</span><span class="o">.</span><span class="n">SyntaxWarning</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;pronto&quot;</span><span class="p">)</span>
 
@@ -169,7 +177,9 @@
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown scope: </span><span class="si">{</span><span class="n">scope</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="ProntoImplementation"><a class="viewcode-back" href="../../../../packages/implementations/pronto.html#oaklib.implementations.pronto.pronto_implementation.ProntoImplementation">[docs]</a><span class="nd">@dataclass</span>
+<div class="viewcode-block" id="ProntoImplementation">
+<a class="viewcode-back" href="../../../../packages/implementations/pronto.html#oaklib.implementations.pronto.pronto_implementation.ProntoImplementation">[docs]</a>
+<span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">ProntoImplementation</span><span class="p">(</span>
     <span class="n">ValidatorInterface</span><span class="p">,</span>
     <span class="n">RdfInterface</span><span class="p">,</span>
@@ -187,37 +197,41 @@
     <span class="n">TaxonConstraintInterface</span><span class="p">,</span>
     <span class="n">DumperInterface</span><span class="p">,</span>
     <span class="n">MergeInterface</span><span class="p">,</span>
+    <span class="n">OwlInterface</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Pronto wraps local-file based ontologies in the following formats:</span>
+<span class="sd">    An adapter that standardizes access to OBO Format files by wrapping the Pronto library.</span>
 
-<span class="sd">    - obo</span>
-<span class="sd">    - obojson</span>
-<span class="sd">    - owl rdf/xml</span>
+<span class="sd">    `Pronto &lt;https://github.com/althonos/pronto/&gt;`_ is a high-performance parsing library</span>
+<span class="sd">    for parsing obo format 1.4 and other formats.</span>
 
-<span class="sd">    To load a local file:</span>
+<span class="sd">    Input Selector</span>
+<span class="sd">    --------------</span>
 
-<span class="sd">    .. packages:: python</span>
+<span class="sd">    This adapter uses the ``pronto:`` :term:`Input Selector`; e.g.</span>
 
-<span class="sd">        &gt;&gt;&gt; resource = OntologyResource(slug=&#39;go.obo&#39;, directory=&#39;input&#39;, local=True)</span>
-<span class="sd">        &gt;&gt;&gt; oi = ProntoImplementation(resource)</span>
+<span class="sd">    - ``pronto:path/to/my/file``</span>
+<span class="sd">    - ``pronto:https://example.com/my/file``</span>
+<span class="sd">    - ``prontolib:go`</span>
 
-<span class="sd">    To load from the OBO library:</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from oaklib.implementations import ProntoImplementation</span>
+<span class="sd">    &gt;&gt;&gt; resource = OntologyResource(slug=&#39;go-nucleus.obo&#39;, directory=&#39;tests/input&#39;, local=True)</span>
+<span class="sd">    &gt;&gt;&gt; adapter = ProntoImplementation(resource)</span>
 
-<span class="sd">    .. packages:: python</span>
+<span class="sd">    Or use a selector:</span>
 
-<span class="sd">        &gt;&gt;&gt; resource = OntologyResource(local=False, slug=&#39;go.obo&#39;))</span>
-<span class="sd">        &gt;&gt;&gt; oi = ProntoImplementation(resource)</span>
+<span class="sd">    &gt;&gt;&gt; from oaklib import get_adapter</span>
+<span class="sd">    &gt;&gt;&gt; adapter = get_adapter(&quot;pronto:tests/input/go-nucleus.obo&quot;)</span>
 
-<span class="sd">    Currently this implementation implements most of the BaseOntologyInterface</span>
+<span class="sd">    Then you can use any of the methods implemented by pronto</span>
 
-<span class="sd">    .. packages:: python</span>
-
-<span class="sd">        &gt;&gt;&gt; rels = oi.outgoing_relationships(&#39;GO:0005773&#39;)</span>
-<span class="sd">        &gt;&gt;&gt; for rel, parents in rels.items():</span>
-<span class="sd">        &gt;&gt;&gt;    print(f&#39;  {rel} ! {oi.label(rel)}&#39;)</span>
-<span class="sd">        &gt;&gt;&gt;        for parent in parents:</span>
-<span class="sd">        &gt;&gt;&gt;            print(f&#39;    {parent} ! {oi.label(parent)}&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; rels = adapter.relationships([&#39;GO:0005773&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; for _s, p, o in rels:</span>
+<span class="sd">    ...    print(f&#39;  {p} {o} ! {adapter.label(o)}&#39;)</span>
+<span class="sd">    rdfs:subClassOf GO:0043231 ! intracellular membrane-bounded organelle</span>
+<span class="sd">    BFO:0000050 GO:0005737 ! cytoplasm</span>
 
 <span class="sd">    .. warning::</span>
 
@@ -283,6 +297,10 @@
                         <span class="k">yield</span> <span class="n">s</span><span class="p">,</span> <span class="n">EQUIVALENT_CLASS</span><span class="p">,</span> <span class="n">o</span>
                         <span class="k">yield</span> <span class="n">o</span><span class="p">,</span> <span class="n">EQUIVALENT_CLASS</span><span class="p">,</span> <span class="n">s</span>
 
+    <span class="k">def</span> <span class="nf">_all_entailed_relationships</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">reasoner</span> <span class="o">=</span> <span class="n">RelationGraphReasoner</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">yield from</span> <span class="n">reasoner</span><span class="o">.</span><span class="n">entailed_edges</span><span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">store</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">OntologyResource</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">resource</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">resource</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resource</span>
@@ -317,11 +335,10 @@
     <span class="nd">@deprecated</span><span class="p">(</span><span class="s2">&quot;Use this when we fix https://github.com/fastobo/fastobo/issues/42&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">load_graph_using_jsondoc</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">replace</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">tf</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">()</span>
-        <span class="n">tf_name</span> <span class="o">=</span> <span class="s2">&quot;/tmp/tf.json&quot;</span>
+        <span class="n">tf_name</span> <span class="o">=</span> <span class="s2">&quot;/tmp/tf.json&quot;</span>  <span class="c1"># noqa</span>
         <span class="n">gd</span> <span class="o">=</span> <span class="n">GraphDocument</span><span class="p">(</span><span class="n">graphs</span><span class="o">=</span><span class="p">[</span><span class="n">graph</span><span class="p">])</span>
         <span class="n">json_dumper</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">gd</span><span class="p">,</span> <span class="n">to_file</span><span class="o">=</span><span class="n">tf_name</span><span class="p">)</span>
         <span class="n">tf</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">tf_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">ont</span> <span class="o">=</span> <span class="n">Ontology</span><span class="p">(</span><span class="n">tf_name</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">replace</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">wrapped_ontology</span> <span class="o">=</span> <span class="n">ont</span>
@@ -478,6 +495,10 @@
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rel_type</span><span class="o">.</span><span class="n">xrefs</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;BFO:&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;RO:&quot;</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rel_type</span><span class="o">.</span><span class="n">xrefs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+                <span class="n">compacted</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uri_to_curie</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">compacted</span>
         <span class="k">return</span> <span class="n">rel_type</span><span class="o">.</span><span class="n">id</span>
 
     <span class="k">def</span> <span class="nf">relationships</span><span class="p">(</span>
@@ -490,23 +511,20 @@
         <span class="n">include_entailed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">exclude_blank</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">RELATIONSHIP</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_relationship_index</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">subjects</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subjects</span><span class="p">:</span>
-                <span class="k">continue</span>
-            <span class="k">for</span> <span class="n">s2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_relationship_index</span><span class="p">[</span><span class="n">s</span><span class="p">]:</span>
-                <span class="k">if</span> <span class="n">s2</span> <span class="o">==</span> <span class="n">s</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">predicates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">predicates</span><span class="p">:</span>
-                        <span class="k">continue</span>
-                    <span class="k">if</span> <span class="n">objects</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">o</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
-                        <span class="k">continue</span>
-                    <span class="k">yield</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span>
+        <span class="n">ei</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_index</span>
+        <span class="k">if</span> <span class="n">include_entailed</span><span class="p">:</span>
+            <span class="n">ei</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entailed_edge_index</span>
+        <span class="k">yield from</span> <span class="n">ei</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span>
+            <span class="n">subjects</span><span class="o">=</span><span class="n">subjects</span><span class="p">,</span>
+            <span class="n">predicates</span><span class="o">=</span><span class="n">predicates</span><span class="p">,</span>
+            <span class="n">objects</span><span class="o">=</span><span class="n">objects</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">outgoing_relationships</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">curie</span><span class="p">:</span> <span class="n">CURIE</span><span class="p">,</span> <span class="n">predicates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">entailed</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">,</span> <span class="n">CURIE</span><span class="p">]]:</span>
-        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">relationships</span><span class="p">([</span><span class="n">curie</span><span class="p">],</span> <span class="n">predicates</span><span class="p">,</span> <span class="n">include_entailed</span><span class="o">=</span><span class="n">entailed</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="n">curie</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span>
+        <span class="k">for</span> <span class="n">_s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">relationships</span><span class="p">([</span><span class="n">curie</span><span class="p">],</span> <span class="n">predicates</span><span class="p">,</span> <span class="n">include_entailed</span><span class="o">=</span><span class="n">entailed</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span>
 
     <span class="k">def</span> <span class="nf">create_entity</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -562,6 +580,27 @@
         <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">e</span><span class="o">.</span><span class="n">definition</span> <span class="k">if</span> <span class="n">e</span> <span class="k">else</span> <span class="kc">None</span>
 
+    <span class="k">def</span> <span class="nf">definitions</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">curies</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">],</span>
+        <span class="n">include_metadata</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">include_missing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">lang</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LANGUAGE_TAG</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">DEFINITION</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">curie</span> <span class="ow">in</span> <span class="n">curies</span><span class="p">:</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">defn</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">definition</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">defn</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">include_missing</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="n">include_metadata</span><span class="p">:</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="n">HAS_DBXREF</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">defn</span><span class="o">.</span><span class="n">xrefs</span><span class="p">:</span>
+                    <span class="n">metadata</span><span class="p">[</span><span class="n">HAS_DBXREF</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="k">yield</span> <span class="n">curie</span><span class="p">,</span> <span class="n">defn</span><span class="p">,</span> <span class="n">metadata</span>
+
     <span class="k">def</span> <span class="nf">comments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curies</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
         <span class="k">for</span> <span class="n">curie</span> <span class="ow">in</span> <span class="n">curies</span><span class="p">:</span>
             <span class="n">e</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
@@ -580,30 +619,23 @@
         <span class="k">return</span> <span class="n">m</span>
 
     <span class="k">def</span> <span class="nf">simple_mappings_by_curie</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curie</span><span class="p">:</span> <span class="n">CURIE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">,</span> <span class="n">CURIE</span><span class="p">]]:</span>
-        <span class="n">m</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
         <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">t</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">m</span>
+            <span class="k">return</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">xrefs</span><span class="p">:</span>
-            <span class="c1"># m[HAS_DBXREF].append(s.id)</span>
             <span class="k">yield</span> <span class="n">HAS_DBXREF</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">id</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">annotations</span><span class="p">:</span>
-            <span class="c1"># TODO: less hacky</span>
-            <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">property</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;skos&quot;</span><span class="p">):</span>
+            <span class="n">rel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">property</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s2">&quot;:&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">property</span><span class="p">:</span>
+                <span class="n">pred</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">property</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_pronto_relationship_type_curie</span><span class="p">(</span><span class="n">rel</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">pred</span> <span class="ow">in</span> <span class="n">SKOS_MATCH_PREDICATES</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">LiteralPropertyValue</span><span class="p">):</span>
                     <span class="n">v</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">literal</span>
-                    <span class="c1"># m[s.property].append(v)</span>
-                    <span class="k">yield</span> <span class="n">s</span><span class="o">.</span><span class="n">property</span><span class="p">,</span> <span class="n">v</span>
+                    <span class="k">yield</span> <span class="n">pred</span><span class="p">,</span> <span class="n">v</span>
                 <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ResourcePropertyValue</span><span class="p">):</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">uri_to_curie</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">resource</span><span class="p">)</span>
-                    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-                        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-                            <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> could not compress URI </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">resource</span>
-                        <span class="p">)</span>
-                        <span class="k">continue</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="k">yield</span> <span class="n">s</span><span class="o">.</span><span class="n">property</span><span class="p">,</span> <span class="n">tail</span>
+                    <span class="k">yield</span> <span class="n">pred</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">resource</span>
 
     <span class="k">def</span> <span class="nf">entity_metadata_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curie</span><span class="p">:</span> <span class="n">CURIE</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">METADATA_MAP</span><span class="p">:</span>
         <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
@@ -691,21 +723,23 @@
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">sssom</span><span class="o">.</span><span class="n">Mapping</span><span class="p">]:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">curies</span><span class="p">,</span> <span class="n">CURIE</span><span class="p">):</span>
             <span class="n">curies</span> <span class="o">=</span> <span class="p">[</span><span class="n">curies</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">curies</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">curies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">entities</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">curies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">curies</span><span class="p">)</span>
         <span class="c1"># mappings where curie is the subject:</span>
         <span class="k">for</span> <span class="n">curie</span> <span class="ow">in</span> <span class="n">curies</span><span class="p">:</span>
-            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">curie</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">t</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">xrefs</span><span class="p">:</span>
-                    <span class="k">yield</span> <span class="n">sssom</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span>
-                        <span class="n">subject_id</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-                        <span class="n">predicate_id</span><span class="o">=</span><span class="n">SKOS_CLOSE_MATCH</span><span class="p">,</span>
-                        <span class="n">object_id</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-                        <span class="n">mapping_justification</span><span class="o">=</span><span class="n">sssom</span><span class="o">.</span><span class="n">EntityReference</span><span class="p">(</span>
-                            <span class="n">SEMAPV</span><span class="o">.</span><span class="n">UnspecifiedMatching</span><span class="o">.</span><span class="n">value</span>
-                        <span class="p">),</span>
-                    <span class="p">)</span>
+            <span class="k">for</span> <span class="n">pred</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">simple_mappings_by_curie</span><span class="p">(</span><span class="n">curie</span><span class="p">):</span>
+                <span class="n">m</span> <span class="o">=</span> <span class="n">sssom</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span>
+                    <span class="n">subject_id</span><span class="o">=</span><span class="n">curie</span><span class="p">,</span>
+                    <span class="n">predicate_id</span><span class="o">=</span><span class="n">pred</span><span class="p">,</span>
+                    <span class="n">object_id</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+                    <span class="n">mapping_justification</span><span class="o">=</span><span class="n">sssom</span><span class="o">.</span><span class="n">EntityReference</span><span class="p">(</span><span class="n">SEMAPV</span><span class="o">.</span><span class="n">UnspecifiedMatching</span><span class="o">.</span><span class="n">value</span><span class="p">),</span>
+                <span class="p">)</span>
+                <span class="n">inject_mapping_sources</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">object_source</span> <span class="o">!=</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">subject_source</span> <span class="o">!=</span> <span class="n">source</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">yield</span> <span class="n">m</span>
         <span class="c1"># mappings where curie is the object:</span>
         <span class="c1"># TODO: use a cache to avoid re-calculating</span>
         <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">entities</span><span class="p">():</span>
@@ -713,7 +747,7 @@
             <span class="k">if</span> <span class="n">t</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">t</span><span class="o">.</span><span class="n">xrefs</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">id</span> <span class="ow">in</span> <span class="n">curies</span><span class="p">:</span>
-                        <span class="k">yield</span> <span class="n">sssom</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span>
+                        <span class="n">m</span> <span class="o">=</span> <span class="n">sssom</span><span class="o">.</span><span class="n">Mapping</span><span class="p">(</span>
                             <span class="n">subject_id</span><span class="o">=</span><span class="n">e</span><span class="p">,</span>
                             <span class="n">predicate_id</span><span class="o">=</span><span class="n">SKOS_CLOSE_MATCH</span><span class="p">,</span>
                             <span class="n">object_id</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
@@ -721,6 +755,10 @@
                                 <span class="n">SEMAPV</span><span class="o">.</span><span class="n">UnspecifiedMatching</span><span class="o">.</span><span class="n">value</span>
                             <span class="p">),</span>
                         <span class="p">)</span>
+                        <span class="n">inject_mapping_sources</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">object_source</span> <span class="o">!=</span> <span class="n">source</span> <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">subject_source</span> <span class="o">!=</span> <span class="n">source</span><span class="p">:</span>
+                            <span class="k">continue</span>
+                        <span class="k">yield</span> <span class="n">m</span>
 
     <span class="c1"># ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
     <span class="c1"># Implements: OboGraphInterface</span>
@@ -775,10 +813,11 @@
             <span class="n">Edge</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">pred</span><span class="o">=</span><span class="s2">&quot;is_a&quot;</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">IS_A</span> <span class="k">else</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">obj</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
             <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">relationships</span><span class="p">()</span>
         <span class="p">]</span>
+        <span class="n">ldefs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logical_definitions</span><span class="p">(</span><span class="n">entities</span><span class="p">))</span>
         <span class="n">graph_id</span> <span class="o">=</span> <span class="n">om</span><span class="o">.</span><span class="n">ontology</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">graph_id</span><span class="p">:</span>
             <span class="n">graph_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">slug</span>
-        <span class="k">return</span> <span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">graph_id</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="n">edges</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">graph_id</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="n">edges</span><span class="p">,</span> <span class="n">logicalDefinitionAxioms</span><span class="o">=</span><span class="n">ldefs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">synonym_property_values</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]]</span>
@@ -798,8 +837,14 @@
                     <span class="k">yield</span> <span class="n">curie</span><span class="p">,</span> <span class="n">spv</span>
 
     <span class="k">def</span> <span class="nf">logical_definitions</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">subjects</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">subjects</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">predicates</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">PRED_CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">objects</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">obograph</span><span class="o">.</span><span class="n">LogicalDefinitionAxiom</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">subjects</span><span class="p">:</span>
+            <span class="n">subjects</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entities</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">subjects</span><span class="p">:</span>
             <span class="n">term</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">term</span> <span class="ow">and</span> <span class="n">term</span><span class="o">.</span><span class="n">intersection_of</span><span class="p">:</span>
@@ -814,7 +859,8 @@
                             <span class="n">propertyId</span><span class="o">=</span><span class="n">rel</span><span class="p">,</span> <span class="n">fillerId</span><span class="o">=</span><span class="n">filler</span><span class="o">.</span><span class="n">id</span>
                         <span class="p">)</span>
                         <span class="n">ldef</span><span class="o">.</span><span class="n">restrictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">er</span><span class="p">)</span>
-                <span class="k">yield</span> <span class="n">ldef</span>
+                <span class="k">if</span> <span class="n">logical_definition_matches</span><span class="p">(</span><span class="n">ldef</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="n">predicates</span><span class="p">,</span> <span class="n">objects</span><span class="o">=</span><span class="n">objects</span><span class="p">):</span>
+                    <span class="k">yield</span> <span class="n">ldef</span>
 
     <span class="c1"># ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
     <span class="c1"># Implements: SearchInterface</span>
@@ -936,6 +982,12 @@
             <span class="c1"># rather than forcing all synonyms to be related.</span>
             <span class="n">scope</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">patch</span><span class="o">.</span><span class="n">qualifier</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">if</span> <span class="n">patch</span><span class="o">.</span><span class="n">qualifier</span> <span class="k">else</span> <span class="s2">&quot;RELATED&quot;</span>
             <span class="n">t</span><span class="o">.</span><span class="n">add_synonym</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">patch</span><span class="o">.</span><span class="n">new_value</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="n">scope</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">kgcl</span><span class="o">.</span><span class="n">AddNodeToSubset</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">patch</span><span class="o">.</span><span class="n">about_node</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">subsets</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">subsets</span><span class="o">.</span><span class="n">union</span><span class="p">({</span><span class="n">patch</span><span class="o">.</span><span class="n">in_subset</span><span class="p">})</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">kgcl</span><span class="o">.</span><span class="n">RemoveNodeFromSubset</span><span class="p">):</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_entity</span><span class="p">(</span><span class="n">patch</span><span class="o">.</span><span class="n">about_node</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">subsets</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">subsets</span><span class="o">.</span><span class="n">difference</span><span class="p">({</span><span class="n">patch</span><span class="o">.</span><span class="n">in_subset</span><span class="p">})</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">kgcl</span><span class="o">.</span><span class="n">EdgeCreation</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_relationship</span><span class="p">(</span><span class="n">patch</span><span class="o">.</span><span class="n">subject</span><span class="p">,</span> <span class="n">patch</span><span class="o">.</span><span class="n">predicate</span><span class="p">,</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">patch</span><span class="p">,</span> <span class="n">kgcl</span><span class="o">.</span><span class="n">EdgeDeletion</span><span class="p">):</span>
@@ -948,7 +1000,29 @@
             <span class="n">t</span><span class="o">.</span><span class="n">_data</span><span class="p">()</span><span class="o">.</span><span class="n">synonyms</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">synonym_to_remove</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cannot handle KGCL type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">patch</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">patch</span></div>
+        <span class="k">return</span> <span class="n">patch</span>
+
+    <span class="c1"># ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+    <span class="c1"># Implements: OwlInterface</span>
+    <span class="c1"># ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+
+    <span class="k">def</span> <span class="nf">transitive_object_properties</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapped_ontology</span><span class="o">.</span><span class="n">relationships</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">transitive</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_pronto_relationship_type_curie</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">simple_subproperty_of_chains</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">CURIE</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">CURIE</span><span class="p">]]]:</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">wrapped_ontology</span><span class="o">.</span><span class="n">relationships</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">holds_over_chain</span><span class="p">:</span>
+                    <span class="n">subp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_pronto_relationship_type_curie</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+                    <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">holds_over_chain</span>
+                    <span class="n">p1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_pronto_relationship_type_curie</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+                    <span class="n">p2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_pronto_relationship_type_curie</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+                    <span class="k">yield</span> <span class="n">subp</span><span class="p">,</span> <span class="p">[</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;could not find chain relationships for </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
 </pre></div>
 
            </div>
@@ -958,7 +1032,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

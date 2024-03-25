@@ -11,13 +11,13 @@
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../../../_static/jquery.js"></script>
-        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-        <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinx_highlight.js"></script>
-        <script src="../../../../_static/clipboard.min.js"></script>
-        <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../../../../_static/js/theme.js"></script>
@@ -49,13 +49,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../packages/index.html">Package Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../packages/index.html">OAK Library Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -96,31 +96,71 @@
 <span class="n">ONTOBEE_MERGED_GRAPH_PREFIX</span> <span class="o">=</span> <span class="s2">&quot;http://purl.obolibrary.org/obo/merged/&quot;</span>
 
 
-<div class="viewcode-block" id="OntobeeImplementation"><a class="viewcode-back" href="../../../../packages/implementations/ontobee.html#oaklib.implementations.ontobee.ontobee_implementation.OntobeeImplementation">[docs]</a><span class="nd">@dataclass</span>
+<div class="viewcode-block" id="OntobeeImplementation">
+<a class="viewcode-back" href="../../../../packages/implementations/ontobee.html#oaklib.implementations.ontobee.ontobee_implementation.OntobeeImplementation">[docs]</a>
+<span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">OntobeeImplementation</span><span class="p">(</span>
     <span class="n">AbstractSparqlImplementation</span><span class="p">,</span> <span class="n">SearchInterface</span><span class="p">,</span> <span class="n">MappingProviderInterface</span><span class="p">,</span> <span class="n">OboGraphInterface</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Wraps the Ontobee sparql endpoint</span>
+<span class="sd">    An OAK adapter that standardizes access to the Ontobee sparql endpoint.</span>
 
-<span class="sd">    An OntobeeImplementation can be initialed by:</span>
+<span class="sd">    Ontobee is the default linked data server for most OBO Foundry library ontologies.</span>
+<span class="sd">    Ontobee has also been used for many non-OBO ontologies.</span>
 
-<span class="sd">        .. packages:: python</span>
+<span class="sd">    To access this use the ``ontobee:`` :term:`Input Selector`:</span>
 
-<span class="sd">           &gt;&gt;&gt;  oi = OntobeeImplementation()</span>
+<span class="sd">    - ``ontobee:`` - the default ontobee endpoint</span>
+<span class="sd">    - ``ontobee:uberon`` - the uberon subgraph on ontobee</span>
+
+<span class="sd">    This adapter implements:</span>
+
+<span class="sd">    - :ref:`basic_ontology_interface`</span>
+<span class="sd">    - :ref:`search_interface`</span>
+<span class="sd">    - :ref:`mapping_provider_interface`</span>
+<span class="sd">    - :ref:`obograph_interface`</span>
+
+<span class="sd">    .. note ::</span>
+
+<span class="sd">        To see the full range of methods implemented, see the documentation for the interfaces above.</span>
+
+<span class="sd">    An OntobeeImplementation can be initialized directly:</span>
+
+<span class="sd">    &gt;&gt;&gt; from oaklib.implementations import OntobeeImplementation</span>
+<span class="sd">    &gt;&gt;&gt; oi = OntobeeImplementation()</span>
 
 <span class="sd">    The default ontobee endpoint will be assumed</span>
 
 <span class="sd">    Alternatively, use a selector:</span>
 
-<span class="sd">    .. packages :: python</span>
+<span class="sd">    &gt;&gt;&gt; from oaklib import get_adapter</span>
+<span class="sd">    &gt;&gt;&gt; oi = get_adapter(&quot;ontobee:&quot;)</span>
 
-<span class="sd">        &gt;&gt;&gt; oi = get_implementation_from_shorthand(&quot;ontobee:&quot;)</span>
-<span class="sd">        &gt;&gt;&gt; for a in oi.ancestors(&quot;UBERON:0002398&quot;, predicates=[IS_A]):</span>
-<span class="sd">        &gt;&gt;&gt;     ...</span>
+<span class="sd">    Or to access a specific ontology, such as the Vaccine Ontology:</span>
 
+<span class="sd">    &gt;&gt;&gt; oi = get_adapter(&quot;ontobee:vo&quot;)</span>
+
+<span class="sd">    After that you can use any of the methods that OntoBee implements; e.g.</span>
+
+<span class="sd">    &gt;&gt;&gt; from oaklib.datamodels.vocabulary import IS_A</span>
+<span class="sd">    &gt;&gt;&gt; # uncomment to test</span>
+<span class="sd">    &gt;&gt;&gt; # for a in oi.ancestors(&quot;UBERON:0002398&quot;, predicates=[IS_A]):</span>
+<span class="sd">    &gt;&gt;&gt; #    print(a)</span>
+
+<span class="sd">    Command Line</span>
+<span class="sd">    ------------</span>
+
+<span class="sd">    .. code-block:: bash</span>
+
+<span class="sd">        $ runoak -i ontobee:uberon ancestors -p i UBERON:0002398</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This is a specialization the :ref:`sparql` implementation to</span>
+<span class="sd">    allow access for ontologies on the `Ontobee &lt;https://www.ontobee.org/&gt;`_ linked data server.</span>
 
 <span class="sd">    See: `&lt;https://www.ontobee.org/&gt;`_</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">_default_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -132,6 +172,7 @@
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ONTOBEE_MERGED_GRAPH_PREFIX</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">slug</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
 </pre></div>
 
            </div>
@@ -141,7 +182,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

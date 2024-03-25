@@ -1,10 +1,14 @@
 # Class: RepairOperation
+
+
 _The result of performing an individual repair_
 
 
 
 
+
 URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperation)
+
 
 
 
@@ -19,7 +23,7 @@ URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperati
         
       RepairOperation : repairs
         
-          RepairOperation ..> ValidationResult : repairs
+          RepairOperation --> ValidationResult : repairs
         
       RepairOperation : successful
         
@@ -43,7 +47,7 @@ URI: [vm:RepairOperation](https://w3id.org/linkml/validation-model/RepairOperati
 | [repairs](repairs.md) | 0..1 <br/> [ValidationResult](ValidationResult.md) |  | direct |
 | [modified](modified.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
 | [successful](successful.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
-| [info](info.md) | 0..1 <br/> [String](String.md) | additional information about the issue | direct |
+| [info](info.md) | 0..1 <br/> [String](String.md) |  | direct |
 
 
 
@@ -105,27 +109,36 @@ description: The result of performing an individual repair
 todos:
 - integrate with kgcl data model, to be able to describe changes
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: Result
 attributes:
   repairs:
     name: repairs
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - RepairOperation
     range: ValidationResult
   modified:
     name: modified
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - RepairOperation
     range: boolean
   successful:
     name: successful
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - RepairOperation
     range: boolean
   info:
     name: info
     from_schema: https://w3id.org/linkml/validation_results
+    domain_of:
+    - ValidationResult
+    - MappingValidationResult
+    - RepairOperation
     range: string
 
 ```
@@ -140,7 +153,6 @@ description: The result of performing an individual repair
 todos:
 - integrate with kgcl data model, to be able to describe changes
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: Result
 attributes:
   repairs:
@@ -177,6 +189,7 @@ attributes:
     owner: RepairOperation
     domain_of:
     - ValidationResult
+    - MappingValidationResult
     - RepairOperation
     range: string
 

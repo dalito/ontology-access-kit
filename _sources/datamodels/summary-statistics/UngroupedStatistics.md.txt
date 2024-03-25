@@ -1,10 +1,14 @@
 # Class: UngroupedStatistics
+
+
 _A summary statistics report object_
 
 
 
 
+
 URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_statistics.UngroupedStatistics)
+
 
 
 
@@ -15,7 +19,7 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
       
       UngroupedStatistics : agents
         
-          UngroupedStatistics ..> Agent : agents
+          UngroupedStatistics --> Agent : agents
         
       UngroupedStatistics : annotation_property_count
         
@@ -25,17 +29,17 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : change_summary
         
-          UngroupedStatistics ..> ChangeTypeStatistic : change_summary
+          UngroupedStatistics --> ChangeTypeStatistic : change_summary
         
       UngroupedStatistics : class_count
         
       UngroupedStatistics : class_count_by_category
         
-          UngroupedStatistics ..> FacetedCount : class_count_by_category
+          UngroupedStatistics --> FacetedCount : class_count_by_category
         
       UngroupedStatistics : class_count_by_subset
         
-          UngroupedStatistics ..> FacetedCount : class_count_by_subset
+          UngroupedStatistics --> FacetedCount : class_count_by_subset
         
       UngroupedStatistics : class_count_with_text_definitions
         
@@ -43,11 +47,11 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : compared_with
         
-          UngroupedStatistics ..> Ontology : compared_with
+          UngroupedStatistics --> Ontology : compared_with
         
       UngroupedStatistics : contributor_summary
         
-          UngroupedStatistics ..> ContributorStatistics : contributor_summary
+          UngroupedStatistics --> ContributorStatistics : contributor_summary
         
       UngroupedStatistics : datatype_property_count
         
@@ -61,11 +65,11 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : edge_count_by_predicate
         
-          UngroupedStatistics ..> FacetedCount : edge_count_by_predicate
+          UngroupedStatistics --> FacetedCount : edge_count_by_predicate
         
       UngroupedStatistics : entailed_edge_count_by_predicate
         
-          UngroupedStatistics ..> FacetedCount : entailed_edge_count_by_predicate
+          UngroupedStatistics --> FacetedCount : entailed_edge_count_by_predicate
         
       UngroupedStatistics : equivalent_classes_axiom_count
         
@@ -77,15 +81,15 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : mapping_statement_count_by_object_source
         
-          UngroupedStatistics ..> FacetedCount : mapping_statement_count_by_object_source
+          UngroupedStatistics --> FacetedCount : mapping_statement_count_by_object_source
         
       UngroupedStatistics : mapping_statement_count_by_predicate
         
-          UngroupedStatistics ..> FacetedCount : mapping_statement_count_by_predicate
+          UngroupedStatistics --> FacetedCount : mapping_statement_count_by_predicate
         
       UngroupedStatistics : mapping_statement_count_subject_by_object_source
         
-          UngroupedStatistics ..> FacetedCount : mapping_statement_count_subject_by_object_source
+          UngroupedStatistics --> FacetedCount : mapping_statement_count_subject_by_object_source
         
       UngroupedStatistics : merged_class_count
         
@@ -99,7 +103,7 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : ontologies
         
-          UngroupedStatistics ..> Ontology : ontologies
+          UngroupedStatistics --> Ontology : ontologies
         
       UngroupedStatistics : ontology_count
         
@@ -117,7 +121,7 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : synonym_statement_count_by_predicate
         
-          UngroupedStatistics ..> FacetedCount : synonym_statement_count_by_predicate
+          UngroupedStatistics --> FacetedCount : synonym_statement_count_by_predicate
         
       UngroupedStatistics : unsatisfiable_class_count
         
@@ -125,7 +129,7 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
         
       UngroupedStatistics : was_generated_by
         
-          UngroupedStatistics ..> SummaryStatisticsCalculationActivity : was_generated_by
+          UngroupedStatistics --> SummaryStatisticsCalculationActivity : was_generated_by
         
       
 ```
@@ -242,7 +246,6 @@ URI: [summary_statistics:UngroupedStatistics](https://w3id.org/oaklib/summary_st
 name: UngroupedStatistics
 description: A summary statistics report object
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 is_a: SummaryStatisticsReport
 attributes:
   class_count:
@@ -255,6 +258,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   anonymous_class_expression_count:
@@ -263,6 +268,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   unsatisfiable_class_count:
@@ -275,6 +282,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   deprecated_class_count:
@@ -287,6 +296,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   non_deprecated_class_count:
@@ -300,6 +311,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   merged_class_count:
@@ -313,6 +326,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   class_count_with_text_definitions:
@@ -325,6 +340,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   class_count_without_text_definitions:
@@ -337,6 +354,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: class_statistic_group
     range: integer
   property_count:
@@ -345,6 +364,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: property_statistic_group
     range: integer
   object_property_count:
@@ -357,6 +378,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: property_statistic_group
     range: integer
   deprecated_object_property_count:
@@ -370,6 +393,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: property_statistic_group
     range: integer
   non_deprecated_object_property_count:
@@ -383,6 +408,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: property_statistic_group
     range: integer
   datatype_property_count:
@@ -395,6 +422,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: property_statistic_group
     range: integer
   annotation_property_count:
@@ -408,6 +437,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: property_statistic_group
     range: integer
   individual_count:
@@ -420,6 +451,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: individual_statistic_group
     range: integer
   named_individual_count:
@@ -432,6 +465,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: individual_statistic_group
     range: integer
   anonymous_individual_count:
@@ -444,6 +479,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: individual_statistic_group
     range: integer
     equals_expression: '{named_individual_count} - {individual_count}'
@@ -454,6 +491,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     range: integer
   subset_count:
     name: subset_count
@@ -462,6 +501,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     range: integer
   description_logic_profile:
     name: description_logic_profile
@@ -469,6 +510,8 @@ attributes:
       subset
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
+    domain_of:
+    - UngroupedStatistics
     slot_group: owl_statistic_group
     range: string
   owl_axiom_count:
@@ -481,6 +524,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: owl_statistic_group
     range: integer
   rdf_triple_count:
@@ -489,6 +534,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: owl_statistic_group
     range: integer
   subclass_of_axiom_count:
@@ -497,6 +544,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: owl_statistic_group
     range: integer
   equivalent_classes_axiom_count:
@@ -505,6 +554,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: owl_statistic_group
     range: integer
   edge_count_by_predicate:
@@ -520,6 +571,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -537,6 +590,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -553,6 +608,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: integer
   synonym_statement_count:
@@ -565,6 +622,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: integer
   synonym_statement_count_by_predicate:
@@ -581,6 +640,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -598,6 +659,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -614,6 +677,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -627,6 +692,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: integer
   mapping_statement_count_by_predicate:
@@ -643,6 +710,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -660,6 +729,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -682,6 +753,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     slot_group: metadata_statistic_group
     range: FacetedCount
     inlined: true
@@ -695,12 +768,16 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     is_a: count_statistic
+    domain_of:
+    - UngroupedStatistics
     range: integer
   contributor_summary:
     name: contributor_summary
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     range: ContributorStatistics
     inlined: true
   change_summary:
@@ -709,6 +786,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - UngroupedStatistics
     range: ChangeTypeStatistic
     inlined: true
 
@@ -722,7 +801,6 @@ attributes:
 name: UngroupedStatistics
 description: A summary statistics report object
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 is_a: SummaryStatisticsReport
 attributes:
   class_count:

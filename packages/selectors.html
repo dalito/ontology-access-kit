@@ -12,20 +12,20 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=046fa432"></script>
         <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Converters" href="converters/index.html" />
-    <link rel="prev" title="Aggregator Adapter" href="implementations/aggregator.html" /> 
+    <link rel="prev" title="LLM Adapter" href="implementations/llm.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide/index.html">The OAK Guide</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Package Documentation</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">OAK Library Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interfaces/index.html">Interfaces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="implementations/index.html">Implementations</a></li>
@@ -87,9 +87,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datamodels/index.html">Datamodels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../howtos/index.html">How-To Guides</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
 </ul>
 
         </div>
@@ -106,7 +106,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">Package Documentation</a></li>
+          <li class="breadcrumb-item"><a href="index.html">OAK Library Documentation</a></li>
       <li class="breadcrumb-item active">Ontology Adapter Selectors</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/packages/selectors.rst.txt" rel="nofollow"> View page source</a>
@@ -118,7 +118,7 @@
            <div itemprop="articleBody">
              
   <section id="ontology-adapter-selectors">
-<span id="selectors"></span><h1>Ontology Adapter Selectors<a class="headerlink" href="#ontology-adapter-selectors" title="Permalink to this heading"></a></h1>
+<span id="selectors"></span><h1>Ontology Adapter Selectors<a class="headerlink" href="#ontology-adapter-selectors" title="Link to this heading"></a></h1>
 <p>In the command line interface and in Python code, <em>descriptors</em> can be used as a shorthand way to refer to either a local or remote ontology, plus
 a method for parsing/querying it. The OntologyResource that is returned can be used
 to instantiate an implementation. The descriptors can also be used in the <a class="reference internal" href="../howtos/fhir-conversions.html#cli"><span class="std std-ref">CLI</span></a></p>
@@ -132,7 +132,7 @@ RDF/XML (NOT the same as OWL-XML), JSON-LD, …). Confusing, huh? We are doing o
 to simplify things for you the user, please be patient!</p>
 </div>
 <section id="syntax">
-<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this heading"></a></h2>
+<h2>Syntax<a class="headerlink" href="#syntax" title="Link to this heading"></a></h2>
 <p>A descriptor is EITHER:</p>
 <blockquote>
 <div><ul class="simple">
@@ -142,7 +142,7 @@ to simplify things for you the user, please be patient!</p>
 </div></blockquote>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
 <p>Examples of scheme-less descriptors, implicit implementation:</p>
 <ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">tests/input/go-nucleus.obo</span></code> - local <a class="reference internal" href="../glossary.html#term-OBO-Format"><span class="xref std std-term">OBO Format</span></a> file loaded with pronto</p></li>
@@ -178,54 +178,54 @@ to simplify things for you the user, please be patient!</p>
 <p>See <a class="reference internal" href="../howtos/fhir-conversions.html#cli"><span class="std std-ref">CLI</span></a> for more examples</p>
 </section>
 <section id="schemes">
-<h2>Schemes<a class="headerlink" href="#schemes" title="Permalink to this heading"></a></h2>
+<h2>Schemes<a class="headerlink" href="#schemes" title="Link to this heading"></a></h2>
 <section id="pronto">
-<h3>pronto<a class="headerlink" href="#pronto" title="Permalink to this heading"></a></h3>
-<p>Implementation: <span class="xref std std-ref">pronto_implementation</span></p>
+<h3>pronto<a class="headerlink" href="#pronto" title="Link to this heading"></a></h3>
+<p>Implementation: <a class="reference internal" href="implementations/pronto.html#pronto-implementation"><span class="std std-ref">Pronto / OBO Files Adapter</span></a></p>
 <p>The slug is a path to a file on disk. Must be in obo or owl or json</p>
 </section>
 <section id="prontolib">
-<h3>prontolib<a class="headerlink" href="#prontolib" title="Permalink to this heading"></a></h3>
-<p>Implementation: <span class="xref std std-ref">pronto_implementation</span></p>
+<h3>prontolib<a class="headerlink" href="#prontolib" title="Link to this heading"></a></h3>
+<p>Implementation: <a class="reference internal" href="implementations/pronto.html#pronto-implementation"><span class="std std-ref">Pronto / OBO Files Adapter</span></a></p>
 <p>The slug is the name of the resource on obo, e.g. pato.obo, cl.owl</p>
 </section>
 <section id="sqlite">
-<h3>sqlite<a class="headerlink" href="#sqlite" title="Permalink to this heading"></a></h3>
+<h3>sqlite<a class="headerlink" href="#sqlite" title="Link to this heading"></a></h3>
 <p>Implementation: <a class="reference internal" href="implementations/sqldb.html#sql-implementation"><span class="std std-ref">SQL Database Adapter</span></a></p>
 <p>The slug is the path to the sqlite .db file on local disk</p>
 </section>
 <section id="obosqlite">
-<h3>obosqlite<a class="headerlink" href="#obosqlite" title="Permalink to this heading"></a></h3>
+<h3>obosqlite<a class="headerlink" href="#obosqlite" title="Link to this heading"></a></h3>
 <p>Implementation: <a class="reference internal" href="implementations/sqldb.html#sql-implementation"><span class="std std-ref">SQL Database Adapter</span></a></p>
 <p>The slug is the name of the ontology, e.g ‘hp’, ‘uberon’</p>
 <p>TODO: download from s3</p>
 </section>
 <section id="ontobee">
-<h3>ontobee<a class="headerlink" href="#ontobee" title="Permalink to this heading"></a></h3>
-<p>Implementation: <span class="xref std std-ref">ontobee_implementation</span></p>
+<h3>ontobee<a class="headerlink" href="#ontobee" title="Link to this heading"></a></h3>
+<p>Implementation: <a class="reference internal" href="implementations/ontobee.html#ontobee-implementation"><span class="std std-ref">Ontobee Adapter</span></a></p>
 <p>Currently the slug is ignored</p>
 </section>
 <section id="ols">
-<h3>ols<a class="headerlink" href="#ols" title="Permalink to this heading"></a></h3>
-<p>Implementation: <span class="xref std std-ref">ols_implementation</span></p>
+<h3>ols<a class="headerlink" href="#ols" title="Link to this heading"></a></h3>
+<p>Implementation: <a class="reference internal" href="implementations/ols.html#ols-implementation"><span class="std std-ref">Ontology Lookup Service (OLS) Adapter</span></a></p>
 <p>Currently the slug is ignored</p>
 </section>
 <section id="bioportal">
-<h3>bioportal<a class="headerlink" href="#bioportal" title="Permalink to this heading"></a></h3>
+<h3>bioportal<a class="headerlink" href="#bioportal" title="Link to this heading"></a></h3>
 <p>Implementation: <a class="reference internal" href="implementations/bioportal.html#bioportal-implementation"><span class="std std-ref">Bioportal Adapter</span></a></p>
 <p>Currently the slug is ignored</p>
 </section>
 <section id="funowl">
-<h3>funowl<a class="headerlink" href="#funowl" title="Permalink to this heading"></a></h3>
-<p>Implementation: <span class="xref std std-ref">funowl_implementation</span></p>
+<h3>funowl<a class="headerlink" href="#funowl" title="Link to this heading"></a></h3>
+<p>Implementation: <a class="reference internal" href="implementations/funowl.html#funowl-implementation"><span class="std std-ref">FunOwl Adapter</span></a></p>
 <p>NOT IMPLEMENTED YET</p>
 </section>
 </section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading"></a></h2>
-<span class="target" id="module-oaklib.selector"></span><dl class="py function">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<dl class="py function" id="module-oaklib.selector">
 <dt class="sig sig-object py" id="oaklib.selector.get_adapter">
-<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_adapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">InputSpecification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="interfaces/basic.html#oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface" title="oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface"><span class="pre">BasicOntologyInterface</span></a></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_adapter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_adapter" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_adapter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">InputSpecification</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">implements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">T</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">T</span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_adapter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_adapter" title="Link to this definition"></a></dt>
 <dd><p>Gets an adapter (implementation) for a given descriptor.</p>
 <p>OAK allows for multiple different <em>adapters</em> (aka <em>implementations</em>);
 for example, <span class="xref std std-ref">SQLImplementation</span> and <span class="xref std std-ref">BioPortalImplementation</span>.</p>
@@ -233,25 +233,33 @@ for example, <span class="xref std std-ref">SQLImplementation</span> and <span c
 A descriptor combines a <em>scheme</em> followed by a colon symbol, and then
 optionally additional information that specifies how to access a particular
 resource or ontology within that scheme.</p>
-<p>Example:</p>
+<section id="example">
+<h3>Example:<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
 <p>If you omit the scheme then OAK will try to guess the scheme based on the
 suffix of the descriptor</p>
+<p>If you want to pass extra information through to the implementation
+class, you can do so with keyword arguments:</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>descriptor</strong> – </p></li>
-<li><p><strong>format</strong> – </p></li>
-</ul>
+<dt class="field-odd">param descriptor<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The input specification, path to a YAML describing an input specification,
+or a shorthand string for instantiating an ontology interface</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
+<dt class="field-even">param format<span class="colon">:</span></dt>
+<dd class="field-even"><p>file format/syntax, e.g obo, turtle</p>
+</dd>
+<dt class="field-odd">param kwargs<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Keyword arguments to pass through to the implementation class</p>
+</dd>
+<dt class="field-even">return<span class="colon">:</span></dt>
+<dd class="field-even"><p>An instantiated interface</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="oaklib.selector.add_associations">
-<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">add_associations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adapter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="interfaces/association-provider.html#oaklib.interfaces.association_provider_interface.AssociationProviderInterface" title="oaklib.interfaces.association_provider_interface.AssociationProviderInterface"><span class="pre">AssociationProviderInterface</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#add_associations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.add_associations" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">add_associations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adapter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="interfaces/association-provider.html#oaklib.interfaces.association_provider_interface.AssociationProviderInterface" title="oaklib.interfaces.association_provider_interface.AssociationProviderInterface"><span class="pre">AssociationProviderInterface</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalizers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Normalizer</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary_knowledge_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregator_knowledge_source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#add_associations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.add_associations" title="Link to this definition"></a></dt>
 <dd><p>Adds associations to an adapter.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -259,6 +267,7 @@ suffix of the descriptor</p>
 <li><p><strong>adapter</strong> – </p></li>
 <li><p><strong>descriptor</strong> – </p></li>
 <li><p><strong>format</strong> – </p></li>
+<li><p><strong>normalizers</strong> – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -269,7 +278,7 @@ suffix of the descriptor</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="oaklib.selector.get_implementation_from_shorthand">
-<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_implementation_from_shorthand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="interfaces/basic.html#oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface" title="oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface"><span class="pre">BasicOntologyInterface</span></a></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_implementation_from_shorthand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_implementation_from_shorthand" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_implementation_from_shorthand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="interfaces/basic.html#oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface" title="oaklib.interfaces.basic_ontology_interface.BasicOntologyInterface"><span class="pre">BasicOntologyInterface</span></a></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_implementation_from_shorthand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_implementation_from_shorthand" title="Link to this definition"></a></dt>
 <dd><p>Gets an adapter (implementation) for a given descriptor.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -294,7 +303,7 @@ get_implementation_from_shorthand will be deprecated in future.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="oaklib.selector.get_implementation_class_from_scheme">
-<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_implementation_class_from_scheme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scheme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">OntologyInterface</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_implementation_class_from_scheme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_implementation_class_from_scheme" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_implementation_class_from_scheme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scheme</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">OntologyInterface</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_implementation_class_from_scheme"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_implementation_class_from_scheme" title="Link to this definition"></a></dt>
 <dd><p>Given a selector schema (e.g. sqlite, ubergraph, pronto, etc.) return the adapter class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -308,7 +317,7 @@ get_implementation_from_shorthand will be deprecated in future.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="oaklib.selector.get_resource_from_shorthand">
-<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_resource_from_shorthand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">import_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OntologyResource</span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_resource_from_shorthand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_resource_from_shorthand" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">oaklib.selector.</span></span><span class="sig-name descname"><span class="pre">get_resource_from_shorthand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">import_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">OntologyResource</span></span></span><a class="reference internal" href="../_modules/oaklib/selector.html#get_resource_from_shorthand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#oaklib.selector.get_resource_from_shorthand" title="Link to this definition"></a></dt>
 <dd><p>Maps from a shorthand descriptor to an OntologyResource.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -331,14 +340,14 @@ get_implementation_from_shorthand will be deprecated in future.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="implementations/aggregator.html" class="btn btn-neutral float-left" title="Aggregator Adapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="implementations/llm.html" class="btn btn-neutral float-left" title="LLM Adapter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="converters/index.html" class="btn btn-neutral float-right" title="Converters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, OAK developers.</p>
+    <p>&#169; Copyright 2022-2024, OAK developers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

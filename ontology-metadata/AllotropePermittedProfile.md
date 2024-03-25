@@ -1,7 +1,6 @@
 # Subset: AllotropePermittedProfile
 
-URI: [AllotropePermittedProfile](AllotropePermittedProfile)
-
+URI: [AllotropePermittedProfile](AllotropePermittedProfile.md)
 
 
 
@@ -26,10 +25,185 @@ URI: [AllotropePermittedProfile](AllotropePermittedProfile)
 
 
 
-## Classes in subset
 
-| Class | Description |
-| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -45,8 +219,4 @@ URI: [AllotropePermittedProfile](AllotropePermittedProfile)
 | [term_replaced_by](term_replaced_by.md) |  |
 
 
-## Enumerations in subset
-
-| Enumeration | Description |
-| --- | --- |
 

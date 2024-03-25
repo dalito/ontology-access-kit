@@ -1,10 +1,14 @@
 # Class: LogicalDefinitionAxiom
+
+
 _An axiom that defines a class in terms of a genus or set of genus classes and a set of differentia_
 
 
 
 
+
 URI: [obographs:LogicalDefinitionAxiom](https://github.com/geneontology/obographs/LogicalDefinitionAxiom)
+
 
 
 
@@ -15,19 +19,19 @@ URI: [obographs:LogicalDefinitionAxiom](https://github.com/geneontology/obograph
       
       LogicalDefinitionAxiom : definedClassId
         
-          LogicalDefinitionAxiom ..> None : definedClassId
+          LogicalDefinitionAxiom --> None : definedClassId
         
       LogicalDefinitionAxiom : genusIds
         
-          LogicalDefinitionAxiom ..> None : genusIds
+          LogicalDefinitionAxiom --> None : genusIds
         
       LogicalDefinitionAxiom : meta
         
-          LogicalDefinitionAxiom ..> Meta : meta
+          LogicalDefinitionAxiom --> Meta : meta
         
       LogicalDefinitionAxiom : restrictions
         
-          LogicalDefinitionAxiom ..> ExistentialRestrictionExpression : restrictions
+          LogicalDefinitionAxiom --> ExistentialRestrictionExpression : restrictions
         
       
 ```
@@ -123,7 +127,6 @@ description: An axiom that defines a class in terms of a genus or set of genus c
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - genus differentia definition
-rank: 1000
 is_a: Axiom
 attributes:
   definedClassId:
@@ -131,6 +134,8 @@ attributes:
     description: The class that is defined by this axiom
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
+    domain_of:
+    - LogicalDefinitionAxiom
     required: true
   genusIds:
     name: genusIds
@@ -142,6 +147,8 @@ attributes:
     - https://github.com/geneontology/obographs/issues/89
     rank: 1000
     multivalued: true
+    domain_of:
+    - LogicalDefinitionAxiom
     recommended: true
   restrictions:
     name: restrictions
@@ -157,6 +164,8 @@ attributes:
     rank: 1000
     slot_uri: owl:someValuesFrom
     multivalued: true
+    domain_of:
+    - LogicalDefinitionAxiom
     range: ExistentialRestrictionExpression
     recommended: true
 
@@ -177,7 +186,6 @@ description: An axiom that defines a class in terms of a genus or set of genus c
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - genus differentia definition
-rank: 1000
 is_a: Axiom
 attributes:
   definedClassId:

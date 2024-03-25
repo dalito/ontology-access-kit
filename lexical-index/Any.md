@@ -6,6 +6,7 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 
 
 
+
 ```{mermaid}
  classDiagram
     class Any
@@ -76,7 +77,6 @@ URI: [linkml:Any](https://w3id.org/linkml/Any)
 ```yaml
 name: Any
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 class_uri: linkml:Any
 
 ```
@@ -88,7 +88,6 @@ class_uri: linkml:Any
 ```yaml
 name: Any
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 class_uri: linkml:Any
 
 ```

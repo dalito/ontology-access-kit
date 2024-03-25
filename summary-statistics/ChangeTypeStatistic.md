@@ -1,10 +1,14 @@
 # Class: ChangeTypeStatistic
+
+
 _statistics for a particular kind of diff_
 
 
 
 
+
 URI: [summary_statistics:ChangeTypeStatistic](https://w3id.org/oaklib/summary_statistics.ChangeTypeStatistic)
+
 
 
 
@@ -28,8 +32,8 @@ URI: [summary_statistics:ChangeTypeStatistic](https://w3id.org/oaklib/summary_st
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [facet](facet.md) | 0..1 <br/> [String](String.md) |  | direct |
-| [filtered_count](filtered_count.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [facet](facet.md) | 0..1 <br/> [String](String.md) | the facet used to group the counts | direct |
+| [filtered_count](filtered_count.md) | 1..1 <br/> [Integer](Integer.md) | the number of items in the facet | direct |
 
 
 
@@ -85,17 +89,23 @@ URI: [summary_statistics:ChangeTypeStatistic](https://w3id.org/oaklib/summary_st
 name: ChangeTypeStatistic
 description: statistics for a particular kind of diff
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   facet:
     name: facet
     description: the facet used to group the counts
     from_schema: https://w3id.org/oak/summary_statistics
     key: true
+    domain_of:
+    - FacetedCount
+    - ChangeTypeStatistic
+    required: true
   filtered_count:
     name: filtered_count
     description: the number of items in the facet
     from_schema: https://w3id.org/oak/summary_statistics
+    domain_of:
+    - FacetedCount
+    - ChangeTypeStatistic
     range: integer
     required: true
 
@@ -109,7 +119,6 @@ attributes:
 name: ChangeTypeStatistic
 description: statistics for a particular kind of diff
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 attributes:
   facet:
     name: facet
@@ -122,6 +131,7 @@ attributes:
     - FacetedCount
     - ChangeTypeStatistic
     range: string
+    required: true
   filtered_count:
     name: filtered_count
     description: the number of items in the facet

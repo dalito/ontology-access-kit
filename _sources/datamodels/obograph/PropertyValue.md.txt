@@ -1,5 +1,8 @@
 # Class: PropertyValue
+
+
 _A generic grouping for the different kinds of key-value associations on object. Minimally, a property value has a predicate and a value. It can also have a list of xrefs indicating provenance, as well as a metadata object._
+
 
 
 
@@ -7,6 +10,7 @@ _A generic grouping for the different kinds of key-value associations on object.
 
 
 URI: [obographs:PropertyValue](https://github.com/geneontology/obographs/PropertyValue)
+
 
 
 
@@ -22,7 +26,7 @@ URI: [obographs:PropertyValue](https://github.com/geneontology/obographs/Propert
         
       PropertyValue : meta
         
-          PropertyValue ..> Meta : meta
+          PropertyValue --> Meta : meta
         
       PropertyValue : pred
         
@@ -123,7 +127,6 @@ comments:
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - annotation
-rank: 1000
 abstract: true
 slots:
 - pred
@@ -151,7 +154,6 @@ comments:
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - annotation
-rank: 1000
 abstract: true
 attributes:
   pred:

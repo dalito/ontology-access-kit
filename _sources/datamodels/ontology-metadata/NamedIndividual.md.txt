@@ -1,10 +1,14 @@
 # Class: NamedIndividual
+
+
 _An instance that has a IRI_
 
 
 
 
+
 URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
+
 
 
 
@@ -23,27 +27,27 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
         
       NamedIndividual : broadMatch
         
-          NamedIndividual ..> Thing : broadMatch
+          NamedIndividual --> Thing : broadMatch
         
       NamedIndividual : category
         
       NamedIndividual : closeMatch
         
-          NamedIndividual ..> Thing : closeMatch
+          NamedIndividual --> Thing : closeMatch
         
       NamedIndividual : comment
         
       NamedIndividual : conformsTo
         
-          NamedIndividual ..> Thing : conformsTo
+          NamedIndividual --> Thing : conformsTo
         
       NamedIndividual : consider
         
-          NamedIndividual ..> Any : consider
+          NamedIndividual --> Any : consider
         
       NamedIndividual : contributor
         
-          NamedIndividual ..> Agent : contributor
+          NamedIndividual --> Agent : contributor
         
       NamedIndividual : created
         
@@ -53,7 +57,7 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
         
       NamedIndividual : creator
         
-          NamedIndividual ..> Agent : creator
+          NamedIndividual --> Agent : creator
         
       NamedIndividual : curator_note
         
@@ -67,7 +71,7 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
         
       NamedIndividual : depicted_by
         
-          NamedIndividual ..> Image : depicted_by
+          NamedIndividual --> Image : depicted_by
         
       NamedIndividual : deprecated
         
@@ -77,17 +81,17 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
         
       NamedIndividual : exactMatch
         
-          NamedIndividual ..> Thing : exactMatch
+          NamedIndividual --> Thing : exactMatch
         
       NamedIndividual : example_of_usage
         
       NamedIndividual : excluded_from_QC_check
         
-          NamedIndividual ..> Thing : excluded_from_QC_check
+          NamedIndividual --> Thing : excluded_from_QC_check
         
       NamedIndividual : excluded_subClassOf
         
-          NamedIndividual ..> Class : excluded_subClassOf
+          NamedIndividual --> Class : excluded_subClassOf
         
       NamedIndividual : excluded_synonym
         
@@ -113,27 +117,27 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
         
       NamedIndividual : image
         
-          NamedIndividual ..> Thing : image
+          NamedIndividual --> Thing : image
         
       NamedIndividual : imported_from
         
-          NamedIndividual ..> NamedIndividual : imported_from
+          NamedIndividual --> NamedIndividual : imported_from
         
       NamedIndividual : in_subset
         
-          NamedIndividual ..> Subset : in_subset
+          NamedIndividual --> Subset : in_subset
         
       NamedIndividual : ISA_alternative_term
         
       NamedIndividual : isDefinedBy
         
-          NamedIndividual ..> Ontology : isDefinedBy
+          NamedIndividual --> Ontology : isDefinedBy
         
       NamedIndividual : label
         
       NamedIndividual : narrowMatch
         
-          NamedIndividual ..> Thing : narrowMatch
+          NamedIndividual --> Thing : narrowMatch
         
       NamedIndividual : OBO_foundry_unique_label
         
@@ -143,17 +147,17 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
         
       NamedIndividual : seeAlso
         
-          NamedIndividual ..> Thing : seeAlso
+          NamedIndividual --> Thing : seeAlso
         
       NamedIndividual : should_conform_to
         
-          NamedIndividual ..> Thing : should_conform_to
+          NamedIndividual --> Thing : should_conform_to
         
       NamedIndividual : term_editor
         
       NamedIndividual : term_replaced_by
         
-          NamedIndividual ..> Any : term_replaced_by
+          NamedIndividual --> Any : term_replaced_by
         
       NamedIndividual : term_tracker_item
         
@@ -301,7 +305,6 @@ URI: [owl:NamedIndividual](http://www.w3.org/2002/07/owl#NamedIndividual)
 name: NamedIndividual
 description: An instance that has a IRI
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: Term
 class_uri: owl:NamedIndividual
 
@@ -315,7 +318,6 @@ class_uri: owl:NamedIndividual
 name: NamedIndividual
 description: An instance that has a IRI
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: Term
 attributes:
   has_exact_synonym:

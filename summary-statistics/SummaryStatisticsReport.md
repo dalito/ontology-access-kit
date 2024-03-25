@@ -1,5 +1,8 @@
 # Class: SummaryStatisticsReport
+
+
 _abstract base class for all summary statistics reports_
+
 
 
 
@@ -7,6 +10,7 @@ _abstract base class for all summary statistics reports_
 
 
 URI: [summary_statistics:SummaryStatisticsReport](https://w3id.org/oaklib/summary_statistics.SummaryStatisticsReport)
+
 
 
 
@@ -18,21 +22,21 @@ URI: [summary_statistics:SummaryStatisticsReport](https://w3id.org/oaklib/summar
       
       SummaryStatisticsReport : agents
         
-          SummaryStatisticsReport ..> Agent : agents
+          SummaryStatisticsReport --> Agent : agents
         
       SummaryStatisticsReport : compared_with
         
-          SummaryStatisticsReport ..> Ontology : compared_with
+          SummaryStatisticsReport --> Ontology : compared_with
         
       SummaryStatisticsReport : id
         
       SummaryStatisticsReport : ontologies
         
-          SummaryStatisticsReport ..> Ontology : ontologies
+          SummaryStatisticsReport --> Ontology : ontologies
         
       SummaryStatisticsReport : was_generated_by
         
-          SummaryStatisticsReport ..> SummaryStatisticsCalculationActivity : was_generated_by
+          SummaryStatisticsReport --> SummaryStatisticsCalculationActivity : was_generated_by
         
       
 ```
@@ -52,7 +56,7 @@ URI: [summary_statistics:SummaryStatisticsReport](https://w3id.org/oaklib/summar
 
 | Name | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- |
-| [id](id.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [id](id.md) | 1..1 <br/> [String](String.md) | Unique handle for this report | direct |
 | [ontologies](ontologies.md) | 0..* <br/> [Ontology](Ontology.md) | Ontology for which the statistics are computed | direct |
 | [compared_with](compared_with.md) | 0..* <br/> [Ontology](Ontology.md) | For diffs, the ontologies being compared against | direct |
 | [was_generated_by](was_generated_by.md) | 0..1 <br/> [SummaryStatisticsCalculationActivity](SummaryStatisticsCalculationActivity.md) | The process that generated the report | direct |
@@ -105,7 +109,6 @@ URI: [summary_statistics:SummaryStatisticsReport](https://w3id.org/oaklib/summar
 name: SummaryStatisticsReport
 description: abstract base class for all summary statistics reports
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 abstract: true
 attributes:
   id:
@@ -113,6 +116,11 @@ attributes:
     description: Unique handle for this report
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
+    domain_of:
+    - SummaryStatisticsReport
+    - Ontology
+    - Agent
+    - ContributorRole
     required: true
   ontologies:
     name: ontologies
@@ -120,6 +128,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - SummaryStatisticsReport
     range: Ontology
     inlined: true
     inlined_as_list: true
@@ -129,6 +139,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - SummaryStatisticsReport
     range: Ontology
     inlined: true
     inlined_as_list: true
@@ -137,6 +149,8 @@ attributes:
     description: The process that generated the report
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
+    domain_of:
+    - SummaryStatisticsReport
     range: SummaryStatisticsCalculationActivity
   agents:
     name: agents
@@ -144,6 +158,8 @@ attributes:
     from_schema: https://w3id.org/oak/summary_statistics
     rank: 1000
     multivalued: true
+    domain_of:
+    - SummaryStatisticsReport
     range: Agent
     inlined: true
     inlined_as_list: true
@@ -158,7 +174,6 @@ attributes:
 name: SummaryStatisticsReport
 description: abstract base class for all summary statistics reports
 from_schema: https://w3id.org/oak/summary_statistics
-rank: 1000
 abstract: true
 attributes:
   id:

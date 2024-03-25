@@ -1,7 +1,6 @@
 # Subset: ObiPermittedProfile
 
-URI: [ObiPermittedProfile](ObiPermittedProfile)
-
+URI: [ObiPermittedProfile](ObiPermittedProfile.md)
 
 
 
@@ -22,10 +21,184 @@ URI: [ObiPermittedProfile](ObiPermittedProfile)
 
 
 
-## Classes in subset
 
-| Class | Description |
-| --- | --- |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -40,8 +213,4 @@ URI: [ObiPermittedProfile](ObiPermittedProfile)
 | [term_replaced_by](term_replaced_by.md) |  |
 
 
-## Enumerations in subset
-
-| Enumeration | Description |
-| --- | --- |
 

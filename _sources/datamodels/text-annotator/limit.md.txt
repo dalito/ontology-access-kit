@@ -1,5 +1,10 @@
 # Slot: limit
 
+
+_The maximum number of annotations to return_
+
+
+
 URI: [ann:limit](https://w3id.org/linkml/text_annotator/limit)
 
 
@@ -11,9 +16,10 @@ URI: [ann:limit](https://w3id.org/linkml/text_annotator/limit)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[TextAnnotationConfiguration](TextAnnotationConfiguration.md) | configuration for search
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[TextAnnotationConfiguration](TextAnnotationConfiguration.md) | configuration for search |  no  |
+
 
 
 
@@ -23,8 +29,6 @@ URI: [ann:limit](https://w3id.org/linkml/text_annotator/limit)
 ## Properties
 
 * Range: [Integer](Integer.md)
-
-
 
 
 
@@ -51,6 +55,7 @@ URI: [ann:limit](https://w3id.org/linkml/text_annotator/limit)
 <details>
 ```yaml
 name: limit
+description: The maximum number of annotations to return
 from_schema: https://w3id.org/oak/text_annotator
 rank: 1000
 alias: limit

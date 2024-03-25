@@ -1,5 +1,8 @@
 # Slot: prefix
+
+
 _The prefix of a prefix declaration._
+
 
 
 URI: [sh:prefix](https://w3id.org/shacl/prefix)
@@ -13,9 +16,10 @@ URI: [sh:prefix](https://w3id.org/shacl/prefix)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[PrefixDeclaration](PrefixDeclaration.md) | A mapping between an individual prefix (e
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[PrefixDeclaration](PrefixDeclaration.md) | A mapping between an individual prefix (e |  no  |
+
 
 
 
@@ -26,7 +30,7 @@ URI: [sh:prefix](https://w3id.org/shacl/prefix)
 
 * Range: [String](String.md)
 
-
+* Required: True
 
 
 
@@ -69,6 +73,7 @@ owner: PrefixDeclaration
 domain_of:
 - PrefixDeclaration
 range: string
+required: true
 
 ```
 </details>

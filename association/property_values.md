@@ -1,5 +1,10 @@
 # Slot: property_values
 
+
+_Arbitrary key-value pairs with additional information about the association_
+
+
+
 URI: [ontoassoc:property_values](https://w3id.org/oak/association/property_values)
 
 
@@ -11,10 +16,12 @@ URI: [ontoassoc:property_values](https://w3id.org/oak/association/property_value
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[Association](Association.md) | A generic association between a thing (subject) and another thing (object)
-[NegatedAssociation](NegatedAssociation.md) | A negated association between a thing (subject) and another thing (object)
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[PositiveOrNegativeAssociation](PositiveOrNegativeAssociation.md) |  |  no  |
+[Association](Association.md) | A generic association between a thing (subject) and another thing (object) |  no  |
+[NegatedAssociation](NegatedAssociation.md) | A negated association between a thing (subject) and another thing (object) |  no  |
+
 
 
 
@@ -24,10 +31,8 @@ URI: [ontoassoc:property_values](https://w3id.org/oak/association/property_value
 ## Properties
 
 * Range: [PropertyValue](PropertyValue.md)
+
 * Multivalued: True
-
-
-
 
 
 
@@ -54,13 +59,13 @@ URI: [ontoassoc:property_values](https://w3id.org/oak/association/property_value
 <details>
 ```yaml
 name: property_values
+description: Arbitrary key-value pairs with additional information about the association
 from_schema: https://w3id.org/oak/association
 rank: 1000
 multivalued: true
 alias: property_values
 domain_of:
-- Association
-- NegatedAssociation
+- PositiveOrNegativeAssociation
 range: PropertyValue
 inlined: true
 

@@ -1,5 +1,8 @@
 # Class: Report
+
+
 _A report object that is a holder to multiple report results_
+
 
 
 
@@ -7,6 +10,7 @@ _A report object that is a holder to multiple report results_
 
 
 URI: [vm:Report](https://w3id.org/linkml/validation-model/Report)
+
 
 
 
@@ -18,7 +22,7 @@ URI: [vm:Report](https://w3id.org/linkml/validation-model/Report)
       
       Report : results
         
-          Report ..> Result : results
+          Report --> Result : results
         
       
 ```
@@ -87,7 +91,6 @@ URI: [vm:Report](https://w3id.org/linkml/validation-model/Report)
 name: Report
 description: A report object that is a holder to multiple report results
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 abstract: true
 slots:
 - results
@@ -102,7 +105,6 @@ slots:
 name: Report
 description: A report object that is a holder to multiple report results
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 abstract: true
 attributes:
   results:

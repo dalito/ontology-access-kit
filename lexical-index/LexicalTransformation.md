@@ -1,10 +1,14 @@
 # Class: LexicalTransformation
+
+
 _An atomic lexical transformation applied on a term (string) yielding a transformed string_
 
 
 
 
+
 URI: [ontolexindex:LexicalTransformation](https://w3id.org/oak/lexical-index/LexicalTransformation)
+
 
 
 
@@ -15,11 +19,11 @@ URI: [ontolexindex:LexicalTransformation](https://w3id.org/oak/lexical-index/Lex
       
       LexicalTransformation : params
         
-          LexicalTransformation ..> Any : params
+          LexicalTransformation --> Any : params
         
       LexicalTransformation : type
         
-          LexicalTransformation ..> TransformationType : type
+          LexicalTransformation --> TransformationType : type
         
       
 ```
@@ -96,7 +100,6 @@ name: LexicalTransformation
 description: An atomic lexical transformation applied on a term (string) yielding
   a transformed string
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 is_a: Activity
 attributes:
   type:
@@ -104,6 +107,8 @@ attributes:
     description: The type of transformation
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
+    domain_of:
+    - LexicalTransformation
     range: TransformationType
   params:
     name: params
@@ -111,6 +116,8 @@ attributes:
     from_schema: https://w3id.org/oak/lexical-index
     rank: 1000
     multivalued: true
+    domain_of:
+    - LexicalTransformation
     range: Any
     inlined: true
     inlined_as_list: true
@@ -126,7 +133,6 @@ name: LexicalTransformation
 description: An atomic lexical transformation applied on a term (string) yielding
   a transformed string
 from_schema: https://w3id.org/oak/lexical-index
-rank: 1000
 is_a: Activity
 attributes:
   type:

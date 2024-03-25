@@ -1,5 +1,8 @@
 # Slot: score
+
+
 _Abstract base slot for different kinds of scores_
+
 
 
 URI: [sim:score](https://w3id.org/linkml/similarity/score)
@@ -12,6 +15,7 @@ URI: [sim:score](https://w3id.org/linkml/similarity/score)
 * **score**
     * [information_content](information_content.md)
     * [jaccard_similarity](jaccard_similarity.md)
+    * [cosine_similarity](cosine_similarity.md)
     * [dice_similarity](dice_similarity.md)
     * [phenodigm_score](phenodigm_score.md)
     * [overlap_coefficient](overlap_coefficient.md)
@@ -26,9 +30,10 @@ URI: [sim:score](https://w3id.org/linkml/similarity/score)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[BestMatch](BestMatch.md) | 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[BestMatch](BestMatch.md) |  |  no  |
+
 
 
 
@@ -38,8 +43,6 @@ URI: [sim:score](https://w3id.org/linkml/similarity/score)
 ## Properties
 
 * Range: [String](String.md)
-
-
 
 
 

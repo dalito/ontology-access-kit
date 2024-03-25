@@ -1,10 +1,14 @@
 # Class: SearchBaseConfiguration
+
+
 _A user-specified configuration that determines how a particular search operation works_
 
 
 
 
+
 URI: [ontosearch:SearchBaseConfiguration](https://w3id.org/oak/search-datamodel/SearchBaseConfiguration)
+
 
 
 
@@ -29,13 +33,13 @@ URI: [ontosearch:SearchBaseConfiguration](https://w3id.org/oak/search-datamodel/
         
       SearchBaseConfiguration : properties
         
-          SearchBaseConfiguration ..> SearchProperty : properties
+          SearchBaseConfiguration --> SearchProperty : properties
         
       SearchBaseConfiguration : search_terms
         
       SearchBaseConfiguration : syntax
         
-          SearchBaseConfiguration ..> SearchTermSyntax : syntax
+          SearchBaseConfiguration --> SearchTermSyntax : syntax
         
       
 ```
@@ -54,7 +58,7 @@ URI: [ontosearch:SearchBaseConfiguration](https://w3id.org/oak/search-datamodel/
 | [syntax](syntax.md) | 0..1 <br/> [SearchTermSyntax](SearchTermSyntax.md) | Determines how the search term is interpreted | direct |
 | [properties](properties.md) | 0..* <br/> [SearchProperty](SearchProperty.md) | determines which properties are searched over | direct |
 | [limit](limit.md) | 0..1 <br/> [Integer](Integer.md) | the maximum number of search results to be returned in one batch | direct |
-| [cursor](cursor.md) | 0..1 <br/> [String](String.md) |  | direct |
+| [cursor](cursor.md) | 0..1 <br/> [Integer](Integer.md) | when the number of search results exceed the limit this can be used to iterat... | direct |
 | [is_partial](is_partial.md) | 0..1 <br/> [Boolean](Boolean.md) | allows matches where the search term is a subset of the full span | direct |
 | [is_complete](is_complete.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
 | [include_obsoletes_in_results](include_obsoletes_in_results.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
@@ -125,25 +129,28 @@ description: A user-specified configuration that determines how a particular sea
 todos:
 - rename this SearchConfiguration
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   search_terms:
     name: search_terms
     description: An individual search term. The syntax is determined by the syntax
       slot
     comments:
-    - This slot is optional when the configuration is used to paramterize multiple
+    - This slot is optional when the configuration is used to parameterize multiple
       searches
     - If multiple terms are provided this is treated as a union query
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchBaseConfiguration
     range: SearchTerm
   syntax:
     name: syntax
     description: Determines how the search term is interpreted
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: SearchTermSyntax
   properties:
     name: properties
@@ -151,12 +158,16 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchBaseConfiguration
     range: SearchProperty
   limit:
     name: limit
     description: the maximum number of search results to be returned in one batch
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: integer
   cursor:
     name: cursor
@@ -164,29 +175,40 @@ attributes:
       to iterate through results
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
+    - SearchResultSet
     range: integer
   is_partial:
     name: is_partial
     description: allows matches where the search term is a subset of the full span
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   is_complete:
     name: is_complete
     deprecated: use is_partial
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   include_obsoletes_in_results:
     name: include_obsoletes_in_results
     deprecated: use properties to explicitly list properties
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   is_fuzzy:
     name: is_fuzzy
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
   categories:
     name: categories
@@ -194,12 +216,16 @@ attributes:
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - SearchBaseConfiguration
     range: uriorcurie
   force_case_insensitive:
     name: force_case_insensitive
     description: force case insensitive matching
     from_schema: https://w3id.org/oak/search-datamodel
     rank: 1000
+    domain_of:
+    - SearchBaseConfiguration
     range: boolean
 
 ```
@@ -215,14 +241,13 @@ description: A user-specified configuration that determines how a particular sea
 todos:
 - rename this SearchConfiguration
 from_schema: https://w3id.org/oak/search-datamodel
-rank: 1000
 attributes:
   search_terms:
     name: search_terms
     description: An individual search term. The syntax is determined by the syntax
       slot
     comments:
-    - This slot is optional when the configuration is used to paramterize multiple
+    - This slot is optional when the configuration is used to parameterize multiple
       searches
     - If multiple terms are provided this is treated as a union query
     from_schema: https://w3id.org/oak/search-datamodel

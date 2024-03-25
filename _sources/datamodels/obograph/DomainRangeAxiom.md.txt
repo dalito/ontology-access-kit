@@ -1,10 +1,14 @@
 # Class: DomainRangeAxiom
+
+
 _This groups potentially multiple axioms that constrain the usage of a property depending on some combination of domain and range._
 
 
 
 
+
 URI: [obographs:DomainRangeAxiom](https://github.com/geneontology/obographs/DomainRangeAxiom)
+
 
 
 
@@ -15,13 +19,13 @@ URI: [obographs:DomainRangeAxiom](https://github.com/geneontology/obographs/Doma
       
       DomainRangeAxiom : allValuesFromEdges
         
-          DomainRangeAxiom ..> Edge : allValuesFromEdges
+          DomainRangeAxiom --> Edge : allValuesFromEdges
         
       DomainRangeAxiom : domainClassIds
         
       DomainRangeAxiom : meta
         
-          DomainRangeAxiom ..> Meta : meta
+          DomainRangeAxiom --> Meta : meta
         
       DomainRangeAxiom : predicateId
         
@@ -114,7 +118,6 @@ comments:
   to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations
   may merge these, but only when semantically valid.
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 is_a: Axiom
 slots:
 - predicateId
@@ -138,7 +141,6 @@ comments:
   to a DomainRangeAxiom with a rangeClassIds, and no domainClassIds. But translations
   may merge these, but only when semantically valid.
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 is_a: Axiom
 attributes:
   predicateId:

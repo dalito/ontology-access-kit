@@ -6,6 +6,7 @@ URI: [omoschema:HasCategory](http://purl.obolibrary.org/obo/omo/schema/HasCatego
 
 
 
+
 ```{mermaid}
  classDiagram
     class HasCategory
@@ -19,13 +20,13 @@ URI: [omoschema:HasCategory](http://purl.obolibrary.org/obo/omo/schema/HasCatego
         
       HasCategory : conformsTo
         
-          HasCategory ..> Thing : conformsTo
+          HasCategory --> Thing : conformsTo
         
       HasCategory : has_obo_namespace
         
       HasCategory : in_subset
         
-          HasCategory ..> Subset : in_subset
+          HasCategory --> Subset : in_subset
         
       
 ```
@@ -102,7 +103,6 @@ URI: [omoschema:HasCategory](http://purl.obolibrary.org/obo/omo/schema/HasCatego
 ```yaml
 name: HasCategory
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 slots:
@@ -120,7 +120,6 @@ slots:
 ```yaml
 name: HasCategory
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 attributes:

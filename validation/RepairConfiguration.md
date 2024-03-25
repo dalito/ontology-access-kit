@@ -1,10 +1,14 @@
 # Class: RepairConfiguration
+
+
 _Configuration parameters for execution of validation repairs_
 
 
 
 
+
 URI: [vm:RepairConfiguration](https://w3id.org/linkml/validation-model/RepairConfiguration)
+
 
 
 
@@ -15,7 +19,7 @@ URI: [vm:RepairConfiguration](https://w3id.org/linkml/validation-model/RepairCon
         
       RepairConfiguration : validation_configuration
         
-          RepairConfiguration ..> ValidationConfiguration : validation_configuration
+          RepairConfiguration --> ValidationConfiguration : validation_configuration
         
       
 ```
@@ -80,18 +84,21 @@ URI: [vm:RepairConfiguration](https://w3id.org/linkml/validation-model/RepairCon
 name: RepairConfiguration
 description: Configuration parameters for execution of validation repairs
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 attributes:
   validation_configuration:
     name: validation_configuration
     description: repair configurations include validation configurations
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - RepairConfiguration
     range: ValidationConfiguration
   dry_run:
     name: dry_run
     from_schema: https://w3id.org/linkml/validation_results
     rank: 1000
+    domain_of:
+    - RepairConfiguration
     range: boolean
 
 ```
@@ -104,7 +111,6 @@ attributes:
 name: RepairConfiguration
 description: Configuration parameters for execution of validation repairs
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 attributes:
   validation_configuration:
     name: validation_configuration

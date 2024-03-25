@@ -11,9 +11,10 @@ URI: [ann:id](https://w3id.org/linkml/text_annotator/id)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[TextualElement](TextualElement.md) | 
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[TextualElement](TextualElement.md) |  |  no  |
+
 
 
 
@@ -24,7 +25,7 @@ URI: [ann:id](https://w3id.org/linkml/text_annotator/id)
 
 * Range: [Uriorcurie](Uriorcurie.md)
 
-
+* Required: True
 
 
 
@@ -59,6 +60,7 @@ owner: TextualElement
 domain_of:
 - TextualElement
 range: uriorcurie
+required: true
 
 ```
 </details>

@@ -1,10 +1,14 @@
 # Class: XrefPropertyValue
+
+
 _A property value that represents an assertion about an external reference to an entity_
 
 
 
 
+
 URI: [obographs:XrefPropertyValue](https://github.com/geneontology/obographs/XrefPropertyValue)
+
 
 
 
@@ -17,7 +21,7 @@ URI: [obographs:XrefPropertyValue](https://github.com/geneontology/obographs/Xre
         
       XrefPropertyValue : meta
         
-          XrefPropertyValue ..> Meta : meta
+          XrefPropertyValue --> Meta : meta
         
       XrefPropertyValue : pred
         
@@ -106,7 +110,6 @@ name: XrefPropertyValue
 description: A property value that represents an assertion about an external reference
   to an entity
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 is_a: PropertyValue
 slot_usage:
   val:
@@ -127,7 +130,6 @@ name: XrefPropertyValue
 description: A property value that represents an assertion about an external reference
   to an entity
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 is_a: PropertyValue
 slot_usage:
   val:

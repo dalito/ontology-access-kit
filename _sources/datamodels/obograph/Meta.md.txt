@@ -1,5 +1,8 @@
 # Class: Meta
+
+
 _A collection of annotations on an entity or ontology or edge or axiom. Metadata typically does not affect the logical interpretation of the container but provides useful information to humans or machines._
+
 
 
 
@@ -8,18 +11,19 @@ URI: [obographs:Meta](https://github.com/geneontology/obographs/Meta)
 
 
 
+
 ```{mermaid}
  classDiagram
     class Meta
       Meta : basicPropertyValues
         
-          Meta ..> BasicPropertyValue : basicPropertyValues
+          Meta --> BasicPropertyValue : basicPropertyValues
         
       Meta : comments
         
       Meta : definition
         
-          Meta ..> DefinitionPropertyValue : definition
+          Meta --> DefinitionPropertyValue : definition
         
       Meta : deprecated
         
@@ -27,13 +31,13 @@ URI: [obographs:Meta](https://github.com/geneontology/obographs/Meta)
         
       Meta : synonyms
         
-          Meta ..> SynonymPropertyValue : synonyms
+          Meta --> SynonymPropertyValue : synonyms
         
       Meta : version
         
       Meta : xrefs
         
-          Meta ..> XrefPropertyValue : xrefs
+          Meta --> XrefPropertyValue : xrefs
         
       
 ```
@@ -52,7 +56,7 @@ URI: [obographs:Meta](https://github.com/geneontology/obographs/Meta)
 | [version](version.md) | 0..1 <br/> [String](String.md) |  | direct |
 | [comments](comments.md) | 0..* <br/> [String](String.md) | A list of comments about the entity | direct |
 | [definition](definition.md) | 0..1 <br/> [DefinitionPropertyValue](DefinitionPropertyValue.md) | A definition of an entity | direct |
-| [xrefs](xrefs.md) | 0..* <br/> [XrefString](XrefString.md) | A list of cross references to other entities represented in other ontologies,... | direct |
+| [xrefs](xrefs.md) | 0..* <br/> [XrefPropertyValue](XrefPropertyValue.md) | A list of cross references to other entities represented in other ontologies,... | direct |
 | [synonyms](synonyms.md) | 0..* <br/> [SynonymPropertyValue](SynonymPropertyValue.md) | A list of synonym property value assertions for an entity | direct |
 | [basicPropertyValues](basicPropertyValues.md) | 0..* <br/> [BasicPropertyValue](BasicPropertyValue.md) | A list of open-ended property values that does not correspond to those predef... | direct |
 | [deprecated](deprecated.md) | 0..1 <br/> [Boolean](Boolean.md) |  | direct |
@@ -78,6 +82,7 @@ URI: [obographs:Meta](https://github.com/geneontology/obographs/Meta)
 | [DomainRangeAxiom](DomainRangeAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
 | [EquivalentNodesSet](EquivalentNodesSet.md) | [meta](meta.md) | range | [Meta](Meta.md) |
 | [LogicalDefinitionAxiom](LogicalDefinitionAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
+| [DisjointClassExpressionsAxiom](DisjointClassExpressionsAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
 | [PropertyChainAxiom](PropertyChainAxiom.md) | [meta](meta.md) | range | [Meta](Meta.md) |
 
 
@@ -133,7 +138,6 @@ description: A collection of annotations on an entity or ontology or edge or axi
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - annotation collection
-rank: 1000
 slots:
 - subsets
 - version
@@ -166,7 +170,6 @@ description: A collection of annotations on an entity or ontology or edge or axi
 from_schema: https://github.com/geneontology/obographs
 aliases:
 - annotation collection
-rank: 1000
 slot_usage:
   xrefs:
     name: xrefs

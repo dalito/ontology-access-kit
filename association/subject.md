@@ -1,5 +1,8 @@
 # Slot: subject
+
+
 _The thing which the association is about._
+
 
 
 URI: [rdf:subject](rdf:subject)
@@ -13,10 +16,13 @@ URI: [rdf:subject](rdf:subject)
 
 ## Applicable Classes
 
-| Name | Description |
-| --- | --- |
-[Association](Association.md) | A generic association between a thing (subject) and another thing (object)
-[NegatedAssociation](NegatedAssociation.md) | A negated association between a thing (subject) and another thing (object)
+| Name | Description | Modifies Slot |
+| --- | --- | --- |
+[PositiveOrNegativeAssociation](PositiveOrNegativeAssociation.md) |  |  no  |
+[AssociationChange](AssociationChange.md) | A change object describing a change between two associations |  no  |
+[Association](Association.md) | A generic association between a thing (subject) and another thing (object) |  no  |
+[NegatedAssociation](NegatedAssociation.md) | A negated association between a thing (subject) and another thing (object) |  no  |
+
 
 
 
@@ -31,7 +37,9 @@ URI: [rdf:subject](rdf:subject)
 
 
 
+## Comments
 
+* it is conventional for the subject to be the "entity" and the object to be the ontological descriptor
 
 ## Identifier and Mapping Information
 
@@ -55,6 +63,9 @@ URI: [rdf:subject](rdf:subject)
 ```yaml
 name: subject
 description: The thing which the association is about.
+comments:
+- it is conventional for the subject to be the "entity" and the object to be the ontological
+  descriptor
 from_schema: https://w3id.org/oak/association
 exact_mappings:
 - oa:hasBody
@@ -62,8 +73,9 @@ rank: 1000
 slot_uri: rdf:subject
 alias: subject
 domain_of:
-- Association
-- NegatedAssociation
+- PositiveOrNegativeAssociation
+- AssociationChange
+slot_group: core_triple
 range: uriorcurie
 
 ```

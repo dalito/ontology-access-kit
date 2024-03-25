@@ -6,6 +6,7 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/omo/schema/Ha
 
 
 
+
 ```{mermaid}
  classDiagram
     class HasUserInformation
@@ -21,7 +22,7 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/omo/schema/Ha
         
       HasUserInformation : depicted_by
         
-          HasUserInformation ..> Image : depicted_by
+          HasUserInformation --> Image : depicted_by
         
       HasUserInformation : example_of_usage
         
@@ -29,13 +30,13 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/omo/schema/Ha
         
       HasUserInformation : image
         
-          HasUserInformation ..> Thing : image
+          HasUserInformation --> Thing : image
         
       HasUserInformation : page
         
       HasUserInformation : seeAlso
         
-          HasUserInformation ..> Thing : seeAlso
+          HasUserInformation --> Thing : seeAlso
         
       
 ```
@@ -116,7 +117,6 @@ URI: [omoschema:HasUserInformation](http://purl.obolibrary.org/obo/omo/schema/Ha
 ```yaml
 name: HasUserInformation
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 slots:
@@ -138,7 +138,6 @@ slots:
 ```yaml
 name: HasUserInformation
 from_schema: http://purl.obolibrary.org/obo/omo/schema
-rank: 1000
 is_a: AnnotationPropertyMixin
 mixin: true
 attributes:

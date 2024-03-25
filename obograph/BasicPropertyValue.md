@@ -1,10 +1,14 @@
 # Class: BasicPropertyValue
+
+
 _A property value that represents an assertion about an entity that is not a definition, synonym, or xref_
 
 
 
 
+
 URI: [obographs:BasicPropertyValue](https://github.com/geneontology/obographs/BasicPropertyValue)
+
 
 
 
@@ -17,7 +21,7 @@ URI: [obographs:BasicPropertyValue](https://github.com/geneontology/obographs/Ba
         
       BasicPropertyValue : meta
         
-          BasicPropertyValue ..> Meta : meta
+          BasicPropertyValue --> Meta : meta
         
       BasicPropertyValue : pred
         
@@ -106,7 +110,6 @@ name: BasicPropertyValue
 description: A property value that represents an assertion about an entity that is
   not a definition, synonym, or xref
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 is_a: PropertyValue
 
 ```
@@ -120,7 +123,6 @@ name: BasicPropertyValue
 description: A property value that represents an assertion about an entity that is
   not a definition, synonym, or xref
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 is_a: PropertyValue
 attributes:
   pred:

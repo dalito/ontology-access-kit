@@ -1,10 +1,14 @@
 # Class: PrefixDeclaration
+
+
 _A mapping between an individual prefix (e.g. GO) and a namespace (e.g. http://purl.obolibrary.org/obo/GO_)_
 
 
 
 
+
 URI: [sh:PrefixDeclaration](https://w3id.org/shacl/PrefixDeclaration)
+
 
 
 
@@ -87,7 +91,6 @@ name: PrefixDeclaration
 description: A mapping between an individual prefix (e.g. GO) and a namespace (e.g.
   http://purl.obolibrary.org/obo/GO_)
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 attributes:
   prefix:
     name: prefix
@@ -98,13 +101,18 @@ attributes:
     rank: 1000
     slot_uri: sh:prefix
     key: true
+    domain_of:
+    - PrefixDeclaration
     range: string
+    required: true
   namespace:
     name: namespace
     description: The namespace associated with a prefix in a prefix declaration.
     from_schema: https://github.com/geneontology/obographs
     rank: 1000
     slot_uri: sh:namespace
+    domain_of:
+    - PrefixDeclaration
     range: uri
 class_uri: sh:PrefixDeclaration
 
@@ -119,7 +127,6 @@ name: PrefixDeclaration
 description: A mapping between an individual prefix (e.g. GO) and a namespace (e.g.
   http://purl.obolibrary.org/obo/GO_)
 from_schema: https://github.com/geneontology/obographs
-rank: 1000
 attributes:
   prefix:
     name: prefix
@@ -135,6 +142,7 @@ attributes:
     domain_of:
     - PrefixDeclaration
     range: string
+    required: true
   namespace:
     name: namespace
     description: The namespace associated with a prefix in a prefix declaration.

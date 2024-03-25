@@ -1,10 +1,14 @@
 # Class: Precondition
+
+
 _A pattern to be matched against an individual SSSOM mapping_
 
 
 
 
+
 URI: [mappingrules:Precondition](https://w3id.org/oak/mapping-rules-datamodel/Precondition)
+
 
 
 
@@ -100,43 +104,56 @@ URI: [mappingrules:Precondition](https://w3id.org/oak/mapping-rules-datamodel/Pr
 name: Precondition
 description: A pattern to be matched against an individual SSSOM mapping
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   subject_source_one_of:
     name: subject_source_one_of
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
   object_source_one_of:
     name: object_source_one_of
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
   mapping_source_one_of:
     name: mapping_source_one_of
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
   subject_match_field_one_of:
     name: subject_match_field_one_of
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
   object_match_field_one_of:
     name: object_match_field_one_of
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
   transformations_included_in:
     name: transformations_included_in
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
   predicate_id_one_of:
     name: predicate_id_one_of
     from_schema: https://w3id.org/oak/mapping-rules-datamodel
     rank: 1000
     multivalued: true
+    domain_of:
+    - Precondition
 
 ```
 </details>
@@ -148,7 +165,6 @@ attributes:
 name: Precondition
 description: A pattern to be matched against an individual SSSOM mapping
 from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
 attributes:
   subject_source_one_of:
     name: subject_source_one_of

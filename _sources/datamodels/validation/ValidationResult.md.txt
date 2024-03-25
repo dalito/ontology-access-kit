@@ -1,10 +1,14 @@
 # Class: ValidationResult
+
+
 _An individual result arising from validation of a data instance using a particular rule_
 
 
 
 
+
 URI: [sh:ValidationResult](http://www.w3.org/ns/shacl#ValidationResult)
+
 
 
 
@@ -21,31 +25,31 @@ URI: [sh:ValidationResult](http://www.w3.org/ns/shacl#ValidationResult)
         
       ValidationResult : instantiates
         
-          ValidationResult ..> Node : instantiates
+          ValidationResult --> Node : instantiates
         
       ValidationResult : object
         
-          ValidationResult ..> Node : object
+          ValidationResult --> Node : object
         
       ValidationResult : object_str
         
       ValidationResult : predicate
         
-          ValidationResult ..> Node : predicate
+          ValidationResult --> Node : predicate
         
       ValidationResult : severity
         
-          ValidationResult ..> severity_options : severity
+          ValidationResult --> severity_options : severity
         
       ValidationResult : source
         
       ValidationResult : subject
         
-          ValidationResult ..> Node : subject
+          ValidationResult --> Node : subject
         
       ValidationResult : type
         
-          ValidationResult ..> ConstraintComponent : type
+          ValidationResult --> ConstraintComponent : type
         
       
 ```
@@ -131,7 +135,6 @@ name: ValidationResult
 description: An individual result arising from validation of a data instance using
   a particular rule
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: Result
 slots:
 - type
@@ -156,7 +159,6 @@ name: ValidationResult
 description: An individual result arising from validation of a data instance using
   a particular rule
 from_schema: https://w3id.org/linkml/validation_results
-rank: 1000
 is_a: Result
 attributes:
   type:
@@ -260,6 +262,7 @@ attributes:
     owner: ValidationResult
     domain_of:
     - ValidationResult
+    - MappingValidationResult
     - RepairOperation
     range: string
 class_uri: sh:ValidationResult

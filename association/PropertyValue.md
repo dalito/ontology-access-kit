@@ -1,10 +1,14 @@
 # Class: PropertyValue
+
+
 _A generic tag-value that can be associated with an association._
 
 
 
 
+
 URI: [ontoassoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
+
 
 
 
@@ -39,6 +43,7 @@ URI: [ontoassoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [PositiveOrNegativeAssociation](PositiveOrNegativeAssociation.md) | [property_values](property_values.md) | range | [PropertyValue](PropertyValue.md) |
 | [Association](Association.md) | [property_values](property_values.md) | range | [PropertyValue](PropertyValue.md) |
 | [NegatedAssociation](NegatedAssociation.md) | [property_values](property_values.md) | range | [PropertyValue](PropertyValue.md) |
 
@@ -86,7 +91,6 @@ URI: [ontoassoc:PropertyValue](https://w3id.org/oak/association/PropertyValue)
 name: PropertyValue
 description: A generic tag-value that can be associated with an association.
 from_schema: https://w3id.org/oak/association
-rank: 1000
 slots:
 - predicate
 - object
@@ -101,7 +105,6 @@ slots:
 name: PropertyValue
 description: A generic tag-value that can be associated with an association.
 from_schema: https://w3id.org/oak/association
-rank: 1000
 attributes:
   predicate:
     name: predicate
@@ -112,13 +115,16 @@ attributes:
     alias: predicate
     owner: PropertyValue
     domain_of:
-    - Association
-    - NegatedAssociation
+    - PositiveOrNegativeAssociation
     - PropertyValue
+    slot_group: core_triple
     range: uriorcurie
   object:
     name: object
     description: An ontology entity that is associated with the subject.
+    comments:
+    - it is conventional for the subject to be the "entity" and the object to be the
+      ontological descriptor
     from_schema: https://w3id.org/oak/association
     exact_mappings:
     - oa:hasTarget
@@ -127,9 +133,9 @@ attributes:
     alias: object
     owner: PropertyValue
     domain_of:
-    - Association
-    - NegatedAssociation
+    - PositiveOrNegativeAssociation
     - PropertyValue
+    slot_group: core_triple
     range: uriorcurie
 
 ```

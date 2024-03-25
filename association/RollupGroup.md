@@ -6,18 +6,19 @@ URI: [ontoassoc:RollupGroup](https://w3id.org/oak/association/RollupGroup)
 
 
 
+
 ```{mermaid}
  classDiagram
     class RollupGroup
       RollupGroup : associations
         
-          RollupGroup ..> Association : associations
+          RollupGroup --> Association : associations
         
       RollupGroup : group_object
         
       RollupGroup : sub_groups
         
-          RollupGroup ..> RollupGroup : sub_groups
+          RollupGroup --> RollupGroup : sub_groups
         
       
 ```
@@ -34,7 +35,7 @@ URI: [ontoassoc:RollupGroup](https://w3id.org/oak/association/RollupGroup)
 | ---  | --- | --- | --- |
 | [group_object](group_object.md) | 0..1 <br/> [Uriorcurie](Uriorcurie.md) | An ontology entity that is the ancestor of the objects in the group's  | direct |
 | [sub_groups](sub_groups.md) | 0..* <br/> [RollupGroup](RollupGroup.md) | Container for groups within a rollup group | direct |
-| [associations](associations.md) | 0..* <br/> [Association](Association.md) |  | direct |
+| [associations](associations.md) | 0..* <br/> [Association](Association.md) | A collection of associations | direct |
 
 
 
@@ -89,7 +90,6 @@ URI: [ontoassoc:RollupGroup](https://w3id.org/oak/association/RollupGroup)
 ```yaml
 name: RollupGroup
 from_schema: https://w3id.org/oak/association
-rank: 1000
 slots:
 - group_object
 - sub_groups
@@ -104,7 +104,6 @@ slots:
 ```yaml
 name: RollupGroup
 from_schema: https://w3id.org/oak/association
-rank: 1000
 attributes:
   group_object:
     name: group_object
@@ -133,6 +132,7 @@ attributes:
     inlined_as_list: true
   associations:
     name: associations
+    description: A collection of associations
     from_schema: https://w3id.org/oak/association
     rank: 1000
     multivalued: true
