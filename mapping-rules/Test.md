@@ -1,3 +1,5 @@
+
+
 # Class: Test
 
 
@@ -108,6 +110,7 @@ attributes:
     domain_of:
     - Synonymizer
     - Test
+    - RuleSet
 
 ```
 </details>
@@ -148,6 +151,7 @@ attributes:
     domain_of:
     - Synonymizer
     - Test
+    - RuleSet
     range: string
 
 ```

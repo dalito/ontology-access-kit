@@ -1,3 +1,5 @@
+
+
 # Class: MappingRule
 
 
@@ -112,6 +114,7 @@ attributes:
     rank: 1000
     domain_of:
     - MappingRule
+    - Synonymizer
   oneway:
     name: oneway
     description: if true then subject and object can be switched and predicate inverted
@@ -167,6 +170,7 @@ attributes:
     owner: MappingRule
     domain_of:
     - MappingRule
+    - Synonymizer
     range: string
   oneway:
     name: oneway

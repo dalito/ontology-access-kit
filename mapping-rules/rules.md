@@ -1,9 +1,6 @@
+
+
 # Slot: rules
-
-
-_all rules_
-
-
 
 URI: [mappingrules:rules](https://w3id.org/oak/mapping-rules-datamodel/rules)
 
@@ -14,11 +11,13 @@ URI: [mappingrules:rules](https://w3id.org/oak/mapping-rules-datamodel/rules)
 
 
 
+
 ## Applicable Classes
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
-[MappingRuleCollection](MappingRuleCollection.md) | A collection of mapping rules |  no  |
+| [RuleSet](RuleSet.md) | A set of rules for generating synonyms or alternate lexical elements |  no  |
+| [MappingRuleCollection](MappingRuleCollection.md) | A collection of mapping rules |  no  |
 
 
 
@@ -28,9 +27,7 @@ URI: [mappingrules:rules](https://w3id.org/oak/mapping-rules-datamodel/rules)
 
 ## Properties
 
-* Range: [MappingRule](MappingRule.md)
-
-* Multivalued: True
+* Range: [String](String.md)
 
 
 
@@ -44,29 +41,17 @@ URI: [mappingrules:rules](https://w3id.org/oak/mapping-rules-datamodel/rules)
 
 
 
-### Schema Source
-
-
-* from schema: https://w3id.org/oak/mapping-rules-datamodel
-
-
-
 
 ## LinkML Source
 
 <details>
 ```yaml
 name: rules
-description: all rules
-from_schema: https://w3id.org/oak/mapping-rules-datamodel
-rank: 1000
-multivalued: true
 alias: rules
-owner: MappingRuleCollection
 domain_of:
 - MappingRuleCollection
-range: MappingRule
-inlined: true
+- RuleSet
+range: string
 
 ```
 </details>
