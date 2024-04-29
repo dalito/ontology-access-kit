@@ -21,20 +21,20 @@ URI: [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type)
 
 | Name | Description | Modifies Slot |
 | --- | --- | --- |
+| [Class](Class.md) |  |  no  |
 | [TransitiveProperty](TransitiveProperty.md) | An ObjectProperty with the property of transitivity |  no  |
-| [AnnotationProperty](AnnotationProperty.md) | A property used in non-logical axioms |  no  |
-| [NamedObject](NamedObject.md) | Anything with an IRI |  no  |
-| [Thing](Thing.md) |  |  no  |
-| [ObjectProperty](ObjectProperty.md) | A property that connects two objects in logical axioms |  no  |
-| [Term](Term.md) | A NamedThing that includes classes, properties, but not ontologies |  no  |
-| [Ontology](Ontology.md) | An OWL ontology |  no  |
 | [NamedIndividual](NamedIndividual.md) | An instance that has a IRI |  no  |
 | [Image](Image.md) |  |  no  |
-| [HomoSapiens](HomoSapiens.md) | An individual human being |  no  |
-| [Subset](Subset.md) | A collection of terms grouped for some purpose |  no  |
-| [Class](Class.md) |  |  no  |
-| [Property](Property.md) |  |  no  |
 | [Agent](Agent.md) |  |  no  |
+| [Ontology](Ontology.md) | An OWL ontology |  no  |
+| [Property](Property.md) |  |  no  |
+| [ObjectProperty](ObjectProperty.md) | A property that connects two objects in logical axioms |  no  |
+| [Thing](Thing.md) |  |  no  |
+| [Subset](Subset.md) | A collection of terms grouped for some purpose |  no  |
+| [HomoSapiens](HomoSapiens.md) | An individual human being |  no  |
+| [Term](Term.md) | A NamedThing that includes classes, properties, but not ontologies |  no  |
+| [AnnotationProperty](AnnotationProperty.md) | A property used in non-logical axioms |  no  |
+| [NamedObject](NamedObject.md) | Anything with an IRI |  no  |
 
 
 
